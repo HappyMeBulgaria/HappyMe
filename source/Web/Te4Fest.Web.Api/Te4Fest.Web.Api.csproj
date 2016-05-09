@@ -173,7 +173,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\ApplicationUserManager.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -211,12 +211,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountBindingModels.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AccountBinding\SetPasswordBindingModel.cs" />
+    <Compile Include="ViewModels\AccountBinding\AddExternalLoginBindingModel.cs" />
+    <Compile Include="ViewModels\AccountBinding\ChangePasswordBindingModel.cs" />
+    <Compile Include="ViewModels\AccountBinding\RegisterBindingModel.cs" />
+    <Compile Include="ViewModels\AccountBinding\RegisterExternalBindingModel.cs" />
+    <Compile Include="ViewModels\AccountBinding\RemoveLoginBindingModel.cs" />
+    <Compile Include="ViewModels\Account\UserLoginInfoViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Account\ExternalLoginViewModel.cs" />
+    <Compile Include="ViewModels\Account\ManageInfoViewModel.cs" />
+    <Compile Include="ViewModels\Account\UserInfoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

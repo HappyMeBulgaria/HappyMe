@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Te4FestDbContext.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

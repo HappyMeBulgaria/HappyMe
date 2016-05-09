@@ -64,25 +64,25 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.ModelDescriptions
         // Modify this to add more default documentations.
         private readonly IDictionary<Type, string> defaultTypeDocumentation = new Dictionary<Type, string>
         {
-            { typeof(Int16), "integer" }, 
-            { typeof(Int32), "integer" }, 
-            { typeof(Int64), "integer" }, 
-            { typeof(UInt16), "unsigned integer" }, 
-            { typeof(UInt32), "unsigned integer" }, 
-            { typeof(UInt64), "unsigned integer" }, 
-            { typeof(Byte), "byte" }, 
-            { typeof(Char), "character" }, 
-            { typeof(SByte), "signed byte" }, 
+            { typeof(short), "integer" }, 
+            { typeof(int), "integer" }, 
+            { typeof(long), "integer" }, 
+            { typeof(ushort), "unsigned integer" }, 
+            { typeof(uint), "unsigned integer" }, 
+            { typeof(ulong), "unsigned integer" }, 
+            { typeof(byte), "byte" }, 
+            { typeof(char), "character" }, 
+            { typeof(sbyte), "signed byte" }, 
             { typeof(Uri), "URI" }, 
-            { typeof(Single), "decimal number" }, 
-            { typeof(Double), "decimal number" }, 
-            { typeof(Decimal), "decimal number" }, 
-            { typeof(String), "string" }, 
+            { typeof(float), "decimal number" }, 
+            { typeof(double), "decimal number" }, 
+            { typeof(decimal), "decimal number" }, 
+            { typeof(string), "string" }, 
             { typeof(Guid), "globally unique identifier" }, 
             { typeof(TimeSpan), "time interval" }, 
             { typeof(DateTime), "date" }, 
             { typeof(DateTimeOffset), "date" }, 
-            { typeof(Boolean), "boolean" }, 
+            { typeof(bool), "boolean" }, 
         };
 
         private Lazy<IModelDocumentationProvider> documentationProvider;
@@ -125,13 +125,15 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.ModelDescriptions
             string modelName = ModelNameHelper.GetModelName(modelType);
             if (this.GeneratedModels.TryGetValue(modelName, out modelDescription))
             {
+                const string InfoMessage = "A model description could not be created. Duplicate model name '{0}' was found for types '{1}' and '{2}'. "
+                                           + "Use the [ModelName] attribute to change the model name for at least one of the types so that it has a unique name.";
+
                 if (modelType != modelDescription.ModelType)
                 {
                     throw new InvalidOperationException(
                         string.Format(
-                            CultureInfo.CurrentCulture, 
-                            "A model description could not be created. Duplicate model name '{0}' was found for types '{1}' and '{2}'. " +
-                            "Use the [ModelName] attribute to change the model name for at least one of the types so that it has a unique name.", 
+                            CultureInfo.CurrentCulture,
+                            InfoMessage, 
                             modelName, 
                             modelDescription.ModelType.FullName, 
                             modelType.FullName));

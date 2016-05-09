@@ -316,7 +316,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
                     }
                     else
                     {
-                        Debug.Assert(parameterDescriptor == null);
+                        Debug.Assert(parameterDescriptor == null, "parameterDescriptor == null");
 
                         // If parameterDescriptor is null, this is an undeclared route parameter which only occurs
                         // when source is FromUri. Ignored in request model and among resource parameters but listed
@@ -338,8 +338,10 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
             return TypeDescriptor.GetConverter(parameterType).CanConvertFrom(typeof(string));
         }
 
-        private static ParameterDescription AddParameterDescription(HelpPageApiModel apiModel, 
-            ApiParameterDescription apiParameter, ModelDescription typeDescription)
+        private static ParameterDescription AddParameterDescription(
+            HelpPageApiModel apiModel, 
+            ApiParameterDescription apiParameter, 
+            ModelDescription typeDescription)
         {
             ParameterDescription parameterDescription = new ParameterDescription
             {
@@ -405,7 +407,8 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
             }
             catch (Exception e)
             {
-                apiModel.ErrorMessages.Add(string.Format(CultureInfo.CurrentCulture, 
+                apiModel.ErrorMessages.Add(string.Format(
+                    CultureInfo.CurrentCulture, 
                     "An exception has occurred while generating the sample. Exception message: {0}", 
                     HelpPageSampleGenerator.UnwrapException(e).Message));
             }

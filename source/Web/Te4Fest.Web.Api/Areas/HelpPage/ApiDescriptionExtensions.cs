@@ -25,7 +25,8 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
             }
 
             StringBuilder friendlyPath = new StringBuilder();
-            friendlyPath.AppendFormat("{0}-{1}", 
+            friendlyPath.AppendFormat(
+                "{0}-{1}", 
                 description.HttpMethod.Method, 
                 localPath.Replace("/", "-").Replace("{", string.Empty).Replace("}", string.Empty));
             if (queryKeyString != null)

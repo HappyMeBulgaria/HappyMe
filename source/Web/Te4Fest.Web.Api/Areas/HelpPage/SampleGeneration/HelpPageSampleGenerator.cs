@@ -423,6 +423,17 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             return false;
         }
 
+        private static object WrapSampleIfString(object sample)
+        {
+            string stringSample = sample as string;
+            if (stringSample != null)
+            {
+                return new TextSample(stringSample);
+            }
+
+            return sample;
+        }
+
         private IEnumerable<KeyValuePair<HelpPageSampleKey, object>> GetAllActionSamples(string controllerName, string actionName, IEnumerable<string> parameterNames, SampleDirection sampleDirection)
         {
             HashSet<string> parameterNamesSet = new HashSet<string>(parameterNames, StringComparer.OrdinalIgnoreCase);
@@ -437,17 +448,6 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
                     yield return sample;
                 }
             }
-        }
-
-        private static object WrapSampleIfString(object sample)
-        {
-            string stringSample = sample as string;
-            if (stringSample != null)
-            {
-                return new TextSample(stringSample);
-            }
-
-            return sample;
         }
     }
 }

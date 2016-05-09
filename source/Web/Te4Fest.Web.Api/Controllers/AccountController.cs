@@ -17,9 +17,10 @@
     using Microsoft.Owin.Security.OAuth;
 
     using Te4Fest.Data.Models;
-    using Te4Fest.Web.Api.Models;
     using Te4Fest.Web.Api.Providers;
     using Te4Fest.Web.Api.Results;
+    using Te4Fest.Web.Api.ViewModels.Account;
+    using Te4Fest.Web.Api.ViewModels.AccountBinding;
 
     [Authorize]
     [RoutePrefix("api/Account")]
@@ -32,7 +33,8 @@
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, 
+        public AccountController(
+            ApplicationUserManager userManager,
             ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
         {
             this.UserManager = userManager;
@@ -54,6 +56,11 @@
 
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; }
 
+        private IAuthenticationManager Authentication
+        {
+            get { return this.Request.GetOwinContext().Authentication; }
+        }
+
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
@@ -63,8 +70,8 @@
 
             return new UserInfoViewModel
             {
-                Email = this.User.Identity.GetUserName(), 
-                HasRegistered = externalLogin == null, 
+                Email = this.User.Identity.GetUserName(),
+                HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
         }
@@ -94,7 +101,7 @@
             {
                 logins.Add(new UserLoginInfoViewModel
                 {
-                    LoginProvider = linkedAccount.LoginProvider, 
+                    LoginProvider = linkedAccount.LoginProvider,
                     ProviderKey = linkedAccount.ProviderKey
                 });
             }
@@ -103,16 +110,16 @@
             {
                 logins.Add(new UserLoginInfoViewModel
                 {
-                    LoginProvider = LocalLoginProvider, 
-                    ProviderKey = user.UserName, 
+                    LoginProvider = LocalLoginProvider,
+                    ProviderKey = user.UserName,
                 });
             }
 
             return new ManageInfoViewModel
             {
-                LocalLoginProvider = LocalLoginProvider, 
-                Email = user.UserName, 
-                Logins = logins, 
+                LocalLoginProvider = LocalLoginProvider,
+                Email = user.UserName,
+                Logins = logins,
                 ExternalLoginProviders = this.GetExternalLogins(returnUrl, generateState)
             };
         }
@@ -126,7 +133,9 @@
                 return this.BadRequest(this.ModelState);
             }
 
-            IdentityResult result = await this.UserManager.ChangePasswordAsync(this.User.Identity.GetUserId(), model.OldPassword, 
+            IdentityResult result = await this.UserManager.ChangePasswordAsync(
+                this.User.Identity.GetUserId(),
+                model.OldPassword,
                 model.NewPassword);
 
             if (!result.Succeeded)
@@ -183,7 +192,8 @@
                 return this.BadRequest("The external login is already associated with an account.");
             }
 
-            IdentityResult result = await this.UserManager.AddLoginAsync(this.User.Identity.GetUserId(), 
+            IdentityResult result = await this.UserManager.AddLoginAsync(
+                this.User.Identity.GetUserId(),
                 new UserLoginInfo(externalData.LoginProvider, externalData.ProviderKey));
 
             if (!result.Succeeded)
@@ -211,7 +221,8 @@
             }
             else
             {
-                result = await this.UserManager.RemoveLoginAsync(this.User.Identity.GetUserId(), 
+                result = await this.UserManager.RemoveLoginAsync(
+                    this.User.Identity.GetUserId(),
                     new UserLoginInfo(model.LoginProvider, model.ProviderKey));
             }
 
@@ -254,8 +265,9 @@
             }
 
             User user = await this.UserManager.FindAsync(
-                new UserLoginInfo(externalLogin.LoginProvider, 
-                externalLogin.ProviderKey));
+                new UserLoginInfo(
+                    externalLogin.LoginProvider,
+                    externalLogin.ProviderKey));
 
             bool hasRegistered = user != null;
 
@@ -263,10 +275,12 @@
             {
                 this.Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
 
-                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(this.UserManager, 
-                   OAuthDefaults.AuthenticationType);
+                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(
+                    this.UserManager,
+                    OAuthDefaults.AuthenticationType);
 
-                ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(this.UserManager, 
+                ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(
+                    this.UserManager,
                     CookieAuthenticationDefaults.AuthenticationType);
 
                 AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName);
@@ -306,15 +320,17 @@
             {
                 ExternalLoginViewModel login = new ExternalLoginViewModel
                 {
-                    Name = description.Caption, 
-                    Url = this.Url.Route("ExternalLogin", new
-                    {
-                        provider = description.AuthenticationType, 
-                        response_type = "token", 
-                        client_id = Startup.PublicClientId, 
-                        redirect_uri = new Uri(this.Request.RequestUri, returnUrl).AbsoluteUri, 
-                        state = state
-                    }), 
+                    Name = description.Caption,
+                    Url = this.Url.Route(
+                        "ExternalLogin",
+                        new
+                        {
+                            provider = description.AuthenticationType,
+                            response_type = "token",
+                            client_id = Startup.PublicClientId,
+                            redirect_uri = new Uri(this.Request.RequestUri, returnUrl).AbsoluteUri,
+                            state = state
+                        }),
                     State = state
                 };
                 logins.Add(login);
@@ -392,11 +408,6 @@
 
         #region Helpers
 
-        private IAuthenticationManager Authentication
-        {
-            get { return this.Request.GetOwinContext().Authentication; }
-        }
-
         private IHttpActionResult GetErrorResult(IdentityResult result)
         {
             if (result == null)
@@ -426,24 +437,34 @@
             return null;
         }
 
+        private static class RandomOAuthStateGenerator
+        {
+            private static RandomNumberGenerator random = new RNGCryptoServiceProvider();
+
+            public static string Generate(int strengthInBits)
+            {
+                const int BitsPerByte = 8;
+
+                if (strengthInBits % BitsPerByte != 0)
+                {
+                    throw new ArgumentException("strengthInBits must be evenly divisible by 8.", "strengthInBits");
+                }
+
+                int strengthInBytes = strengthInBits / BitsPerByte;
+
+                byte[] data = new byte[strengthInBytes];
+                random.GetBytes(data);
+                return HttpServerUtility.UrlTokenEncode(data);
+            }
+        }
+
         private class ExternalLoginData
         {
             public string LoginProvider { get; set; }
+
             public string ProviderKey { get; set; }
+
             public string UserName { get; set; }
-
-            public IList<Claim> GetClaims()
-            {
-                IList<Claim> claims = new List<Claim>();
-                claims.Add(new Claim(ClaimTypes.NameIdentifier, this.ProviderKey, null, this.LoginProvider));
-
-                if (this.UserName != null)
-                {
-                    claims.Add(new Claim(ClaimTypes.Name, this.UserName, null, this.LoginProvider));
-                }
-
-                return claims;
-            }
 
             public static ExternalLoginData FromIdentity(ClaimsIdentity identity)
             {
@@ -467,31 +488,23 @@
 
                 return new ExternalLoginData
                 {
-                    LoginProvider = providerKeyClaim.Issuer, 
-                    ProviderKey = providerKeyClaim.Value, 
+                    LoginProvider = providerKeyClaim.Issuer,
+                    ProviderKey = providerKeyClaim.Value,
                     UserName = identity.FindFirstValue(ClaimTypes.Name)
                 };
             }
-        }
 
-        private static class RandomOAuthStateGenerator
-        {
-            private static RandomNumberGenerator random = new RNGCryptoServiceProvider();
-
-            public static string Generate(int strengthInBits)
+            public IList<Claim> GetClaims()
             {
-                const int BitsPerByte = 8;
+                IList<Claim> claims = new List<Claim>();
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, this.ProviderKey, null, this.LoginProvider));
 
-                if (strengthInBits % BitsPerByte != 0)
+                if (this.UserName != null)
                 {
-                    throw new ArgumentException("strengthInBits must be evenly divisible by 8.", "strengthInBits");
+                    claims.Add(new Claim(ClaimTypes.Name, this.UserName, null, this.LoginProvider));
                 }
 
-                int strengthInBytes = strengthInBits / BitsPerByte;
-
-                byte[] data = new byte[strengthInBytes];
-                random.GetBytes(data);
-                return HttpServerUtility.UrlTokenEncode(data);
+                return claims;
             }
         }
 
