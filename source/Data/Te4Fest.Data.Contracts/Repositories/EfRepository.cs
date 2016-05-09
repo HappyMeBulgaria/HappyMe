@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="EfRepository.cs" company="">
-//   
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Te4Fest.Data.Contracts.Repositories
+﻿namespace Te4Fest.Data.Contracts.Repositories
 {
     using System;
     using System.Data.Entity;

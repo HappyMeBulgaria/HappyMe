@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\DefaultMigrationConfiguration.cs" />
     <Compile Include="Te4FestDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
@@ -66,9 +67,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Te4Fest.Data.Contracts\Te4Fest.Data.Contracts.csproj">
       <Project>{9bc2b1cd-c05d-40ca-a972-c4b16f3cb064}</Project>
