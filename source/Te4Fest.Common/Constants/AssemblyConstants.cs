@@ -2,18 +2,18 @@
 {
     public class AssemblyConstants
     {
-        public const string DataModels = "ComponentCms.Data.Models";
+        public const string DataModels = "Te4Fest.Data.Models";
 
-        public const string ServicesAdministration = "ComponentCms.Services.Administration";
+        public const string ServicesAdministration = "Te4Fest.Services.Administration";
 
-        public const string ServicesCommon = "ComponentCms.Services.Common";
+        public const string ServicesCommon = "Te4Fest.Services.Common";
 
-        public const string ServicesData = "ComponentCms.Services.Data";
+        public const string ServicesData = "Te4Fest.Services.Data";
 
-        public const string Web = "ComponentCms.Web";
+        public const string Web = "Te4Fest.Web";
 
-        public const string WebCommon = "ComponentCms.Web.Common";
+        public const string WebCommon = "Te4Fest.Web.Common";
 
-        public const string WebModels = "ComponentCms.Web.Models";
+        public const string WebModels = "Te4Fest.Web.Models";
     }
 }
