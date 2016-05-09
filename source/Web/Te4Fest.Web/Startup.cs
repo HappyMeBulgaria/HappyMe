@@ -1,6 +1,7 @@
 ﻿using Microsoft.Owin;
 
 [assembly: OwinStartup(typeof(Te4Fest.Web.Startup))]
+
 namespace Te4Fest.Web
 {
     using Owin;
