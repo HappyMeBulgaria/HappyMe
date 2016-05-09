@@ -3,6 +3,8 @@ using System.Web.Mvc;
 
 namespace Te4Fest.Web.Api.Areas.HelpPage
 {
+    using Te4Fest.Web.Api.Areas.HelpPage.App_Start;
+
     public class HelpPageAreaRegistration : AreaRegistration
     {
         public override string AreaName

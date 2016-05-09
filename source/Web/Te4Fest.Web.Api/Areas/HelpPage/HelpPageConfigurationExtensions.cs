@@ -16,6 +16,8 @@ using Te4Fest.Web.Api.Areas.HelpPage.Models;
 
 namespace Te4Fest.Web.Api.Areas.HelpPage
 {
+    using Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration;
+
     public static class HelpPageConfigurationExtensions
     {
         private const string ApiModelPrefix = "MS_HelpPageApiModel_";
