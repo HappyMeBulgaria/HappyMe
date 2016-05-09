@@ -1,4 +1,10 @@
-﻿namespace Te4Fest.Common.Constants
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="GlobalConstants.cs" company="">
+//   
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Te4Fest.Common.Constants
 {
     public class GlobalConstants
     {

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Te4Fest.Web.Api.Models
+﻿namespace Te4Fest.Web.Api.Models
 {
-    // Models returned by AccountController actions.
+    using System.Collections.Generic;
 
+    // Models returned by AccountController actions.
     public class ExternalLoginViewModel
     {
         public string Name { get; set; }

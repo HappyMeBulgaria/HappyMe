@@ -1,21 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Web.Http;
-using System.Web.Http.Controllers;
-using System.Web.Http.Description;
-using Te4Fest.Web.Api.Areas.HelpPage.ModelDescriptions;
-using Te4Fest.Web.Api.Areas.HelpPage.Models;
-
 namespace Te4Fest.Web.Api.Areas.HelpPage
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.ComponentModel;
+    using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Globalization;
+    using System.Linq;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using System.Web.Http;
+    using System.Web.Http.Controllers;
+    using System.Web.Http.Description;
+
+    using Te4Fest.Web.Api.Areas.HelpPage.ModelDescriptions;
+    using Te4Fest.Web.Api.Areas.HelpPage.Models;
     using Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration;
 
     public static class HelpPageConfigurationExtensions
@@ -181,7 +181,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
         public static HelpPageSampleGenerator GetHelpPageSampleGenerator(this HttpConfiguration config)
         {
             return (HelpPageSampleGenerator)config.Properties.GetOrAdd(
-                typeof(HelpPageSampleGenerator),
+                typeof(HelpPageSampleGenerator), 
                 k => new HelpPageSampleGenerator());
         }
 
@@ -193,8 +193,8 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
         public static void SetHelpPageSampleGenerator(this HttpConfiguration config, HelpPageSampleGenerator sampleGenerator)
         {
             config.Properties.AddOrUpdate(
-                typeof(HelpPageSampleGenerator),
-                k => sampleGenerator,
+                typeof(HelpPageSampleGenerator), 
+                k => sampleGenerator, 
                 (k, o) => sampleGenerator);
         }
 
@@ -206,7 +206,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
         public static ModelDescriptionGenerator GetModelDescriptionGenerator(this HttpConfiguration config)
         {
             return (ModelDescriptionGenerator)config.Properties.GetOrAdd(
-                typeof(ModelDescriptionGenerator),
+                typeof(ModelDescriptionGenerator), 
                 k => InitializeModelDescriptionGenerator(config));
         }
 
@@ -225,7 +225,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
             if (!config.Properties.TryGetValue(modelId, out model))
             {
                 Collection<ApiDescription> apiDescriptions = config.Services.GetApiExplorer().ApiDescriptions;
-                ApiDescription apiDescription = apiDescriptions.FirstOrDefault(api => String.Equals(api.GetFriendlyId(), apiDescriptionId, StringComparison.OrdinalIgnoreCase));
+                ApiDescription apiDescription = apiDescriptions.FirstOrDefault(api => string.Equals(api.GetFriendlyId(), apiDescriptionId, StringComparison.OrdinalIgnoreCase));
                 if (apiDescription != null)
                 {
                     model = GenerateApiModel(apiDescription, config);
@@ -240,7 +240,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
         {
             HelpPageApiModel apiModel = new HelpPageApiModel()
             {
-                ApiDescription = apiDescription,
+                ApiDescription = apiDescription, 
             };
 
             ModelDescriptionGenerator modelGenerator = config.GetModelDescriptionGenerator();
@@ -275,20 +275,19 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
                     // [TypeConverter(typeof(PointConverter))]
                     // public class Point
                     // {
-                    //     public Point(int x, int y)
-                    //     {
-                    //         X = x;
-                    //         Y = y;
-                    //     }
-                    //     public int X { get; set; }
-                    //     public int Y { get; set; }
+                    // public Point(int x, int y)
+                    // {
+                    // X = x;
+                    // Y = y;
+                    // }
+                    // public int X { get; set; }
+                    // public int Y { get; set; }
                     // }
                     // Class Point is bindable with a TypeConverter, so Point will be added to UriParameters collection.
-                    // 
                     // public class Point
                     // {
-                    //     public int X { get; set; }
-                    //     public int Y { get; set; }
+                    // public int X { get; set; }
+                    // public int Y { get; set; }
                     // }
                     // Regular complex class Point will have properties X and Y added to UriParameters collection.
                     if (complexTypeDescription != null
@@ -339,14 +338,14 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
             return TypeDescriptor.GetConverter(parameterType).CanConvertFrom(typeof(string));
         }
 
-        private static ParameterDescription AddParameterDescription(HelpPageApiModel apiModel,
+        private static ParameterDescription AddParameterDescription(HelpPageApiModel apiModel, 
             ApiParameterDescription apiParameter, ModelDescription typeDescription)
         {
             ParameterDescription parameterDescription = new ParameterDescription
             {
-                Name = apiParameter.Name,
-                Documentation = apiParameter.Documentation,
-                TypeDescription = typeDescription,
+                Name = apiParameter.Name, 
+                Documentation = apiParameter.Documentation, 
+                TypeDescription = typeDescription, 
             };
 
             apiModel.UriParameters.Add(parameterDescription);
@@ -406,8 +405,8 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
             }
             catch (Exception e)
             {
-                apiModel.ErrorMessages.Add(String.Format(CultureInfo.CurrentCulture,
-                    "An exception has occurred while generating the sample. Exception message: {0}",
+                apiModel.ErrorMessages.Add(string.Format(CultureInfo.CurrentCulture, 
+                    "An exception has occurred while generating the sample. Exception message: {0}", 
                     HelpPageSampleGenerator.UnwrapException(e).Message));
             }
         }
@@ -454,6 +453,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage
                     modelGenerator.GetOrCreateModelDescription(parameterType);
                 }
             }
+
             return modelGenerator;
         }
 

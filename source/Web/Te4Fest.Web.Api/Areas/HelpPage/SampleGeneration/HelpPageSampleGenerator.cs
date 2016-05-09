@@ -31,7 +31,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             this.SampleObjects = new Dictionary<Type, object>();
             this.SampleObjectFactories = new List<Func<HelpPageSampleGenerator, Type, object>>
             {
-                DefaultSampleObjectFactory,
+                DefaultSampleObjectFactory, 
             };
         }
 
@@ -58,9 +58,9 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
         /// Collection includes just <see cref="ObjectGenerator.GenerateObject(Type)"/> initially. Use
         /// <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
         /// <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
-        [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures",
+        [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", 
             Justification = "This is an appropriate nesting of generic types")]
-        public IList<Func<HelpPageSampleGenerator, Type, object>> SampleObjectFactories { get; private set; }
+        public IList<Func<HelpPageSampleGenerator, Type, object>> SampleObjectFactories { get; }
 
         /// <summary>
         /// Gets the request body samples for a given <see cref="ApiDescription"/>.
@@ -94,6 +94,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 throw new ArgumentNullException("api");
             }
+
             string controllerName = api.ActionDescriptor.ControllerDescriptor.ControllerName;
             string actionName = api.ActionDescriptor.ActionName;
             IEnumerable<string> parameterNames = api.ParameterDescriptions.Select(p => p.Name);
@@ -174,7 +175,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>The sample object.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes",
+        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", 
             Justification = "Even if all items in SampleObjectFactories throw, problem will be visible as missing sample.")]
         public virtual object GetSampleObject(Type type)
         {
@@ -238,10 +239,12 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 throw new InvalidEnumArgumentException("sampleDirection", (int)sampleDirection, typeof(SampleDirection));
             }
+
             if (api == null)
             {
                 throw new ArgumentNullException("api");
             }
+
             Type type;
             if (this.ActualHttpMessageTypes.TryGetValue(new HelpPageSampleKey(sampleDirection, controllerName, actionName, parameterNames), out type) ||
                 this.ActualHttpMessageTypes.TryGetValue(new HelpPageSampleKey(sampleDirection, controllerName, actionName, new[] { "*" }), out type))
@@ -255,6 +258,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
                         newFormatters.Add(formatter);
                     }
                 }
+
                 formatters = newFormatters;
             }
             else
@@ -292,12 +296,13 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 throw new ArgumentNullException("formatter");
             }
+
             if (mediaType == null)
             {
                 throw new ArgumentNullException("mediaType");
             }
 
-            object sample = String.Empty;
+            object sample = string.Empty;
             MemoryStream ms = null;
             HttpContent content = null;
             try
@@ -323,21 +328,21 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
                 }
                 else
                 {
-                    sample = new InvalidSample(String.Format(
-                        CultureInfo.CurrentCulture,
-                        "Failed to generate the sample for media type '{0}'. Cannot use formatter '{1}' to write type '{2}'.",
-                        mediaType,
-                        formatter.GetType().Name,
+                    sample = new InvalidSample(string.Format(
+                        CultureInfo.CurrentCulture, 
+                        "Failed to generate the sample for media type '{0}'. Cannot use formatter '{1}' to write type '{2}'.", 
+                        mediaType, 
+                        formatter.GetType().Name, 
                         type.Name));
                 }
             }
             catch (Exception e)
             {
-                sample = new InvalidSample(String.Format(
-                    CultureInfo.CurrentCulture,
-                    "An exception has occurred while using the formatter '{0}' to generate sample for media type '{1}'. Exception message: {2}",
-                    formatter.GetType().Name,
-                    mediaType.MediaType,
+                sample = new InvalidSample(string.Format(
+                    CultureInfo.CurrentCulture, 
+                    "An exception has occurred while using the formatter '{0}' to generate sample for media type '{1}'. Exception message: {2}", 
+                    formatter.GetType().Name, 
+                    mediaType.MediaType, 
                     UnwrapException(e).Message));
             }
             finally
@@ -346,6 +351,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
                 {
                     ms.Dispose();
                 }
+
                 if (content != null)
                 {
                     content.Dispose();
@@ -362,6 +368,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 return aggregateException.Flatten().InnerException;
             }
+
             return exception;
         }
 
@@ -412,6 +419,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
                 case SampleDirection.Response:
                     return formatter.CanWriteType(type);
             }
+
             return false;
         }
 
@@ -421,8 +429,8 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             foreach (var sample in this.ActionSamples)
             {
                 HelpPageSampleKey sampleKey = sample.Key;
-                if (String.Equals(controllerName, sampleKey.ControllerName, StringComparison.OrdinalIgnoreCase) &&
-                    String.Equals(actionName, sampleKey.ActionName, StringComparison.OrdinalIgnoreCase) &&
+                if (string.Equals(controllerName, sampleKey.ControllerName, StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(actionName, sampleKey.ActionName, StringComparison.OrdinalIgnoreCase) &&
                     (sampleKey.ParameterNames.SetEquals(new[] { "*" }) || parameterNamesSet.SetEquals(sampleKey.ParameterNames)) &&
                     sampleDirection == sampleKey.SampleDirection)
                 {

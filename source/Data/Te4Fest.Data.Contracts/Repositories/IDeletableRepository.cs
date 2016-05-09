@@ -1,4 +1,10 @@
-﻿namespace Te4Fest.Data.Contracts.Repositories
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IDeletableRepository.cs" company="">
+//   
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Te4Fest.Data.Contracts.Repositories
 {
     using System.Linq;
 

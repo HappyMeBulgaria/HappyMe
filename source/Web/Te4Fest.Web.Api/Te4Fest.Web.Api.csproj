@@ -213,7 +213,6 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -284,6 +283,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Te4Fest.Data.Contracts\Te4Fest.Data.Contracts.csproj">
+      <Project>{9bc2b1cd-c05d-40ca-a972-c4b16f3cb064}</Project>
+      <Name>Te4Fest.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Te4Fest.Data.Models\Te4Fest.Data.Models.csproj">
+      <Project>{c4a645c4-329d-42e1-87c0-494ad19775ea}</Project>
+      <Name>Te4Fest.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Te4Fest.Data\Te4Fest.Data.csproj">
+      <Project>{72c1b581-35d3-4913-9056-7fd98700b010}</Project>
+      <Name>Te4Fest.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

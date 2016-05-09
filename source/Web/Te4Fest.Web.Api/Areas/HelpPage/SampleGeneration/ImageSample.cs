@@ -17,10 +17,11 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 throw new ArgumentNullException("src");
             }
+
             this.Src = src;
         }
 
-        public string Src { get; private set; }
+        public string Src { get; }
 
         public override bool Equals(object obj)
         {

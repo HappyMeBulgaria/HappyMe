@@ -1,4 +1,10 @@
-﻿namespace Te4Fest.Data.Contracts.Models
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IDeletableEntity.cs" company="">
+//   
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Te4Fest.Data.Contracts.Models
 {
     using System;
 

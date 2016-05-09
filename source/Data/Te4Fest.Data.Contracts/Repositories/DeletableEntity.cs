@@ -1,4 +1,10 @@
-﻿namespace Te4Fest.Data.Contracts.Repositories
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DeletableEntity.cs" company="">
+//   
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Te4Fest.Data.Contracts.Repositories
 {
     using System;
     using System.ComponentModel.DataAnnotations.Schema;

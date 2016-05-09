@@ -13,10 +13,11 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 throw new ArgumentNullException("errorMessage");
             }
+
             this.ErrorMessage = errorMessage;
         }
 
-        public string ErrorMessage { get; private set; }
+        public string ErrorMessage { get; }
 
         public override bool Equals(object obj)
         {

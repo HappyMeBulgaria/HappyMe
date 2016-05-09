@@ -1,4 +1,10 @@
-﻿namespace Te4Fest.Data.Contracts.Models
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AuditInfo.cs" company="">
+//   
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Te4Fest.Data.Contracts.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations.Schema;

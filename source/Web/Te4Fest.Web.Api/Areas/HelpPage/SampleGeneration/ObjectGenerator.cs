@@ -14,7 +14,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
     public class ObjectGenerator
     {
         internal const int DefaultCollectionSize = 2;
-        private readonly SimpleTypeObjectGenerator SimpleObjectGenerator = new SimpleTypeObjectGenerator();
+        private readonly SimpleTypeObjectGenerator simpleObjectGenerator = new SimpleTypeObjectGenerator();
 
         /// <summary>
         /// Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
@@ -42,7 +42,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 if (SimpleTypeObjectGenerator.CanGenerateObject(type))
                 {
-                    return this.SimpleObjectGenerator.GenerateObject(type);
+                    return this.simpleObjectGenerator.GenerateObject(type);
                 }
 
                 if (type.IsArray)
@@ -176,10 +176,12 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
                 parameterValues[i] = objectGenerator.GenerateObject(genericArgs[i], createdObjectReferences);
                 failedToCreateTuple &= parameterValues[i] == null;
             }
+
             if (failedToCreateTuple)
             {
                 return null;
             }
+
             object result = Activator.CreateInstance(type, parameterValues);
             return result;
         }
@@ -209,6 +211,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
                 // Failed to create key and values
                 return null;
             }
+
             object result = Activator.CreateInstance(keyValuePairType, keyObject, valueObject);
             return result;
         }
@@ -258,11 +261,11 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
                     return null;
                 }
 
-                bool containsKey = (bool)containsMethod.Invoke(result, new object[] { newKey });
+                bool containsKey = (bool)containsMethod.Invoke(result, new[] { newKey });
                 if (!containsKey)
                 {
                     object newValue = objectGenerator.GenerateObject(typeV, createdObjectReferences);
-                    addMethod.Invoke(result, new object[] { newKey, newValue });
+                    addMethod.Invoke(result, new[] { newKey, newValue });
                 }
             }
 
@@ -276,6 +279,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 return possibleValues.GetValue(0);
             }
+
             return null;
         }
 
@@ -292,10 +296,12 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 list = GenerateArray(typeof(object[]), size, createdObjectReferences);
             }
+
             if (list == null)
             {
                 return null;
             }
+
             if (isGeneric)
             {
                 Type argumentType = typeof(IEnumerable<>).MakeGenericType(queryableType.GetGenericArguments());
@@ -318,7 +324,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             for (int i = 0; i < size; i++)
             {
                 object element = objectGenerator.GenerateObject(type, createdObjectReferences);
-                addMethod.Invoke(result, new object[] { element });
+                addMethod.Invoke(result, new[] { element });
                 areAllElementsNull &= element == null;
             }
 
@@ -362,6 +368,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
 
                 result = defaultCtor.Invoke(new object[0]);
             }
+
             createdObjectReferences.Add(type, result);
             SetPublicProperties(type, result, createdObjectReferences);
             SetPublicFields(type, result, createdObjectReferences);
@@ -395,7 +402,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
 
         private class SimpleTypeObjectGenerator
         {
-            private long _index = 0;
+            private long index = 0;
             private static readonly Dictionary<Type, Func<long, object>> DefaultGenerators = InitializeGenerators();
 
             [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "These are simple type factories and cannot be split up.")]
@@ -403,42 +410,42 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 return new Dictionary<Type, Func<long, object>>
                 {
-                    { typeof(Boolean), index => true },
-                    { typeof(Byte), index => (Byte)64 },
-                    { typeof(Char), index => (Char)65 },
-                    { typeof(DateTime), index => DateTime.Now },
-                    { typeof(DateTimeOffset), index => new DateTimeOffset(DateTime.Now) },
-                    { typeof(DBNull), index => DBNull.Value },
-                    { typeof(Decimal), index => (Decimal)index },
-                    { typeof(Double), index => (Double)(index + 0.1) },
-                    { typeof(Guid), index => Guid.NewGuid() },
-                    { typeof(Int16), index => (Int16)(index % Int16.MaxValue) },
-                    { typeof(Int32), index => (Int32)(index % Int32.MaxValue) },
-                    { typeof(Int64), index => (Int64)index },
-                    { typeof(Object), index => new object() },
-                    { typeof(SByte), index => (SByte)64 },
-                    { typeof(Single), index => (Single)(index + 0.1) },
+                    { typeof(Boolean), index => true }, 
+                    { typeof(Byte), index => (Byte)64 }, 
+                    { typeof(Char), index => (Char)65 }, 
+                    { typeof(DateTime), index => DateTime.Now }, 
+                    { typeof(DateTimeOffset), index => new DateTimeOffset(DateTime.Now) }, 
+                    { typeof(DBNull), index => DBNull.Value }, 
+                    { typeof(Decimal), index => (Decimal)index }, 
+                    { typeof(Double), index => (Double)(index + 0.1) }, 
+                    { typeof(Guid), index => Guid.NewGuid() }, 
+                    { typeof(Int16), index => (Int16)(index % short.MaxValue) }, 
+                    { typeof(Int32), index => (Int32)(index % int.MaxValue) }, 
+                    { typeof(Int64), index => (Int64)index }, 
+                    { typeof(Object), index => new object() }, 
+                    { typeof(SByte), index => (SByte)64 }, 
+                    { typeof(Single), index => (Single)(index + 0.1) }, 
                     { 
                         typeof(String), index =>
                         {
-                            return String.Format(CultureInfo.CurrentCulture, "sample string {0}", index);
+                            return string.Format(CultureInfo.CurrentCulture, "sample string {0}", index);
                         }
-                    },
+                    }, 
                     { 
                         typeof(TimeSpan), index =>
                         {
                             return TimeSpan.FromTicks(1234567);
                         }
-                    },
-                    { typeof(UInt16), index => (UInt16)(index % UInt16.MaxValue) },
-                    { typeof(UInt32), index => (UInt32)(index % UInt32.MaxValue) },
-                    { typeof(UInt64), index => (UInt64)index },
+                    }, 
+                    { typeof(UInt16), index => (UInt16)(index % ushort.MaxValue) }, 
+                    { typeof(UInt32), index => (UInt32)(index % uint.MaxValue) }, 
+                    { typeof(UInt64), index => (UInt64)index }, 
                     { 
                         typeof(Uri), index =>
                         {
-                            return new Uri(String.Format(CultureInfo.CurrentCulture, "http://webapihelppage{0}.com", index));
+                            return new Uri(string.Format(CultureInfo.CurrentCulture, "http://webapihelppage{0}.com", index));
                         }
-                    },
+                    }, 
                 };
             }
 
@@ -449,7 +456,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
 
             public object GenerateObject(Type type)
             {
-                return DefaultGenerators[type](++this._index);
+                return DefaultGenerators[type](++this.index);
             }
         }
     }

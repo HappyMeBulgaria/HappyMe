@@ -21,8 +21,8 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
                 throw new ArgumentNullException("mediaType");
             }
 
-            this.ActionName = String.Empty;
-            this.ControllerName = String.Empty;
+            this.ActionName = string.Empty;
+            this.ControllerName = string.Empty;
             this.MediaType = mediaType;
             this.ParameterNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         }
@@ -56,14 +56,17 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 throw new InvalidEnumArgumentException("sampleDirection", (int)sampleDirection, typeof(SampleDirection));
             }
+
             if (controllerName == null)
             {
                 throw new ArgumentNullException("controllerName");
             }
+
             if (actionName == null)
             {
                 throw new ArgumentNullException("actionName");
             }
+
             if (parameterNames == null)
             {
                 throw new ArgumentNullException("parameterNames");
@@ -100,7 +103,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
         /// <value>
         /// The name of the controller.
         /// </value>
-        public string ControllerName { get; private set; }
+        public string ControllerName { get; }
 
         /// <summary>
         /// Gets the name of the action.
@@ -108,7 +111,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
         /// <value>
         /// The name of the action.
         /// </value>
-        public string ActionName { get; private set; }
+        public string ActionName { get; }
 
         /// <summary>
         /// Gets the media type.
@@ -116,19 +119,19 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
         /// <value>
         /// The media type.
         /// </value>
-        public MediaTypeHeaderValue MediaType { get; private set; }
+        public MediaTypeHeaderValue MediaType { get; }
 
         /// <summary>
         /// Gets the parameter names.
         /// </summary>
-        public HashSet<string> ParameterNames { get; private set; }
+        public HashSet<string> ParameterNames { get; }
 
-        public Type ParameterType { get; private set; }
+        public Type ParameterType { get; }
 
         /// <summary>
         /// Gets the <see cref="SampleDirection"/>.
         /// </summary>
-        public SampleDirection? SampleDirection { get; private set; }
+        public SampleDirection? SampleDirection { get; }
 
         public override bool Equals(object obj)
         {
@@ -138,8 +141,8 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
                 return false;
             }
 
-            return String.Equals(this.ControllerName, otherKey.ControllerName, StringComparison.OrdinalIgnoreCase) &&
-                String.Equals(this.ActionName, otherKey.ActionName, StringComparison.OrdinalIgnoreCase) &&
+            return string.Equals(this.ControllerName, otherKey.ControllerName, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(this.ActionName, otherKey.ActionName, StringComparison.OrdinalIgnoreCase) &&
                 (this.MediaType == otherKey.MediaType || (this.MediaType != null && this.MediaType.Equals(otherKey.MediaType))) &&
                 this.ParameterType == otherKey.ParameterType &&
                 this.SampleDirection == otherKey.SampleDirection &&
@@ -153,14 +156,17 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
             {
                 hashCode ^= this.MediaType.GetHashCode();
             }
+
             if (this.SampleDirection != null)
             {
                 hashCode ^= this.SampleDirection.GetHashCode();
             }
+
             if (this.ParameterType != null)
             {
                 hashCode ^= this.ParameterType.GetHashCode();
             }
+
             foreach (string parameterName in this.ParameterNames)
             {
                 hashCode ^= parameterName.ToUpperInvariant().GetHashCode();

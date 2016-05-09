@@ -1,13 +1,12 @@
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-
 namespace Te4Fest.Web.Api.Areas.HelpPage.ModelDescriptions
 {
+    using System.Collections.ObjectModel;
+
     public class ParameterDescription
     {
         public ParameterDescription()
         {
-            Annotations = new Collection<ParameterAnnotation>();
+            this.Annotations = new Collection<ParameterAnnotation>();
         }
 
         public Collection<ParameterAnnotation> Annotations { get; private set; }

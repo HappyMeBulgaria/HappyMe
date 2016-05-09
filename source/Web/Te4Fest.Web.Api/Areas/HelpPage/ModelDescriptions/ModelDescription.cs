@@ -1,7 +1,7 @@
-using System;
-
 namespace Te4Fest.Web.Api.Areas.HelpPage.ModelDescriptions
 {
+    using System;
+
     /// <summary>
     /// Describes a type model.
     /// </summary>

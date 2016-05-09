@@ -5,7 +5,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.SampleGeneration
     /// </summary>
     public enum SampleDirection
     {
-        Request = 0,
+        Request = 0, 
         Response
     }
 }

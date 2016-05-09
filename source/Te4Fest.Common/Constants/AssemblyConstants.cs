@@ -1,4 +1,10 @@
-﻿namespace Te4Fest.Common.Constants
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AssemblyConstants.cs" company="">
+//   
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Te4Fest.Common.Constants
 {
     public class AssemblyConstants
     {

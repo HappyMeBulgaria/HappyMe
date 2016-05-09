@@ -1,11 +1,12 @@
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Net.Http.Headers;
-using System.Web.Http.Description;
-using Te4Fest.Web.Api.Areas.HelpPage.ModelDescriptions;
-
 namespace Te4Fest.Web.Api.Areas.HelpPage.Models
 {
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Net.Http.Headers;
+    using System.Web.Http.Description;
+
+    using Te4Fest.Web.Api.Areas.HelpPage.ModelDescriptions;
+
     /// <summary>
     /// The model that represents an API displayed on the help page.
     /// </summary>
@@ -16,10 +17,10 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.Models
         /// </summary>
         public HelpPageApiModel()
         {
-            UriParameters = new Collection<ParameterDescription>();
-            SampleRequests = new Dictionary<MediaTypeHeaderValue, object>();
-            SampleResponses = new Dictionary<MediaTypeHeaderValue, object>();
-            ErrorMessages = new Collection<string>();
+            this.UriParameters = new Collection<ParameterDescription>();
+            this.SampleRequests = new Dictionary<MediaTypeHeaderValue, object>();
+            this.SampleResponses = new Dictionary<MediaTypeHeaderValue, object>();
+            this.ErrorMessages = new Collection<string>();
         }
 
         /// <summary>
@@ -49,7 +50,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.Models
         {
             get
             {
-                return GetParameterDescriptions(RequestModelDescription);
+                return GetParameterDescriptions(this.RequestModelDescription);
             }
         }
 
@@ -65,7 +66,7 @@ namespace Te4Fest.Web.Api.Areas.HelpPage.Models
         {
             get
             {
-                return GetParameterDescriptions(ResourceDescription);
+                return GetParameterDescriptions(this.ResourceDescription);
             }
         }
 
