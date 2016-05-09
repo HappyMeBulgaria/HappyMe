@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Base\AdministrationService.cs" />
     <Compile Include="Base\DeletableEntityAdministrationService.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Contracts\IAdministrationService.cs" />
     <Compile Include="Contracts\IDeletableEntityAdministrationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
