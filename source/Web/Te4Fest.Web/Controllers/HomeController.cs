@@ -2,8 +2,17 @@
 {
     using System.Web.Mvc;
 
+    using Te4Fest.Services.Common.Mapping.Contracts;
+
     public class HomeController : Controller
     {
+        private IMappingService mappingService;
+
+        public HomeController(IMappingService mappingService)
+        {
+            this.mappingService = mappingService;
+        }
+
         public ActionResult Index()
         {
             return this.View();
