@@ -11,21 +11,26 @@
 
     public static class ControllerExtensions
     {
-        public static ActionResult EmptyResult(this Controller controller) => new EmptyResult();
+        public static ActionResult EmptyResult(this Controller controller)
+        {
+            return new EmptyResult();
+        }
 
         public static ActionResult JsonSuccess(
-                this Controller controller,
-                object data,
-                string contentType = null,
-                Encoding contentEncoding = null,
-                JsonRequestBehavior jsonRequestBehavior = JsonRequestBehavior.DenyGet) => 
-            new StandardJsonResult
+            this Controller controller,
+            object data,
+            string contentType = null,
+            Encoding contentEncoding = null,
+            JsonRequestBehavior jsonRequestBehavior = JsonRequestBehavior.DenyGet)
+        {
+            return new StandardJsonResult
             {
                 Data = data,
                 ContentType = contentType,
                 ContentEncoding = contentEncoding,
                 JsonRequestBehavior = jsonRequestBehavior,
             };
+        }
 
         public static JsonResult JsonError(
             this Controller controller,
@@ -69,8 +74,8 @@
         }
 
         public static ActionResult JsonWithoutReferenceLoop(
-            this Controller controller, 
-            object data, 
+            this Controller controller,
+            object data,
             Encoding contentEncoding = null)
         {
             var serializationSettings = new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore };
