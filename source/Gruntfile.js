@@ -8,7 +8,7 @@ module.exports = function (grunt) {
             },
         },
         jasmine: {
-            osmmap: {
+            te4Fest: {
                 src: [''],
                 options: {
                     specs: '',
