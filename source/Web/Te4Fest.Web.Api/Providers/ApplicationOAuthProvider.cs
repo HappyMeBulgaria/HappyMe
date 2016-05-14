@@ -45,7 +45,7 @@
                 return;
             }
 
-            ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(
+            ClaimsIdentity openAuthIdentity = await user.GenerateUserIdentityAsync(
                 userManager,
                 OAuthDefaults.AuthenticationType);
 
@@ -54,7 +54,7 @@
                 CookieAuthenticationDefaults.AuthenticationType);
 
             AuthenticationProperties properties = CreateProperties(user.UserName);
-            AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
+            AuthenticationTicket ticket = new AuthenticationTicket(openAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
         }
