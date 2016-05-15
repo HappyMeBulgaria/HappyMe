@@ -1,6 +1,8 @@
 ﻿namespace Te4Fest.Data.Models
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Security.Claims;
@@ -15,8 +17,15 @@
 
     public class User : IdentityUser, IDeletableEntity, IAuditInfo, IIdentifiable<string>
     {
+        private ICollection<User> children;
+        private ICollection<UserInModule> userInModules;
+        private ICollection<UserAnswer> userAnswers; 
+
         public User()
         {
+            this.children = new HashSet<User>();
+            this.userInModules = new HashSet<UserInModule>();
+            this.userAnswers = new HashSet<UserAnswer>();
             this.CreatedOn = DateTime.Now;
         }
 
@@ -36,6 +45,28 @@
         public bool PreserveCreatedOn { get; set; }
 
         public DateTime? ModifiedOn { get; set; }
+
+        public string ParentId { get; set; }
+
+        public virtual User Parent { get; set; }
+
+        public virtual ICollection<User> Children
+        {
+            get { return this.children; }
+            set { this.children = value; }
+        }
+
+        public virtual ICollection<UserInModule> UserInModules
+        {
+            get { return this.userInModules; }
+            set { this.userInModules = value; }
+        }
+
+        public virtual ICollection<UserAnswer> UserAnswers
+        {
+            get { return this.userAnswers; }
+            set { this.userAnswers = value; }
+        }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

@@ -18,7 +18,17 @@
         {
         }
 
-        //// TODO: Add IDbSets here
+        public virtual IDbSet<Answer> Answers { get; set; } 
+
+        public virtual IDbSet<Question> Questions { get; set; } 
+
+        public virtual IDbSet<Image> Images { get; set; } 
+
+        public virtual IDbSet<Module> Modules { get; set; }
+
+        public virtual IDbSet<UserInModule> UsersInModules { get; set; }
+
+        public virtual IDbSet<UserAnswer> UsersAnswers { get; set; }
 
         public static Te4FestDbContext Create()
         {

@@ -61,10 +61,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Answer.cs" />
+    <Compile Include="Image.cs" />
+    <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
+    <Compile Include="Question.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserAnswer.cs" />
+    <Compile Include="UserInModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -84,7 +90,7 @@
   <Import Project="..\..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets')" />
   <PropertyGroup>
     <BuildDependsOn>$([MSBuild]::Unescape($(BuildDependsOn.Replace(";StyleCop", "").Insert($(BuildDependsOn.IndexOf("BeforeBuild;")),"StyleCop;"))))</BuildDependsOn>
-  </PropertyGroup>  
+  </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
