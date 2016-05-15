@@ -6,13 +6,7 @@
 
     internal class JsonResponse
     {
-        public bool Success
-        {
-            get
-            {
-                return this.ErrorMessages.IsNullOrEmpty();
-            }
-        }
+        public bool Success => this.ErrorMessages.IsNullOrEmpty();
 
         public object OriginalData { get; set; }
 
