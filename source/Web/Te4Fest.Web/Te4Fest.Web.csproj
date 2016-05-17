@@ -185,15 +185,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\ApplicationUserManager.cs" />
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\EmailService.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\ApplicationSignInManager.cs" />
-    <Compile Include="App_Start\NinjectWebCommon.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\SmsService.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Config\ApplicationUserManager.cs" />
+    <Compile Include="Config\BundleConfig.cs" />
+    <Compile Include="Config\EmailService.cs" />
+    <Compile Include="Config\FilterConfig.cs" />
+    <Compile Include="Config\ApplicationSignInManager.cs" />
+    <Compile Include="Config\NinjectWebCommon.cs" />
+    <Compile Include="Config\RouteConfig.cs" />
+    <Compile Include="Config\SmsService.cs" />
+    <Compile Include="Config\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Base\BaseAuthorizationController.cs" />
