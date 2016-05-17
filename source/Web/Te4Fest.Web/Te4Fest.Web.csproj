@@ -194,7 +194,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Base\BaseAuthorizationController.cs" />
+    <Compile Include="Controllers\Base\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -240,6 +243,7 @@
     <Content Include="Content\bootstrap\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap\bootstrap-theme.css.map" />
     <Content Include=".eslintrc" />
+    <Content Include="Areas\Administration\Views\web.config" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\specs\test-spec.js" />
     <Content Include="Scripts\vendor\bootstrap\bootstrap.js" />
@@ -294,6 +298,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Controllers\" />
+    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Scripts\custom\" />
   </ItemGroup>
   <ItemGroup>
@@ -316,6 +323,10 @@
     <ProjectReference Include="..\..\Services\Te4Fest.Services.Common\Te4Fest.Services.Common.csproj">
       <Project>{98d63f27-173e-4a8a-978d-27300694536e}</Project>
       <Name>Te4Fest.Services.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Te4Fest.Services.Data\Te4Fest.Services.Data.csproj">
+      <Project>{862BD9D3-A1C0-4D9B-93A0-DD65A443E97B}</Project>
+      <Name>Te4Fest.Services.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Te4Fest.Common\Te4Fest.Common.csproj">
       <Project>{be0b0219-3996-433e-b63b-5bf485f9230c}</Project>
