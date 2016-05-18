@@ -15,6 +15,9 @@
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/vendors/bootstrap/bootstrap.css",
                 "~/Content/custom/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/administration-css").Include(
+                "~/Content/vendors/MvcGrid/mvc-grid.css"));
         }
 
         private static void RegisterScriptBundles(BundleCollection bundles)
@@ -31,6 +34,9 @@
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/vendor/bootstrap/bootstrap.js",
                 "~/Scripts/vendor/respond/respond.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/administration-scripts").Include(
+                "~/Scripts/vendors/MvcGrid/mvc-grid.js"));
         }
     }
 }
