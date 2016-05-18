@@ -1,9 +1,28 @@
-﻿@model Mvc.JQuery.DataTables.DataTableConfigVm
-@{
-    ViewBag.Title = "Изображения";
+﻿@using NonFactors.Mvc.Grid
+
+@model IEnumerable<Te4Fest.Web.Areas.Administration.ViewModels.Images.ImageGridViewModel>
+
+<h2>Изображения</h2>
+
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.Id).Titled("№");
+        columns.Add(model => model.Path).Titled("Path");
+    })
+    .Filterable()
+    .Sortable()
+    .Pageable(p =>
+    {
+        p.PagesToDisplay = 5;
+        p.InitialPage = 1;
+        p.RowsPerPage = 5;
+    })
+)
+
+@section scripts {
+    <script>
+        $('.mvc-grid').mvcgrid();
+    </script>
 }
-
-<h2>@ViewBag.Title</h2>
-
-@Html.Partial("DataTable", Model)
-

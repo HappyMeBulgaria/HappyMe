@@ -3,8 +3,6 @@
     using System.Linq;
     using System.Web.Mvc;
 
-    using Mvc.JQuery.DataTables;
-
     using Te4Fest.Data.Models;
     using Te4Fest.Services.Administration.Contracts;
     using Te4Fest.Services.Common.Mapping.Contracts;
@@ -27,16 +25,9 @@
 
         public ActionResult Index()
         {
-            var getDataUrl = this.Url.Action(nameof(ImagesController.GetImages));
-            var vm = DataTablesHelper.DataTableVm<ImageGridViewModel>("imagesGridTable", getDataUrl);
+            var imagesViewModels = this.mapingService.MapCollection<ImageGridViewModel>(this.imageAdministrationService.Read().OrderBy(x => x.Id));
 
-            return this.View(vm);
-        }
-
-        public DataTablesResult<ImageGridViewModel> GetImages(DataTablesParam dataTableParam)
-        {
-            var imagesViewModels = this.mapingService.MapCollection<ImageGridViewModel>(this.imageAdministrationService.Read());
-            return DataTablesResult.Create(imagesViewModels, dataTableParam);
+            return this.View(imagesViewModels);
         }
     }
 }
