@@ -6,7 +6,7 @@
     using Te4Fest.Data.Contracts;
     using Te4Fest.Data.Contracts.Models;
 
-    public class Module : DeletableEntity, IIdentifiable<int>
+    public class Module : DeletableEntity, IIdentifiable<int>, IEntity
     {
         private ICollection<Question> questions;
         private ICollection<UserInModule> usersInModule; 

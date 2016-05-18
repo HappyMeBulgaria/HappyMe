@@ -7,7 +7,7 @@
     using Te4Fest.Data.Contracts;
     using Te4Fest.Data.Contracts.Models;
 
-    public class Question : DeletableEntity, IIdentifiable<int>
+    public class Question : DeletableEntity, IIdentifiable<int>, IEntity
     {
         private ICollection<Answer> answers;
 

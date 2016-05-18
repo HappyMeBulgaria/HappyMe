@@ -2,10 +2,11 @@
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    
+
+    using Te4Fest.Data.Contracts;
     using Te4Fest.Data.Contracts.Models;
 
-    public class UserInModule : DeletableEntity
+    public class UserInModule : DeletableEntity, IEntity
     {
         [Key]
         [Column(Order = 1)]

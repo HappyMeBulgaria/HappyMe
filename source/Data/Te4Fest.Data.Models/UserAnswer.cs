@@ -2,8 +2,9 @@
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using Contracts;
 
-    public class UserAnswer
+    public class UserAnswer : IEntity
     {
         [Key]
         [Column(Order = 1)]
