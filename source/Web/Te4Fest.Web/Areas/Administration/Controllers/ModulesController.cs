@@ -11,18 +11,20 @@
 
     public class ModulesController : BaseController
     {
-        private readonly AdministrationService<Module> moduleService;
+        private readonly AdministrationService<Module> modulesAdministrationService;
         private readonly IMappingService mappingService;
 
-        public ModulesController(AdministrationService<Module> moduleService, IMappingService mappingService)
+        public ModulesController(
+            AdministrationService<Module> modulesAdministrationService, 
+            IMappingService mappingService)
         {
-            this.moduleService = moduleService;
             this.mappingService = mappingService;
+            this.modulesAdministrationService = modulesAdministrationService;
         }
 
         public ActionResult Index()
         {
-            var model = this.mappingService.MapCollection<ModuleGridViewModel>(this.moduleService.Read());
+            var model = this.mappingService.MapCollection<ModuleGridViewModel>(this.modulesAdministrationService.Read());
             return this.View(model);
         }
     }
