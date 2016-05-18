@@ -13,11 +13,11 @@
         private static void RegisterStyleBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/vendors/bootstrap/bootstrap.css",
+                "~/Content/vendor/bootstrap/bootstrap.css",
                 "~/Content/custom/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/administration-css").Include(
-                "~/Content/vendors/MvcGrid/mvc-grid.css"));
+                "~/Content/vendor/MvcGrid/mvc-grid.css"));
         }
 
         private static void RegisterScriptBundles(BundleCollection bundles)
@@ -36,7 +36,7 @@
                 "~/Scripts/vendor/respond/respond.js"));
 
             bundles.Add(new StyleBundle("~/bundles/administration-scripts").Include(
-                "~/Scripts/vendors/MvcGrid/mvc-grid.js"));
+                "~/Scripts/vendor/MvcGrid/mvc-grid.js"));
         }
     }
 }
