@@ -6,7 +6,7 @@
     using Te4Fest.Data.Contracts;
     using Te4Fest.Data.Contracts.Models;
 
-    public class Image : DeletableEntity, IIdentifiable<int>
+    public class Image : DeletableEntity, IIdentifiable<int>, IEntity
     {
         private ICollection<Question> questions;
         private ICollection<Answer> answers;
