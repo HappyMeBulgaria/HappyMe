@@ -1,0 +1,42 @@
+﻿@using NonFactors.Mvc.Grid;
+
+@model IGridPager
+
+@if (Model.TotalPages > 1)
+{
+    <div class="mvc-grid-pager @Model.CssClasses">
+        <ul class="pagination">
+            @if (Model.CurrentPage > 1)
+            {
+                <li><span data-page="1">&laquo;</span></li>
+                <li><span data-page="@(Model.CurrentPage - 1)">&lsaquo;</span></li>
+            }
+            else
+            {
+                <li class="disabled"><span>&laquo;</span></li>
+                <li class="disabled"><span>&lsaquo;</span></li>
+            }
+            @for (Int32 page = Model.FirstDisplayPage; page <= Model.TotalPages && page < Model.FirstDisplayPage + Model.PagesToDisplay; page++)
+            {
+                if (page == Model.CurrentPage)
+                {
+                    <li class="active"><span>@page</span></li>
+                }
+                else
+                {
+                    <li><span data-page="@page">@page</span></li>
+                }
+            }
+            @if (Model.CurrentPage < Model.TotalPages)
+            {
+                <li><span data-page="@(Model.CurrentPage + 1)">&rsaquo;</span></li>
+                <li><span data-page="@(Model.TotalPages)">&raquo;</span></li>
+            }
+            else
+            {
+                <li class="disabled"><span>&rsaquo;</span></li>
+                <li class="disabled"><span>&raquo;</span></li>
+            }
+        </ul>
+    </div>
+}

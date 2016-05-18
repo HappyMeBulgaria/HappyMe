@@ -75,6 +75,10 @@
       <HintPath>..\..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NonFactors.Mvc.Grid, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NonFactors.Grid.Core.Mvc5.2.3.2\lib\net45\NonFactors.Mvc.Grid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -226,10 +230,11 @@
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap\bootstrap.css" />
-    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\vendors\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\vendors\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\vendors\bootstrap\bootstrap.css" />
+    <Content Include="Content\vendors\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\vendors\MvcGrid\mvc-grid.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -238,13 +243,15 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap\bootstrap.css.map" />
-    <Content Include="Content\bootstrap\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Content\vendors\bootstrap\bootstrap.min.css.map" />
+    <Content Include="Content\vendors\bootstrap\bootstrap.css.map" />
+    <Content Include="Content\vendors\bootstrap\bootstrap-theme.min.css.map" />
+    <Content Include="Content\vendors\bootstrap\bootstrap-theme.css.map" />
     <Content Include=".eslintrc" />
     <Content Include="Areas\Administration\Views\web.config" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
+    <Content Include="Scripts\MvcGrid\mvc-grid.js" />
+    <Content Include="Scripts\MvcGrid\mvc-grid.min.js" />
     <Content Include="Scripts\specs\test-spec.js" />
     <Content Include="Scripts\vendor\bootstrap\bootstrap.js" />
     <Content Include="Scripts\vendor\bootstrap\bootstrap.min.js" />
@@ -295,6 +302,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
