@@ -13,7 +13,7 @@
         private static void RegisterStyleBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap/bootstrap.css",
+                "~/Content/vendors/bootstrap/bootstrap.css",
                 "~/Content/custom/site.css"));
         }
 
