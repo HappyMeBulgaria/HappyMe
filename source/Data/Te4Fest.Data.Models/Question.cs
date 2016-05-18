@@ -31,6 +31,7 @@
 
         public virtual Image Image { get; set; }
 
+        [Required]
         public string AuthorId { get; set; }
 
         public virtual User User { get; set; }
