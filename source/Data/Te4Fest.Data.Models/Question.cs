@@ -27,7 +27,7 @@
 
         public virtual Module Module { get; set; }
 
-        public int ImageId { get; set; }
+        public int? ImageId { get; set; }
 
         public virtual Image Image { get; set; }
 
