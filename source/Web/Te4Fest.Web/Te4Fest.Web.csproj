@@ -191,6 +191,7 @@
   <ItemGroup>
     <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
     <Compile Include="Areas\Administration\Controllers\ModulesController.cs" />
+    <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Modules\ModuleGridViewModel.cs" />
     <Compile Include="Config\ApplicationUserManager.cs" />
@@ -315,6 +316,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Views\Users\" />
     <Folder Include="Scripts\custom\" />
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +351,10 @@
     <ProjectReference Include="..\..\Te4Fest.Common\Te4Fest.Common.csproj">
       <Project>{be0b0219-3996-433e-b63b-5bf485f9230c}</Project>
       <Name>Te4Fest.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Te4Fest.Web.Common\Te4Fest.Web.Common.csproj">
+      <Project>{93689a76-ebba-45a7-8da4-cc1376bd0d1d}</Project>
+      <Name>Te4Fest.Web.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
