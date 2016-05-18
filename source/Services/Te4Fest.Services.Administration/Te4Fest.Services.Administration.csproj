@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +50,8 @@
     <Compile Include="Base\DeletableEntityAdministrationService.cs" />
     <Compile Include="Contracts\IAdministrationService.cs" />
     <Compile Include="Contracts\IDeletableEntityAdministrationService.cs" />
+    <Compile Include="Contracts\IModulesAdministrationService.cs" />
+    <Compile Include="ModulesAdministrationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
@@ -56,6 +60,10 @@
     <ProjectReference Include="..\..\Data\Te4Fest.Data.Contracts\Te4Fest.Data.Contracts.csproj">
       <Project>{9bc2b1cd-c05d-40ca-a972-c4b16f3cb064}</Project>
       <Name>Te4Fest.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Te4Fest.Data.Models\Te4Fest.Data.Models.csproj">
+      <Project>{C4A645C4-329D-42E1-87C0-494AD19775EA}</Project>
+      <Name>Te4Fest.Data.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Te4Fest.Services.Common\Te4Fest.Services.Common.csproj">
       <Project>{98d63f27-173e-4a8a-978d-27300694536e}</Project>
@@ -69,7 +77,7 @@
   <Import Project="..\..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets')" />
   <PropertyGroup>
     <BuildDependsOn>$([MSBuild]::Unescape($(BuildDependsOn.Replace(";StyleCop", "").Insert($(BuildDependsOn.IndexOf("BeforeBuild;")),"StyleCop;"))))</BuildDependsOn>
-  </PropertyGroup>  
+  </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
