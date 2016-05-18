@@ -2,6 +2,8 @@
 {
     using System.Web.Mvc;
 
+    using Te4Fest.Data.Models;
+    using Te4Fest.Services.Administration.Base;
     using Te4Fest.Services.Common.Mapping.Contracts;
     using Te4Fest.Services.Data.Contracts;
     using Te4Fest.Web.Areas.Administration.ViewModels.Modules;
@@ -9,18 +11,18 @@
 
     public class ModulesController : BaseController
     {
-        private readonly IModulesDataService modulesData;
+        private readonly AdministrationService<Module> moduleService;
         private readonly IMappingService mappingService;
 
-        public ModulesController(IModulesDataService modulesData, IMappingService mappingService)
+        public ModulesController(AdministrationService<Module> moduleService, IMappingService mappingService)
         {
-            this.modulesData = modulesData;
+            this.moduleService = moduleService;
             this.mappingService = mappingService;
         }
 
         public ActionResult Index()
         {
-            var model = this.mappingService.MapCollection<ModuleGridViewModel>(this.modulesData.GetAllModules());
+            var model = this.mappingService.MapCollection<ModuleGridViewModel>(this.moduleService.Read());
             return this.View(model);
         }
     }

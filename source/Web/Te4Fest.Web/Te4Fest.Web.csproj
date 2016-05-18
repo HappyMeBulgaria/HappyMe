@@ -189,7 +189,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
     <Compile Include="Areas\Administration\Controllers\ModulesController.cs" />
     <Compile Include="Areas\Administration\ViewModels\Modules\ModuleGridViewModel.cs" />
     <Compile Include="Config\ApplicationUserManager.cs" />
@@ -314,7 +313,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\Images\" />
     <Folder Include="Scripts\custom\" />
   </ItemGroup>
   <ItemGroup>
@@ -335,7 +333,7 @@
       <Name>Te4Fest.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\Te4Fest.Services.Administration\Te4Fest.Services.Administration.csproj">
-      <Project>{39a959eb-97eb-4ffd-bdf4-6bf9ddfe24a4}</Project>
+      <Project>{39A959EB-97EB-4FFD-BDF4-6BF9DDFE24A4}</Project>
       <Name>Te4Fest.Services.Administration</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\Te4Fest.Services.Common\Te4Fest.Services.Common.csproj">
