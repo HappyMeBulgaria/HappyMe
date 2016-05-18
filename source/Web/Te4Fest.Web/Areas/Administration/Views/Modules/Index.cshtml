@@ -15,7 +15,7 @@
         columns.Add(model => model.IsActive).Titled("IsActive");
         columns.Add(model => model.AuthorId).Titled("AuthorId");
     })
-    .Filterable(true)
+    .Filterable()
     .Sortable()
     .Pageable(p =>
     {
@@ -24,7 +24,6 @@
         p.RowsPerPage = 5;
     })
 )
-
 
 @section scripts {
     <script>
