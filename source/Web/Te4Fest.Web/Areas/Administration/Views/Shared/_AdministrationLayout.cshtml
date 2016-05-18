@@ -5,9 +5,10 @@
 @section styles{
     @Styles.Render("~/Content/administration-css")
 }
-    
+
 @section scripts{
     @Scripts.Render("~/bundles/administration-scripts")
+    @RenderSection("scripts", required: false)
 }
 
 

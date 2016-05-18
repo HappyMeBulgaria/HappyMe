@@ -1,5 +1,6 @@
 ﻿namespace Te4Fest.Web.Areas.Administration.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
 
     using Te4Fest.Data.Models;
@@ -24,7 +25,7 @@
 
         public ActionResult Index()
         {
-            var model = this.mappingService.MapCollection<ModuleGridViewModel>(this.modulesAdministrationService.Read());
+            var model = this.mappingService.MapCollection<ModuleGridViewModel>(this.modulesAdministrationService.Read().OrderBy(m => m.Id));
             return this.View(model);
         }
     }

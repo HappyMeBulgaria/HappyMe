@@ -1,4 +1,5 @@
 ﻿@using NonFactors.Mvc.Grid
+@using Te4Fest.Web.Areas.Administration.ViewModels.Modules
 
 @model IEnumerable<Te4Fest.Web.Areas.Administration.ViewModels.Modules.ModuleGridViewModel>
 
@@ -8,13 +9,25 @@
     .Grid(Model)
     .Build(columns =>
     {
+        columns.Add(model => model.Id).Titled("№");
         columns.Add(model => model.Name).Titled("Name");
         columns.Add(model => model.Description).Titled("Description");
-
-        columns.Add(model => model.Id);
-        columns.Add(model => model.IsActive);
-        columns.Add(model => model.AuthorId);
+        columns.Add(model => model.IsActive).Titled("IsActive");
+        columns.Add(model => model.AuthorId).Titled("AuthorId");
     })
-    .Filterable()
+    .Filterable(true)
     .Sortable()
+    .Pageable(p =>
+    {
+        p.PagesToDisplay = 5;
+        p.InitialPage = 1;
+        p.RowsPerPage = 5;
+    })
 )
+
+
+@section scripts {
+    <script>
+        $('.mvc-grid').mvcgrid();
+    </script>
+}
