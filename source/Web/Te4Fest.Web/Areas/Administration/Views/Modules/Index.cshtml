@@ -1,0 +1,20 @@
+﻿@using NonFactors.Mvc.Grid
+
+@model IEnumerable<Te4Fest.Web.Areas.Administration.ViewModels.Modules.ModuleGridViewModel>
+
+<h2>Модули</h2>
+
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.Name).Titled("Name");
+        columns.Add(model => model.Description).Titled("Description");
+
+        columns.Add(model => model.Id);
+        columns.Add(model => model.IsActive);
+        columns.Add(model => model.AuthorId);
+    })
+    .Filterable()
+    .Sortable()
+)
