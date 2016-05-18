@@ -8,16 +8,16 @@
 
     public class UsersDataService : IUsersDataService
     {
-        private readonly IDeletableEntityRepository<User> usersData;
+        private readonly IDeletableEntityRepository<User> usersRepository;
 
-        public UsersDataService(IDeletableEntityRepository<User> usersData)
+        public UsersDataService(IDeletableEntityRepository<User> usersRepository)
         {
-            this.usersData = usersData;
+            this.usersRepository = usersRepository;
         }
 
         public User GetUserByUsername(string username)
         {
-            return this.usersData.All().FirstOrDefault(u => u.UserName == username);
+            return this.usersRepository.All().FirstOrDefault(u => u.UserName == username);
         }
     }
 }
