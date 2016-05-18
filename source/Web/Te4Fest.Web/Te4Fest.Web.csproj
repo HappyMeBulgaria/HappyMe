@@ -249,9 +249,11 @@
     <Content Include="Content\vendors\bootstrap\bootstrap-theme.css.map" />
     <Content Include=".eslintrc" />
     <Content Include="Areas\Administration\Views\web.config" />
+    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_AdministrationLayout.cshtml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
-    <Content Include="Scripts\MvcGrid\mvc-grid.js" />
-    <Content Include="Scripts\MvcGrid\mvc-grid.min.js" />
+    <Content Include="Scripts\vendor\MvcGrid\mvc-grid.js" />
+    <Content Include="Scripts\vendor\MvcGrid\mvc-grid.min.js" />
     <Content Include="Scripts\specs\test-spec.js" />
     <Content Include="Scripts\vendor\bootstrap\bootstrap.js" />
     <Content Include="Scripts\vendor\bootstrap\bootstrap.min.js" />
@@ -310,7 +312,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Controllers\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Scripts\custom\" />
   </ItemGroup>
   <ItemGroup>
