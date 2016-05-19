@@ -1,0 +1,28 @@
+﻿@using NonFactors.Mvc.Grid
+
+@model IEnumerable<Te4Fest.Web.Common.Contracts.IAdministrationViewModel>
+
+@{
+    var columnNames = Model.Select(m => m.GetType().GetProperties().Select(p => p.Name).ToList()).FirstOrDefault();
+}
+
+<h1>test</h1>
+
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        for (var i = 0; i < columnNames.Count; i++)
+        {
+            var index = i;
+            columns.Add(e => e.GetType().GetProperties()[index].GetValue(e, null)).Titled(columnNames[i]);
+        }
+    })
+    .Pageable(p =>
+    {
+        p.InitialPage = 1;
+        p.RowsPerPage = 10;
+    })
+    .Filterable()
+    .Sortable()
+)

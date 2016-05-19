@@ -189,6 +189,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Administration\Controllers\Base\AdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
     <Compile Include="Areas\Administration\Controllers\ModulesController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
@@ -258,6 +260,8 @@
     <Content Include="Areas\Administration\Views\Shared\_AdministrationLayout.cshtml" />
     <Content Include="Areas\Administration\Views\Modules\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Images\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_BaseGridPartial.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_Test.cshtml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.min.js" />
@@ -316,6 +320,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Views\Administration\" />
+    <Folder Include="Areas\Administration\Views\MvcGridAdministration\" />
     <Folder Include="Areas\Administration\Views\Users\" />
     <Folder Include="Scripts\custom\" />
   </ItemGroup>

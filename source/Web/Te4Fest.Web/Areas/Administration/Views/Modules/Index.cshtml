@@ -1,11 +1,15 @@
 ﻿@using NonFactors.Mvc.Grid
+@using Te4Fest.Web.Areas.Administration.Controllers
 @using Te4Fest.Web.Areas.Administration.ViewModels.Modules
 
 @model IEnumerable<Te4Fest.Web.Areas.Administration.ViewModels.Modules.ModuleGridViewModel>
 
 <h2>Модули</h2>
 
-@(Html
+@Html.AjaxGrid(Url.Action(nameof(ModulesController.BaseRead)))
+
+
+@*@(Html
     .Grid(Model)
     .Build(columns =>
     {
@@ -23,10 +27,11 @@
         p.InitialPage = 1;
         p.RowsPerPage = 5;
     })
-)
+)*@
 
 @section scripts {
     <script>
+        debugger;
         $('.mvc-grid').mvcgrid();
     </script>
 }
