@@ -96,6 +96,6 @@
             });
 
         private IEnumerable<TViewModel> GetData() =>
-            this.MappingService.MapCollection<TViewModel>(this.AdministrationService.Read()).ToList().OrderBy(m => m.Id);
+            this.MappingService.MapCollection<TViewModel>(this.AdministrationService.Read()).OrderBy(m => m.Id);
     }
 }
