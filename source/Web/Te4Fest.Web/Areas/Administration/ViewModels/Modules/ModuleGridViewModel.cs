@@ -3,9 +3,8 @@
     using Te4Fest.Common.Mapping;
     using Te4Fest.Data.Contracts;
     using Te4Fest.Data.Models;
-    using Te4Fest.Web.Common.Contracts;
 
-    public class ModuleGridViewModel : IMapFrom<Module>, IMapTo<Module>, IIdentifiable<int>, IAdministrationViewModel
+    public class ModuleGridViewModel : IMapFrom<Module>, IMapTo<Module>, IIdentifiable<int>
     {
         public int Id { get; set; }
 
