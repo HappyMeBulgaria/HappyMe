@@ -25,6 +25,9 @@
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/vendor/jquery/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/ckeditor").Include(
+                "~/Scripts/vendor/ckeditor/ckeditor.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                 "~/Scripts/vendor/jquery/jquery.validate*"));
 
@@ -36,6 +39,7 @@
                 "~/Scripts/vendor/respond/respond.js"));
 
             bundles.Add(new StyleBundle("~/bundles/administration-scripts").Include(
+                "~/Scripts/custom/administration/common/editorHelper.js",
                 "~/Scripts/vendor/MvcGrid/mvc-grid.js"));
         }
     }

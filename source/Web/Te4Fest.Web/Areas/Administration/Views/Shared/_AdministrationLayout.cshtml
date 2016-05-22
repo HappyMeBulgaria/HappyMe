@@ -9,6 +9,12 @@
 }
 
 @section scripts{
+    <script type="text/javascript">
+        CKEDITOR_BASEPATH = '@(Url.Content("~/Scripts/vendor/ckeditor/"))';
+    </script>
+
+    @Scripts.Render("~/bundles/ckeditor")
+
     @Scripts.Render("~/bundles/administration-scripts")
     @RenderSection("scripts", required: false)
     <script type="text/javascript" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
