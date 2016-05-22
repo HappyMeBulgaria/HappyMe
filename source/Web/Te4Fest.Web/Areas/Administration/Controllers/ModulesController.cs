@@ -1,5 +1,6 @@
 ﻿namespace Te4Fest.Web.Areas.Administration.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
 
     using Te4Fest.Data.Models;
@@ -17,6 +18,6 @@
         {
         }
 
-        public ActionResult Index() => this.View();
+        public ActionResult Index() => this.View(this.GetData().OrderBy(x => x.Id));
     }
 }

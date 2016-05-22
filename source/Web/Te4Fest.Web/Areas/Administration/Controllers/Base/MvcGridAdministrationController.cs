@@ -24,11 +24,9 @@
         protected IAdministrationService<TEntity> AdministrationService { get; }
 
         protected IMappingService MappingService { get; }
-
-        public ActionResult BaseRead()
-        {
-            return this.PartialView("_BaseGridPartial", this.GetData());
-        }
+        
+        protected IEnumerable<TViewModel> GetData() =>
+           this.MappingService.MapCollection<TViewModel>(this.AdministrationService.Read());
 
         protected virtual void BeforeCreateAndUpdate(TViewModel viewModel)
         {
@@ -94,8 +92,5 @@
             {
                 model 
             });
-
-        private IEnumerable<TViewModel> GetData() =>
-            this.MappingService.MapCollection<TViewModel>(this.AdministrationService.Read()).OrderBy(m => m.Id);
     }
 }
