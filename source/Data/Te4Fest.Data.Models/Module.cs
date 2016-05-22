@@ -20,8 +20,11 @@
         [Key]
         public int Id { get; set; }
 
+        [Required]
+        [MinLength(5), MaxLength(100)]
         public string Name { get; set; }
 
+        [MinLength(10), MaxLength(5000)]
         public string Description { get; set; }
 
         public bool IsActive { get; set; }
