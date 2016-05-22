@@ -7,7 +7,7 @@
     {
         private const string DefaultArea = "Administration";
 
-        public static HtmlString DeleteForm(this HtmlHelper helper, string action, string controller, int id, string area = DefaultArea)
+        public static HtmlString DeleteForm(this HtmlHelper helper, string action, string controller, string id, string area = DefaultArea)
         {
             var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
             var url = urlHelper.Action(action, controller, new { area });
@@ -21,7 +21,7 @@
             var hiddenId = new TagBuilder("input");
             hiddenId.Attributes.Add("type", "hidden");
             hiddenId.Attributes.Add("name", "id");
-            hiddenId.Attributes.Add("value", id.ToString());
+            hiddenId.Attributes.Add("value", id);
 
             var submitInput = new TagBuilder("input");
             submitInput.Attributes.Add("type", "submit");
