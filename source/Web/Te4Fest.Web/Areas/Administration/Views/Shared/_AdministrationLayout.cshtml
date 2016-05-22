@@ -2,7 +2,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Scripts.Render("~/bundles/administration-scripts")
 
 @section styles{
     @Styles.Render("~/Content/administration-css")
@@ -10,6 +9,7 @@
 }
 
 @section scripts{
+    @Scripts.Render("~/bundles/administration-scripts")
     @RenderSection("scripts", required: false)
     <script type="text/javascript" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
 }
