@@ -1,10 +1,13 @@
 ﻿@using NonFactors.Mvc.Grid
+@using Te4Fest.Web.Areas.Administration.Controllers
 @using Te4Fest.Web.Areas.Administration.ViewModels.Modules
 @using Te4Fest.Web.Common.Helpers
 
 @model IEnumerable<ModuleGridViewModel>
 
 <h2>Модули</h2>
+
+@(Html.ActionLink("Create new", nameof(ModulesController.Create)))
 
 @(Html.MvcGrid(
     Model,

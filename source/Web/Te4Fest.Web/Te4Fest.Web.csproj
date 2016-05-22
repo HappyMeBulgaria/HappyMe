@@ -260,6 +260,8 @@
     <Content Include="Areas\Administration\Views\Shared\_AdministrationLayout.cshtml" />
     <Content Include="Areas\Administration\Views\Modules\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Images\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Modules\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Modules\Update.cshtml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.min.js" />

@@ -1,0 +1,17 @@
+﻿@using Te4Fest.Web.Areas.Administration.Controllers
+@model Te4Fest.Web.Areas.Administration.ViewModels.Modules.ModuleGridViewModel
+
+@{
+    ViewBag.Title = "Добавяне на нов модул";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(nameof(ModulesController.Create), nameof(ModulesController), FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <input type="submit" value="Създай"/>
+}
