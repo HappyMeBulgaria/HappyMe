@@ -1,5 +1,4 @@
-﻿@using NonFactors.Mvc.Grid
-@using Te4Fest.Web.Areas.Administration.Controllers
+﻿@using Te4Fest.Web.Areas.Administration.Controllers
 @using Te4Fest.Web.Areas.Administration.ViewModels.Modules
 @using Te4Fest.Web.Common.Helpers
 
@@ -31,7 +30,7 @@
             .Titled("Промяна")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => Html.DeleteForm(nameof(ModulesController.Delete), ControllerName, model.Id));
+            .RenderedAs(model => Html.DeleteForm(nameof(ModulesController.Delete), ControllerName, model.Id.ToString()));
     }))
 
 @section scripts {

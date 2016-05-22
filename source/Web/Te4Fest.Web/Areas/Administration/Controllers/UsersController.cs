@@ -1,28 +1,24 @@
 ﻿namespace Te4Fest.Web.Areas.Administration.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
 
     using Te4Fest.Data.Models;
     using Te4Fest.Services.Administration.Contracts;
     using Te4Fest.Services.Common.Mapping.Contracts;
-    using Te4Fest.Web.Controllers.Base;
+    using Te4Fest.Web.Areas.Administration.Controllers.Base;
+    using Te4Fest.Web.Areas.Administration.InputModels.Users;
+    using Te4Fest.Web.Areas.Administration.ViewModels.Users;
 
-    public class UsersController : BaseController
+    public class UsersController : MvcGridAdministrationController<User, UserGridViewModel, UserCreateInputModel, UserEditInputModel>
     {
-        private IAdministrationService<User> userAdministrationService;
-        private IMappingService mappingService; 
-
         public UsersController(
             IAdministrationService<User> userAdministrationService,
             IMappingService mappingService)
+            : base(userAdministrationService, mappingService)
         {
-            this.userAdministrationService = userAdministrationService;
-            this.mappingService = mappingService;
         }
 
-        public ActionResult Index()
-        {
-            return this.View();
-        }
+        public ActionResult Index() => this.View(this.GetData().OrderBy(u => u.Id));
     }
 }
