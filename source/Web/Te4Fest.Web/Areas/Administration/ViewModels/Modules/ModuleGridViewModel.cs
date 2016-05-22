@@ -1,9 +1,10 @@
 ﻿namespace Te4Fest.Web.Areas.Administration.ViewModels.Modules
 {
     using Te4Fest.Common.Mapping;
+    using Te4Fest.Data.Contracts;
     using Te4Fest.Data.Models;
 
-    public class ModuleGridViewModel : IMapFrom<Module>
+    public class ModuleGridViewModel : IMapFrom<Module>, IMapTo<Module>, IIdentifiable<int>
     {
         public int Id { get; set; }
 
