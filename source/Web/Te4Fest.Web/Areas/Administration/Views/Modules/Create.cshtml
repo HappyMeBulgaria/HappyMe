@@ -1,5 +1,4 @@
-﻿@using Te4Fest.Web.Areas.Administration.Controllers
-@model Te4Fest.Web.Areas.Administration.ViewModels.Modules.ModuleGridViewModel
+﻿@model Te4Fest.Web.Areas.Administration.InputModels.Modules.ModuleCreateInputModel
 
 @{
     ViewBag.Title = "Добавяне на нов модул";
@@ -7,7 +6,7 @@
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm(nameof(ModulesController.Create), nameof(ModulesController), FormMethod.Post))
+@using (Html.BeginForm(FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 

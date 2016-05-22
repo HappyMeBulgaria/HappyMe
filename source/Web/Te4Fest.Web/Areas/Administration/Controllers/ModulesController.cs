@@ -8,9 +8,11 @@
     using Te4Fest.Services.Administration;
     using Te4Fest.Services.Common.Mapping.Contracts;
     using Te4Fest.Web.Areas.Administration.Controllers.Base;
+    using Te4Fest.Web.Areas.Administration.InputModels.Modules;
     using Te4Fest.Web.Areas.Administration.ViewModels.Modules;
 
-    public class ModulesController : MvcGridAdministrationController<Module, ModuleGridViewModel>
+    public class ModulesController : 
+        MvcGridAdministrationController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
     {
         public ModulesController(
             ModulesAdministrationService modulesAdministrationService, 
@@ -26,30 +28,30 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ModuleGridViewModel model)
+        public ActionResult Create(ModuleCreateInputModel model)
         {
             var entity = this.BaseCreate(model);
             if (entity != null)
             {
                 this.TempData[GlobalConstants.SuccessMessage] = "Успешно създадохте модул";
-                this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToAction(nameof(this.Index));
             }
 
             return this.View(model);
         }
 
         [HttpGet]
-        public ActionResult Update() => this.View();
+        public ActionResult Update(int id) => this.View(this.GetEditModelData(id));
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update(ModuleGridViewModel model)
+        public ActionResult Update(ModuleUpdateInputModel model)
         {
-            var entity = this.BaseUpdate(model);
+            var entity = this.BaseUpdate(model, model.Id);
             if (entity != null)
             {
                 this.TempData[GlobalConstants.SuccessMessage] = "Успешно редактирахте модул";
-                this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToAction(nameof(this.Index));
             }
 
             return this.View(model);

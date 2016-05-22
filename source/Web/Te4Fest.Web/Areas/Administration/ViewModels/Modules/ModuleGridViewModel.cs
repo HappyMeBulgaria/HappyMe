@@ -1,5 +1,6 @@
 ﻿namespace Te4Fest.Web.Areas.Administration.ViewModels.Modules
 {
+    using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
     using Te4Fest.Common.Mapping;
@@ -13,6 +14,8 @@
 
         public string Name { get; set; }
 
+        [AllowHtml]
+        [UIHint("CKeditor")]
         public string Description { get; set; }
 
         public bool IsActive { get; set; }
