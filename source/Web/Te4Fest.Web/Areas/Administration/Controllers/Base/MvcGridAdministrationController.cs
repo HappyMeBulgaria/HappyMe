@@ -36,45 +36,31 @@
         {
         }
 
-        protected ActionResult BaseCreate(TViewModel viewModel)
+        protected virtual TEntity BaseCreate(TViewModel viewModel)
         {
-            if (viewModel != null)
-            {
-                this.BeforeCreateAndUpdate(viewModel);
-            }
+            TEntity entity = null;
 
             if (viewModel != null && this.ModelState.IsValid)
             {
-                var entity = this.MappingService.Map<TEntity>(viewModel);
-
+                entity = this.MappingService.Map<TEntity>(viewModel);
                 this.AdministrationService.Create(entity);
-
-                viewModel = this.MappingService.Map<TViewModel>(entity);
-
-                this.AfterCreateAndUpdate(viewModel);
             }
 
-            return this.GridOperation(viewModel);
+            return entity;
         }
 
-        protected ActionResult BaseUpdate(TViewModel viewModel)
+        protected virtual TEntity BaseUpdate(TViewModel viewModel)
         {
-            if (viewModel != null)
-            {
-                this.BeforeCreateAndUpdate(viewModel);
-            }
+            TEntity entity = null;
 
             if (viewModel != null && this.ModelState.IsValid)
             {
-                var model = this.AdministrationService.Get(viewModel.Id);
-
-                this.MappingService.Map(viewModel, model);
-
-                this.AdministrationService.Update(model);
+                entity = this.AdministrationService.Get(viewModel.Id);
+                this.MappingService.Map(viewModel, entity);
+                this.AdministrationService.Update(entity);
             }
 
-            // success message
-            return this.GridOperation(viewModel);
+            return entity;
         }
 
         protected ActionResult BaseDestroy(TViewModel viewModel)
