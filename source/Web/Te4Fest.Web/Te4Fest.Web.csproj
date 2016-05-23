@@ -192,6 +192,7 @@
     <Compile Include="Areas\Administration\Controllers\AnswersController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
     <Compile Include="Areas\Administration\Controllers\ModulesController.cs" />
     <Compile Include="Areas\Administration\Controllers\QuestionsController.cs" />
@@ -683,6 +684,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Administration\" />
     <Folder Include="Areas\Administration\Views\Answers\" />
+    <Folder Include="Areas\Administration\Views\Dashboard\" />
     <Folder Include="Areas\Administration\Views\Questions\" />
     <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
