@@ -18,8 +18,11 @@
 
         public void CreateMappings(IConfiguration configuration)
         {
-            configuration.CreateMap<ImageCreateInputModel, Image>("test").ForMember(x => x.ImageData, x => x.MapFrom(
-                y => y.ImageFile.InputStream.ToByteArray()));
+            configuration
+                .CreateMap<ImageCreateInputModel, Image>("ImageCreateInputModel")
+                .ForMember(
+                x => x.ImageData, 
+                x => x.MapFrom(y => y.ImageFile.InputStream.ToByteArray()));
         }
     }
 }

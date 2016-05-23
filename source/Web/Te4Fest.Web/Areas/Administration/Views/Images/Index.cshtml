@@ -1,28 +1,29 @@
-﻿@using NonFactors.Mvc.Grid
+﻿@using Te4Fest.Web.Areas.Administration.Controllers
+@using Te4Fest.Web.Common.Helpers
 
 @model IEnumerable<Te4Fest.Web.Areas.Administration.ViewModels.Images.ImageGridViewModel>
 
 <h2>Изображения</h2>
 
-@(Html
-    .Grid(Model)
-    .Build(columns =>
+@(Html.ActionLink("Create new", "Create", "Images"))
+
+@(Html.MvcGrid(
+    Model,
+    columns =>
     {
         columns.Add(model => model.Id).Titled("№");
-        columns.Add(model => model.Path).Titled("Path");
-    })
-    .Filterable()
-    .Sortable()
-    .Pageable(p =>
-    {
-        p.PagesToDisplay = 5;
-        p.InitialPage = 1;
-        p.RowsPerPage = 5;
-    })
-)
+        columns.Add(model => model.Path).Titled("Път");
+        columns.Add(model => model.Id)
+            .Titled("Изображение")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => MvcHtmlString.Create(string.Format(@"<img src=""{0}"" />", model.ImageUrl)));
+    }))
 
+
+@*TODO: Move to _AdministrationLayout, if has .mvc-grid*@
 @section scripts {
     <script>
-        $('.mvc-grid').mvcgrid();
+        $('.mvc-grid').mvcgrid()
     </script>
 }
