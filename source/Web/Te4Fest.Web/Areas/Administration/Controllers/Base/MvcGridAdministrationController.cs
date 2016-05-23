@@ -32,14 +32,6 @@
         protected TEditModel GetEditModelData(params object[] id) =>
            this.MappingService.Map<TEditModel>(this.AdministrationService.Get(id));
 
-        protected virtual void BeforeCreateAndUpdate(TViewModel viewModel)
-        {
-        }
-
-        protected virtual void AfterCreateAndUpdate(TViewModel viewModel)
-        {
-        }
-
         protected virtual TEntity BaseCreate(TCreateModel model)
         {
             TEntity entity = null;

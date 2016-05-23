@@ -673,7 +673,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Administration\" />
-    <Folder Include="Areas\Administration\Views\MvcGridAdministration\" />
     <Folder Include="Areas\Administration\Views\Users\" />
     <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
