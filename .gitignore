@@ -237,3 +237,4 @@ _Pvt_Extensions
 
 #Grunt configs
 .grunt/
+/source/Web/Te4Fest.Web/Web.Release.config
