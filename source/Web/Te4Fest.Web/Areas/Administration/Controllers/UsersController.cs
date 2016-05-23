@@ -1,6 +1,5 @@
 ﻿namespace Te4Fest.Web.Areas.Administration.Controllers
 {
-    using System;
     using System.Linq;
     using System.Web.Mvc;
 
@@ -14,7 +13,7 @@
     using Te4Fest.Web.Areas.Administration.ViewModels.Users;
     using Te4Fest.Web.Common.Extensions;
 
-    public class UsersController : MvcGridAdministrationController<User, UserGridViewModel, UserCreateInputModel, UserEditInputModel>
+    public class UsersController : MvcGridAdministrationController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
     {
         private readonly UserManager<User> userManager;
 
@@ -42,7 +41,6 @@
             {
                 if (userCreateResult.Succeeded)
                 {
-                    this.AdministrationService.Create(entity);
                     this.TempData.AddSuccessMessage("Успешно създадохте потребител");
                     return this.RedirectToAction(nameof(this.Index));
                 }
@@ -52,6 +50,33 @@
             }
 
             return this.View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Update(string id) => this.View(this.GetEditModelData(id));
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(UserUpdateInputModel model)
+        {
+            var entity = this.BaseUpdate(model, model.Id);
+            if (entity != null)
+            {
+                this.TempData.AddSuccessMessage("Успешно редактирахте модул");
+                return this.RedirectToAction(nameof(this.Index));
+            }
+
+            return this.View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(string id)
+        {
+            this.BaseDestroy(id);
+
+            this.TempData.AddSuccessMessage("Успешно изтрихте модул");
+            return this.RedirectToAction(nameof(this.Index));
         }
     }
 }

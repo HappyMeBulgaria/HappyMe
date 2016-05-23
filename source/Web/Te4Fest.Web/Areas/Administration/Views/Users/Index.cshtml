@@ -9,7 +9,7 @@
 
 <h2>Потребители</h2>
 
-@*@(Html.ActionLink("Create new", nameof(UsersController.Create)))*@
+@(Html.ActionLink("Create new", nameof(UsersController.Create)))
 
 @(Html.MvcGrid(
     Model,
@@ -19,16 +19,16 @@
         columns.Add(model => model.UserName).Titled("Потребителско име");
         columns.Add(model => model.Email).Titled("Имейл");
         columns.Add(model => model.CreatedOn).Titled("Регистриран на");
-        ////columns.Add(model => model.Id)
-        ////    .Titled("Промяна")
-        ////    .Encoded(false)
-        ////    .Filterable(false)
-        ////    .RenderedAs(model => Html.ActionLink("Промяна", nameof(UsersController.Update), new { id = model.Id }));
-        ////columns.Add(model => model.Id)
-        ////    .Titled("Промяна")
-        ////    .Encoded(false)
-        ////    .Filterable(false)
-        ////    .RenderedAs(model => Html.DeleteForm(nameof(ModulesController.Delete), ControllerName, model.Id));
+        columns.Add(model => model.Id)
+            .Titled("Промяна")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.ActionLink("Промяна", nameof(UsersController.Update), new { id = model.Id }));
+        columns.Add(model => model.Id)
+            .Titled("Изтриване")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.DeleteForm(nameof(ModulesController.Delete), ControllerName, model.Id));
     }))
 
 @section scripts {
