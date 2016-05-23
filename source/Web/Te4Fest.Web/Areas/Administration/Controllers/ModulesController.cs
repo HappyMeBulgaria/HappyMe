@@ -2,14 +2,14 @@
 {
     using System.Linq;
     using System.Web.Mvc;
-
-    using Te4Fest.Common.Constants;
+    
     using Te4Fest.Data.Models;
     using Te4Fest.Services.Administration;
     using Te4Fest.Services.Common.Mapping.Contracts;
     using Te4Fest.Web.Areas.Administration.Controllers.Base;
     using Te4Fest.Web.Areas.Administration.InputModels.Modules;
     using Te4Fest.Web.Areas.Administration.ViewModels.Modules;
+    using Te4Fest.Web.Common.Extensions;
 
     public class ModulesController : 
         MvcGridAdministrationController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
@@ -33,7 +33,7 @@
             var entity = this.BaseCreate(model);
             if (entity != null)
             {
-                this.TempData[GlobalConstants.SuccessMessage] = "Успешно създадохте модул";
+                this.TempData.AddSuccessMessage("Успешно създадохте модул");
                 return this.RedirectToAction(nameof(this.Index));
             }
 
@@ -50,11 +50,21 @@
             var entity = this.BaseUpdate(model, model.Id);
             if (entity != null)
             {
-                this.TempData[GlobalConstants.SuccessMessage] = "Успешно редактирахте модул";
+                this.TempData.AddSuccessMessage("Успешно редактирахте модул");
                 return this.RedirectToAction(nameof(this.Index));
             }
 
             return this.View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
+            this.BaseDestroy(id);
+
+            this.TempData.AddSuccessMessage("Успешно изтрихте модул");
+            return this.RedirectToAction(nameof(this.Index));
         }
     }
 }

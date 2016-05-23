@@ -1,0 +1,17 @@
+﻿@model Te4Fest.Web.Areas.Administration.InputModels.Users.UserUpdateInputModel
+
+@{
+    ViewBag.Title = "Редактиране на потребител";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <input type="submit" value="Редактирай" />
+}
+

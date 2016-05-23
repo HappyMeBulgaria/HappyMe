@@ -1,9 +1,12 @@
-﻿@using NonFactors.Mvc.Grid
-@using Te4Fest.Web.Areas.Administration.Controllers
+﻿@using Te4Fest.Web.Areas.Administration.Controllers
 @using Te4Fest.Web.Areas.Administration.ViewModels.Modules
 @using Te4Fest.Web.Common.Helpers
 
 @model IEnumerable<ModuleGridViewModel>
+
+@{
+    const string ControllerName = "Modules";
+}
 
 <h2>Модули</h2>
 
@@ -14,10 +17,20 @@
     columns =>
     {
         columns.Add(model => model.Id).Titled("№");
-        columns.Add(model => model.Name).Titled("Name");
-        columns.Add(model => model.Description).Titled("Description");
-        columns.Add(model => model.IsActive).Titled("IsActive");
-        columns.Add(model => model.AuthorId).Titled("AuthorId");
+        columns.Add(model => model.Name).Titled("Име");
+        columns.Add(model => model.Description).Titled("Описание");
+        columns.Add(model => model.IsActive).Titled("Активност");
+        columns.Add(model => model.AuthorId).Titled("Автор");
+        columns.Add(model => model.Id)
+            .Titled("Промяна")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.ActionLink("Промяна", nameof(ModulesController.Update), new { id = model.Id }));
+        columns.Add(model => model.Id)
+            .Titled("Промяна")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.DeleteForm(nameof(ModulesController.Delete), ControllerName, model.Id.ToString()));
     }))
 
 @*TODO: Move to _AdministrationLayout, if has .mvc-grid*@
