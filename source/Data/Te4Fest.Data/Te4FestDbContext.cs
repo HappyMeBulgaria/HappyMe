@@ -2,6 +2,9 @@
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Validation;
+    using System.Diagnostics;
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
@@ -38,7 +41,8 @@
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
-            return base.SaveChanges();
+
+            return this.SaveChangesWithTracingDbExceptions();
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken)
@@ -72,6 +76,37 @@
                 {
                     entity.ModifiedOn = DateTime.Now;
                 }
+            }
+        }
+
+        private int SaveChangesWithTracingDbExceptions()
+        {
+            try
+            {
+                return base.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                Exception currentException = ex;
+                while (currentException != null)
+                {
+                    Trace.TraceError(currentException.Message);
+                    currentException = currentException.InnerException;
+                }
+
+                throw;
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var validationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceError($"Property: {validationError.PropertyName}{Environment.NewLine} Error: {validationError.ErrorMessage}");
+                    }
+                }
+
+                throw;
             }
         }
     }
