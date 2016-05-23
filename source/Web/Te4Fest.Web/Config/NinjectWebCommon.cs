@@ -9,6 +9,8 @@ namespace Te4Fest.Web
     using System.Data.Entity;
     using System.Web;
 
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
@@ -76,6 +78,9 @@ namespace Te4Fest.Web
             kernel.Bind(typeof(IDeletableEntityRepository<>)).To(typeof(EfDeletableEntityRepository<>));
             kernel.Bind<DbContext>().To<Te4FestDbContext>().InRequestScope();
             kernel.Bind<IMappingService>().To<AutoMapperMappingService>();
+
+            kernel.Bind(typeof(UserManager<>)).To(typeof(ApplicationUserManager));
+            kernel.Bind(typeof(IUserStore<>)).To(typeof(UserStore<>));
 
             kernel.Bind(k => k
                 .From(
