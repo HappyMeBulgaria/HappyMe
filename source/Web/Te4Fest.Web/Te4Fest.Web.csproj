@@ -197,7 +197,7 @@
     <Compile Include="Areas\Administration\InputModels\Modules\ModuleUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Modules\ModuleCreateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserCreateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Users\UserEditInputModel.cs" />
+    <Compile Include="Areas\Administration\InputModels\Users\UserUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Modules\ModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Users\UserGridViewModel.cs" />
