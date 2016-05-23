@@ -6,6 +6,8 @@
 @section styles{
     @Styles.Render("~/Content/administration-css")
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css" />
+<link href="http://kendo.cdn.telerik.com/2014.2.716/styles/kendo.common.min.css" rel="stylesheet" />
+<link href="http://kendo.cdn.telerik.com/2014.2.716/styles/kendo.default.min.css" rel="stylesheet" />
 }
 
 @section scripts{
@@ -18,6 +20,8 @@
     @Scripts.Render("~/bundles/administration-scripts")
     @RenderSection("scripts", required: false)
     <script type="text/javascript" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2014.2.716/js/jquery.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2014.2.716/js/kendo.ui.core.min.js"></script>
 }
 
 
