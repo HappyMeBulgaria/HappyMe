@@ -6,7 +6,7 @@
     using Te4Fest.Data.Contracts;
     using Te4Fest.Data.Contracts.Models;
 
-    public class Image : DeletableEntity, IIdentifiable<int>, IEntity
+    public class Image : DeletableEntity, IIdentifiable<int>
     {
         private ICollection<Question> questions;
         private ICollection<Answer> answers;
@@ -20,9 +20,11 @@
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        ////[Required]
         [MaxLength(500)]
         public string Path { get; set; }
+
+        public byte[] ImageData { get; set; }
 
         ////[Required]
         public string AuthorId { get; set; }
