@@ -296,6 +296,8 @@
     <Content Include="Areas\Administration\Views\Users\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Update.cshtml" />
     <Content Include="Areas\Administration\Views\Images\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Images\Update.cshtml" />
+    <Content Include="Areas\Administration\Views\Dashboard\Index.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />
@@ -693,9 +695,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\Administration\" />
     <Folder Include="Areas\Administration\Views\Answers\" />
-    <Folder Include="Areas\Administration\Views\Dashboard\" />
     <Folder Include="Areas\Administration\Views\Questions\" />
     <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>

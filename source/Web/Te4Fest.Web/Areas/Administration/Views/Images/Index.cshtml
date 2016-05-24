@@ -18,6 +18,16 @@
             .Encoded(false)
             .Filterable(false)
             .RenderedAs(model => MvcHtmlString.Create(string.Format(@"<img src=""{0}"" />", model.ImageUrl)));
+        columns.Add(model => model.Id)
+            .Titled("Промяна")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.ActionLink("Промяна", nameof(ImagesController.Update), new { id = model.Id }));
+        columns.Add(model => model.Id)
+            .Titled("Изтриване")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.DeleteForm(nameof(ImagesController.Delete), "Images", model.Id.ToString()));
     }))
 
 

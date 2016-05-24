@@ -23,6 +23,12 @@
                 .ForMember(
                 x => x.ImageData, 
                 x => x.MapFrom(y => y.ImageFile.InputStream.ToByteArray()));
+
+            configuration
+                .CreateMap<ImageUpdateInputModel, Image>("ImageUpdateInputModel")
+                .ForMember(
+                x => x.ImageData,
+                x => x.MapFrom(y => y.ImageFile.InputStream.ToByteArray()));
         }
     }
 }

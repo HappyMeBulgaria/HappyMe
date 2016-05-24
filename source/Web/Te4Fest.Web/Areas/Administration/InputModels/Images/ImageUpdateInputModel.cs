@@ -2,6 +2,8 @@
 {
     using System.Web.Mvc;
 
+    using Te4Fest.Common.Mapping;
+
     public class ImageUpdateInputModel : ImageCreateInputModel
     {
         [HiddenInput(DisplayValue = false)]

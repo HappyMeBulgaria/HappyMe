@@ -43,9 +43,22 @@
         }
 
         [HttpGet]
-        public ActionResult Update()
+        public ActionResult Update(int? id)
         {
-            return this.View();
+            if (!id.HasValue)
+            {
+                this.TempData.AddDangerMessage("Няма такава снимка.");
+                return this.RedirectToAction<ImagesController>(x => x.Index());
+            }
+
+            var editModel = this.GetEditModelData(id);
+            if (editModel == null)
+            {
+                this.TempData.AddDangerMessage("Няма такава снимка.");
+                return this.RedirectToAction<ImagesController>(x => x.Index());
+            }
+
+            return this.View(editModel);
         }
 
         [HttpPost]
