@@ -6,7 +6,7 @@
     using Te4Fest.Data.Contracts;
     using Te4Fest.Data.Contracts.Models;
 
-    public class UserInModule : DeletableEntity, IEntity
+    public class UserInModule : DeletableEntity
     {
         [Key]
         [Column(Order = 1)]
