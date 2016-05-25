@@ -25,6 +25,8 @@
 
         public QuestionType Type { get; set; }
 
+        public bool IsPublic { get; set; }
+
         public int? ModuleId { get; set; }
 
         public virtual Module Module { get; set; }
