@@ -1,0 +1,8 @@
+﻿@model string
+
+@{
+    var propertyName = ViewData.ModelMetadata.PropertyName;
+    var viewDataName = $"{propertyName}Data";
+}
+
+@Html.DropDownListFor(m => m, ViewData[viewDataName] as IEnumerable<SelectListItem>)
