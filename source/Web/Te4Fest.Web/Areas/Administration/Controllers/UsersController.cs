@@ -6,6 +6,7 @@
     using Microsoft.AspNet.Identity;
 
     using Te4Fest.Data.Models;
+    using Te4Fest.Services.Administration;
     using Te4Fest.Services.Administration.Contracts;
     using Te4Fest.Services.Common.Mapping.Contracts;
     using Te4Fest.Web.Areas.Administration.Controllers.Base;
@@ -15,14 +16,20 @@
 
     public class UsersController : MvcGridAdministrationController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
     {
+        private readonly IAdministrationService<Role> roleAdministrationService;
+        private readonly UsersInRolesAdministrationService usersInRolesAdministrationService;
         private readonly UserManager<User> userManager;
 
         public UsersController(
-            IAdministrationService<User> userAdministrationService,
+            IUsersAdministrationService userAdministrationService,
             IMappingService mappingService,
+            IAdministrationService<Role> roleAdministrationService,
+            UsersInRolesAdministrationService usersInRolesAdministrationService,
             UserManager<User> userManager)
             : base(userAdministrationService, mappingService)
         {
+            this.roleAdministrationService = roleAdministrationService;
+            this.usersInRolesAdministrationService = usersInRolesAdministrationService;
             this.userManager = userManager;
         }
 
@@ -35,6 +42,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(UserCreateInputModel model)
         {
+            // TODO: Conform the case if model.IsSamePassword is true
             var entity = MappingService.Map<User>(model);
             var userCreateResult = this.userManager.Create(entity, model.Password);
             if (this.ModelState.IsValid)
@@ -77,6 +85,35 @@
 
             this.TempData.AddSuccessMessage("Успешно изтрихте модул");
             return this.RedirectToAction(nameof(this.Index));
+        }
+
+        [HttpGet]
+        public ActionResult AddUserInRole(string username)
+        {
+            var user = (this.AdministrationService as IUsersAdministrationService).GetByUsername(username);
+            var model = this.MappingService.Map<AddUserInRoleInputModel>(user);
+
+            this.ViewBag.RoleIdData = this.roleAdministrationService
+                .Read()
+                .Select(r => new SelectListItem { Value = r.Id, Text = r.Name })
+                .ToList();
+            return this.View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddUserInRole(AddUserInRoleInputModel model)
+        {
+            if (model != null && this.ModelState.IsValid)
+            {
+                var userInRole = this.MappingService.Map<UserInRole>(model);
+                this.usersInRolesAdministrationService.Create(userInRole);
+
+                this.TempData.AddSuccessMessage("Успешно добавихте потребител в роля");
+                return this.RedirectToAction(nameof(this.Index));
+            }
+
+            return this.View(model);
         }
     }
 }
