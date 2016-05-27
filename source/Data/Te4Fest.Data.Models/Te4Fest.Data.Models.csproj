@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Answer.cs" />
+    <Compile Include="Role.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -72,6 +73,7 @@
     <Compile Include="User.cs" />
     <Compile Include="UserAnswer.cs" />
     <Compile Include="UserInModule.cs" />
+    <Compile Include="UserInRole.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
