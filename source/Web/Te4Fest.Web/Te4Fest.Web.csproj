@@ -51,6 +51,10 @@
       <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -196,8 +200,9 @@
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Administration\InputModels\Modules\ModuleUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Modules\ModuleCreateInputModel.cs" />
+    <Compile Include="Areas\Administration\InputModels\Users\AddUserInRoleInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserCreateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Users\UserEditInputModel.cs" />
+    <Compile Include="Areas\Administration\InputModels\Users\UserUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Modules\ModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Users\UserGridViewModel.cs" />
@@ -282,6 +287,8 @@
     <Content Include="Areas\Administration\Views\Users\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Update.cshtml" />
+    <Content Include="Areas\Administration\Views\Users\AddUserInRole.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\StringDropDownList.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />
@@ -676,12 +683,14 @@
     <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
     <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
     <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DropDownList.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Administration\" />
     <Folder Include="Areas\Administration\Views\MvcGridAdministration\" />
-    <Folder Include="Views\Shared\EditorTemplates\" />
+    <Folder Include="Areas\Administration\Views\UsersInRoles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
