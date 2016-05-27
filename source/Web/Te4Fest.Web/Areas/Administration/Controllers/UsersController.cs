@@ -9,6 +9,7 @@
     using Te4Fest.Services.Administration;
     using Te4Fest.Services.Administration.Contracts;
     using Te4Fest.Services.Common.Mapping.Contracts;
+    using Te4Fest.Services.Data.Contracts;
     using Te4Fest.Web.Areas.Administration.Controllers.Base;
     using Te4Fest.Web.Areas.Administration.InputModels.Users;
     using Te4Fest.Web.Areas.Administration.ViewModels.Users;
@@ -22,11 +23,13 @@
 
         public UsersController(
             IUsersAdministrationService userAdministrationService,
+            IUsersDataService userData,
+            IAdministrationService<User> userAdministrationService,
             IMappingService mappingService,
             IAdministrationService<Role> roleAdministrationService,
             UsersInRolesAdministrationService usersInRolesAdministrationService,
             UserManager<User> userManager)
-            : base(userAdministrationService, mappingService)
+            : base(userData, userAdministrationService, mappingService)
         {
             this.roleAdministrationService = roleAdministrationService;
             this.usersInRolesAdministrationService = usersInRolesAdministrationService;

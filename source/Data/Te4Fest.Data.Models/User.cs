@@ -15,7 +15,7 @@
     using Te4Fest.Data.Contracts;
     using Te4Fest.Data.Contracts.Models;
 
-    public class User : IdentityUser, IDeletableEntity, IAuditInfo, IIdentifiable<string>, IEntity
+    public class User : IdentityUser, IDeletableEntity, IAuditInfo, IIdentifiable<string>
     {
         private ICollection<User> children;
         private ICollection<UserInModule> userInModules;

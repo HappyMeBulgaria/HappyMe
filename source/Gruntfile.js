@@ -17,7 +17,7 @@ module.exports = function (grunt) {
                     template: require('grunt-template-jasmine-istanbul'),
                     templateOptions: {
                         coverage: 'bin/coverage/Te4FestWeb/coverage.json',
-                        report: 'bin/coverage/Te4FestWeb',
+                        report: 'bin/coverage/Te4FestWeb'
                         //thresholds: {
                         //    lines: 80,
                         //    statements: 80,

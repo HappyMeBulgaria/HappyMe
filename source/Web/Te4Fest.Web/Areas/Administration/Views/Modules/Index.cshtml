@@ -27,12 +27,13 @@
             .Filterable(false)
             .RenderedAs(model => Html.ActionLink("Промяна", nameof(ModulesController.Update), new { id = model.Id }));
         columns.Add(model => model.Id)
-            .Titled("Промяна")
+            .Titled("Изтриване")
             .Encoded(false)
             .Filterable(false)
             .RenderedAs(model => Html.DeleteForm(nameof(ModulesController.Delete), ControllerName, model.Id.ToString()));
     }))
 
+@*TODO: Move to _AdministrationLayout, if has .mvc-grid*@
 @section scripts {
     <script>
         $('.mvc-grid').mvcgrid()

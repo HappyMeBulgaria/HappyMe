@@ -6,8 +6,9 @@
     using Te4Fest.Data.Contracts;
     using Te4Fest.Services.Administration.Contracts;
     using Te4Fest.Services.Common.Mapping.Contracts;
+    using Te4Fest.Services.Data.Contracts;
 
-    public abstract class MvcGridAdministrationController<TEntity, TViewModel, TCreateModel, TEditModel> : 
+    public abstract class MvcGridAdministrationController<TEntity, TViewModel, TCreateModel, TEditModel> :
         AdministrationController
         where TEntity : class, IEntity, new()
         where TViewModel : IMapFrom<TEntity>, new()
@@ -15,61 +16,55 @@
         where TEditModel : IMapFrom<TEntity>, IMapTo<TEntity>, new()
     {
         protected MvcGridAdministrationController(
+           IUsersDataService userData,
            IAdministrationService<TEntity> dataRepository,
            IMappingService mappingService)
+            : base(userData)
         {
             this.AdministrationService = dataRepository;
             this.MappingService = mappingService;
         }
 
-        protected IAdministrationService<TEntity> AdministrationService { get; }
+    protected IAdministrationService<TEntity> AdministrationService { get; }
 
-        protected IMappingService MappingService { get; }
+    protected IMappingService MappingService { get; }
 
-        protected IEnumerable<TViewModel> GetData() =>
-           this.MappingService.MapCollection<TViewModel>(this.AdministrationService.Read());
+    protected IEnumerable<TViewModel> GetData() =>
+       this.MappingService.MapCollection<TViewModel>(this.AdministrationService.Read());
 
-        protected TEditModel GetEditModelData(params object[] id) =>
-           this.MappingService.Map<TEditModel>(this.AdministrationService.Get(id));
+    protected TEditModel GetEditModelData(params object[] id) =>
+       this.MappingService.Map<TEditModel>(this.AdministrationService.Get(id));
 
-        protected virtual void BeforeCreateAndUpdate(TViewModel viewModel)
+    protected virtual TEntity BaseCreate(TCreateModel model)
+    {
+        TEntity entity = null;
+
+        if (model != null && this.ModelState.IsValid)
         {
+            entity = this.MappingService.Map<TEntity>(model);
+            this.AdministrationService.Create(entity);
         }
 
-        protected virtual void AfterCreateAndUpdate(TViewModel viewModel)
-        {
-        }
-
-        protected virtual TEntity BaseCreate(TCreateModel model)
-        {
-            TEntity entity = null;
-
-            if (model != null && this.ModelState.IsValid)
-            {
-                entity = this.MappingService.Map<TEntity>(model);
-                this.AdministrationService.Create(entity);
-            }
-
-            return entity;
-        }
-
-        protected virtual TEntity BaseUpdate(TEditModel model, params object[] id)
-        {
-            TEntity entity = null;
-
-            if (model != null && this.ModelState.IsValid)
-            {
-                entity = this.AdministrationService.Get(id);
-                this.MappingService.Map(model, entity);
-                this.AdministrationService.Update(entity);
-            }
-
-            return entity;
-        }
-
-        protected void BaseDestroy(params object[] id)
-        {
-            this.AdministrationService.Delete(id);
-        }
+        return entity;
     }
+
+    protected virtual TEntity BaseUpdate(TEditModel model, params object[] id)
+    {
+        TEntity entity = null;
+
+        if (model != null && this.ModelState.IsValid)
+        {
+            entity = this.AdministrationService.Get(id);
+            this.MappingService.Map(model, entity);
+            this.AdministrationService.Update(entity);
+        }
+
+        return entity;
+    }
+
+    protected void BaseDestroy(params object[] id)
+    {
+        this.AdministrationService.Delete(id);
+    }
+}
 }
