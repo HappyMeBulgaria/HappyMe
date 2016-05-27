@@ -16,7 +16,7 @@
         [Required(ErrorMessage = "Моля изберете изображение.")]
         public HttpPostedFileBase ImageFile { get; set; }
 
-        public void CreateMappings(IConfiguration configuration)
+        public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration
                 .CreateMap<ImageCreateInputModel, Image>("ImageCreateInputModel")

@@ -22,9 +22,8 @@
         private readonly UserManager<User> userManager;
 
         public UsersController(
-            IUsersAdministrationService userAdministrationService,
             IUsersDataService userData,
-            IAdministrationService<User> userAdministrationService,
+            IUsersAdministrationService userAdministrationService,
             IMappingService mappingService,
             IAdministrationService<Role> roleAdministrationService,
             UsersInRolesAdministrationService usersInRolesAdministrationService,

@@ -28,12 +28,11 @@
 
         private void SetCurrentUser()
         {
-            var test = Request.IsAuthenticated;
-            var username = this.User.Identity.GetUserName();
-            if (username != null)
-            {
-                this.UserProfile = this.UsersData.GetUserByUsername(username);
-            }
+            ////var username = this.User.Identity.GetUserName();    
+            ////if (username != null)
+            ////{
+            ////    this.UserProfile = this.UsersData.GetUserByUsername(username);
+            ////}
         }
     }
 }
