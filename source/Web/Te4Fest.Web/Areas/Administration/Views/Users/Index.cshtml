@@ -29,6 +29,11 @@
             .Encoded(false)
             .Filterable(false)
             .RenderedAs(model => Html.DeleteForm(nameof(ModulesController.Delete), ControllerName, model.Id));
+        columns.Add(model => model.Id)
+            .Titled("Добавяне в роля")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.ActionLink("Добави в роля", nameof(UsersController.AddUserInRole), new { id = model.UserName }));
     }))
 
 @section scripts {
