@@ -19,18 +19,18 @@
 
         protected override IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state)
         {
-            this.SetCurrentUser();
+            var username = requestContext.HttpContext.User.Identity.Name;
+            this.SetCurrentUser(username);
 
             return base.BeginExecute(requestContext, callback, state);
         }
 
-        private void SetCurrentUser()
+        private void SetCurrentUser(string username)
         {
-            ////var username = this.User.Identity.GetUserName();    
-            ////if (username != null)
-            ////{
-            ////    this.UserProfile = this.UsersData.GetUserByUsername(username);
-            ////}
+            if (username != null)
+            {
+                this.UserProfile = this.UsersData.GetUserByUsername(username);
+            }
         }
     }
 }
