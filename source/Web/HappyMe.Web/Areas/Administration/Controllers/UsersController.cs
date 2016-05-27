@@ -90,15 +90,24 @@
         }
 
         [HttpGet]
-        public ActionResult AddUserInRole(string username)
+        public ActionResult AddUserInRole(string id)
         {
-            var user = (this.AdministrationService as IUsersAdministrationService).GetByUsername(username);
-            var model = this.MappingService.Map<AddUserInRoleInputModel>(user);
-
-            this.ViewBag.RoleIdData = this.roleAdministrationService
+            // TODO: Don't get role, if user is in it
+            var roles = this.roleAdministrationService
                 .Read()
                 .Select(r => new SelectListItem { Value = r.Id, Text = r.Name })
                 .ToList();
+
+            if (!roles.Any())
+            {
+                this.TempData.AddWarningMessage("Няма намерени роли");
+                return this.RedirectToAction(nameof(this.Index));
+            }
+
+            var user = this.AdministrationService.Get(id);
+            var model = this.MappingService.Map<AddUserInRoleInputModel>(user);
+
+            this.ViewBag.RoleIdData = roles;
             return this.View(model);
         }
 

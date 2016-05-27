@@ -33,7 +33,7 @@
             .Titled("Добавяне в роля")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => Html.ActionLink("Добави в роля", nameof(UsersController.AddUserInRole), new { id = model.UserName }));
+            .RenderedAs(model => Html.ActionLink("Добави в роля", nameof(UsersController.AddUserInRole), new { id = model.Id }));
     }))
 
 @section scripts {

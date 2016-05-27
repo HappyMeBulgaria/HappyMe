@@ -12,15 +12,26 @@
     {
         isDisabled = ViewData.ModelMetadata.AdditionalValues["enabled"] as bool?;
     }
-
-    var disabled = isDisabled.HasValue && isDisabled.Value ? "disabled" : string.Empty;
-
-    var htmlAttributes = new
+    
+    object htmlAttributes;
+    if (isDisabled.HasValue && !isDisabled.Value)
     {
-        disabled,
-        placeholder,
-        @class = "form-control",
-    };
+        htmlAttributes = new
+        {
+            disabled = "disabled",
+            placeholder,
+            @class = "form-control",
+        };
+    }
+    else
+    {
+        htmlAttributes = new
+        {
+            placeholder,
+            @class = "form-control",
+        };
+    }
+
 }
 
 @Html.TextBoxFor(m => m, htmlAttributes)
