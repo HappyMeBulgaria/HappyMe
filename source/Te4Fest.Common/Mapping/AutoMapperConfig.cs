@@ -37,7 +37,7 @@
             CreateMappings(configuration, maps);
         }
 
-        private static void RegisterCustomMaps(IConfiguration configuration, IEnumerable<Type> types)
+        private static void RegisterCustomMaps(IMapperConfiguration configuration, IEnumerable<Type> types)
         {
             var maps = GetCustomMappings(types);
 
@@ -98,7 +98,7 @@
             }
         }
 
-        private static void CreateMappings(IConfiguration configuration, IEnumerable<IHaveCustomMappings> maps)
+        private static void CreateMappings(IMapperConfiguration configuration, IEnumerable<IHaveCustomMappings> maps)
         {
             foreach (var map in maps)
             {
