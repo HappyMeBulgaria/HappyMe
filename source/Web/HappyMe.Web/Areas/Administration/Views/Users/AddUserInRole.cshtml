@@ -1,0 +1,16 @@
+﻿@model HappyMe.Web.Areas.Administration.InputModels.Users.AddUserInRoleInputModel
+
+@{
+    ViewBag.Title = "Добавяне на потребител в роля";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <input type="submit" value="Добави" />
+}

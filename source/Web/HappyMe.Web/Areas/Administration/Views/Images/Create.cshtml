@@ -1,0 +1,23 @@
+﻿@model HappyMe.Web.Areas.Administration.InputModels.Images.ImageCreateInputModel
+@{
+    ViewBag.Title = "Добавяне на ново изображение";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Create", "Images", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ImageFile, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="ImageFile" id="ImageFile" class="form-control" />
+            @Html.ValidationMessageFor(model => model.ImageFile, string.Empty, new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <input type="submit" value="Създай" />
+}
+

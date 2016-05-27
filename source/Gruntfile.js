@@ -4,15 +4,15 @@ module.exports = function (grunt) {
     grunt.initConfig({
         eslint: {
             te4FestWeb: {
-                src: ["Web/Te4Fest.Web/Scripts/custom/*.js"]
+                src: ["Web/HappyMe.Web/Scripts/custom/*.js"]
             }
         },
         jasmine: {
             te4FestWeb: {
-                src: ['Web/Te4Fest.Web/Scripts/custom/*.js'],
+                src: ['Web/HappyMe.Web/Scripts/custom/*.js'],
                 options: {
-                    specs: 'Web/Te4Fest.Web/Scripts/specs/*.js',
-                    vendor: ['Web/Te4Fest.Web/Scripts/vendor/jquery/jquery-2.2.3.js'],
+                    specs: 'Web/HappyMe.Web/Scripts/specs/*.js',
+                    vendor: ['Web/HappyMe.Web/Scripts/vendor/jquery/jquery-2.2.3.js'],
                     outfile: '_SpecRunnerTe4FestWeb.html',
                     template: require('grunt-template-jasmine-istanbul'),
                     templateOptions: {

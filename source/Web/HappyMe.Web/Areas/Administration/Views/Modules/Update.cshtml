@@ -1,0 +1,16 @@
+﻿@model HappyMe.Web.Areas.Administration.InputModels.Modules.ModuleUpdateInputModel
+
+@{
+    ViewBag.Title = "Редактиране на модул";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <input type="submit" value="Редактирай" />
+}

@@ -1,0 +1,18 @@
+﻿@model HappyMe.Web.Areas.Administration.InputModels.Questions.QuestionCreateInputModel
+
+@{
+    ViewBag.Title = "Добавяне на нов въпрос";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    
+
+    <input type="submit" value="Създай" />
+}

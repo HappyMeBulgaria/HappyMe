@@ -1,0 +1,96 @@
+﻿namespace HappyMe.Web.Areas.Administration.Controllers
+{
+    using System.IO;
+    using System.Linq;
+    using System.Web.Mvc;
+
+    using HappyMe.Data.Models;
+    using HappyMe.Services.Administration.Contracts;
+    using HappyMe.Services.Common.Mapping.Contracts;
+    using HappyMe.Services.Data.Contracts;
+    using HappyMe.Web.Areas.Administration.Controllers.Base;
+    using HappyMe.Web.Areas.Administration.InputModels.Images;
+    using HappyMe.Web.Areas.Administration.ViewModels.Images;
+    using HappyMe.Web.Common.Extensions;
+
+    public class ImagesController : MvcGridAdministrationController<Image, ImageGridViewModel, ImageCreateInputModel, ImageUpdateInputModel>
+    {
+        public ImagesController(
+            IUsersDataService userData,
+            IAdministrationService<Image> imageAdministrationService,
+            IMappingService mapingService) 
+            : base(userData, imageAdministrationService, mapingService)
+        {
+        }
+
+        public ActionResult Index() => this.View(this.GetData().OrderBy(x => x.Id));
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ImageCreateInputModel input)
+        {
+            var entity = this.BaseCreate(input);
+            if (entity != null)
+            {
+                this.TempData.AddSuccessMessage("Успешно запазихте изображение");
+                return this.RedirectToAction(nameof(this.Index));
+            }
+
+            return this.View(input);
+        }
+
+        [HttpGet]
+        public ActionResult Update(int? id)
+        {
+            if (!id.HasValue)
+            {
+                this.TempData.AddDangerMessage("Няма такава снимка.");
+                return this.RedirectToAction<ImagesController>(x => x.Index());
+            }
+
+            var editModel = this.GetEditModelData(id);
+            if (editModel == null)
+            {
+                this.TempData.AddDangerMessage("Няма такава снимка.");
+                return this.RedirectToAction<ImagesController>(x => x.Index());
+            }
+
+            return this.View(editModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(ImageUpdateInputModel input)
+        {
+            var entity = this.BaseUpdate(input, input.Id);
+            if (entity != null)
+            {
+                this.TempData.AddSuccessMessage("Успешно редактирахте модул");
+                return this.RedirectToAction(nameof(this.Index));
+            }
+
+            return this.View();
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int? id)
+        {
+            if (!id.HasValue)
+            {
+                this.TempData.AddDangerMessage("Няма такава снимка.");
+                return this.RedirectToAction<ImagesController>(x => x.Index());
+            }
+
+            this.BaseDestroy(id);
+
+            this.TempData.AddSuccessMessage("Успешно изтрихте изображение.");
+            return this.RedirectToAction<ImagesController>(x => x.Index());
+        }
+    }
+}

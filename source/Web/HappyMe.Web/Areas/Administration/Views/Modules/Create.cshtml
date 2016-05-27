@@ -1,0 +1,16 @@
+﻿@model HappyMe.Web.Areas.Administration.InputModels.Modules.ModuleCreateInputModel
+
+@{
+    ViewBag.Title = "Добавяне на нов модул";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <input type="submit" value="Създай"/>
+}

@@ -1,0 +1,39 @@
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Common.Helpers
+
+@model IEnumerable<HappyMe.Web.Areas.Administration.ViewModels.Images.ImageGridViewModel>
+
+<h2>Изображения</h2>
+
+@(Html.ActionLink("Create new", "Create", "Images"))
+
+@(Html.MvcGrid(
+    Model,
+    columns =>
+    {
+        columns.Add(model => model.Id).Titled("№");
+        columns.Add(model => model.Path).Titled("Път");
+        columns.Add(model => model.Id)
+            .Titled("Изображение")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => MvcHtmlString.Create(string.Format(@"<img src=""{0}"" />", model.ImageUrl)));
+        columns.Add(model => model.Id)
+            .Titled("Промяна")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.ActionLink("Промяна", nameof(ImagesController.Update), new { id = model.Id }));
+        columns.Add(model => model.Id)
+            .Titled("Изтриване")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.DeleteForm(nameof(ImagesController.Delete), "Images", model.Id.ToString()));
+    }))
+
+
+@*TODO: Move to _AdministrationLayout, if has .mvc-grid*@
+@section scripts {
+    <script>
+        $('.mvc-grid').mvcgrid()
+    </script>
+}
