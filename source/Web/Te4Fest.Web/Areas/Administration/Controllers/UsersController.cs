@@ -8,6 +8,7 @@
     using Te4Fest.Data.Models;
     using Te4Fest.Services.Administration.Contracts;
     using Te4Fest.Services.Common.Mapping.Contracts;
+    using Te4Fest.Services.Data.Contracts;
     using Te4Fest.Web.Areas.Administration.Controllers.Base;
     using Te4Fest.Web.Areas.Administration.InputModels.Users;
     using Te4Fest.Web.Areas.Administration.ViewModels.Users;
@@ -18,10 +19,11 @@
         private readonly UserManager<User> userManager;
 
         public UsersController(
+            IUsersDataService userData,
             IAdministrationService<User> userAdministrationService,
             IMappingService mappingService,
             UserManager<User> userManager)
-            : base(userAdministrationService, mappingService)
+            : base(userData, userAdministrationService, mappingService)
         {
             this.userManager = userManager;
         }

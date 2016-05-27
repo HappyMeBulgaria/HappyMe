@@ -7,7 +7,7 @@
     using Te4Fest.Data.Contracts;
     using Te4Fest.Data.Contracts.Models;
 
-    public class Question : DeletableEntity, IIdentifiable<int>, IEntity
+    public class Question : DeletableEntity, IIdentifiable<int>
     {
         private ICollection<Answer> answers;
 
@@ -24,6 +24,8 @@
         public string Text { get; set; }
 
         public QuestionType Type { get; set; }
+
+        public bool IsPublic { get; set; }
 
         public int? ModuleId { get; set; }
 

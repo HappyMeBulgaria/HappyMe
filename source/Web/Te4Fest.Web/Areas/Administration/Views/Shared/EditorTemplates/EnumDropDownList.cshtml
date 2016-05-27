@@ -1,0 +1,7 @@
+﻿@model Enum
+
+@{
+    var propertyName = ViewData.ModelMetadata.PropertyName;
+}
+
+@Html.EnumDropDownListFor(model => model)

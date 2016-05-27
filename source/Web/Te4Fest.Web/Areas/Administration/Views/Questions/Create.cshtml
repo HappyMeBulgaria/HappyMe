@@ -1,17 +1,18 @@
-﻿@{
-    Layout = null;
+﻿@model Te4Fest.Web.Areas.Administration.InputModels.Questions.QuestionCreateInputModel
+
+@{
+    ViewBag.Title = "Добавяне на нов въпрос";
 }
 
-<!DOCTYPE html>
+<h2>@ViewBag.Title</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
     
-    </div>
-</body>
-</html>
+
+    <input type="submit" value="Създай" />
+}
