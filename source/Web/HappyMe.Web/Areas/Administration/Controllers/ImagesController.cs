@@ -1,6 +1,5 @@
 ﻿namespace HappyMe.Web.Areas.Administration.Controllers
 {
-    using System.IO;
     using System.Linq;
     using System.Web.Mvc;
 
@@ -13,7 +12,7 @@
     using HappyMe.Web.Areas.Administration.ViewModels.Images;
     using HappyMe.Web.Common.Extensions;
 
-    public class ImagesController : MvcGridAdministrationController<Image, ImageGridViewModel, ImageCreateInputModel, ImageUpdateInputModel>
+    public class ImagesController : MvcGridAdministrationCrudController<Image, ImageGridViewModel, ImageCreateInputModel, ImageUpdateInputModel>
     {
         public ImagesController(
             IUsersDataService userData,

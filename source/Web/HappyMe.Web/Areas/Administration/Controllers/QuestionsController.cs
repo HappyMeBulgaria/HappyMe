@@ -15,7 +15,7 @@ using HappyMe.Web.Common.Extensions;
 namespace HappyMe.Web.Areas.Administration.Controllers
 {
     public class QuestionsController : 
-        MvcGridAdministrationController<Question, QuestionGridViewModel, QuestionCreateInputModel, QuestionUpdateInputModel>
+        MvcGridAdministrationCrudController<Question, QuestionGridViewModel, QuestionCreateInputModel, QuestionUpdateInputModel>
     {
         public QuestionsController(
             IUsersDataService userData,

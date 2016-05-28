@@ -15,7 +15,7 @@
 
     // TODO: Add authorization for admin and parrent roles
     public class ModulesController : 
-        MvcGridAdministrationController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
+        MvcGridAdministrationCrudController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
     {
         public ModulesController(
             IUsersDataService userData,

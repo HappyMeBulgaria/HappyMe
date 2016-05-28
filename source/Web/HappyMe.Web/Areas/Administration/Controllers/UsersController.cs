@@ -15,7 +15,7 @@
 
     using Microsoft.AspNet.Identity;
 
-    public class UsersController : MvcGridAdministrationController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
+    public class UsersController : MvcGridAdministrationCrudController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
     {
         private readonly IAdministrationService<Role> roleAdministrationService;
         private readonly UsersInRolesAdministrationService usersInRolesAdministrationService;
