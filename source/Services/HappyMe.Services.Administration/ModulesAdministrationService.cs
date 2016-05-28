@@ -17,5 +17,8 @@
         public IQueryable<Module> GetAllOrderedModules() => this.Read().OrderBy(m => m.CreatedOn);
 
         public IQueryable<Module> GetUserModules(string userId) => this.Read().Where(m => m.AuthorId == userId);
+
+        public IQueryable<Module> GetUserAndPublicModules(string userId) => 
+            this.Read().Where(m => m.AuthorId == userId || m.IsPublic);
     }
 }
