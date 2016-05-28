@@ -1,0 +1,21 @@
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Common.Helpers
+
+@model IEnumerable<HappyMe.Web.Areas.Administration.ViewModels.UsersInModules.UserInModuleGridViewModel>
+
+<h2>Потребители в модули</h2>
+
+@Html.ActionLink("Create new", nameof(UsersInModulesController.Create))
+
+@(Html.MvcGrid(
+    Model,
+    columns =>
+    {
+        columns.Add(model => model.ModuleName).Titled("Модул");
+        columns.Add(model => model.UserName).Titled("Потребител");
+        columns.Add(model => model.ModuleId)
+            .Titled("Изтриване")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.DeleteForm(nameof(UsersInModulesController.Delete), "UsersInModules", model.ModuleId.ToString(), model.UserId));
+    }))

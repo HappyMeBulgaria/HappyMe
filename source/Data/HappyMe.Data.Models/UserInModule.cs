@@ -2,8 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-
-    using HappyMe.Data.Contracts;
+    
     using HappyMe.Data.Contracts.Models;
 
     public class UserInModule : DeletableEntity

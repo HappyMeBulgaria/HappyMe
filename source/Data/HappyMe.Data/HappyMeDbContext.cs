@@ -14,7 +14,7 @@
 
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    public class HappyMeDbContext : IdentityDbContext
+    public class HappyMeDbContext : IdentityDbContext<User>
     {
         public HappyMeDbContext()
             : base("DefaultConnection")
@@ -32,6 +32,8 @@
         public virtual IDbSet<UserInModule> UsersInModules { get; set; }
 
         public virtual IDbSet<UserAnswer> UsersAnswers { get; set; }
+
+        public override IDbSet<IdentityRole> Roles { get; set; }
 
         public static HappyMeDbContext Create()
         {
