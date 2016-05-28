@@ -200,7 +200,7 @@
   <ItemGroup>
     <Compile Include="Areas\Administration\Controllers\AnswersController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\AdministrationController.cs" />
-    <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationCrudController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationReadAndDeleteController.cs" />
     <Compile Include="Areas\Administration\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
@@ -264,13 +264,6 @@
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\fonts\font-awesome\css\font-awesome.css" />
-    <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\vendor\bootstrap\administration\style-responsive.css" />
-    <Content Include="Content\vendor\bootstrap\administration\style.css" />
-    <Content Include="Content\vendor\bootstrap\administration\table-responsive.css" />
-    <Content Include="Content\vendor\bootstrap\administration\to-do.css" />
-    <Content Include="Content\vendor\bootstrap\administration\zabuto_calendar.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap.css" />
@@ -297,7 +290,6 @@
     <Content Include="Areas\Administration\Views\Modules\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Modules\Update.cshtml" />
     <Content Include="Scripts\custom\administration\common\editorHelper.js" />
-    <Content Include="Scripts\vendor\bootstrap\administration-theme-common\common-scripts.js" />
     <Content Include="Scripts\vendor\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\vendor\ckeditor\CHANGES.html" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor.asp" />
@@ -323,10 +315,6 @@
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\EnumDropDownList.cshtml" />
     <Content Include="Areas\Administration\Views\UsersInModules\Index.cshtml" />
     <Content Include="Areas\Administration\Views\UsersInModules\Create.cshtml" />
-    <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\fonts\font-awesome\fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />
@@ -667,13 +655,6 @@
     <Content Include="Scripts\vendor\ckeditor\skins\v2\skin.js" />
     <Content Include="Scripts\vendor\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\vendor\ckeditor\themes\default\theme.js" />
-    <Content Include="Scripts\vendor\jquery\gritter\css\jquery.gritter.css" />
-    <Content Include="Scripts\vendor\jquery\gritter\gritter-conf.js" />
-    <Content Include="Scripts\vendor\jquery\gritter\images\gritter-light.png" />
-    <Content Include="Scripts\vendor\jquery\gritter\images\gritter-long.png" />
-    <Content Include="Scripts\vendor\jquery\gritter\images\gritter.png" />
-    <Content Include="Scripts\vendor\jquery\gritter\images\ie-spacer.gif" />
-    <Content Include="Scripts\vendor\jquery\gritter\js\jquery.gritter.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.min.js" />
     <Content Include="Scripts\specs\test-spec.js" />
