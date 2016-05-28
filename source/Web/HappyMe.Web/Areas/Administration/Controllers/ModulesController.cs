@@ -32,6 +32,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(ModuleCreateInputModel model)
         {
+            model.AuthorId = this.UserProfile.Id;
             var entity = this.BaseCreate(model);
             if (entity != null)
             {

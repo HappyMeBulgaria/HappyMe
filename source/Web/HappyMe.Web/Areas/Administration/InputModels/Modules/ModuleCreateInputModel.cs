@@ -14,6 +14,9 @@
         [UIHint("CKeditor")]
         public string Description { get; set; }
 
+        [HiddenInput(DisplayValue = false)]
+        public string AuthorId { get; set; }
+
         public bool IsActive { get; set; }
     }
 }
