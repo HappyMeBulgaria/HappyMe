@@ -35,7 +35,7 @@
                 "~/Scripts/vendor/modernizr/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                "~/Scripts/vendor/bootstrap/bootstrap.js",
+                "~/Scripts/vendor/bootstrap/bootstrap.min.js",
                 "~/Scripts/vendor/respond/respond.js"));
 
             bundles.Add(new StyleBundle("~/bundles/administration-scripts").Include(
