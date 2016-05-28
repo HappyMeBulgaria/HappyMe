@@ -1,28 +1,120 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@using HappyMe.Web.Controllers
 
+@Styles.Render("~/Content/css")
+@Styles.Render("~/Content/administration-css")
+@Styles.Render("~/Scripts/vendor/jquery/gritter/css/jquery.gritter.css")
+@Styles.Render("~/Content/fonts/font-awesome/css/font-awesome.css")
+@Styles.Render("~/Content/vendor/bootstrap/administration/style.css")
+@Styles.Render("~/Content/vendor/bootstrap/administration/style-responsive.css")
 
-@section styles{
-    @Styles.Render("~/Content/administration-css")
 <link href="http://kendo.cdn.telerik.com/2014.2.716/styles/kendo.common.min.css" rel="stylesheet" />
 <link href="http://kendo.cdn.telerik.com/2014.2.716/styles/kendo.default.min.css" rel="stylesheet" />
-}
 
-@section scripts{
-    <script type="text/javascript">
-        CKEDITOR_BASEPATH = '@(Url.Content("~/Scripts/vendor/ckeditor/"))';
-    </script>
+<div class="administration-container">
+    <header class="header black-bg">
+        <div class="sidebar-toggle-box">
+            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        </div>
+        <!--logo start-->
+        <a href="#" class="logo">
+            <b>HappyMe</b>
+        </a>
+        <!--logo end-->
+        <div class="top-menu">
+            <ul class="nav pull-right top-menu">
+                <li>
+                    @Html.ActionLink("Logout", nameof(AccountController.LogOff), "Account", new { @class = "logout" })
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!--header end-->
+    <!--sidebar start-->
+    <aside>
+        <div id="sidebar" class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
 
-    @Scripts.Render("~/bundles/ckeditor")
+                <p class="centered">
+                    <a href="/profile"><img src="/Content/images/ui-zac.jpg" class="img-circle" width="60"></a>
+                </p>
+                <h5 class="centered">Marcel Newman</h5>
 
-    @Scripts.Render("~/bundles/administration-scripts")
-    @RenderSection("scripts", required: false)
-    <script src="http://kendo.cdn.telerik.com/2014.2.716/js/jquery.min.js"></script>
-    <script src="http://kendo.cdn.telerik.com/2014.2.716/js/kendo.ui.core.min.js"></script>
-}
+                <li class="mt">
+                    <a class="active" href="/administration/dashboard/index">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
 
+                <li class="mt">
+                    <a href="/administration/modules/index">
+                        <i class="fa fa-puzzle-piece"></i>
+                        <span>Modules</span>
+                    </a>
+                </li>
 
-<div class="container administration-container">
-    @RenderBody()
+                <li class="mt">
+                    <a href="/administration/images/index">
+                        <i class="fa fa-camera"></i>
+                        <span>Images</span>
+                    </a>
+                </li>
+
+                <li class="mt">
+                    <a href="/administration/questions/index">
+                        <i class="fa fa-question-circle"></i>
+                        <span>Questions</span>
+                    </a>
+                </li>
+
+                <li class="mt">
+                    <a href="/administration/answers/index">
+                        <i class="fa fa-comments"></i>
+                        <span>Answers</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+    <!--sidebar end-->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    @RenderBody()
+                </div><!-- /col-lg-12 END SECTION MIDDLE -->
+            </div><!-- /row -->
+        </section>
+    </section>
+
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+        <div class="text-center">
+            2014 - Alvarez.is
+            <a href="index.html#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
 </div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/administration-scripts")
+
+@Scripts.Render("~/Scripts/vendor/jquery/jquery.scrollTo.min.js")
+@Scripts.Render("~/Scripts/vendor/jquery/gritter/js/jquery.gritter.js")
+@Scripts.Render("~/Scripts/vendor/jquery/gritter/gritter-conf.js")
+@Scripts.Render("~/Scripts/vendor/bootstrap/administration-theme-common/common-scripts.js")
+
+<script type="text/javascript">
+    CKEDITOR_BASEPATH = '@(Url.Content("~/Scripts/vendor/ckeditor/"))';
+</script>
+
+@Scripts.Render("~/bundles/ckeditor")
+@RenderSection("scripts", required: false)
