@@ -5,7 +5,7 @@
 
 <h2>Изображения</h2>
 
-@(Html.ActionLink("Create new", "Create", "Images"))
+@Html.ActionLink("Create new", "Create", "Images")
 
 @(Html.MvcGrid(
     Model,
@@ -17,7 +17,7 @@
             .Titled("Изображение")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => MvcHtmlString.Create(string.Format(@"<img src=""{0}"" />", model.ImageUrl)));
+            .RenderedAs(model => MvcHtmlString.Create(string.Format(@"<img class=""img-responsive"" width=""150"" src =""{0}"" />", model.ImageUrl)));
         columns.Add(model => model.Id)
             .Titled("Промяна")
             .Encoded(false)

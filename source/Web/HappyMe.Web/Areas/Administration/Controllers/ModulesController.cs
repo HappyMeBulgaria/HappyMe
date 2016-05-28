@@ -15,7 +15,7 @@
 
     // TODO: Add authorization for admin and parrent roles
     public class ModulesController : 
-        MvcGridAdministrationController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
+        MvcGridAdministrationCrudController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
     {
         public ModulesController(
             IUsersDataService userData,
@@ -38,7 +38,7 @@
                 modules = this.MappingService
                     .MapCollection<ModuleGridViewModel>(
                         (this.AdministrationService as ModulesAdministrationService)
-                            .GetUserModules(this.UserProfile.Id))
+                            .GetUserAndPublicModules(this.UserProfile.Id))
                     .OrderBy(m => m.Id);
             }
 

@@ -33,6 +33,8 @@
 
         public virtual User Author { get; set; }
 
+        public bool IsPublic { get; set; }
+
         public virtual ICollection<Question> Questions
         {
             get { return this.questions; }

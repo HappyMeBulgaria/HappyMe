@@ -24,6 +24,9 @@ namespace HappyMe.Web.Areas.Administration.InputModels.Questions
 
         public bool IsPublic { get; set; }
 
+        [UIHint("DropDownList")]
+        public int ModuleId { get; set; }
+
         // add image -> kendo upload image
 
         // module -> dropdown

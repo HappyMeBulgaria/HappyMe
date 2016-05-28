@@ -3,11 +3,13 @@
     using System.Web;
     using System.Web.Mvc;
 
+    using MoreDotNet.Wrappers;
+
     public static class FormHelper
     {
         private const string DefaultArea = "Administration";
 
-        public static HtmlString DeleteForm(this HtmlHelper helper, string action, string controller, string id, string area = DefaultArea)
+        public static HtmlString DeleteForm(this HtmlHelper helper, string action, string controller, string id, string secondId = null, string area = DefaultArea)
         {
             var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
             var url = urlHelper.Action(action, controller, new { area });
@@ -26,6 +28,15 @@
             var submitInput = new TagBuilder("input");
             submitInput.Attributes.Add("type", "submit");
             submitInput.Attributes.Add("value", "Изтрии");
+
+            if (!secondId.IsNullOrWhiteSpace())
+            {
+                var secondHiddenId = new TagBuilder("input");
+                secondHiddenId.Attributes.Add("type", "hidden");
+                secondHiddenId.Attributes.Add("name", "secondId");
+                secondHiddenId.Attributes.Add("value", secondId);
+                form.InnerHtml += secondHiddenId;
+            }
 
             form.InnerHtml += antiForgeryToken;
             form.InnerHtml += hiddenId;
