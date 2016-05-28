@@ -1,7 +1,7 @@
-﻿using System.ComponentModel;
-
-namespace HappyMe.Common.Models
+﻿namespace HappyMe.Common.Models
 {
+    using System.ComponentModel;
+
     public enum QuestionType
     {
         [Description("Въпрос с изображение")]
