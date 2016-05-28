@@ -76,7 +76,7 @@ namespace HappyMe.Web
         {
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfRepository<>));
             kernel.Bind(typeof(IDeletableEntityRepository<>)).To(typeof(EfDeletableEntityRepository<>));
-            kernel.Bind<DbContext>().To<Te4FestDbContext>().InRequestScope();
+            kernel.Bind<DbContext>().To<HappyMeDbContext>().InRequestScope();
             kernel.Bind<IMappingService>().To<AutoMapperMappingService>();
 
             kernel.Bind(typeof(UserManager<>)).To(typeof(ApplicationUserManager));

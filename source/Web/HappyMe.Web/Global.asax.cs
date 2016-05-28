@@ -15,7 +15,7 @@
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Te4FestDbContext, DefaultMigrationConfiguration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<HappyMeDbContext, DefaultMigrationConfiguration>());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

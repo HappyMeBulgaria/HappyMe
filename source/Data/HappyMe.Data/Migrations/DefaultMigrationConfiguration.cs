@@ -6,7 +6,7 @@ namespace HappyMe.Data.Migrations
     using HappyMe.Data;
     using HappyMe.Data.Models;
 
-    public class DefaultMigrationConfiguration : DbMigrationsConfiguration<Te4FestDbContext>
+    public class DefaultMigrationConfiguration : DbMigrationsConfiguration<HappyMeDbContext>
     {
         private const int ImagesToSeed = 20;
         private const int ModulesToSeed = 20;
@@ -17,13 +17,13 @@ namespace HappyMe.Data.Migrations
             this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Te4FestDbContext context)
+        protected override void Seed(HappyMeDbContext context)
         {
             this.SeedImages(context);
             this.SeedModules(context);
         }
 
-        private void SeedImages(Te4FestDbContext context)
+        private void SeedImages(HappyMeDbContext context)
         {
             if (!context.Images.Any())
             {
@@ -41,7 +41,7 @@ namespace HappyMe.Data.Migrations
             }
         }
 
-        private void SeedModules(Te4FestDbContext context)
+        private void SeedModules(HappyMeDbContext context)
         {
             if (!context.Modules.Any())
             {

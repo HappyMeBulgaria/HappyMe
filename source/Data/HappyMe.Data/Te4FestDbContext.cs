@@ -14,9 +14,9 @@
 
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    public class Te4FestDbContext : IdentityDbContext<User>
+    public class HappyMeDbContext : IdentityDbContext<User>
     {
-        public Te4FestDbContext()
+        public HappyMeDbContext()
             : base("DefaultConnection")
         {
         }
@@ -33,9 +33,9 @@
 
         public virtual IDbSet<UserAnswer> UsersAnswers { get; set; }
 
-        public static Te4FestDbContext Create()
+        public static HappyMeDbContext Create()
         {
-            return new Te4FestDbContext();
+            return new HappyMeDbContext();
         }
 
         public override int SaveChanges()
