@@ -38,7 +38,7 @@
                 modules = this.MappingService
                     .MapCollection<ModuleGridViewModel>(
                         (this.AdministrationService as ModulesAdministrationService)
-                            .GetUserModules(this.UserProfile.Id))
+                            .GetUserAndPublicModules(this.UserProfile.Id))
                     .OrderBy(m => m.Id);
             }
 
