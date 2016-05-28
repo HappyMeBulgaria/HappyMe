@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Migrations\DefaultMigrationConfiguration.cs" />
-    <Compile Include="Te4FestDbContext.cs" />
+    <Compile Include="HappyMeDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>

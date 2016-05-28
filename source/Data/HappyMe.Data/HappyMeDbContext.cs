@@ -14,7 +14,7 @@
 
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    public class HappyMeDbContext : IdentityDbContext<User>
+    public class HappyMeDbContext : IdentityDbContext
     {
         public HappyMeDbContext()
             : base("DefaultConnection")
