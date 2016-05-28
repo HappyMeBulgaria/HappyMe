@@ -9,13 +9,13 @@
 
     public class ModulesAdministrationService : AdministrationService<Module>, IModulesAdministrationService
     {
-        public ModulesAdministrationService(IRepository<Module> entities) : base(entities)
+        public ModulesAdministrationService(IRepository<Module> entities) 
+            : base(entities)
         {
         }
 
-        public IQueryable<Module> GetAllOrderedModules()
-        {
-            return this.Read().OrderBy(m => m.CreatedOn);
-        }
+        public IQueryable<Module> GetAllOrderedModules() => this.Read().OrderBy(m => m.CreatedOn);
+
+        public IQueryable<Module> GetUserModules(string userId) => this.Read().Where(m => m.AuthorId == userId);
     }
 }

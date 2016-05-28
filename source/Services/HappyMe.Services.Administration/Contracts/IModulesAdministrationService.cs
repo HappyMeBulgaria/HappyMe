@@ -7,5 +7,7 @@
     public interface IModulesAdministrationService : IAdministrationService<Module>
     {
         IQueryable<Module> GetAllOrderedModules();
+
+        IQueryable<Module> GetUserModules(string userId);
     }
 }
