@@ -1,26 +1,26 @@
 ﻿namespace HappyMe.Web.Areas.Administration.ViewModels.Modules
 {
-    using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
+    using AutoMapper;
 
     using HappyMe.Common.Mapping;
-    using HappyMe.Data.Contracts;
     using HappyMe.Data.Models;
 
-    public class ModuleGridViewModel : IMapFrom<Module>, IMapTo<Module>, IIdentifiable<int>
+    public class ModuleGridViewModel : IMapFrom<Module>, IMapTo<Module>, IHaveCustomMappings
     {
-        [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
         public string Name { get; set; }
-
-        [AllowHtml]
-        [UIHint("CKeditor")]
+        
         public string Description { get; set; }
 
         public bool IsActive { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
-        public string AuthorId { get; set; }
+        public string UserName { get; set; }
+
+        public void CreateMappings(IMapperConfiguration configuration)
+        {
+            configuration.CreateMap<Module, ModuleGridViewModel>()
+                .ForMember(m => m.UserName, opt => opt.MapFrom(e => e.Author.UserName));
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace HappyMe.Web.Areas.Administration.Controllers
 {
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
 
@@ -12,6 +13,7 @@
     using HappyMe.Web.Areas.Administration.ViewModels.Modules;
     using HappyMe.Web.Common.Extensions;
 
+    // TODO: Add authorization for admin and parrent roles
     public class ModulesController : 
         MvcGridAdministrationController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
     {
@@ -23,7 +25,25 @@
         {
         }
 
-        public ActionResult Index() => this.View(this.GetData().OrderBy(x => x.Id));
+        // Pass different modules depend of role of the user
+        public ActionResult Index()
+        {
+            IEnumerable<ModuleGridViewModel> modules;
+            if (this.User.IsAdmin())
+            {
+                modules = this.GetData().OrderBy(x => x.Id);
+            }
+            else
+            {
+                modules = this.MappingService
+                    .MapCollection<ModuleGridViewModel>(
+                        (this.AdministrationService as ModulesAdministrationService)
+                            .GetUserModules(this.UserProfile.Id))
+                    .OrderBy(m => m.Id);
+            }
+
+            return this.View(modules);
+        } 
 
         [HttpGet]
         public ActionResult Create() => this.View();
@@ -43,6 +63,7 @@
             return this.View(model);
         }
 
+        // TODO: Validate if user has rights to edit this module
         [HttpGet]
         public ActionResult Update(int id) => this.View(this.GetEditModelData(id));
 
@@ -50,6 +71,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult Update(ModuleUpdateInputModel model)
         {
+            // TODO: Validate if user has rights to edit this module
             var entity = this.BaseUpdate(model, model.Id);
             if (entity != null)
             {
@@ -60,6 +82,7 @@
             return this.View(model);
         }
 
+        // TODO: Validate if user has rights to delete this module
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
