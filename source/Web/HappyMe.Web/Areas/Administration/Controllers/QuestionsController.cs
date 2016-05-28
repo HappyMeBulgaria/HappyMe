@@ -17,18 +17,26 @@ namespace HappyMe.Web.Areas.Administration.Controllers
     public class QuestionsController : 
         MvcGridAdministrationCrudController<Question, QuestionGridViewModel, QuestionCreateInputModel, QuestionUpdateInputModel>
     {
+        private readonly IModulesAdministrationService modulesAdministrationService;
+
         public QuestionsController(
             IUsersDataService userData,
-            IAdministrationService<Question> dataRepository, 
-            IMappingService mappingService) 
-            : base(userData, dataRepository, mappingService)
+            IAdministrationService<Question> questionsAdministrationService, 
+            IMappingService mappingService,
+            IModulesAdministrationService modulesAdministrationService) 
+            : base(userData, questionsAdministrationService, mappingService)
         {
+            this.modulesAdministrationService = modulesAdministrationService;
         }
 
         public ActionResult Index() => this.View(this.GetData().OrderBy(x => x.Id));
 
         [HttpGet]
-        public ActionResult Create() => this.View();
+        public ActionResult Create()
+        {
+            this.PopulateViewBag();
+            return this.View();
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -70,6 +78,13 @@ namespace HappyMe.Web.Areas.Administration.Controllers
 
             this.TempData.AddSuccessMessage("Успешно изтрихте въпрос");
             return this.RedirectToAction(nameof(this.Index));
+        }
+
+        private void PopulateViewBag()
+        {
+            this.ViewBag.ModuleIdData =
+                this.modulesAdministrationService.GetUserAndPublicModules(this.UserProfile.Id)
+                    .Select(m => new SelectListItem { Text = m.Name, Value = m.Id.ToString() });
         }
     }
 }

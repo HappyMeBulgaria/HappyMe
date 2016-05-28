@@ -676,6 +676,7 @@
     <Content Include="Scripts\vendor\jquery\gritter\images\ie-spacer.gif" />
     <Content Include="Scripts\vendor\jquery\gritter\js\jquery.gritter.js" />
     <Content Include="Scripts\vendor\jquery\jquery.scrollTo.min.js" />
+    <Content Include="Scripts\vendor\jquery\jquery.nicescroll.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.min.js" />
     <Content Include="Scripts\specs\test-spec.js" />

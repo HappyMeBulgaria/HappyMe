@@ -9,5 +9,7 @@
         IQueryable<Module> GetAllOrderedModules();
 
         IQueryable<Module> GetUserModules(string userId);
+
+        IQueryable<Module> GetUserAndPublicModules(string userId);
     }
 }

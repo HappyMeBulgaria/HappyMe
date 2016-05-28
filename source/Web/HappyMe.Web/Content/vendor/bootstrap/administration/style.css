@@ -10,6 +10,11 @@ Premium: http://www.gridgum.com
 @import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
 
 /* BASIC THEME CONFIGURATION */
+
+html {
+    height: 100%;
+}
+
 body {
     color: #797979;
 	background: #f2f2f2;

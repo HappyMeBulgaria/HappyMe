@@ -1,14 +1,9 @@
 ﻿@using HappyMe.Web.Controllers
 
-@Styles.Render("~/Content/css")
+@Styles.Render("~/Content/bootstrap")
+@Styles.Render("~/Content/font-awesome")
+@Styles.Render("~/Content/jquery-gritter")
 @Styles.Render("~/Content/administration-css")
-@Styles.Render("~/Scripts/vendor/jquery/gritter/css/jquery.gritter.css")
-@Styles.Render("~/Content/fonts/font-awesome/css/font-awesome.css")
-@Styles.Render("~/Content/vendor/bootstrap/administration/style.css")
-@Styles.Render("~/Content/vendor/bootstrap/administration/style-responsive.css")
-
-<link href="http://kendo.cdn.telerik.com/2014.2.716/styles/kendo.common.min.css" rel="stylesheet" />
-<link href="http://kendo.cdn.telerik.com/2014.2.716/styles/kendo.default.min.css" rel="stylesheet" />
 
 <div class="administration-container">
     <header class="header black-bg">
@@ -94,10 +89,7 @@
     <!--footer start-->
     <footer class="site-footer">
         <div class="text-center">
-            2014 - Alvarez.is
-            <a href="index.html#" class="go-top">
-                <i class="fa fa-angle-up"></i>
-            </a>
+            2016 - HappyMe
         </div>
     </footer>
     <!--footer end-->
@@ -105,12 +97,9 @@
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/jquery-gritter")
+@Scripts.Render("~/bundles/nice-scroll")
 @Scripts.Render("~/bundles/administration-scripts")
-
-@Scripts.Render("~/Scripts/vendor/jquery/jquery.scrollTo.min.js")
-@Scripts.Render("~/Scripts/vendor/jquery/gritter/js/jquery.gritter.js")
-@Scripts.Render("~/Scripts/vendor/jquery/gritter/gritter-conf.js")
-@Scripts.Render("~/Scripts/vendor/bootstrap/administration-theme-common/common-scripts.js")
 
 <script type="text/javascript">
     CKEDITOR_BASEPATH = '@(Url.Content("~/Scripts/vendor/ckeditor/"))';
@@ -118,3 +107,7 @@
 
 @Scripts.Render("~/bundles/ckeditor")
 @RenderSection("scripts", required: false)
+
+<script type="application/javascript">
+
+</script>
