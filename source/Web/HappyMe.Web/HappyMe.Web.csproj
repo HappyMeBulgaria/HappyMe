@@ -200,7 +200,7 @@
   <ItemGroup>
     <Compile Include="Areas\Administration\Controllers\AnswersController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\AdministrationController.cs" />
-    <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationCrudController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationReadAndDeleteController.cs" />
     <Compile Include="Areas\Administration\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
