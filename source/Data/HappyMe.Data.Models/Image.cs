@@ -11,18 +11,19 @@
         private ICollection<Question> questions;
         private ICollection<Answer> answers;
         private ICollection<User> users; 
+        private ICollection<Module> modules; 
 
         public Image()
         {
             this.questions = new HashSet<Question>();
             this.answers = new HashSet<Answer>();
             this.users = new HashSet<User>();
+            this.modules = new HashSet<Module>();
         }
 
         [Key]
         public int Id { get; set; }
 
-        ////[Required]
         [MaxLength(500)]
         public string Path { get; set; }
 
@@ -50,5 +51,11 @@
             get { return this.answers; }
             set { this.answers = value; }
         }
+
+        public virtual ICollection<Module> Modules
+        {
+            get { return this.modules; }
+            set { this.modules = value; }
+        } 
     }
 }

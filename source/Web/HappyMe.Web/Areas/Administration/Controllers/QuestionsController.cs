@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,6 +12,7 @@ using HappyMe.Web.Areas.Administration.Controllers.Base;
 using HappyMe.Web.Areas.Administration.InputModels.Questions;
 using HappyMe.Web.Areas.Administration.ViewModels.Questions;
 using HappyMe.Web.Common.Extensions;
+using MoreDotNet.Extentions.Common;
 
 namespace HappyMe.Web.Areas.Administration.Controllers
 {
@@ -18,15 +20,18 @@ namespace HappyMe.Web.Areas.Administration.Controllers
         MvcGridAdministrationCrudController<Question, QuestionGridViewModel, QuestionCreateInputModel, QuestionUpdateInputModel>
     {
         private readonly IModulesAdministrationService modulesAdministrationService;
+        private readonly IImagesAdministrationService imagesAdministrationService;
 
         public QuestionsController(
             IUsersDataService userData,
             IAdministrationService<Question> questionsAdministrationService, 
             IMappingService mappingService,
-            IModulesAdministrationService modulesAdministrationService) 
+            IModulesAdministrationService modulesAdministrationService,
+            IImagesAdministrationService imagesAdministrationService) 
             : base(userData, questionsAdministrationService, mappingService)
         {
             this.modulesAdministrationService = modulesAdministrationService;
+            this.imagesAdministrationService = imagesAdministrationService;
         }
 
         public ActionResult Index() => this.View(this.GetData().OrderBy(x => x.Id));
@@ -34,7 +39,9 @@ namespace HappyMe.Web.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            // get modules for dropdown
             this.PopulateViewBag();
+
             return this.View();
         }
 
@@ -42,7 +49,16 @@ namespace HappyMe.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(QuestionCreateInputModel model)
         {
+            // setting author
             model.AuthorId = this.UserProfile.Id;
+
+            // setting image
+            var imageData = model.ImageData;
+            var target = new MemoryStream();
+            imageData.InputStream.CopyTo(target);
+            var data = target.ToByteArray();
+            model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+
             var entity = this.BaseCreate(model);
             if (entity != null)
             {
