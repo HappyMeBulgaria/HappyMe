@@ -75,6 +75,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\HappyMe.Common\HappyMe.Common.csproj">
+      <Project>{BE0B0219-3996-433E-B63B-5BF485F9230C}</Project>
+      <Name>HappyMe.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HappyMe.Data.Contracts\HappyMe.Data.Contracts.csproj">
       <Project>{9bc2b1cd-c05d-40ca-a972-c4b16f3cb064}</Project>
       <Name>HappyMe.Data.Contracts</Name>

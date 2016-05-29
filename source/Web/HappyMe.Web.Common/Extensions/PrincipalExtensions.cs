@@ -15,5 +15,15 @@
         {
             return principal.IsInRole(RoleConstants.Administrator);
         }
+
+        public static bool IsParent(this IPrincipal principal)
+        {
+            return principal.IsInRole(RoleConstants.Parent);
+        }
+
+        public static bool IsChild(this IPrincipal principal)
+        {
+            return principal.IsInRole(RoleConstants.Child);
+        }
     }
 }

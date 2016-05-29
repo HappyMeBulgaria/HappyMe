@@ -1,10 +1,14 @@
 namespace HappyMe.Data.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
+    using HappyMe.Common.Constants;
     using HappyMe.Data;
     using HappyMe.Data.Models;
+
+    using Microsoft.AspNet.Identity.EntityFramework;
 
     public class DefaultMigrationConfiguration : DbMigrationsConfiguration<HappyMeDbContext>
     {
@@ -21,6 +25,31 @@ namespace HappyMe.Data.Migrations
         {
             this.SeedImages(context);
             this.SeedModules(context);
+            this.SeedRoles(context);
+        }
+
+        private void SeedRoles(HappyMeDbContext context)
+        {
+            if (!context.Roles.Any())
+            {
+                var roleNames = new[]
+                {
+                    RoleConstants.Administrator,
+                    RoleConstants.Parent,
+                    RoleConstants.Child
+                };
+
+                foreach (var roleName in roleNames)
+                {
+                    context.Roles.Add(new IdentityRole
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Name = roleName
+                    });
+                }
+
+                context.SaveChanges();
+            }
         }
 
         private void SeedImages(HappyMeDbContext context)

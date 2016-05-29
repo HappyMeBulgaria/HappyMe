@@ -34,6 +34,10 @@
         [MaxLength(UserValidationConstants.EmailMaxLength)]
         public override string Email { get; set; }
 
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
         public bool IsDeleted { get; set; }
 
         public DateTime? DeletedOn { get; set; }
@@ -44,6 +48,10 @@
         public bool PreserveCreatedOn { get; set; }
 
         public DateTime? ModifiedOn { get; set; }
+
+        public int? ProfileImageId { get; set; }
+
+        public Image ProfileImage { get; set; }
 
         public string ParentId { get; set; }
 

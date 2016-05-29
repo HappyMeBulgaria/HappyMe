@@ -220,6 +220,8 @@
     <Compile Include="Areas\Administration\InputModels\Questions\QuestionUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserCreateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserUpdateInputModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Dashboard\ChildViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Dashboard\DashboardIndexViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Modules\ModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Questions\QuestionGridViewModel.cs" />
@@ -267,6 +269,7 @@
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\custom\administration-styles.css" />
     <Content Include="Content\fonts\font-awesome\css\font-awesome.css" />
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\ui-zac.jpg" />
@@ -279,6 +282,7 @@
     <Content Include="Content\vendor\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\vendor\guillotine\jquery.guillotine.css" />
     <Content Include="Content\vendor\MvcGrid\mvc-grid.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -332,6 +336,7 @@
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\font-awesome\fonts\FontAwesome.otf" />
     <Content Include="Areas\Administration\Views\UsersAnswers\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\ImageUpload.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />
@@ -673,6 +678,7 @@
     <Content Include="Scripts\vendor\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\vendor\ckeditor\themes\default\theme.js" />
     <Content Include="Scripts\vendor\jquery\gritter\css\jquery.gritter.css" />
+    <Content Include="Scripts\vendor\guillotine\jquery.guillotine.min.js" />
     <Content Include="Scripts\vendor\jquery\gritter\gritter-conf.js" />
     <Content Include="Scripts\vendor\jquery\gritter\images\gritter-light.png" />
     <Content Include="Scripts\vendor\jquery\gritter\images\gritter-long.png" />
@@ -794,7 +800,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>46469</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

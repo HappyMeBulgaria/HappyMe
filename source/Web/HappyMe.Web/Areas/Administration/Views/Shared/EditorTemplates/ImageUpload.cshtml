@@ -1,0 +1,25 @@
+﻿@model HttpPostedFileBase
+
+@Styles.Render("~/Content/guillotine")
+
+@*<input type="file" name="FileUpload" />
+    <input type="submit" name="Submit" id="Submit" value="Upload" />*@
+
+@*<div id="theparent" style="width: 80%;">
+        <img id="thepicture" src="@Url.Content(String.Format("~/Images/Model/{0}", item.ModelImagePath))"/>
+    </div>*@
+
+
+@{
+    // TODO:
+    // input to load file -> name as prop name
+    // on change -> get the file and its source
+    // load image to container element
+    // do the magic
+    // save the newly cropped image
+
+    var propertyName = ViewData.ModelMetadata.PropertyName;
+    var viewDataName = $"{propertyName}Data";
+}
+
+@Scripts.Render("~/bundles/guillotine")

@@ -4,9 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using HappyMe.Common.Mapping;
 using HappyMe.Common.Models;
 using HappyMe.Data.Models;
+using HappyMe.Web.Areas.Administration.InputModels.Images;
+using MoreDotNet.Extentions.Common;
 
 namespace HappyMe.Web.Areas.Administration.InputModels.Questions
 {
@@ -25,11 +28,16 @@ namespace HappyMe.Web.Areas.Administration.InputModels.Questions
         public bool IsPublic { get; set; }
 
         [UIHint("DropDownList")]
+        [Display(Name = "Модул")]
         public int ModuleId { get; set; }
 
-        // add image -> kendo upload image
+        public int ImageId { get; set; }
+        
+        [UIHint("ImageUpload")]
+        [Display(Name = "Изображение")]
+        public HttpPostedFileBase ImageData { get; set; }
 
-        // module -> dropdown
+        // add image -> kendo upload image
 
         // answers -> optional ?? from dropdown
     }

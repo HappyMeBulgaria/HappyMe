@@ -5,7 +5,7 @@
 
 <h2>Потребители в модули</h2>
 
-@Html.ActionLink("Create new", nameof(UsersInModulesController.Create))
+@Html.ActionLink("Create new", nameof(UsersInModulesController.Create), null, new { @class = "btn btn-primary bottom-buffer" })
 
 @(Html.MvcGrid(
     Model,

@@ -5,28 +5,35 @@
     using System.Web;
     using System.Web.Mvc;
 
+    using HappyMe.Common.Constants;
+    using HappyMe.Data.Contracts.Repositories;
     using HappyMe.Data.Models;
+    using HappyMe.Web.Controllers.Base;
     using HappyMe.Web.ViewModels.Account;
 
     using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
 
+    using Ninject;
+
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
         private ApplicationSignInManager signInManager;
-
         private ApplicationUserManager userManager;
 
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountController(
+            ApplicationUserManager userManager, 
+            ApplicationSignInManager signInManager)
         {
             this.UserManager = userManager;
             this.SignInManager = signInManager;
@@ -180,6 +187,8 @@
                 var result = await this.UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    await this.UserManager.AddToRoleAsync(user.Id, RoleConstants.Parent);
+
                     await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

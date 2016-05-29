@@ -10,7 +10,7 @@
 
 <h2>Модули</h2>
 
-@(Html.ActionLink("Create new", nameof(ModulesController.Create)))
+@(Html.ActionLink("Create new", nameof(ModulesController.Create), null, new { @class = "btn btn-primary bottom-buffer" }))
 
 @(Html.MvcGrid(
     Model,
@@ -25,7 +25,7 @@
             .Titled("Промяна")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => Html.ActionLink("Промяна", nameof(ModulesController.Update), new { id = model.Id }));
+            .RenderedAs(model => Html.ActionLink("Промяна", nameof(ModulesController.Update), new { id = model.Id }, new { @class = "btn btn-primary" }));
         columns.Add(model => model.Id)
             .Titled("Изтриване")
             .Encoded(false)
