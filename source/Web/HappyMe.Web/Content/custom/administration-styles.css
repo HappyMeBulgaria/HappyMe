@@ -1,0 +1,95 @@
+﻿/*==============Overriding the theme=============*/
+body {
+    background-color: #FCEADE;
+}
+
+.black-bg {
+    background-color: #565656;
+    border-color: #565656;
+}
+
+.sidebar-toggle-box .fa-bars {
+    color: #FFF;
+}
+
+#sidebar {
+    background-color: #25CED1;
+}
+
+    #sidebar h5 {
+        color: #FFF;
+    }
+
+ul.sidebar-menu li a {
+    color: #FFF;
+}
+
+ul.top-menu > li > .logout {
+    color: #eee;
+    border: 1px solid #999 !important;
+    background-color: transparent;
+}
+
+    ul.top-menu > li > .logout:hover {
+        color: #f2f2f2 !important;
+        background-color: #EA256F !important;
+        border: 1px solid #EA256F !important;
+    }
+
+.btn {
+}
+
+    .btn:hover,
+    .btn:focus {
+        background-color: #656565;
+    }
+
+.btn-default {
+    color: #656565;
+    border: 1px solid #656565;
+    background-color: transparent;
+}
+
+.btn-success {
+    border: none;
+    color: #FFF;
+    background-color: #25CED1;
+}
+
+.btn-primary {
+    border: none;
+    background-color: #FF8A5B;
+}
+
+.btn-warning {
+    border: none;
+    background-color: #EA256F;
+}
+/*==============End overriding the theme=============*/
+
+.bottom-buffer {
+    margin-bottom: 10px;
+}
+
+.top-buffer {
+    margin-top: 10px;
+}
+
+.table thead {
+    background-color: #fff2f2;
+}
+
+.table > thead > tr > th {
+    border-bottom-color: #FCEADE;
+}
+
+.table tbody {
+    background-color: #fff2f2;
+}
+
+.site-footer {
+    position: static;
+    bottom: 0;
+    width: 100%;
+    background-color: #656565;
+}

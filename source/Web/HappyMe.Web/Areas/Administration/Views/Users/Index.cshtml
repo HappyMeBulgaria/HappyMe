@@ -9,7 +9,7 @@
 
 <h2>Потребители</h2>
 
-@(Html.ActionLink("Create new", nameof(UsersController.Create)))
+@(Html.ActionLink("Create new", nameof(UsersController.Create), null, new { @class = "btn btn-primary bottom-buffer" }))
 
 @(Html.MvcGrid(
     Model,
@@ -23,7 +23,7 @@
             .Titled("Промяна")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => Html.ActionLink("Промяна", nameof(UsersController.Update), new { id = model.Id }));
+            .RenderedAs(model => Html.ActionLink("Промяна", nameof(UsersController.Update), new { id = model.Id }, new { @class = "btn btn-primary" }));
         columns.Add(model => model.Id)
             .Titled("Изтриване")
             .Encoded(false)

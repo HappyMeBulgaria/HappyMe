@@ -19,7 +19,8 @@
             bundles.Add(new StyleBundle("~/Content/administration-css").Include(
                 "~/Content/vendor/MvcGrid/mvc-grid.css",
                 "~/Content/vendor/bootstrap/administration/style.css",
-                "~/Content/vendor/bootstrap/administration/style-responsive.css"));
+                "~/Content/vendor/bootstrap/administration/style-responsive.css",
+                "~/Content/custom/administration-styles.css"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
                 "~/Content/vendor/bootstrap/bootstrap.css"));
