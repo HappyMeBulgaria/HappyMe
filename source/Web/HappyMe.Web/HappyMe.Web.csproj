@@ -218,6 +218,8 @@
     <Compile Include="Areas\Administration\InputModels\Questions\QuestionUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserCreateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserUpdateInputModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Dashboard\ChildViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Dashboard\DashboardIndexViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Modules\ModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Questions\QuestionGridViewModel.cs" />
