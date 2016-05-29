@@ -35,6 +35,10 @@
 
         public bool IsPublic { get; set; }
 
+        public int? ImageId { get; set; }
+
+        public virtual Image Image { get; set; }
+
         public virtual ICollection<Question> Questions
         {
             get { return this.questions; }
