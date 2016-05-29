@@ -18,7 +18,11 @@
         <div class="top-menu">
             <ul class="nav pull-right top-menu">
                 <li>
-                    @Html.ActionLink("Logout", nameof(AccountController.LogOff), "Account", new { @class = "logout" })
+                    @using (Html.BeginForm("LogOff", "Account", new { area = string.Empty }, FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a class="btn btn-danger" href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                    }
                 </li>
             </ul>
         </div>
