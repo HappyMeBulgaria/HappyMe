@@ -1,4 +1,6 @@
-﻿namespace HappyMe.Web.Areas.Administration.InputModels.Users
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+
+namespace HappyMe.Web.Areas.Administration.InputModels.Users
 {
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
@@ -10,7 +12,7 @@
     using HappyMe.Data.Models;
     using HappyMe.Web.Common.Attributes;
 
-    public class AddUserInRoleInputModel : IMapFrom<User>, IMapTo<UserInRole>, IHaveCustomMappings
+    public class AddUserInRoleInputModel : IMapFrom<User>, IMapTo<IdentityUserRole>, IHaveCustomMappings
     {
         [HiddenInput(DisplayValue = false)]
         public string UserId { get; set; }

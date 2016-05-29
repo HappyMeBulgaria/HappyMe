@@ -5,18 +5,20 @@
     using HappyMe.Services.Administration.Base;
     using HappyMe.Services.Administration.Contracts;
 
+    using Microsoft.AspNet.Identity.EntityFramework;
+
     public class UsersInRolesAdministrationService : 
-        AdministrationService<UserInRole>, 
+        AdministrationService<IdentityUserRole>, 
         IUsersInRolesAdministrationService
     {
-        public UsersInRolesAdministrationService(IRepository<UserInRole> entities)
+        public UsersInRolesAdministrationService(IRepository<IdentityUserRole> entities)
             : base(entities)
         {
         }
 
         public void Create(string userId, string roleId)
         {
-            var userInRole = new UserInRole { RoleId = roleId, UserId = userId };
+            var userInRole = new IdentityUserRole { RoleId = roleId, UserId = userId };
             this.Create(userInRole);
         }
     }

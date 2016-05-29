@@ -1,31 +1,31 @@
 /*---LEFT BAR ACCORDION----*/
-$(function() {
-    $('#nav-accordion').dcAccordion({
-        eventType: 'click',
-        autoClose: true,
-        saveState: true,
-        disableLink: true,
-        speed: 'slow',
-        showCount: false,
-        autoExpand: true,
-//        cookie: 'dcjq-accordion-1',
-        classExpand: 'dcjq-current-parent'
-    });
-});
+//$(function() {
+//    $('#nav-accordion').dcAccordion({
+//        eventType: 'click',
+//        autoClose: true,
+//        saveState: true,
+//        disableLink: true,
+//        speed: 'slow',
+//        showCount: false,
+//        autoExpand: true,
+////        cookie: 'dcjq-accordion-1',
+//        classExpand: 'dcjq-current-parent'
+//    });
+//});
 
 var Script = function () {
 
 
 //    sidebar dropdown menu auto scrolling
 
-    jQuery('#sidebar .sub-menu > a').click(function () {
-        var o = ($(this).offset());
-        diff = 250 - o.top;
-        if(diff>0)
-            $("#sidebar").scrollTo("-="+Math.abs(diff),500);
-        else
-            $("#sidebar").scrollTo("+="+Math.abs(diff),500);
-    });
+    //jQuery('#sidebar .sub-menu > a').click(function () {
+    //    var o = ($(this).offset());
+    //    diff = 250 - o.top;
+    //    if(diff>0)
+    //        $("#sidebar").scrollTo("-="+Math.abs(diff),500);
+    //    else
+    //        $("#sidebar").scrollTo("+="+Math.abs(diff),500);
+    //});
 
 
 
@@ -72,10 +72,12 @@ var Script = function () {
 
 // custom scrollbar
     $("#sidebar").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '3', cursorborderradius: '10px', background: '#404040', spacebarenabled:false, cursorborder: ''});
-
+    
     $("html").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '6', cursorborderradius: '10px', background: '#404040', spacebarenabled:false,  cursorborder: '', zindex: '1000'});
 
-// widget tools
+    $("html").getNiceScroll().show().resize();
+
+    // widget tools
 
     jQuery('.panel .tools .fa-chevron-down').click(function () {
         var el = jQuery(this).parents(".panel").children(".panel-body");

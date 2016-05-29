@@ -10,12 +10,14 @@
     {
         private ICollection<Question> questions;
         private ICollection<Answer> answers;
+        private ICollection<User> users; 
         private ICollection<Module> modules; 
 
         public Image()
         {
             this.questions = new HashSet<Question>();
             this.answers = new HashSet<Answer>();
+            this.users = new HashSet<User>();
             this.modules = new HashSet<Module>();
         }
 
@@ -31,6 +33,12 @@
         public string AuthorId { get; set; }
 
         public virtual User Author { get; set; }
+
+        public virtual ICollection<User> Users
+        {
+            get { return this.users; }
+            set { this.users = value; }
+        }
 
         public virtual ICollection<Question> Questions
         {

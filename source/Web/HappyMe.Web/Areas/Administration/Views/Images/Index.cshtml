@@ -5,7 +5,7 @@
 
 <h2>Изображения</h2>
 
-@Html.ActionLink("Create new", "Create", "Images")
+@Html.ActionLink("Create new", "Create", "Images", new { @class = "btn btn-primary bottom-buffer" })
 
 @(Html.MvcGrid(
     Model,
@@ -17,12 +17,12 @@
             .Titled("Изображение")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => MvcHtmlString.Create(string.Format(@"<img src=""{0}"" />", model.ImageUrl)));
+            .RenderedAs(model => MvcHtmlString.Create(string.Format(@"<img class=""img-responsive"" width=""150"" src =""{0}"" />", model.ImageUrl)));
         columns.Add(model => model.Id)
             .Titled("Промяна")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => Html.ActionLink("Промяна", nameof(ImagesController.Update), new { id = model.Id }));
+            .RenderedAs(model => Html.ActionLink("Промяна", nameof(ImagesController.Update), new { id = model.Id }, new { @class= "btn btn-primary" }));
         columns.Add(model => model.Id)
             .Titled("Изтриване")
             .Encoded(false)

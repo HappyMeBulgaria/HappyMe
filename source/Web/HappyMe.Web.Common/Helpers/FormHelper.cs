@@ -28,6 +28,7 @@
             var submitInput = new TagBuilder("input");
             submitInput.Attributes.Add("type", "submit");
             submitInput.Attributes.Add("value", "Изтрии");
+            submitInput.Attributes.Add("class", "btn btn-warning");
 
             if (!secondId.IsNullOrWhiteSpace())
             {
