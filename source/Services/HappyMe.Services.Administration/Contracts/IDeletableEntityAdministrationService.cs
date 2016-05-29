@@ -5,7 +5,7 @@
     using HappyMe.Data.Contracts.Models;
 
     public interface IDeletableEntityAdministrationService<TDeletableEntity> : IAdministrationService<TDeletableEntity>
-        where TDeletableEntity : IDeletableEntity
+        where TDeletableEntity : class, IDeletableEntity
     {
         IQueryable<TDeletableEntity> ReadWithDeleted();
 

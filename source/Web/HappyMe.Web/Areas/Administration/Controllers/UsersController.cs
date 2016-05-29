@@ -1,4 +1,6 @@
-﻿namespace HappyMe.Web.Areas.Administration.Controllers
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+
+namespace HappyMe.Web.Areas.Administration.Controllers
 {
     using System.Linq;
     using System.Web.Mvc;
@@ -117,7 +119,7 @@
         {
             if (model != null && this.ModelState.IsValid)
             {
-                var userInRole = this.MappingService.Map<UserInRole>(model);
+                var userInRole = this.MappingService.Map<IdentityUserRole>(model);
                 this.usersInRolesAdministrationService.Create(userInRole);
 
                 this.TempData.AddSuccessMessage("Успешно добавихте потребител в роля");
