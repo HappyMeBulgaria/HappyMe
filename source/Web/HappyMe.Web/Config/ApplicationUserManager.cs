@@ -4,6 +4,7 @@ namespace HappyMe.Web
 
     using HappyMe.Data;
     using HappyMe.Data.Models;
+    using HappyMe.Web.Config;
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;

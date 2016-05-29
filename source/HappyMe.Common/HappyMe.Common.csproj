@@ -55,6 +55,7 @@
     <Compile Include="Constants\GlobalConstants.cs" />
     <Compile Include="Constants\RoleConstants.cs" />
     <Compile Include="Constants\UserValidationConstants.cs" />
+    <Compile Include="MailSender.cs" />
     <Compile Include="Mapping\AutoMapperConfig.cs" />
     <Compile Include="Mapping\IHaveCustomMappings.cs" />
     <Compile Include="Mapping\IMapFrom.cs" />
