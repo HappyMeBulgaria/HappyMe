@@ -36,7 +36,7 @@ namespace HappyMe.Data.Migrations
 
                 foreach (var roleName in roleNames)
                 {
-                    context.Roles.Add(new IdentityRole()
+                    context.Roles.Add(new IdentityRole
                     {
                         Id = Guid.NewGuid().ToString(),
                         Name = roleName
