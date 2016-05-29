@@ -60,9 +60,11 @@
     <Compile Include="Base\DeletableEntityAdministrationService.cs" />
     <Compile Include="Contracts\IAdministrationService.cs" />
     <Compile Include="Contracts\IDeletableEntityAdministrationService.cs" />
+    <Compile Include="Contracts\IImagesAdministrationService.cs" />
     <Compile Include="Contracts\IModulesAdministrationService.cs" />
     <Compile Include="Contracts\IUsersAdministrationService.cs" />
     <Compile Include="Contracts\IUsersInRolesAdministrationService.cs" />
+    <Compile Include="ImagesAdministrationService.cs" />
     <Compile Include="ModulesAdministrationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
