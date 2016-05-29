@@ -4,6 +4,7 @@
   <Import Project="..\..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <ExcludeFilesFromDeployment>bin/roslyn/csi.exe</ExcludeFilesFromDeployment>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>
@@ -675,7 +676,6 @@
     <Content Include="Scripts\vendor\jquery\gritter\images\gritter.png" />
     <Content Include="Scripts\vendor\jquery\gritter\images\ie-spacer.gif" />
     <Content Include="Scripts\vendor\jquery\gritter\js\jquery.gritter.js" />
-    <Content Include="Scripts\vendor\jquery\jquery.scrollTo.min.js" />
     <Content Include="Scripts\vendor\jquery\jquery.nicescroll.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.min.js" />
