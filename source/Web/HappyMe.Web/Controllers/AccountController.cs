@@ -247,7 +247,7 @@
                 // Send an email with this link
                 string code = await this.UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = this.Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: this.Request.Url.Scheme);
-                this.UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>").RunSynchronously();
+                await this.UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
                 return this.RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
