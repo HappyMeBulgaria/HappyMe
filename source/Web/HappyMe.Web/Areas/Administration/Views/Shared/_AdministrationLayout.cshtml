@@ -17,11 +17,11 @@
         <!--logo end-->
         <div class="top-menu">
             <ul class="nav pull-right top-menu">
-                <li class="logout">
+                <li>
                     @using (Html.BeginForm("LogOff", "Account", new { area = string.Empty }, FormMethod.Post, new { id = "logoutForm" }))
                     {
                         @Html.AntiForgeryToken()
-                        <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                        <a href="javascript:document.getElementById('logoutForm').submit()" class="logout btn btn-default">Logout</a>
                     }
                 </li>
             </ul>
