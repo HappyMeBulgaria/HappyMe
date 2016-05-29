@@ -32,7 +32,12 @@ namespace HappyMe.Data.Migrations
         {
             if (!context.Roles.Any())
             {
-                var roleNames = new[] { RoleConstants.Administrator, "Parent", "SuperDuperMagicUser" };
+                var roleNames = new[]
+                {
+                    RoleConstants.Administrator,
+                    RoleConstants.Parent,
+                    RoleConstants.Child
+                };
 
                 foreach (var roleName in roleNames)
                 {
