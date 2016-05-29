@@ -4,6 +4,6 @@
     <img src="@Model.ImageUrl" alt="Picture of @Model.ImageUrl" class="img-responsive img-circle"/>
     <p>@Html.DisplayFor(x => x.UserName)</p>
     @Html.ActionLink("Статистика", "Index", "ChildrenStatistics", new { area = "Administration" }, new { @class = "btn btn-info" })
-    @Html.ActionLink("Влизане", "LoginChild", "Dashboard", new { area = "Administration" }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Влизане", "LoginChild", "Dashboard", new { area = "Administration", username = Model.UserName }, new { @class = "btn btn-success" })
 </div>
 

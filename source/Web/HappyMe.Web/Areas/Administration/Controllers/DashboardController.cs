@@ -37,10 +37,10 @@
             return this.View(indexViewModel);
         }
 
-        public ActionResult LoginChild()
+        public ActionResult LoginChild(string username)
         {
             this.HttpContext.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return this.RedirectToAction("Login", "Account", new { area = string.Empty });
+            return this.RedirectToAction("Login", "Account", new { area = string.Empty, username = username });
         }
     }
 }
