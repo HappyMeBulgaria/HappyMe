@@ -19,7 +19,7 @@ namespace HappyMe.Web.Areas.Administration.Controllers
 
     public class UsersController : MvcGridAdministrationCrudController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
     {
-        private readonly IAdministrationService<Role> roleAdministrationService;
+        private readonly IAdministrationService<IdentityRole> roleAdministrationService;
         private readonly UsersInRolesAdministrationService usersInRolesAdministrationService;
         private readonly UserManager<User> userManager;
 
@@ -27,7 +27,7 @@ namespace HappyMe.Web.Areas.Administration.Controllers
             IUsersDataService userData,
             IUsersAdministrationService userAdministrationService,
             IMappingService mappingService,
-            IAdministrationService<Role> roleAdministrationService,
+            IAdministrationService<IdentityRole> roleAdministrationService,
             UsersInRolesAdministrationService usersInRolesAdministrationService,
             UserManager<User> userManager)
             : base(userData, userAdministrationService, mappingService)
@@ -47,7 +47,7 @@ namespace HappyMe.Web.Areas.Administration.Controllers
         public ActionResult Create(UserCreateInputModel model)
         {
             // TODO: Conform the case if model.IsSamePassword is true
-            var entity = MappingService.Map<User>(model);
+            var entity = this.MappingService.Map<User>(model);
             var userCreateResult = this.userManager.Create(entity, model.Password);
             if (this.ModelState.IsValid)
             {
