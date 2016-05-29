@@ -207,6 +207,7 @@
     <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
     <Compile Include="Areas\Administration\Controllers\ModulesController.cs" />
     <Compile Include="Areas\Administration\Controllers\QuestionsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\UsersAnswersController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersInModulesController.cs" />
     <Compile Include="Areas\Administration\InputModels\Images\ImageCreateInputModel.cs" />
@@ -222,6 +223,7 @@
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Modules\ModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Questions\QuestionGridViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\UsersAnswers\UserAnswerGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\UsersInModules\UserInModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Users\UserGridViewModel.cs" />
     <Compile Include="Config\ApplicationUserManager.cs" />
@@ -329,6 +331,7 @@
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Administration\Views\UsersAnswers\Index.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />
@@ -737,7 +740,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Answers\" />
-    <Folder Include="Areas\Administration\Views\MvcGridAdministrationReadAndDelete\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
   </ItemGroup>
   <ItemGroup>

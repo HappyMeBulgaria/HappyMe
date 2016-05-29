@@ -62,12 +62,14 @@
     <Compile Include="Contracts\IDeletableEntityAdministrationService.cs" />
     <Compile Include="Contracts\IModulesAdministrationService.cs" />
     <Compile Include="Contracts\IUsersAdministrationService.cs" />
+    <Compile Include="Contracts\IUsersAnswersAdministrationService.cs" />
     <Compile Include="Contracts\IUsersInRolesAdministrationService.cs" />
     <Compile Include="ModulesAdministrationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
     <Compile Include="UsersAdministrationService.cs" />
+    <Compile Include="UsersAnswersAdministrationService.cs" />
     <Compile Include="UsersInRolesAdministrationService.cs" />
   </ItemGroup>
   <ItemGroup>
