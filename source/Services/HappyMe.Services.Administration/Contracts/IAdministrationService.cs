@@ -6,7 +6,7 @@
     using HappyMe.Services.Common;
 
     public interface IAdministrationService<TEntity> : IService
-        where TEntity : IEntity
+        where TEntity : class
     {
         IQueryable<TEntity> Read();
 

@@ -7,7 +7,7 @@
     using HappyMe.Services.Administration.Contracts;
 
     public class AdministrationService<TEntity> : IAdministrationService<TEntity>
-        where TEntity : class, IEntity
+        where TEntity : class
     {
         public AdministrationService(IRepository<TEntity> entities)
         {

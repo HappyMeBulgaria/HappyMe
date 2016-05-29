@@ -1,8 +1,11 @@
-﻿namespace HappyMe.Web.Areas.Administration.Controllers
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+
+namespace HappyMe.Web.Areas.Administration.Controllers
 {
     using System.Linq;
     using System.Web.Mvc;
 
+    using HappyMe.Common.Constants;
     using HappyMe.Data.Models;
     using HappyMe.Services.Administration;
     using HappyMe.Services.Administration.Contracts;
@@ -17,7 +20,7 @@
 
     public class UsersController : MvcGridAdministrationCrudController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
     {
-        private readonly IAdministrationService<Role> roleAdministrationService;
+        private readonly IAdministrationService<IdentityRole> roleAdministrationService;
         private readonly UsersInRolesAdministrationService usersInRolesAdministrationService;
         private readonly UserManager<User> userManager;
 
@@ -25,7 +28,7 @@
             IUsersDataService userData,
             IUsersAdministrationService userAdministrationService,
             IMappingService mappingService,
-            IAdministrationService<Role> roleAdministrationService,
+            IAdministrationService<IdentityRole> roleAdministrationService,
             UsersInRolesAdministrationService usersInRolesAdministrationService,
             UserManager<User> userManager)
             : base(userData, userAdministrationService, mappingService)
@@ -45,11 +48,13 @@
         public ActionResult Create(UserCreateInputModel model)
         {
             // TODO: Conform the case if model.IsSamePassword is true
-            var entity = MappingService.Map<User>(model);
+            var entity = this.MappingService.Map<User>(model);
             var userCreateResult = this.userManager.Create(entity, model.Password);
             if (this.ModelState.IsValid)
             {
-                if (userCreateResult.Succeeded)
+                var roleAssigned = this.userManager.AddToRole(entity.Id, RoleConstants.Child);
+
+                if (userCreateResult.Succeeded && roleAssigned.Succeeded)
                 {
                     this.TempData.AddSuccessMessage("Успешно създадохте потребител");
                     return this.RedirectToAction(nameof(this.Index));
@@ -117,7 +122,7 @@
         {
             if (model != null && this.ModelState.IsValid)
             {
-                var userInRole = this.MappingService.Map<UserInRole>(model);
+                var userInRole = this.MappingService.Map<IdentityUserRole>(model);
                 this.usersInRolesAdministrationService.Create(userInRole);
 
                 this.TempData.AddSuccessMessage("Успешно добавихте потребител в роля");
