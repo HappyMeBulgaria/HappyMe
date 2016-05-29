@@ -5,6 +5,7 @@ namespace HappyMe.Web.Areas.Administration.Controllers
     using System.Linq;
     using System.Web.Mvc;
 
+    using HappyMe.Common.Constants;
     using HappyMe.Data.Models;
     using HappyMe.Services.Administration;
     using HappyMe.Services.Administration.Contracts;
@@ -51,7 +52,9 @@ namespace HappyMe.Web.Areas.Administration.Controllers
             var userCreateResult = this.userManager.Create(entity, model.Password);
             if (this.ModelState.IsValid)
             {
-                if (userCreateResult.Succeeded)
+                var roleAssigned = this.userManager.AddToRole(entity.Id, RoleConstants.Child);
+
+                if (userCreateResult.Succeeded && roleAssigned.Succeeded)
                 {
                     this.TempData.AddSuccessMessage("Успешно създадохте потребител");
                     return this.RedirectToAction(nameof(this.Index));
