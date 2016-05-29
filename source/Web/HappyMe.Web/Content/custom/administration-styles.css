@@ -24,13 +24,18 @@ ul.sidebar-menu li a {
     color: #FFF;
 }
 
-ul.top-menu > li > .logout {
+    ul.sidebar-menu li a span {
+        font-size: 14px;
+    }
+
+ul.top-menu > li .logout {
+    font-size: 14px;
     color: #eee;
     border: 1px solid #999 !important;
     background-color: transparent;
 }
 
-    ul.top-menu > li > .logout:hover {
+    ul.top-menu > li .logout:hover {
         color: #f2f2f2 !important;
         background-color: #EA256F !important;
         border: 1px solid #EA256F !important;
@@ -91,5 +96,6 @@ ul.top-menu > li > .logout {
     position: static;
     bottom: 0;
     width: 100%;
+    font-size: 14px;
     background-color: #656565;
 }
