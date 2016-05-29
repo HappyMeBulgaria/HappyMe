@@ -268,6 +268,7 @@
     <Content Include="Content\vendor\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\vendor\guillotine\jquery.guillotine.css" />
     <Content Include="Content\vendor\MvcGrid\mvc-grid.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -315,6 +316,7 @@
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\EnumDropDownList.cshtml" />
     <Content Include="Areas\Administration\Views\UsersInModules\Index.cshtml" />
     <Content Include="Areas\Administration\Views\UsersInModules\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\ImageUpload.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />
@@ -655,6 +657,7 @@
     <Content Include="Scripts\vendor\ckeditor\skins\v2\skin.js" />
     <Content Include="Scripts\vendor\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\vendor\ckeditor\themes\default\theme.js" />
+    <Content Include="Scripts\vendor\guillotine\jquery.guillotine.min.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.min.js" />
     <Content Include="Scripts\specs\test-spec.js" />
@@ -770,7 +773,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>46469</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
