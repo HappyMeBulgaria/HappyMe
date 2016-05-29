@@ -139,7 +139,7 @@ publish/
 *.azurePubxml
 # TODO: Comment the next line if you want to checkin your web deploy settings 
 # but database connection strings (with potential passwords) will be unencrypted
-*.pubxml
+#*.pubxml
 *.publishproj
 
 # NuGet Packages
@@ -238,3 +238,4 @@ _Pvt_Extensions
 #Grunt configs
 .grunt/
 /source/Web/Te4Fest.Web/Web.Release.config
+Web.Release.config
