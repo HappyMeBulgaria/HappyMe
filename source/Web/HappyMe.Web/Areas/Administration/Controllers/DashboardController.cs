@@ -22,8 +22,8 @@
 
         public ActionResult Index()
         {
-            var currentUserChildrenViewModels =
-                this.mappingService.MapCollection<ChildViewModel>(this.UserProfile.Children.AsQueryable());
+            var currentUserChildrenViewModels = this.mappingService.MapCollection<ChildViewModel>(this.UserProfile.Children.AsQueryable())
+                .ToList();
 
             var indexViewModel = new DashboardIndexViewModel { CurrentUserChildren = currentUserChildrenViewModels };
 
