@@ -1,7 +1,19 @@
-﻿
+﻿@model HappyMe.Web.Areas.Administration.ViewModels.Dashboard.DashboardIndexViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = string.Format("Здравей, {0}", this.User.Identity.Name);
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
+<h3>Деца</h3>
+
+<div class="row">
+    @if (this.Model.CurrentUserChildren.Any())
+    {
+        @Html.DisplayFor(x => x.CurrentUserChildren)
+    }
+    else
+    {
+        <p>Нямате добавени потребители.</p>
+    }
+</div>

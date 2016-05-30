@@ -4,6 +4,7 @@
   <Import Project="..\..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <ExcludeFilesFromDeployment>bin/roslyn/csi.exe</ExcludeFilesFromDeployment>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>
@@ -202,10 +203,12 @@
     <Compile Include="Areas\Administration\Controllers\Base\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationCrudController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationReadAndDeleteController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ChildrenStatisticsController.cs" />
     <Compile Include="Areas\Administration\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
     <Compile Include="Areas\Administration\Controllers\ModulesController.cs" />
     <Compile Include="Areas\Administration\Controllers\QuestionsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\UsersAnswersController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersInModulesController.cs" />
     <Compile Include="Areas\Administration\InputModels\Images\ImageCreateInputModel.cs" />
@@ -223,6 +226,7 @@
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Modules\ModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Questions\QuestionGridViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\UsersAnswers\UserAnswerGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\UsersInModules\UserInModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Users\UserGridViewModel.cs" />
     <Compile Include="Config\ApplicationUserManager.cs" />
@@ -269,7 +273,10 @@
     <Content Include="Content\custom\administration-styles.css" />
     <Content Include="Content\fonts\font-awesome\css\font-awesome.css" />
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\Lato\latofonts.css" />
+    <Content Include="Content\fonts\Lato\latostyle.css" />
     <Content Include="Content\images\ui-zac.jpg" />
+    <Content Include="Content\images\user-default-image.jpg" />
     <Content Include="Content\vendor\bootstrap\administration\style-responsive.css" />
     <Content Include="Content\vendor\bootstrap\administration\style.css" />
     <Content Include="Content\vendor\bootstrap\administration\table-responsive.css" />
@@ -332,6 +339,22 @@
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Administration\Views\Shared\DisplayTemplates\ChildViewModel.cshtml" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Black.eot" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Black.ttf" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Black.woff" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Black.woff2" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Light.eot" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Light.ttf" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Light.woff" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Light.woff2" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Regular.eot" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Regular.ttf" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Regular.woff" />
+    <Content Include="Content\fonts\Lato\fonts\Lato-Regular.woff2" />
+    <Content Include="Areas\Administration\Views\UsersAnswers\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\ImageUpload.cshtml" />
+    <Content Include="Areas\Administration\Views\ChildrenStatistics\Index.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />
@@ -680,7 +703,6 @@
     <Content Include="Scripts\vendor\jquery\gritter\images\gritter.png" />
     <Content Include="Scripts\vendor\jquery\gritter\images\ie-spacer.gif" />
     <Content Include="Scripts\vendor\jquery\gritter\js\jquery.gritter.js" />
-    <Content Include="Scripts\vendor\jquery\jquery.scrollTo.min.js" />
     <Content Include="Scripts\vendor\jquery\jquery.nicescroll.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\vendor\MvcGrid\mvc-grid.min.js" />
@@ -743,7 +765,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Answers\" />
-    <Folder Include="Areas\Administration\Views\MvcGridAdministrationReadAndDelete\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,7 @@
 
     public class UserInModuleCreateInputModel : IMapFrom<UserInModule>, IMapTo<UserInModule>
     {
+        // TODO: Get users with autocomplete
         [UIHint("StringDropDownList")]
         public string UserId { get; set; }
         

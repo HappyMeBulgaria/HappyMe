@@ -218,7 +218,7 @@ hr {
 	background-color: #68dff0;
 }
 
-ul.top-menu > li > .logout {
+ul.top-menu > li .logout {
 	color: #f2f2f2;
 	font-size: 12px;
 	border-radius: 4px;

@@ -1,0 +1,24 @@
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Common.Helpers
+@model IEnumerable<HappyMe.Web.Areas.Administration.ViewModels.UsersAnswers.UserAnswerGridViewModel>
+
+@{
+    ViewBag.Title = "Потребителски отговори";
+    const string ControllerName = "UsersAnswersController";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@(Html.MvcGrid(
+    Model,
+    columns =>
+    {
+        columns.Add(model => model.UserName).Titled("№");
+        columns.Add(model => model.AnswerText).Titled("Име");
+        columns.Add(model => model.CreatedOn).Titled("Автор");
+        columns.Add(model => model.AnswerId)
+            .Titled("Изтриване")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.DeleteForm(nameof(UsersAnswersController.Delete), ControllerName, model.UserId, model.AnswerId.ToString()));
+    }))
