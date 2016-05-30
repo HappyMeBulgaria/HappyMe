@@ -33,6 +33,8 @@
 
         public virtual IDbSet<UserAnswer> UsersAnswers { get; set; }
 
+        public virtual IDbSet<Feedback> Feedback { get; set; }
+
         public override IDbSet<IdentityRole> Roles { get; set; }
 
         public static HappyMeDbContext Create()

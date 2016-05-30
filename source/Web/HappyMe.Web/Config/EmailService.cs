@@ -1,15 +1,16 @@
-﻿namespace HappyMe.Web
+﻿namespace HappyMe.Web.Config
 {
     using System.Threading.Tasks;
+
+    using HappyMe.Common;
 
     using Microsoft.AspNet.Identity;
 
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            await MailSender.Instance.SendMailAsync(message.Destination, message.Subject, message.Body);
         }
     }
 }

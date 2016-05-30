@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using HappyMe.Data.Models;
-using HappyMe.Services.Administration.Contracts;
-using HappyMe.Services.Common.Mapping.Contracts;
-using HappyMe.Services.Data.Contracts;
-using HappyMe.Web.Areas.Administration.Controllers.Base;
-using HappyMe.Web.Areas.Administration.InputModels.Questions;
-using HappyMe.Web.Areas.Administration.ViewModels.Questions;
-using HappyMe.Web.Common.Extensions;
-using MoreDotNet.Extentions.Common;
-
-namespace HappyMe.Web.Areas.Administration.Controllers
+﻿namespace HappyMe.Web.Areas.Administration.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using HappyMe.Data.Models;
+    using HappyMe.Services.Administration.Contracts;
+    using HappyMe.Services.Common.Mapping.Contracts;
+    using HappyMe.Services.Data.Contracts;
+    using HappyMe.Web.Areas.Administration.Controllers.Base;
+    using HappyMe.Web.Areas.Administration.InputModels.Questions;
+    using HappyMe.Web.Areas.Administration.ViewModels.Questions;
+    using HappyMe.Web.Common.Extensions;
+    using MoreDotNet.Extentions.Common;
+
     public class QuestionsController : 
         MvcGridAdministrationCrudController<Question, QuestionGridViewModel, QuestionCreateInputModel, QuestionUpdateInputModel>
     {
@@ -51,13 +51,17 @@ namespace HappyMe.Web.Areas.Administration.Controllers
         {
             // setting author
             model.AuthorId = this.UserProfile.Id;
-
-            // setting image
+            
+            // setting image if any
             var imageData = model.ImageData;
-            var target = new MemoryStream();
-            imageData.InputStream.CopyTo(target);
-            var data = target.ToByteArray();
-            model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+
+            if (imageData != null)
+            {
+                var target = new MemoryStream();
+                imageData.InputStream.CopyTo(target);
+                var data = target.ToArray();
+                model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+            }
 
             var entity = this.BaseCreate(model);
             if (entity != null)
@@ -70,12 +74,29 @@ namespace HappyMe.Web.Areas.Administration.Controllers
         }
 
         [HttpGet]
-        public ActionResult Update(int id) => this.View(this.GetEditModelData(id));
+        public ActionResult Update(int id)
+        {
+            // get modules for dropdown
+            this.PopulateViewBag();
+
+            return this.View(this.GetEditModelData(id));
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Update(QuestionUpdateInputModel model)
         {
+            // updating image if any
+            var imageData = model.ImageData;
+
+            if (imageData != null)
+            {
+                var target = new MemoryStream();
+                imageData.InputStream.CopyTo(target);
+                var data = target.ToArray();
+                model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+            }
+
             var entity = this.BaseUpdate(model, model.Id);
             if (entity != null)
             {
