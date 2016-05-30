@@ -1,4 +1,5 @@
-﻿@model HappyMe.Web.Areas.Administration.InputModels.Questions.QuestionCreateInputModel
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@model HappyMe.Web.Areas.Administration.InputModels.Questions.QuestionCreateInputModel
 
 @{
     ViewBag.Title = "Добавяне на нов въпрос";
@@ -6,13 +7,17 @@
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm(FormMethod.Post))
+@using (Html.BeginForm(
+    nameof(QuestionsController.Create), 
+    "Questions", 
+    FormMethod.Post, 
+    new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     @Html.EditorForModel()
 
-    
+    @Html.EditorFor(m => m.ImageData)
 
     <input type="submit" value="Създай" />
 }

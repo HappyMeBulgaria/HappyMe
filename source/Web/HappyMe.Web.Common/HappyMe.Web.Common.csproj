@@ -99,6 +99,7 @@
     <Compile Include="Extensions\HttpResponseBaseExtensions.cs" />
     <Compile Include="Extensions\PrincipalExtensions.cs" />
     <Compile Include="Extensions\TempDataExtentions.cs" />
+    <Compile Include="Helpers\ActionLinkHelper.cs" />
     <Compile Include="Helpers\FormHelper.cs" />
     <Compile Include="Helpers\GridHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

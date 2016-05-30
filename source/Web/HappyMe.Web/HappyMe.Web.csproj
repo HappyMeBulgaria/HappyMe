@@ -763,6 +763,7 @@
     <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DropDownList.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ImageUpload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

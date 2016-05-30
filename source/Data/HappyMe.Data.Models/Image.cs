@@ -29,6 +29,7 @@
 
         public byte[] ImageData { get; set; }
 
+        // TODO: set to required
         ////[Required]
         public string AuthorId { get; set; }
 

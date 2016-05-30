@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using HappyMe.Common.Mapping;
-using HappyMe.Common.Models;
-using HappyMe.Data.Contracts;
-using HappyMe.Data.Models;
-
-namespace HappyMe.Web.Areas.Administration.ViewModels.Questions
+﻿namespace HappyMe.Web.Areas.Administration.ViewModels.Questions
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using HappyMe.Common.Mapping;
+    using HappyMe.Common.Models;
+    using HappyMe.Data.Contracts;
+    using HappyMe.Data.Models;
+
     public class QuestionGridViewModel : IMapFrom<Question>, IMapTo<Question>, IIdentifiable<int>
     {
         [HiddenInput(DisplayValue = false)]
@@ -27,6 +27,10 @@ namespace HappyMe.Web.Areas.Administration.ViewModels.Questions
 
         [HiddenInput(DisplayValue = false)]
         public int? ImageId { get; set; }
+
+        public virtual Image Image { get; set; }
+
+        public string ImageUrl => this.Image != null ? string.Format("data:image/jpeg;base64,{0}", Convert.ToBase64String(this.Image.ImageData)) : string.Empty;
 
         [HiddenInput(DisplayValue = false)]
         public string AuthorId { get; set; }

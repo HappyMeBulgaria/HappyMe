@@ -20,7 +20,12 @@
         columns.Add(model => model.Text).Titled("Текст на въпроса");
         columns.Add(model => model.Type).Titled("Тип");
         columns.Add(model => model.ModuleId).Titled("Присъства в модул");
-        columns.Add(model => model.ImageId).Titled("Изображение");
+        //columns.Add(model => model.ImageId).Titled("Изображение");
+        columns.Add(model => model.Id)
+            .Titled("Изображение")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => MvcHtmlString.Create(string.Format(@"<img class=""img-responsive"" width=""150"" src =""{0}"" />", model.ImageUrl)));
         columns.Add(model => model.AuthorId).Titled("Автор");
         columns.Add(model => model.Id)
             .Titled("Промяна")
@@ -34,9 +39,9 @@
             .RenderedAs(model => Html.DeleteForm(nameof(QuestionsController.Delete), ControllerName, model.Id.ToString()));
     }))
 
-@*TODO: Move to _AdministrationLayout, if has .mvc-grid*@
 @section scripts {
     <script>
-        $('.mvc-grid').mvcgrid()
+        // TODO: Move to _AdministrationLayout, if has .mvc-grid
+        $('.mvc-grid').mvcgrid();
     </script>
 }
