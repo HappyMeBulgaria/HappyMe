@@ -1,11 +1,12 @@
-﻿@using HappyMe.Web.Controllers
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Common.Helpers
+@using HappyMe.Web.Controllers
 
 @Styles.Render("~/Content/bootstrap")
+@Styles.Render("~/Content/lato-font")
 @Styles.Render("~/Content/font-awesome")
 @Styles.Render("~/Content/jquery-gritter")
 @Styles.Render("~/Content/administration-css")
-<link href="~/Content/fonts/Lato/latofonts.css" rel="stylesheet" type="text/css">
-<link href="~/Content/fonts/Lato/latostyle.css" rel="stylesheet" type="text/css">
 
 <div class="administration-container">
     <header class="header black-bg">
@@ -42,38 +43,23 @@
                 <h5 class="centered">Marcel Newman</h5>
 
                 <li class="mt">
-                    <a class="active" href="/administration/dashboard/index">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Управление</span>
-                    </a>
+                    @(Html.ActiveActionLinkHelper("Управление", nameof(DashboardController.Index), "Dashboard", new RouteValueDictionary { { "class", "dashboard" } }))
                 </li>
 
                 <li class="mt">
-                    <a href="/administration/modules/index">
-                        <i class="fa fa-puzzle-piece"></i>
-                        <span>МоДюли</span>
-                    </a>
+                    @(Html.ActiveActionLinkHelper("Модули", nameof(ModulesController.Index), "Modules", new RouteValueDictionary { { "class", "modules" } }))
                 </li>
 
                 <li class="mt">
-                    <a href="/administration/images/index">
-                        <i class="fa fa-camera"></i>
-                        <span>Изображения</span>
-                    </a>
+                    @(Html.ActiveActionLinkHelper("Изображения", nameof(ImagesController.Index), "Images", new RouteValueDictionary { { "class", "images" } }))
                 </li>
 
                 <li class="mt">
-                    <a href="/administration/questions/index">
-                        <i class="fa fa-question-circle"></i>
-                        <span>Въпроси</span>
-                    </a>
+                    @(Html.ActiveActionLinkHelper("Въпроси", nameof(QuestionsController.Index), "Questions", new RouteValueDictionary { { "class", "questions" } }))
                 </li>
 
                 <li class="mt">
-                    <a href="/administration/answers/index">
-                        <i class="fa fa-comments"></i>
-                        <span>Отговори</span>
-                    </a>
+                    @(Html.ActiveActionLinkHelper("Отговори", nameof(AnswersController.Index), "Answers", new RouteValueDictionary { { "class", "answers" } }))
                 </li>
             </ul>
             <!-- sidebar menu end-->
@@ -113,7 +99,3 @@
 
 @Scripts.Render("~/bundles/ckeditor")
 @RenderSection("scripts", required: false)
-
-<script type="application/javascript">
-
-</script>

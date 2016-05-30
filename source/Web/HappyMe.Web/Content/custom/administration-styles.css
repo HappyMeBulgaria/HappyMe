@@ -22,10 +22,33 @@ body {
 
 ul.sidebar-menu li a {
     color: #FFF;
+    font-size: 14px;
 }
 
-    ul.sidebar-menu li a span {
-        font-size: 14px;
+    ul.sidebar-menu li a:before {
+        font-family: 'FontAwesome';
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    ul.sidebar-menu li a.dashboard:before {
+        content: '\f0e4';
+    }
+
+    ul.sidebar-menu li a.modules:before {
+        content: '\f12e';
+    }
+
+    ul.sidebar-menu li a.images:before {
+        content: '\f030';
+    }
+
+    ul.sidebar-menu li a.questions:before {
+        content: '\f059';
+    }
+
+    ul.sidebar-menu li a.answers:before {
+        content: '\f086';
     }
 
 ul.top-menu > li .logout {
@@ -93,9 +116,10 @@ ul.top-menu > li .logout {
 }
 
 .site-footer {
-    position: static;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    padding: 5px 0;
     font-size: 14px;
     background-color: #656565;
 }
