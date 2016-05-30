@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using HappyMe.Common.Mapping;
-using HappyMe.Common.Models;
-using HappyMe.Data.Contracts;
-using HappyMe.Data.Models;
-
-namespace HappyMe.Web.Areas.Administration.ViewModels.Questions
+﻿namespace HappyMe.Web.Areas.Administration.ViewModels.Questions
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using HappyMe.Common.Mapping;
+    using HappyMe.Common.Models;
+    using HappyMe.Data.Contracts;
+    using HappyMe.Data.Models;
+
     public class QuestionGridViewModel : IMapFrom<Question>, IMapTo<Question>, IIdentifiable<int>
     {
         [HiddenInput(DisplayValue = false)]

@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using AutoMapper;
-using HappyMe.Common.Mapping;
-using HappyMe.Common.Models;
-using HappyMe.Data.Models;
-using HappyMe.Web.Areas.Administration.InputModels.Images;
-using MoreDotNet.Extentions.Common;
-
-namespace HappyMe.Web.Areas.Administration.InputModels.Questions
+﻿namespace HappyMe.Web.Areas.Administration.InputModels.Questions
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using AutoMapper;
+    using HappyMe.Common.Mapping;
+    using HappyMe.Common.Models;
+    using HappyMe.Data.Models;
+    using HappyMe.Web.Areas.Administration.InputModels.Images;
+    using MoreDotNet.Extentions.Common;
+
     public class QuestionCreateInputModel : IMapTo<Question>, IMapFrom<Question>
     {
         [HiddenInput(DisplayValue = false)]
@@ -31,7 +31,6 @@ namespace HappyMe.Web.Areas.Administration.InputModels.Questions
         [Display(Name = "Модул")]
         public int ModuleId { get; set; }
 
-        // TODO: uncomment when ImageUpload.cshtml is ready
         [HiddenInput(DisplayValue = false)]
         public int? ImageId { get; set; }
 
