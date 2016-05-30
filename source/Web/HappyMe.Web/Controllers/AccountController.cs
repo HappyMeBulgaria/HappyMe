@@ -32,7 +32,7 @@
         }
 
         public AccountController(
-            ApplicationUserManager userManager, 
+            ApplicationUserManager userManager,
             ApplicationSignInManager signInManager)
         {
             this.UserManager = userManager;
@@ -75,10 +75,12 @@
 
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login(string returnUrl, string username)
         {
             this.ViewBag.ReturnUrl = returnUrl;
-            return this.View();
+
+            var viewModel = new LoginViewModel { Email = username };
+            return this.View(viewModel);
         }
 
         // POST: /Account/Login
@@ -97,9 +99,9 @@
             var result =
                 await
                 this.SignInManager.PasswordSignInAsync(
-                    model.Email, 
-                    model.Password, 
-                    model.RememberMe, 
+                    model.Email,
+                    model.Password,
+                    model.RememberMe,
                     shouldLockout: false);
             switch (result)
             {
@@ -109,7 +111,7 @@
                     return this.View("Lockout");
                 case SignInStatus.RequiresVerification:
                     return this.RedirectToAction(
-                        "SendCode", 
+                        "SendCode",
                         new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
@@ -151,9 +153,9 @@
             var result =
                 await
                 this.SignInManager.TwoFactorSignInAsync(
-                    model.Provider, 
-                    model.Code, 
-                    isPersistent: model.RememberMe, 
+                    model.Provider,
+                    model.Code,
+                    isPersistent: model.RememberMe,
                     rememberBrowser: model.RememberBrowser);
             switch (result)
             {
@@ -193,9 +195,9 @@
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    string code = await this.UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = this.Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await this.UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     return this.RedirectToAction("Index", "Home");
                 }
 
@@ -243,10 +245,10 @@
 
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string code = await this.UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = this.Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: this.Request.Url.Scheme);
+                await this.UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                return this.RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form
@@ -310,7 +312,7 @@
         {
             // Request a redirect to the external login provider
             return new ChallengeResult(
-                provider, 
+                provider,
                 this.Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
         }
 
@@ -350,7 +352,7 @@
             }
 
             return this.RedirectToAction(
-                "VerifyCode", 
+                "VerifyCode",
                 new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
@@ -381,7 +383,7 @@
                     this.ViewBag.ReturnUrl = returnUrl;
                     this.ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
                     return this.View(
-                        "ExternalLoginConfirmation", 
+                        "ExternalLoginConfirmation",
                         new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
         }
@@ -391,7 +393,7 @@
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ExternalLoginConfirmation(
-            ExternalLoginConfirmationViewModel model, 
+            ExternalLoginConfirmationViewModel model,
             string returnUrl)
         {
             if (this.User.Identity.IsAuthenticated)

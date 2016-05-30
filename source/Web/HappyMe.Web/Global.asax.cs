@@ -23,6 +23,8 @@
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             AutoMapperConfig.RegisterMappings(Assembly.GetExecutingAssembly());
+
+            MvcHandler.DisableMvcResponseHeader = true;
         }
     }
 }

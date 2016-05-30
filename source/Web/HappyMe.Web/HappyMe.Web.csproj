@@ -203,6 +203,7 @@
     <Compile Include="Areas\Administration\Controllers\Base\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationCrudController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationReadAndDeleteController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ChildrenStatisticsController.cs" />
     <Compile Include="Areas\Administration\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
     <Compile Include="Areas\Administration\Controllers\ModulesController.cs" />
@@ -275,6 +276,7 @@
     <Content Include="Content\fonts\Lato\latofonts.css" />
     <Content Include="Content\fonts\Lato\latostyle.css" />
     <Content Include="Content\images\ui-zac.jpg" />
+    <Content Include="Content\images\user-default-image.jpg" />
     <Content Include="Content\vendor\bootstrap\administration\style-responsive.css" />
     <Content Include="Content\vendor\bootstrap\administration\style.css" />
     <Content Include="Content\vendor\bootstrap\administration\table-responsive.css" />
@@ -337,6 +339,7 @@
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Administration\Views\Shared\DisplayTemplates\ChildViewModel.cshtml" />
     <Content Include="Content\fonts\Lato\fonts\Lato-Black.eot" />
     <Content Include="Content\fonts\Lato\fonts\Lato-Black.ttf" />
     <Content Include="Content\fonts\Lato\fonts\Lato-Black.woff" />
@@ -351,6 +354,7 @@
     <Content Include="Content\fonts\Lato\fonts\Lato-Regular.woff2" />
     <Content Include="Areas\Administration\Views\UsersAnswers\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\ImageUpload.cshtml" />
+    <Content Include="Areas\Administration\Views\ChildrenStatistics\Index.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />

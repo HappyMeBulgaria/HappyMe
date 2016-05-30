@@ -5,7 +5,8 @@
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Controllers.Base;
 
-    // TODO: Add Authorization filter
+    // TODO: Add Administrator Authorization filter
+    [Authorize]
     public class AdministrationController : BaseAuthorizationController
     {
         public AdministrationController(IUsersDataService userData) 
