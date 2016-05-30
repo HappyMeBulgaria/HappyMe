@@ -1,6 +1,5 @@
 ﻿@using HappyMe.Web.Areas.Administration.Controllers
 @using HappyMe.Web.Common.Helpers
-@using HappyMe.Web.Controllers
 
 @Styles.Render("~/Content/bootstrap")
 
@@ -44,23 +43,23 @@
                 <h5 class="centered">Marcel Newman</h5>
 
                 <li class="mt">
-                    @(Html.ActiveActionLinkHelper("Управление", nameof(DashboardController.Index), "Dashboard", new RouteValueDictionary { { "class", "dashboard" } }))
+                    @(Html.ActiveActionLinkHelper("Управление", nameof(DashboardController.Index), "Dashboard", new RouteValueDictionary { { "area", "Administration" } },  new RouteValueDictionary { { "class", "dashboard" } }))
                 </li>
 
                 <li class="mt">
-                    @(Html.ActiveActionLinkHelper("Модули", nameof(ModulesController.Index), "Modules", new RouteValueDictionary { { "class", "modules" } }))
+                    @(Html.ActiveActionLinkHelper("Модули", nameof(ModulesController.Index), "Modules", new RouteValueDictionary { {"area", "Administration" } } , new RouteValueDictionary { { "class", "modules" } }))
                 </li>
 
                 <li class="mt">
-                    @(Html.ActiveActionLinkHelper("Изображения", nameof(ImagesController.Index), "Images", new RouteValueDictionary { { "class", "images" } }))
+                    @(Html.ActiveActionLinkHelper("Изображения", nameof(ImagesController.Index), "Images", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "images" } }))
                 </li>
 
                 <li class="mt">
-                    @(Html.ActiveActionLinkHelper("Въпроси", nameof(QuestionsController.Index), "Questions", new RouteValueDictionary { { "class", "questions" } }))
+                    @(Html.ActiveActionLinkHelper("Въпроси", nameof(QuestionsController.Index), "Questions", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "questions" } }))
                 </li>
 
                 <li class="mt">
-                    @(Html.ActiveActionLinkHelper("Отговори", nameof(AnswersController.Index), "Answers", new RouteValueDictionary { { "class", "answers" } }))
+                    @(Html.ActiveActionLinkHelper("Отговори", nameof(AnswersController.Index), "Answers", new RouteValueDictionary { { "area", "Administration" } },  new RouteValueDictionary { { "class", "answers" } }))
                 </li>
             </ul>
             <!-- sidebar menu end-->

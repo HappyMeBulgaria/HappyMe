@@ -8,7 +8,7 @@
 
     public static class ActionLinkHelper
     {
-        public static MvcHtmlString ActiveActionLinkHelper(this HtmlHelper helper, string linkText, string actionName, string controllerName, RouteValueDictionary htmlAttributes)
+        public static MvcHtmlString ActiveActionLinkHelper(this HtmlHelper helper, string linkText, string actionName, string controllerName, RouteValueDictionary routeValues, RouteValueDictionary htmlAttributes)
         {
             var currentControllerName = helper.ViewContext.Controller.GetType().Name;
             
@@ -17,7 +17,7 @@
                 htmlAttributes["class"] += " active";
             }
 
-            return helper.ActionLink(linkText, actionName, controllerName, new RouteValueDictionary(), htmlAttributes);
+            return helper.ActionLink(linkText, actionName, controllerName, routeValues, htmlAttributes);
         }
     }
 }
