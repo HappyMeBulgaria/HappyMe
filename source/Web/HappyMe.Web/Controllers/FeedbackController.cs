@@ -7,12 +7,12 @@
 
     public class FeedbackController : BaseController
     {
-        private readonly IFeedbackDataService feedbackDataService;
+        ////private readonly IFeedbackDataService feedbackDataService;
 
-        public FeedbackController(IFeedbackDataService feedbackDataService)
-        {
-            this.feedbackDataService = feedbackDataService;
-        }
+        ////public FeedbackController(IFeedbackDataService feedbackDataService)
+        ////{
+        ////    this.feedbackDataService = feedbackDataService;
+        ////}
 
         [HttpGet]
         public ActionResult Index()
