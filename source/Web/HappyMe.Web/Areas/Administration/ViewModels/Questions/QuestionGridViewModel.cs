@@ -28,6 +28,10 @@ namespace HappyMe.Web.Areas.Administration.ViewModels.Questions
         [HiddenInput(DisplayValue = false)]
         public int? ImageId { get; set; }
 
+        public virtual Image Image { get; set; }
+
+        public string ImageUrl => this.Image != null ? string.Format("data:image/jpeg;base64,{0}", Convert.ToBase64String(this.Image.ImageData)) : string.Empty;
+
         [HiddenInput(DisplayValue = false)]
         public string AuthorId { get; set; }
     }

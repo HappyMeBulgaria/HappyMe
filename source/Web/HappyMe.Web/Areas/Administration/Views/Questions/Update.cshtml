@@ -1,17 +1,23 @@
-﻿@{
-    Layout = null;
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@model HappyMe.Web.Areas.Administration.InputModels.Questions.QuestionUpdateInputModel
+
+@{
+    ViewBag.Title = "Редактиране на въпрос";
 }
 
-<!DOCTYPE html>
+<h2>@ViewBag.Title</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>
+@using (Html.BeginForm(
+                nameof(QuestionsController.Update),
+                "Questions",
+                FormMethod.Post,
+                new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    @Html.EditorFor(m => m.ImageData)
+
+    <input type="submit" value="Редактирай" />
+}

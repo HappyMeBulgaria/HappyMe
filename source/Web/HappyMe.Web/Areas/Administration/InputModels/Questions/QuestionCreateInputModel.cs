@@ -31,14 +31,12 @@ namespace HappyMe.Web.Areas.Administration.InputModels.Questions
         [Display(Name = "Модул")]
         public int ModuleId { get; set; }
 
-        public int ImageId { get; set; }
-        
+        // TODO: uncomment when ImageUpload.cshtml is ready
+        [HiddenInput(DisplayValue = false)]
+        public int? ImageId { get; set; }
+
         [UIHint("ImageUpload")]
         [Display(Name = "Изображение")]
         public HttpPostedFileBase ImageData { get; set; }
-
-        // add image -> kendo upload image
-
-        // answers -> optional ?? from dropdown
     }
 }

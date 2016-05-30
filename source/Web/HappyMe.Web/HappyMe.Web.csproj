@@ -332,7 +332,6 @@
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\ImageUpload.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />
@@ -739,6 +738,7 @@
     <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DropDownList.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ImageUpload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

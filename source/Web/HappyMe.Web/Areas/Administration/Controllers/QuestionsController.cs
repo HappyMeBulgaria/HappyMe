@@ -51,13 +51,17 @@ namespace HappyMe.Web.Areas.Administration.Controllers
         {
             // setting author
             model.AuthorId = this.UserProfile.Id;
-
-            // setting image
+            
+            // setting image if any
             var imageData = model.ImageData;
-            var target = new MemoryStream();
-            imageData.InputStream.CopyTo(target);
-            var data = target.ToByteArray();
-            model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+
+            if (imageData != null)
+            {
+                var target = new MemoryStream();
+                imageData.InputStream.CopyTo(target);
+                var data = target.ToArray();
+                model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+            }
 
             var entity = this.BaseCreate(model);
             if (entity != null)
@@ -70,12 +74,29 @@ namespace HappyMe.Web.Areas.Administration.Controllers
         }
 
         [HttpGet]
-        public ActionResult Update(int id) => this.View(this.GetEditModelData(id));
+        public ActionResult Update(int id)
+        {
+            // get modules for dropdown
+            this.PopulateViewBag();
+
+            return this.View(this.GetEditModelData(id));
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Update(QuestionUpdateInputModel model)
         {
+            // updating image if any
+            var imageData = model.ImageData;
+
+            if (imageData != null)
+            {
+                var target = new MemoryStream();
+                imageData.InputStream.CopyTo(target);
+                var data = target.ToArray();
+                model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+            }
+
             var entity = this.BaseUpdate(model, model.Id);
             if (entity != null)
             {
