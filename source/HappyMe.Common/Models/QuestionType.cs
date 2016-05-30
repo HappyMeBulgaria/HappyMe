@@ -11,6 +11,9 @@
         OneAnswerQuestion = 2,
 
         [Description("Въпрос с цвят")]
-        ColorQuestion = 3
+        ColorQuestion = 3,
+
+        [Description("Въпрос с цвят")]
+        AlphabetQuestion = 4,
     }
 }

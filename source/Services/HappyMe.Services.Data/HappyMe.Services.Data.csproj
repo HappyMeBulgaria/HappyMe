@@ -63,10 +63,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IModulesDataService.cs" />
+    <Compile Include="Contracts\IQuestionsDataService.cs" />
     <Compile Include="Contracts\IUsersDataService.cs" />
+    <Compile Include="ModulesDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
+    <Compile Include="QuestionsDataService.cs" />
     <Compile Include="UsersDataService.cs" />
   </ItemGroup>
   <ItemGroup>
