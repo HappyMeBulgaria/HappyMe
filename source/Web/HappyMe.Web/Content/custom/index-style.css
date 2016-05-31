@@ -1,21 +1,101 @@
-
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,900);
-
-*{
-	margin: 0px;
-	padding: 0px;
+* {
+    margin: 0em;
+    padding: 0em;
 }
 
-.clearfix{
-    clear:both;
+.clearfix {
+    clear: both;
 }
 
-.wrapper{
-	margin: 0 auto;
+.wrapper {
+    margin: 0 auto;
 }
 
-nav{
-    position:fixed;
-	width: 100%;
-	height: 50px;
+nav {
+    position: fixed;
+    width: 100%;
+    height: 3.125em;
+}
+
+header {}
+
+main {}
+
+footer {}
+
+.nav-logo {
+    width: 100%;
+    height: 100%;
+    max-width: 10.25em;
+    max-height: 5.25em;
+    margin-left: 3.25em;
+    margin-top: 0.6em;
+    position: absolute;
+    float: left;
+}
+
+#button-menu {
+    font: 1.375em Lato;
+    font-weight: 900;
+    line-height: 0.938em;
+    color: #565656;
+    float: right;
+    margin-right: 3.25em;
+    padding-top: 1.250em;
+}
+
+.search {
+    width: 150px;
+    padding-top: 0;
+}
+
+.searchRounded {
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: none;
+    height: 25px;
+}
+
+::-webkit-input-placeholder {
+    color: gray;
+    font: 14px Lato;
+    font-weight: 200;
+    padding-left: 10px;
+    position: relative;
+}
+
+.nav-content {
+    list-style-type: none;
+    float: right;
+    margin: 0em;
+    padding: 0em;
+    top: 0em;
+    width: 100%;
+    overflow: hidden;
+    height: 3.125em;
+    display: inline-block;
+    margin-right: 1.25em;
+}
+
+#nav-hidden {
+    display: none;
+}
+
+.nav-content-item {
+    list-style-type: none;
+    display: inline-block;
+    padding-top: 1.250em;
+}
+
+.nav-content-item a {
+    font: 1em Lato;
+    font-weight: 900;
+    line-height: 0.938em;
+    color: #565656;
+    margin: 0 25px;
+    position: relative;
+    display: inline-block;
+    float: right;
 }

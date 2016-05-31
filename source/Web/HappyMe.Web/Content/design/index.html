@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../custom/index-style.css">
     <link rel="stylesheet" href="../custom/reset-css.css">
+    <link rel="stylesheet" href="../custom/hover-animation.css">
 </head>
 
 <body>
@@ -19,26 +20,26 @@
 
             <div class="clearfix"></div>
 
-            <p id="menu" class="hvr-overline-from-center" onClick="hideElement(); showElement();">меню</p>
+            <p id="button-menu" class="hvr-overline-from-center" onClick="hideElement(); showElement();">меню</p>
 
-            <ul class="nav-hidden">
-                <li class="nav-content-hidden">
-                    <form autocomplete="on">
+            <ul id="nav-hidden" class="nav-content">
+                <li class="nav-content-item">
+                    <form class="Search" autocomplete="on">
                         <span>
 							<input type="text" class="searchRounded" placeholder="Search">
 						</span>
                     </form>
                 </li>
 
-                <li><a href="#homepage">начало</a></li>
-                <li class="nav-content-hidden"><a href="#mission">нашата мисия</a></li>
-                <li class="nav-content-hidden"><a href="#feedback">родители споделят</a></li>
-                <li class="nav-content-hidden"><a href="#functions">функции</a></li>
-                <li class="nav-content-hidden"><a href="#modules">модули</a></li>
-                <li class="nav-content-hidden"><a href="#tutorial">как да започнем</a></li>
-                <li class="nav-content-hidden"><a href="#why-happy">защо happy me?</a></li>
-                <li class="nav-content-hidden"><a href="#team">екип</a></li>
-                <li class="nav-content-hidden"><a href="#contacts">контакти</a></li>
+                <li class="nav-content-item"><a href="#homepage">начало</a></li>
+                <li class="nav-content-item"><a href="#mission">нашата мисия</a></li>
+                <li class="nav-content-item"><a href="#feedback">родители споделят</a></li>
+                <li class="nav-content-item"><a href="#functions">функции</a></li>
+                <li class="nav-content-item"><a href="#modules">модули</a></li>
+                <li class="nav-content-item"><a href="#tutorial">как да започнем</a></li>
+                <li class="nav-content-item"><a href="#why-happy">защо happy me?</a></li>
+                <li class="nav-content-item"><a href="#team">екип</a></li>
+                <li class="nav-content-item"><a href="#contacts">контакти</a></li>
 
             </ul>
 
@@ -239,7 +240,7 @@
 
         <footer>Happy Me &copy; All Rights Reserved 2016</footer>
     </div>
-    <script type="text/javascript" src="/Scripts/custom/index-script.js">
+    <script type="text/javascript" src="../../Scripts/custom/index-script.js">
     </script>
 </body>
 
