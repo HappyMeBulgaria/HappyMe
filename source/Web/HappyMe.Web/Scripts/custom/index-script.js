@@ -21,6 +21,3 @@ $(function () {
     });
 });
 
-$("play-game").hover(function () {
-    $(this).toggleClass("hvr-grow");
-});

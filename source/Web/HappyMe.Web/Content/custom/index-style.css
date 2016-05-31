@@ -1,3 +1,7 @@
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+} 
 
 @font-face {
     src: url('../fonts/Lato/fonts/Lato-Light.ttf');
