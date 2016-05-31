@@ -1,4 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,900);
+@font-face {
+    src: url('../fonts/Blogger Sans/Blogger_Sans.otf');
+    font-family: Blogger Sans;
+}
+
 * {
     margin: 0em;
     padding: 0em;
@@ -36,7 +41,7 @@ footer {}
 }
 
 #button-menu {
-    font: 1.375em Lato;
+    font: 1.375em Blogger Sans;
     font-weight: 900;
     line-height: 0.938em;
     color: #565656;
@@ -67,12 +72,12 @@ footer {}
 }
 
 .nav-content {
+    width: 80%;
     list-style-type: none;
     float: right;
     margin: 0em;
     padding: 0em;
     top: 0em;
-    width: 100%;
     overflow: hidden;
     height: 3.125em;
     display: inline-block;
@@ -90,12 +95,13 @@ footer {}
 }
 
 .nav-content-item a {
-    font: 1em Lato;
+    text-decoration: none;
+    font: 1.255em Blogger Sans;
     font-weight: 900;
     line-height: 0.938em;
     color: #565656;
-    margin: 0 25px;
+    margin: 0 10px;
+    float: right;
     position: relative;
     display: inline-block;
-    float: right;
 }
