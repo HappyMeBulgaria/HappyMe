@@ -38,6 +38,7 @@ nav {
     height: 3.125em;
     background: #565656;
     color: white;
+    z-index: 10;
 }
 
 header {
@@ -140,4 +141,8 @@ footer {}
     background: #eb5270;
     font: 2.225em Lato Black;
     margin: 2.225em 0em 0em 3.225em;
+}
+
+.play-game:hover{
+    background: #565656;
 }
