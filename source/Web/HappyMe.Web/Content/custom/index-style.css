@@ -1,4 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,900);
+
+@font-face {
+    src: url('../fonts/Lato/fonts/Lato-Light.ttf');
+    font-family: Lato Light;
+}
+
+@font-face {
+    src: url('../fonts/Lato/fonts/Lato-Regular.ttf');
+    font-family: Lato;
+}
+
+@font-face {
+    src: url('../fonts/Lato/fonts/Lato-Black.ttf');
+    font-family: Lato Black;
+}
+
 @font-face {
     src: url('../fonts/Blogger Sans/Blogger_Sans-Light.otf');
     font-family: Blogger Sans Light;
@@ -25,7 +40,14 @@ nav {
     color: white;
 }
 
-header {}
+header {
+    background: url("../images/homepage-background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 739px;
+}
 
 main {}
 
@@ -89,8 +111,33 @@ footer {}
     color: #26cfd1;
 }
 
+.content-under {
+    position: relative;
+}
+
+.content-above {
+    position: absolute;
+    right: 0;
+    top: 5.5em;
+}
+
+#homepage{
+    color: white;
+}
+
 .homepage-slogan {
-    font: 1.5em Lato;
-    font-weight: 900;
-    padding-top: 200px;
+    width: 45%;
+    font: 3em Lato Light;
+    text-align: left;
+    padding: 5.125em 0em 0em 1.925em;
+}
+
+.play-game{
+    width: 9.225em;
+    height: 2.5em;
+    border:none;
+    border-radius: 0.938em;
+    background: #eb5270;
+    font: 2.225em Lato Black;
+    margin: 2.225em 0em 0em 3.225em;
 }
