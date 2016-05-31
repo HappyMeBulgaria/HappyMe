@@ -56,7 +56,10 @@ header {
     height: 739px;
 }
 
-main {}
+main {
+    font: 0.938em Lato-Light;
+    color: #565656;
+}
 
 footer {}
 
@@ -167,6 +170,24 @@ footer {}
     margin: 0 auto;
 }
 
-.mission-list {
-    
+.mission-list{
+    display: flex; 
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.mission-list li{
+    display: inline-block;
+    width: 40%;
+    margin: 2em 3em;
+}
+
+.mission-item{
+    display: inline-block;
+}
+
+.mission-icon{
+    color: #eb5270;
+    margin: 0 0 0.325em 0;
 }
