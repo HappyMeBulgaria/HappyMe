@@ -1,7 +1,9 @@
-.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-} 
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
 
 @font-face {
     src: url('../fonts/Lato/fonts/Lato-Light.ttf');
@@ -126,7 +128,7 @@ footer {}
     top: 5.5em;
 }
 
-#homepage{
+#homepage {
     color: white;
 }
 
@@ -137,16 +139,32 @@ footer {}
     padding: 5.125em 0em 0em 1.925em;
 }
 
-.play-game{
+.play-game {
     width: 9.225em;
     height: 2.5em;
-    border:none;
+    border: none;
     border-radius: 0.938em;
     background: #eb5270;
     font: 2.225em Lato Black;
     margin: 2.225em 0em 0em 3.225em;
 }
 
-.play-game:hover{
+.play-game:hover {
     background: #565656;
 }
+
+.section-title {
+    text-transform: uppercase;
+    font: 1.225em Lato Black;
+    color: #ff8a5b;
+    text-align: center;
+    padding: 1.625em 0 0.625em 0;
+}
+
+.section-title-underline{
+    width:4.688em;
+    border-bottom: 0.225em solid #25ced1;
+    margin: 0 auto;
+}
+
+.mission-list {}
