@@ -1,0 +1,21 @@
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,900);
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.clearfix{
+    clear:both;
+}
+
+.wrapper{
+	margin: 0 auto;
+}
+
+nav{
+    position:fixed;
+	width: 100%;
+	height: 50px;
+}
