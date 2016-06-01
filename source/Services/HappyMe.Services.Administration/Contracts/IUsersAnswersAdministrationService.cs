@@ -7,5 +7,7 @@
     public interface IUsersAnswersAdministrationService : IAdministrationService<UserAnswer>
     {
         IQueryable<UserAnswer> GetChildrenAnswers(string userId);
+
+        bool CheckIfUserHasRights(string userId, params object[] id);
     }
 }
