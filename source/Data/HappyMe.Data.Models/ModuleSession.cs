@@ -20,6 +20,8 @@
         [Required]
         public virtual string UserId { get; set; }
 
+        public bool IsFinised { get; set; }
+
         public User User { get; set; }
 
         public int ModuleId { get; set; }
