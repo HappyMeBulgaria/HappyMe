@@ -837,6 +837,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Answers\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
+    <Folder Include="Content\fonts\bootstrap\" />
     <Folder Include="Views\Feedback\" />
     <Folder Include="Views\Modules\" />
     <Folder Include="Views\Questions\" />

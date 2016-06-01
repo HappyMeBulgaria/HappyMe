@@ -35,6 +35,8 @@
 
         public virtual IDbSet<Feedback> Feedback { get; set; }
 
+        public virtual IDbSet<ModuleSession> ModuleSessions { get; set; }
+
         public override IDbSet<IdentityRole> Roles { get; set; }
 
         public static HappyMeDbContext Create()
