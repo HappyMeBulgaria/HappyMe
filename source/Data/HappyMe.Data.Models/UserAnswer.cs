@@ -5,6 +5,10 @@
 
     public class UserAnswer : IEntity, IIdentifiable<int>
     {
+        public UserAnswer()
+        {
+        }
+
         public UserAnswer(int answerId, int moduleInstanceId)
             : this(null, answerId, moduleInstanceId)
         {

@@ -1,6 +1,8 @@
 ﻿namespace HappyMe.Services.Data
 {
+    using System;
     using System.Linq;
+    using System.Threading.Tasks;
 
     using HappyMe.Common.Tools;
     using HappyMe.Data.Contracts.Repositories;
@@ -8,6 +10,7 @@
     using HappyMe.Services.Data.Contracts;
 
     using MoreDotNet.Extentions.Common;
+    using MoreDotNet.Wrappers;
 
     public class ModuleSessionDataService : IModuleSessionDataService
     {
@@ -43,6 +46,25 @@
             }
 
             return RandomGenerator.Instance.OneOf(unanswerdQuestions);
+        }
+
+        public async Task StartAnonymousSession(int moduleId)
+        {
+            var newSession = new ModuleSession(moduleId);
+            this.moduleSessionsRepository.Add(newSession);
+            await this.moduleSessionsRepository.SaveChangesAsync();
+        }
+
+        public async Task StartUserSession(string userId, int moduleId)
+        {
+            if (userId.IsNullOrWhiteSpace())
+            {
+                throw new ArgumentNullException(nameof(userId), "UserId must have a value");
+            }
+
+            var newSession = new ModuleSession(userId, moduleId);
+            this.moduleSessionsRepository.Add(newSession);
+            await this.moduleSessionsRepository.SaveChangesAsync();
         }
     }
 }
