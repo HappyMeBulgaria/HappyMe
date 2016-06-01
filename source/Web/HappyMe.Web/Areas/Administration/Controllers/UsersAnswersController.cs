@@ -45,9 +45,21 @@
         [ValidateAntiForgeryToken]
         public ActionResult Delete(string id, int secondId)
         {
-            this.BaseDestroy(id, secondId);
+            var userHasRight =
+                this.User.IsAdmin() ||
+                (this.AdministrationService as IUsersAnswersAdministrationService).CheckIfUserHasRights(
+                    this.UserProfile.Id,
+                    id,
+                    secondId);
+            if (userHasRight)
+            {
+                this.BaseDestroy(id, secondId);
 
-            this.TempData.AddSuccessMessage("Успешно изтрихте потребителски отговор");
+                this.TempData.AddSuccessMessage("Успешно изтрихте потребителски отговор");
+                return this.RedirectToAction(nameof(this.Index));
+            }
+
+            this.TempData.AddDangerMessage("Нямате права за да изтриете потребителският отговор");
             return this.RedirectToAction(nameof(this.Index));
         }
     }

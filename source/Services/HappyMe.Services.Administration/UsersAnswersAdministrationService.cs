@@ -23,7 +23,7 @@
             this.Read()
                 .Any(ua => 
                     ua.UserId == ids[0].ToString() && 
-                    ua.AnswerId == (int) ids[1] && 
+                    ua.AnswerId == (int)ids[1] && 
                     ua.User.ParentId == userId);
     }
 }
