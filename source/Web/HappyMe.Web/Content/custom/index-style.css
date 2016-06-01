@@ -416,3 +416,13 @@
         position: relative;
         z-index:5;
     }
+
+#why-happy{
+    padding: 4em 0;
+    background: #eb5270;
+    color: white;
+}
+
+#why-happy h3{
+    color:white;
+}
