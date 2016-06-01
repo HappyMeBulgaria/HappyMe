@@ -2,6 +2,7 @@
 {
     using System.Linq;
 
+    using HappyMe.Common.Tools;
     using HappyMe.Data.Contracts.Repositories;
     using HappyMe.Data.Models;
     using HappyMe.Services.Data.Contracts;
@@ -31,9 +32,17 @@
             var unanswerdQuestions =
                 this.moduleSessionsRepository
                     .GetById(moduleSessionId)
-                    .Module.Questions.Where(x => !answerdQuestioIds.Contains(x.Id));
+                    .Module.Questions.Where(x => !answerdQuestioIds.Contains(x.Id))
+                    .ToArray();
 
-            return unanswerdQuestions.FirstOrDefault();
+            if (!unanswerdQuestions.Any())
+            {
+                this.moduleSessionsRepository.GetById(moduleSessionId).IsFinised = true;
+                this.moduleSessionsRepository.SaveChanges();
+                return null;
+            }
+
+            return RandomGenerator.Instance.OneOf(unanswerdQuestions);
         }
     }
 }
