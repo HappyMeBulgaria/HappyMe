@@ -52,6 +52,10 @@
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MoreDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MoreDotNet.0.3.5\lib\MoreDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -64,9 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IModulesDataService.cs" />
+    <Compile Include="Contracts\IModuleSessionDataService.cs" />
     <Compile Include="Contracts\IQuestionsDataService.cs" />
     <Compile Include="Contracts\IUsersDataService.cs" />
     <Compile Include="ModulesDataService.cs" />
+    <Compile Include="ModuleSessionDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
