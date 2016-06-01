@@ -191,3 +191,24 @@ footer {}
     color: #eb5270;
     margin: 0 0 0.325em 0;
 }
+
+
+.slider {
+    width: 100%;
+}
+
+.slider img{
+    padding: 0.5em;
+}
+
+.slick-slide {
+    background: #fceade;
+    padding: 7.1em 0;
+    font: 1.225em Lato Light;
+    text-align: center;
+}
+
+.slick-dots {
+    bottom: -30px;
+}
+
