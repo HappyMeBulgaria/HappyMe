@@ -12,11 +12,13 @@
     using HappyMe.Web.Areas.Administration.Controllers.Base;
     using HappyMe.Web.Areas.Administration.InputModels.Users;
     using HappyMe.Web.Areas.Administration.ViewModels.Users;
+    using HappyMe.Web.Common.Attributes;
     using HappyMe.Web.Common.Extensions;
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
 
+    [AuthorizeRoles(RoleConstants.Administrator, RoleConstants.Parent)]
     public class UsersController : 
         MvcGridAdministrationCrudController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
     {
@@ -38,6 +40,7 @@
             this.userManager = userManager;
         }
 
+        [AuthorizeRoles(RoleConstants.Administrator)]
         public ActionResult Index() => this.View(this.GetData().OrderBy(u => u.Id));
 
         [HttpGet]
@@ -90,11 +93,12 @@
         {
             this.BaseDestroy(id);
 
-            this.TempData.AddSuccessMessage("Успешно изтрихте модул");
+            this.TempData.AddSuccessMessage("Успешно изтрихте потребител");
             return this.RedirectToAction(nameof(this.Index));
         }
 
         [HttpGet]
+        [AuthorizeRoles(RoleConstants.Administrator)]
         public ActionResult AddUserInRole(string id)
         {
             // TODO: Don't get role, if user is in it

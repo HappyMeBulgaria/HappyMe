@@ -91,6 +91,7 @@
     <Compile Include="ActionResults\Models\JsonResponse.cs" />
     <Compile Include="ActionResults\RssResult.cs" />
     <Compile Include="ActionResults\StandardJsonResult.cs" />
+    <Compile Include="Attributes\AuthorizeRolesAttribute.cs" />
     <Compile Include="Attributes\EnabledAttribute.cs" />
     <Compile Include="Attributes\PlaceHolderAttribute.cs" />
     <Compile Include="Attributes\RestrictRequestsAttribute.cs" />
