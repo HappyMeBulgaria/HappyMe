@@ -25,6 +25,11 @@
             this.userAnswersRepository = userAnswersRepository;
         }
 
+        public ModuleSession GetById(int id)
+        {
+            return this.moduleSessionsRepository.GetById(id);
+        }
+
         public Question NextQuestion(int moduleSessionId, string userId)
         {
             var answerdQuestioIds =
@@ -48,14 +53,16 @@
             return RandomGenerator.Instance.OneOf(unanswerdQuestions);
         }
 
-        public async Task StartAnonymousSession(int moduleId)
+        public async Task<int> StartAnonymousSession(int moduleId)
         {
             var newSession = new ModuleSession(moduleId);
             this.moduleSessionsRepository.Add(newSession);
             await this.moduleSessionsRepository.SaveChangesAsync();
+
+            return newSession.Id;
         }
 
-        public async Task StartUserSession(string userId, int moduleId)
+        public async Task<int> StartUserSession(string userId, int moduleId)
         {
             if (userId.IsNullOrWhiteSpace())
             {
@@ -65,6 +72,8 @@
             var newSession = new ModuleSession(userId, moduleId);
             this.moduleSessionsRepository.Add(newSession);
             await this.moduleSessionsRepository.SaveChangesAsync();
+
+            return newSession.Id;
         }
     }
 }

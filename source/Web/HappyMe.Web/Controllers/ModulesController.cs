@@ -1,5 +1,6 @@
 ﻿namespace HappyMe.Web.Controllers
 {
+    using System.Threading.Tasks;
     using System.Web.Mvc;
 
     using HappyMe.Services.Data.Contracts;
@@ -22,7 +23,7 @@
         }
 
         [HttpGet]
-        public ActionResult Start(int? id)
+        public async Task<ActionResult> Start(int? id)
         {
             if (!id.HasValue)
             {
@@ -38,16 +39,18 @@
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 
+            int sessionId;
+
             if (this.User.IsLoggedIn())
             {
-                this.moduleSessionDataService.StartUserSession(this.User.Identity.GetUserId(), id.Value);
+                sessionId = await this.moduleSessionDataService.StartUserSession(this.User.Identity.GetUserId(), id.Value);
             }
             else
             {
-                this.moduleSessionDataService.StartAnonymousSession(id.Value);
+                sessionId = await this.moduleSessionDataService.StartAnonymousSession(id.Value);
             }
             
-            return this.View();
+            return this.RedirectToAction("Answer", "Questions", new { area = string.Empty, id = sessionId });
         }
     }
 }

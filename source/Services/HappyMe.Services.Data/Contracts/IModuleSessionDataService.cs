@@ -6,10 +6,12 @@
 
     public interface IModuleSessionDataService
     {
+        ModuleSession GetById(int id);
+
         Question NextQuestion(int moduleSessionId, string userId);
 
-        Task StartAnonymousSession(int moduleId);
+        Task<int> StartAnonymousSession(int moduleId);
 
-        Task StartUserSession(string userId, int moduleId);
+        Task<int> StartUserSession(string userId, int moduleId);
     }
 }
