@@ -3,6 +3,7 @@
     using System.Linq;
     using System.Web.Mvc;
 
+    using HappyMe.Common.Constants;
     using HappyMe.Data.Models;
     using HappyMe.Services.Administration.Contracts;
     using HappyMe.Services.Common.Mapping.Contracts;
@@ -10,9 +11,12 @@
     using HappyMe.Web.Areas.Administration.Controllers.Base;
     using HappyMe.Web.Areas.Administration.InputModels.Images;
     using HappyMe.Web.Areas.Administration.ViewModels.Images;
+    using HappyMe.Web.Common.Attributes;
     using HappyMe.Web.Common.Extensions;
 
-    public class ImagesController : MvcGridAdministrationCrudController<Image, ImageGridViewModel, ImageCreateInputModel, ImageUpdateInputModel>
+    [AuthorizeRoles(RoleConstants.Administrator)]
+    public class ImagesController : 
+        MvcGridAdministrationCrudController<Image, ImageGridViewModel, ImageCreateInputModel, ImageUpdateInputModel>
     {
         public ImagesController(
             IUsersDataService userData,

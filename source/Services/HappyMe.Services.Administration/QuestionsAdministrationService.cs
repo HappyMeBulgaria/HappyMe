@@ -1,7 +1,7 @@
 ﻿namespace HappyMe.Services.Administration
 {
-    using System;
     using System.Linq;
+
     using Base;
     using Contracts;
     using Data.Contracts.Repositories;
@@ -9,23 +9,20 @@
 
     public class QuestionsAdministrationService : AdministrationService<Question>, IQuestionsAdministrationService
     {
-        public QuestionsAdministrationService(IRepository<Question> entities) : base(entities)
+        public QuestionsAdministrationService(IRepository<Question> entities) 
+            : base(entities)
         {
-        }
-
-        public IQueryable<Question> GetAllOrderedQuestions()
-        {
-            throw new NotImplementedException();
         }
 
         public IQueryable<Question> GetUserQuestions(string userId)
         {
-            throw new NotImplementedException();
+            return this.Read().Where(q => q.AuthorId == userId);
         }
 
-        public IQueryable<Question> GetUserAndPublicQuestions(string userId)
-        {
-            throw new NotImplementedException();
-        }
+        public IQueryable<Question> GetUserAndPublicQuestions(string userId) => 
+            this.Read().Where(q => q.AuthorId == userId || q.IsPublic);
+
+        public bool CheckIfUserIsAuthorOnQuestion(string userId, int questionId) => 
+            this.Read().Any(q => q.AuthorId == userId && q.Id == questionId);
     }
 }

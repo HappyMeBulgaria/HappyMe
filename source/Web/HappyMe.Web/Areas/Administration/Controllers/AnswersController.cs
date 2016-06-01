@@ -8,7 +8,6 @@
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
     using InputModels.Answers;
-    using InputModels.Questions;
     using Services.Administration.Contracts;
     using Services.Common.Mapping.Contracts;
     using ViewModels.Answers;

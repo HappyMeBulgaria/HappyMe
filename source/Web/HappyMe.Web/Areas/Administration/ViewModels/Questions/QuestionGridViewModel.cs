@@ -30,7 +30,9 @@
 
         public virtual Image Image { get; set; }
 
-        public string ImageUrl => this.Image != null ? string.Format("data:image/jpeg;base64,{0}", Convert.ToBase64String(this.Image.ImageData)) : string.Empty;
+        public string ImageUrl => this.Image != null ?
+            $"data:image/jpeg;base64,{Convert.ToBase64String(this.Image.ImageData)}"
+            : string.Empty;
 
         [HiddenInput(DisplayValue = false)]
         public string AuthorId { get; set; }

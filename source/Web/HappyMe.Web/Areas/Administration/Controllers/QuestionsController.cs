@@ -1,10 +1,8 @@
 ﻿namespace HappyMe.Web.Areas.Administration.Controllers
 {
-    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
     using HappyMe.Data.Models;
     using HappyMe.Services.Administration.Contracts;
@@ -14,7 +12,6 @@
     using HappyMe.Web.Areas.Administration.InputModels.Questions;
     using HappyMe.Web.Areas.Administration.ViewModels.Questions;
     using HappyMe.Web.Common.Extensions;
-    using MoreDotNet.Extentions.Common;
 
     public class QuestionsController : 
         MvcGridAdministrationCrudController<Question, QuestionGridViewModel, QuestionCreateInputModel, QuestionUpdateInputModel>
@@ -24,7 +21,7 @@
 
         public QuestionsController(
             IUsersDataService userData,
-            IAdministrationService<Question> questionsAdministrationService, 
+            IQuestionsAdministrationService questionsAdministrationService, 
             IMappingService mappingService,
             IModulesAdministrationService modulesAdministrationService,
             IImagesAdministrationService imagesAdministrationService) 
@@ -34,12 +31,28 @@
             this.imagesAdministrationService = imagesAdministrationService;
         }
 
-        public ActionResult Index() => this.View(this.GetData().OrderBy(x => x.Id));
+        public ActionResult Index()
+        {
+            IEnumerable<QuestionGridViewModel> questions;
+            if (this.User.IsAdmin())
+            {
+                questions = this.GetData().OrderBy(x => x.Id);
+            }
+            else
+            {
+                questions = this.MappingService
+                    .MapCollection<QuestionGridViewModel>(
+                        (this.AdministrationService as IQuestionsAdministrationService)
+                            .GetUserQuestions(this.UserProfile.Id))
+                    .OrderBy(m => m.Id);
+            }
+
+            return this.View(questions);
+        } 
 
         [HttpGet]
         public ActionResult Create()
         {
-            // get modules for dropdown
             this.PopulateViewBag();
 
             return this.View();
@@ -49,10 +62,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(QuestionCreateInputModel model)
         {
-            // setting author
             model.AuthorId = this.UserProfile.Id;
-            
-            // setting image if any
             var imageData = model.ImageData;
 
             if (imageData != null)
@@ -76,52 +86,82 @@
         [HttpGet]
         public ActionResult Update(int id)
         {
-            // get modules for dropdown
-            this.PopulateViewBag();
+            var userHasRights = this.User.IsAdmin() ||
+                 (this.AdministrationService as IQuestionsAdministrationService)
+                    .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, id);
 
-            return this.View(this.GetEditModelData(id));
+            if (userHasRights)
+            {
+                this.PopulateViewBag();
+                return this.View(this.GetEditModelData(id));
+            }
+
+            this.TempData.AddDangerMessage("Нямате права за да променяте този въпрос");
+            return this.RedirectToAction(nameof(this.Index));
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Update(QuestionUpdateInputModel model)
         {
-            // updating image if any
-            var imageData = model.ImageData;
+            var userHasRights = this.User.IsAdmin() ||
+                 (this.AdministrationService as IQuestionsAdministrationService)
+                    .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, model.Id);
 
-            if (imageData != null)
+            if (userHasRights)
             {
-                var target = new MemoryStream();
-                imageData.InputStream.CopyTo(target);
-                var data = target.ToArray();
-                model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+                var imageData = model.ImageData;
+
+                if (imageData != null)
+                {
+                    var target = new MemoryStream();
+                    imageData.InputStream.CopyTo(target);
+                    var data = target.ToArray();
+                    model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+                }
+
+                var entity = this.BaseUpdate(model, model.Id);
+                if (entity != null)
+                {
+                    this.TempData.AddSuccessMessage("Успешно редактирахте въпрос");
+                    return this.RedirectToAction(nameof(this.Index));
+                }
+
+                this.PopulateViewBag();
+                return this.View(model);
             }
 
-            var entity = this.BaseUpdate(model, model.Id);
-            if (entity != null)
-            {
-                this.TempData.AddSuccessMessage("Успешно редактирахте въпрос");
-                return this.RedirectToAction(nameof(this.Index));
-            }
-
-            return this.View(model);
+            this.TempData.AddDangerMessage("Нямате права за да променяте този въпрос");
+            return this.RedirectToAction(nameof(this.Index));
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-            this.BaseDestroy(id);
+            var userHasRights = this.User.IsAdmin() ||
+                 (this.AdministrationService as IQuestionsAdministrationService)
+                    .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, id);
 
-            this.TempData.AddSuccessMessage("Успешно изтрихте въпрос");
+            if (userHasRights)
+            {
+                this.BaseDestroy(id);
+
+                this.TempData.AddSuccessMessage("Успешно изтрихте въпрос");
+                return this.RedirectToAction(nameof(this.Index));
+            }
+
+            this.TempData.AddDangerMessage("Нямате права за да изтриете този въпрос");
             return this.RedirectToAction(nameof(this.Index));
         }
 
         private void PopulateViewBag()
         {
-            this.ViewBag.ModuleIdData =
-                this.modulesAdministrationService.GetUserAndPublicModules(this.UserProfile.Id)
-                    .Select(m => new SelectListItem { Text = m.Name, Value = m.Id.ToString() });
+            var modules = this.User.IsAdmin() 
+                ? this.modulesAdministrationService.Read() 
+                : this.modulesAdministrationService.GetUserModules(this.UserProfile.Id);
+
+            this.ViewBag.ModuleIdData = modules.Select(m => new SelectListItem { Text = m.Name, Value = m.Id.ToString() });
         }
     }
 }
