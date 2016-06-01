@@ -12,7 +12,8 @@
     using HappyMe.Web.Areas.Administration.ViewModels.UsersAnswers;
     using HappyMe.Web.Common.Extensions;
 
-    public class UsersAnswersController : MvcGridAdministrationReadAndDeleteController<UserAnswer, UserAnswerGridViewModel>
+    public class UsersAnswersController : 
+        MvcGridAdministrationReadAndDeleteController<UserAnswer, UserAnswerGridViewModel>
     {
         public UsersAnswersController(
             IUsersDataService userData,
