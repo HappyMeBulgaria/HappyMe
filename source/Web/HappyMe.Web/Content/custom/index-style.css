@@ -170,6 +170,10 @@
         margin: 0 auto;
     }
     
+    #mission {
+        padding: 3.225em 0;
+    }
+    
     .mission-list {
         display: flex;
         text-align: center;
@@ -213,12 +217,14 @@
     
     #functions {
         display: inline-block;
+        padding: 4.25em 0;
     }
     
     .functions-content-left,
     .function-content-right {
         width: 50%;
         display: inline-block;
+        padding: 3em 0;
     }
     
     .functions-content-left {
@@ -234,7 +240,8 @@
         font-size: 1.225em;
         width: 80%;
         text-align: left;
-        margin: 2.5em 3.625em 0.5em 5.625em;
+        margin: 2.6em 3.625em 1em 5.625em;
+        padding: 0.5em 0;
     }
     
     .section-title-underline-right {
@@ -242,6 +249,28 @@
         border-bottom: 0.225em solid #25ced1;
         position: absolute;
         left: 73%;
+    }
+    
+    .fa-pencil-square-o {
+        color: #eb5270;
+    }
+    
+    .fa-users {
+        color: #ff8a5b;
+    }
+    
+    .fa-bar-chart {
+        color: #42c2c9;
+    }
+    
+    .fa-pencil-square-o,
+    .fa-users,
+    .fa-bar-chart {
+        position: absolute;
+    }
+    
+    #modules {
+        padding: 3em 0;
     }
     
     .module {
@@ -341,10 +370,10 @@
         text-align: center;
         padding: 1.225em;
     }
-
-.module p{
-    padding: 3.125em;
-}
+    
+    .module p {
+        padding: 3.125em;
+    }
     
     #module-title-alphabet {
         color: #42c2c9;
@@ -360,4 +389,8 @@
     
     #module-title-connects {
         color: #565656;
+    }
+    
+    #tutorial {
+        padding: 3em 0;
     }
