@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-
-namespace HappyMe.Web.Areas.Administration.Controllers
+﻿namespace HappyMe.Web.Areas.Administration.Controllers
 {
     using System.Linq;
     using System.Web.Mvc;
@@ -17,8 +15,10 @@ namespace HappyMe.Web.Areas.Administration.Controllers
     using HappyMe.Web.Common.Extensions;
 
     using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
 
-    public class UsersController : MvcGridAdministrationCrudController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
+    public class UsersController : 
+        MvcGridAdministrationCrudController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
     {
         private readonly IAdministrationService<IdentityRole> roleAdministrationService;
         private readonly UsersInRolesAdministrationService usersInRolesAdministrationService;
