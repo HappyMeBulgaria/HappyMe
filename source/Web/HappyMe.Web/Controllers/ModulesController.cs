@@ -6,13 +6,19 @@
     using HappyMe.Web.Common.Extensions;
     using HappyMe.Web.Controllers.Base;
 
+    using Microsoft.AspNet.Identity;
+
     public class ModulesController : BaseController
     {
         private readonly IModulesDataService modulesDataService;
+        private readonly IModuleSessionDataService moduleSessionDataService;
 
-        public ModulesController(IModulesDataService modulesDataService)
+        public ModulesController(
+            IModulesDataService modulesDataService,
+            IModuleSessionDataService moduleSessionDataService)
         {
             this.modulesDataService = modulesDataService;
+            this.moduleSessionDataService = moduleSessionDataService;
         }
 
         [HttpGet]
@@ -32,7 +38,15 @@
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 
-            // TODO: Convert to VM
+            if (this.User.IsLoggedIn())
+            {
+                this.moduleSessionDataService.StartUserSession(this.User.Identity.GetUserId(), id.Value);
+            }
+            else
+            {
+                this.moduleSessionDataService.StartAnonymousSession(id.Value);
+            }
+            
             return this.View();
         }
     }
