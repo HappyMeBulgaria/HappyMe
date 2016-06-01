@@ -217,7 +217,7 @@ footer {}
 
 .functions-content-left,
 .function-content-right {
-        width: 50%;
+    width: 50%;
     display: inline-block;
 }
 
@@ -225,21 +225,123 @@ footer {}
     float: left;
 }
 
-.functions-content-right{
+.functions-content-right {
     float: right;
     width: 50%;
 }
 
-.functions-content-right p{
+.functions-content-right p {
     font-size: 1.225em;
     width: 80%;
     text-align: left;
-    margin: 2.5em 1.5em 0 2.625em ;
+    margin: 2.5em 3.625em 0.5em 5.625em;
 }
 
 .section-title-underline-right {
     width: 4.688em;
     border-bottom: 0.225em solid #25ced1;
     position: absolute;
-    left:73%;
+    left: 73%;
+}
+
+.module {
+    display: inline-block;
+    background: #fceade;
+    box-shadow: 0.3em rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    width: 20%;
+    margin: 2em 2em;
+    padding: 1.225em;
+    text-align: center;
+}
+
+.module h3 {
+    font: 1.225em Lato Black;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#module-title-alphabet {
+    color: #42c2c9;
+}
+
+#module-title-colours {
+    color: #eb5270;
+}
+
+#module-title-family {
+    color: #ff8a5b;
+}
+
+#module-title-actions {
+    color: #565656;
+}
+
+.flip {
+    -webkit-perspective: 800;
+    -ms-perspective: 800;
+    -moz-perspective: 800;
+}
+
+.flip .card.flipped {
+    transform: rotatey(-180deg);
+    -ms-transform: rotatey(-180deg);
+    /* IE 9 */
+    -moz-transform: rotatey(-180deg);
+    /* Firefox */
+    -webkit-transform: rotatey(-180deg);
+    /* Safari and Chrome */
+    -o-transform: rotatey(-180deg);
+    /* Opera */
+}
+
+.flip .card {
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    -moz-transform-style: preserve-3d;
+    -moz-transition: 0.5s;
+    -ms-transform-style: preserve-3d;
+    -ms-transition: 0.5s;
+    -o-transform-style: preserve-3d;
+    -o-transition: 0.5s;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.flip .card .face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    backface-visibility: hidden;
+    /* W3C */
+    -webkit-backface-visibility: hidden;
+    /* Safari & Chrome */
+    -moz-backface-visibility: hidden;
+    /* Firefox */
+    -ms-backface-visibility: hidden;
+    /* Internet Explorer */
+    -o-backface-visibility: hidden;
+    /* Opera */
+}
+
+.flip .card .front {
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.flip .card .back {
+    cursor: pointer;
+    transform: rotatey(-180deg);
+    -ms-transform: rotatey(-180deg);
+    /* IE 9 */
+    -moz-transform: rotatey(-180deg);
+    /* Firefox */
+    -webkit-transform: rotatey(-180deg);
+    /* Safari and Chrome */
+    -o-transform: rotatey(-180deg);
+    /* Opera */
 }
