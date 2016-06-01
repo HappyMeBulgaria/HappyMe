@@ -1,25 +1,24 @@
 ﻿@using HappyMe.Web.Areas.Administration.Controllers
-@using HappyMe.Web.Areas.Administration.ViewModels.Questions
+@using HappyMe.Web.Areas.Administration.ViewModels.Answers
 @using HappyMe.Web.Common.Helpers
 
-@model IEnumerable<QuestionGridViewModel>
+@model IEnumerable<AnswerGridViewModel>
 
 @{
-    const string ControllerName = "Questions";
+    const string ControllerName = "Answers";
 }
 
-<h2>Въпроси</h2>
+<h2>Отговори</h2>
 
-@(Html.ActionLink("Създадай нов", nameof(QuestionsController.Create), null, new { @class = "btn btn-primary bottom-buffer" }))
+@(Html.ActionLink("Създадай нов", nameof(AnswersController.Create), null, new { @class = "btn btn-primary bottom-buffer" }))
 
 @(Html.MvcGrid(
     Model,
     columns =>
     {
         columns.Add(model => model.Id).Titled("№");
-        columns.Add(model => model.Text).Titled("Текст на въпроса");
-        columns.Add(model => model.Type).Titled("Тип");
-        columns.Add(model => model.ModuleId).Titled("Присъства в модул");
+        columns.Add(model => model.Text).Titled("Текст на отговора");
+        columns.Add(model => model.QuestionId).Titled("Към въпрос");
         columns.Add(model => model.Id)
             .Titled("Изображение")
             .Encoded(false)
@@ -30,12 +29,12 @@
             .Titled("Промяна")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => Html.ActionLink("Промяна", nameof(QuestionsController.Update), new { id = model.Id }, new { @class = "btn btn-primary" }));
+            .RenderedAs(model => Html.ActionLink("Промяна", nameof(AnswersController.Update), new { id = model.Id }, new { @class = "btn btn-primary" }));
         columns.Add(model => model.Id)
             .Titled("Изтриване")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => Html.DeleteForm(nameof(QuestionsController.Delete), ControllerName, model.Id.ToString()));
+            .RenderedAs(model => Html.DeleteForm(nameof(AnswersController.Delete), ControllerName, model.Id.ToString()));
     }))
 
 @*TODO: Move to _AdministrationLayout, if has .mvc-grid*@

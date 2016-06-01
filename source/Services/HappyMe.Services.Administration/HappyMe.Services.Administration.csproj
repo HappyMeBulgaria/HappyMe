@@ -62,9 +62,11 @@
     <Compile Include="Contracts\IDeletableEntityAdministrationService.cs" />
     <Compile Include="Contracts\IImagesAdministrationService.cs" />
     <Compile Include="Contracts\IModulesAdministrationService.cs" />
+    <Compile Include="Contracts\IQuestionsAdministrationService.cs" />
     <Compile Include="Contracts\IUsersAdministrationService.cs" />
     <Compile Include="Contracts\IUsersAnswersAdministrationService.cs" />
     <Compile Include="Contracts\IUsersInRolesAdministrationService.cs" />
+    <Compile Include="QuestionsAdministrationService.cs" />
     <Compile Include="ImagesAdministrationService.cs" />
     <Compile Include="ModulesAdministrationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

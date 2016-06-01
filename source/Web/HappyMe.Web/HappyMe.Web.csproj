@@ -211,6 +211,7 @@
     <Compile Include="Areas\Administration\Controllers\UsersAnswersController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersInModulesController.cs" />
+    <Compile Include="Areas\Administration\InputModels\Answers\AnswerUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Images\ImageCreateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Images\ImageUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Modules\ModuleUpdateInputModel.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Areas\Administration\InputModels\Questions\QuestionUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserCreateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserUpdateInputModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Answers\AnswerGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\ChildViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\DashboardIndexViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
@@ -229,6 +231,7 @@
     <Compile Include="Areas\Administration\ViewModels\UsersAnswers\UserAnswerGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\UsersInModules\UserInModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Users\UserGridViewModel.cs" />
+    <Compile Include="Areas\Administration\InputModels\Answers\AnswerCreateInputModel.cs" />
     <Compile Include="Config\ApplicationUserManager.cs" />
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\EmailService.cs" />
@@ -357,6 +360,9 @@
     <Content Include="Areas\Administration\Views\UsersAnswers\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\ImageUpload.cshtml" />
     <Content Include="Areas\Administration\Views\ChildrenStatistics\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Answers\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Answers\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Answers\Update.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />
@@ -766,7 +772,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\Answers\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Views\Modules\" />
     <Folder Include="Views\Questions\" />
