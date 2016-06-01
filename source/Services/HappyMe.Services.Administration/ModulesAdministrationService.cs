@@ -20,5 +20,8 @@
 
         public IQueryable<Module> GetUserAndPublicModules(string userId) => 
             this.Read().Where(m => m.AuthorId == userId || m.IsPublic);
+
+        public bool CheckIfUserIsModuleAuthor(int moduleId, string userId) => 
+            this.Read().Any(m => m.Id == moduleId && m.AuthorId == userId);
     }
 }

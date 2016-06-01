@@ -11,5 +11,7 @@
         IQueryable<Module> GetUserModules(string userId);
 
         IQueryable<Module> GetUserAndPublicModules(string userId);
+
+        bool CheckIfUserIsModuleAuthor(int moduleId, string userId);
     }
 }
