@@ -1,22 +1,29 @@
 ﻿namespace HappyMe.Web.Controllers
 {
+    using System.Threading.Tasks;
     using System.Web.Mvc;
 
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Common.Extensions;
     using HappyMe.Web.Controllers.Base;
 
+    using Microsoft.AspNet.Identity;
+
     public class ModulesController : BaseController
     {
         private readonly IModulesDataService modulesDataService;
+        private readonly IModuleSessionDataService moduleSessionDataService;
 
-        public ModulesController(IModulesDataService modulesDataService)
+        public ModulesController(
+            IModulesDataService modulesDataService,
+            IModuleSessionDataService moduleSessionDataService)
         {
             this.modulesDataService = modulesDataService;
+            this.moduleSessionDataService = moduleSessionDataService;
         }
 
         [HttpGet]
-        public ActionResult Start(int? id)
+        public async Task<ActionResult> Start(int? id)
         {
             if (!id.HasValue)
             {
@@ -32,8 +39,18 @@
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 
-            // TODO: Convert to VM
-            return this.View();
+            int sessionId;
+
+            if (this.User.IsLoggedIn())
+            {
+                sessionId = await this.moduleSessionDataService.StartUserSession(this.User.Identity.GetUserId(), id.Value);
+            }
+            else
+            {
+                sessionId = await this.moduleSessionDataService.StartAnonymousSession(id.Value);
+            }
+            
+            return this.RedirectToAction("Answer", "Questions", new { area = string.Empty, id = sessionId });
         }
     }
 }

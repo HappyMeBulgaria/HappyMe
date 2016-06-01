@@ -262,6 +262,16 @@
     <Compile Include="Account\ResetPasswordViewModel.cs" />
     <Compile Include="Account\SendCodeViewModel.cs" />
     <Compile Include="Account\VerifyCodeViewModel.cs" />
+    <Compile Include="InputModels\Questions\AnswerQuestionInputModel.cs" />
+    <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Account\ExternalLoginListViewModel.cs" />
+    <Compile Include="ViewModels\Account\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Account\ForgotViewModel.cs" />
+    <Compile Include="ViewModels\Account\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Account\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
+    <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
@@ -843,6 +853,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
+    <Folder Include="ViewModels\Questions\" />
     <Folder Include="Views\Feedback\" />
     <Folder Include="Views\Modules\" />
     <Folder Include="Views\Questions\" />

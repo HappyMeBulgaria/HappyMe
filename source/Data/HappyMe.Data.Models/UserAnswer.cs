@@ -5,6 +5,22 @@
 
     public class UserAnswer : IEntity, IIdentifiable<int>
     {
+        public UserAnswer()
+        {
+        }
+
+        public UserAnswer(int answerId, int moduleInstanceId)
+            : this(null, answerId, moduleInstanceId)
+        {
+        }
+
+        public UserAnswer(string userId, int answerId, int moduleInstanceId)
+        {
+            this.UserId = userId;
+            this.AnswerId = answerId;
+            this.ModuleInstanceId = moduleInstanceId;
+        }
+
         [Key]
         public int Id { get; set; }
 

@@ -52,6 +52,10 @@
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MoreDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MoreDotNet.0.3.5\lib\MoreDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -63,10 +67,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswersDataService.cs" />
+    <Compile Include="Contracts\IAnswersDataService.cs" />
     <Compile Include="Contracts\IModulesDataService.cs" />
+    <Compile Include="Contracts\IModuleSessionDataService.cs" />
     <Compile Include="Contracts\IQuestionsDataService.cs" />
     <Compile Include="Contracts\IUsersDataService.cs" />
     <Compile Include="ModulesDataService.cs" />
+    <Compile Include="ModuleSessionDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
@@ -84,6 +92,10 @@
     <ProjectReference Include="..\..\Data\HappyMe.Data.Models\HappyMe.Data.Models.csproj">
       <Project>{C4A645C4-329D-42E1-87C0-494AD19775EA}</Project>
       <Name>HappyMe.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HappyMe.Common\HappyMe.Common.csproj">
+      <Project>{be0b0219-3996-433e-b63b-5bf485f9230c}</Project>
+      <Name>HappyMe.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\HappyMe.Services.Common\HappyMe.Services.Common.csproj">
       <Project>{98D63F27-173E-4A8A-978D-27300694536E}</Project>
