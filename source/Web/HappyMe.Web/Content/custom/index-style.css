@@ -224,7 +224,7 @@
     .function-content-right {
         width: 50%;
         display: inline-block;
-        padding: 3em 0;
+        padding: 4em 0;
     }
     
     .functions-content-left {
@@ -234,6 +234,7 @@
     .functions-content-right {
         float: right;
         width: 50%;
+        padding: 4em 0;
     }
     
     .functions-content-right p {
@@ -270,7 +271,7 @@
     }
     
     #modules {
-        padding: 3em 0;
+        padding: 5.625em 0;
     }
     
     .module {
@@ -392,5 +393,26 @@
     }
     
     #tutorial {
-        padding: 3em 0;
+        padding: 4em 0;
+    }
+    
+    .single-step {
+        display: inline-block;
+        width: 30%;
+        margin: 1.25em;
+        text-align: center;
+    }
+    
+    .number-step {
+        font: 2em Lato-Black;
+        color: white;
+        background: #565656;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 1em;
+        padding: 0.5em 0;
+        line-height: 0.5em;
+        margin: 0 auto;
+        position: relative;
+        z-index:5;
     }
