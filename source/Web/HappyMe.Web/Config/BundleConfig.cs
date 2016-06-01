@@ -20,6 +20,7 @@
                 "~/Content/vendor/MvcGrid/mvc-grid.css",
                 "~/Content/vendor/bootstrap/administration/style.css",
                 "~/Content/vendor/bootstrap/administration/style-responsive.css",
+                "~/Content/fonts/lato/latostyle.css",
                 "~/Content/custom/administration-styles.css"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
@@ -30,6 +31,9 @@
 
             bundles.Add(new StyleBundle("~/Content/font-awesome").Include(
                 "~/Content/fonts/font-awesome/css/font-awesome.css"));
+
+            bundles.Add(new StyleBundle("~/Content/lato-font").Include(
+                "~/Content/fonts/lato/latofonts.css"));
 
             bundles.Add(new StyleBundle("~/Content/guillotine").Include(
                 "~/Content/vendor/guillotine/jquery.guillotine.css"));

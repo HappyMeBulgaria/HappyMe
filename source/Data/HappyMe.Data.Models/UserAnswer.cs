@@ -14,8 +14,14 @@
         [Column(Order = 2)]
         public int AnswerId { get; set; }
 
+        [Key]
+        [Column(Order = 3)]
+        public int ModuleInstanceId { get; set; }
+
         public virtual User User { get; set; }
 
         public virtual Answer Answer { get; set; }
+
+        public virtual ModuleSession ModuleSession { get; set; }
     }
 }

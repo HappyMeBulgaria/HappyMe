@@ -67,6 +67,7 @@
     <Compile Include="Feedback.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Module.cs" />
+    <Compile Include="ModuleSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>

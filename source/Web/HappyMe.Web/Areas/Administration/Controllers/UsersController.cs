@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-
-namespace HappyMe.Web.Areas.Administration.Controllers
+﻿namespace HappyMe.Web.Areas.Administration.Controllers
 {
     using System.Linq;
     using System.Web.Mvc;
@@ -14,11 +12,15 @@ namespace HappyMe.Web.Areas.Administration.Controllers
     using HappyMe.Web.Areas.Administration.Controllers.Base;
     using HappyMe.Web.Areas.Administration.InputModels.Users;
     using HappyMe.Web.Areas.Administration.ViewModels.Users;
+    using HappyMe.Web.Common.Attributes;
     using HappyMe.Web.Common.Extensions;
 
     using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
 
-    public class UsersController : MvcGridAdministrationCrudController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
+    [AuthorizeRoles(RoleConstants.Administrator, RoleConstants.Parent)]
+    public class UsersController : 
+        MvcGridAdministrationCrudController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
     {
         private readonly IAdministrationService<IdentityRole> roleAdministrationService;
         private readonly UsersInRolesAdministrationService usersInRolesAdministrationService;
@@ -38,6 +40,7 @@ namespace HappyMe.Web.Areas.Administration.Controllers
             this.userManager = userManager;
         }
 
+        [AuthorizeRoles(RoleConstants.Administrator)]
         public ActionResult Index() => this.View(this.GetData().OrderBy(u => u.Id));
 
         [HttpGet]
@@ -90,11 +93,12 @@ namespace HappyMe.Web.Areas.Administration.Controllers
         {
             this.BaseDestroy(id);
 
-            this.TempData.AddSuccessMessage("Успешно изтрихте модул");
+            this.TempData.AddSuccessMessage("Успешно изтрихте потребител");
             return this.RedirectToAction(nameof(this.Index));
         }
 
         [HttpGet]
+        [AuthorizeRoles(RoleConstants.Administrator)]
         public ActionResult AddUserInRole(string id)
         {
             // TODO: Don't get role, if user is in it

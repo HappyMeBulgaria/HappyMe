@@ -38,9 +38,9 @@
             .RenderedAs(model => Html.DeleteForm(nameof(QuestionsController.Delete), ControllerName, model.Id.ToString()));
     }))
 
-@*TODO: Move to _AdministrationLayout, if has .mvc-grid*@
 @section scripts {
     <script>
-        $('.mvc-grid').mvcgrid()
+        // TODO: Move to _AdministrationLayout, if has .mvc-grid
+        $('.mvc-grid').mvcgrid();
     </script>
 }
