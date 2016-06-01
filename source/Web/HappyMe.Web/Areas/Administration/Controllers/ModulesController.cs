@@ -3,8 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
-
-    using HappyMe.Common.Constants;
+    
     using HappyMe.Data.Models;
     using HappyMe.Services.Administration.Contracts;
     using HappyMe.Services.Common.Mapping.Contracts;
@@ -12,10 +11,8 @@
     using HappyMe.Web.Areas.Administration.Controllers.Base;
     using HappyMe.Web.Areas.Administration.InputModels.Modules;
     using HappyMe.Web.Areas.Administration.ViewModels.Modules;
-    using HappyMe.Web.Common.Attributes;
     using HappyMe.Web.Common.Extensions;
     
-    [AuthorizeRoles(RoleConstants.Administrator, RoleConstants.Parent)]
     public class ModulesController : 
         MvcGridAdministrationCrudController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
     {

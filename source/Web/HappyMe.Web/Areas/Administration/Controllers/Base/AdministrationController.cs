@@ -1,12 +1,11 @@
 ﻿namespace HappyMe.Web.Areas.Administration.Controllers.Base
 {
-    using System.Web.Mvc;
-
+    using HappyMe.Common.Constants;
     using HappyMe.Services.Data.Contracts;
+    using HappyMe.Web.Common.Attributes;
     using HappyMe.Web.Controllers.Base;
-
-    // TODO: Add Administrator Authorization filter
-    [Authorize]
+    
+    [AuthorizeRoles(RoleConstants.Administrator, RoleConstants.Parent)]
     public class AdministrationController : BaseAuthorizationController
     {
         public AdministrationController(IUsersDataService userData) 

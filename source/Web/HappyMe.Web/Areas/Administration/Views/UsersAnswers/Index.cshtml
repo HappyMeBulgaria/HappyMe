@@ -13,12 +13,13 @@
     Model,
     columns =>
     {
-        columns.Add(model => model.UserName).Titled("№");
-        columns.Add(model => model.AnswerText).Titled("Име");
-        columns.Add(model => model.CreatedOn).Titled("Автор");
+        columns.Add(model => model.Id).Titled("№");
+        columns.Add(model => model.UserName).Titled("Потребител");
+        columns.Add(model => model.AnswerText).Titled("Отговор");
+        columns.Add(model => model.CreatedOn).Titled("Дата на създаване");
         columns.Add(model => model.AnswerId)
             .Titled("Изтриване")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => Html.DeleteForm(nameof(UsersAnswersController.Delete), ControllerName, model.UserId, model.AnswerId.ToString()));
+            .RenderedAs(model => Html.DeleteForm(nameof(UsersAnswersController.Delete), ControllerName, model.Id.ToString()));
     }))

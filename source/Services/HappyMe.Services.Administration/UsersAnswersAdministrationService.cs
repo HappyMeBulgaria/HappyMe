@@ -19,11 +19,7 @@
         public IQueryable<UserAnswer> GetChildrenAnswers(string userId) => 
             this.Read().Where(ua => ua.User.ParentId == userId);
 
-        public bool CheckIfUserHasRights(string userId, params object[] ids) => 
-            this.Read()
-                .Any(ua => 
-                    ua.UserId == ids[0].ToString() && 
-                    ua.AnswerId == (int)ids[1] && 
-                    ua.User.ParentId == userId);
+        public bool CheckIfUserHasRights(string userId, int id) => 
+            this.Read().Any(ua => ua.Id == id && ua.User.ParentId == userId);
     }
 }

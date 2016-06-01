@@ -39,8 +39,7 @@
             this.usersInRolesAdministrationService = usersInRolesAdministrationService;
             this.userManager = userManager;
         }
-
-        [AuthorizeRoles(RoleConstants.Administrator)]
+        
         public ActionResult Index() => this.View(this.GetData().OrderBy(u => u.Id));
 
         [HttpGet]
@@ -98,7 +97,6 @@
         }
 
         [HttpGet]
-        [AuthorizeRoles(RoleConstants.Administrator)]
         public ActionResult AddUserInRole(string id)
         {
             // TODO: Don't get role, if user is in it

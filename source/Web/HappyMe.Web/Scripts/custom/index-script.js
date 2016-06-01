@@ -25,6 +25,7 @@ $(function () {
 $(".slider").slick({
     autoplay: true,
     dots: true,
+    arrows:false,
     responsive: [{
         breakpoint: 500,
         settings: {
