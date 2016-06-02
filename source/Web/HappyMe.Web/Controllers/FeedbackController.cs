@@ -1,5 +1,6 @@
 ﻿namespace HappyMe.Web.Controllers
 {
+    using System.Threading.Tasks;
     using System.Web.Mvc;
 
     using HappyMe.Services.Data.Contracts;
@@ -18,11 +19,11 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Send(FeedbackInputModel model)
+        public async Task<ActionResult> Send(FeedbackInputModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
-                this.feedbackDataService.Add(model.Name, model.Email, model.Subject, model.Message);
+                await this.feedbackDataService.Add(model.Name, model.Email, model.Subject, model.Message);
 
                 return this.RedirectToAction(nameof(this.Success));
             }
