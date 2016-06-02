@@ -44,7 +44,7 @@
             }
 
             // To VM
-            var nextQuestion = this.moduleSessionDataService.NextQuestion(id, this.User.Identity.GetUserId());
+            var nextQuestion = this.moduleSessionDataService.NextQuestion(id.Value, this.User.Identity.GetUserId());
 
             return this.View();
         }
