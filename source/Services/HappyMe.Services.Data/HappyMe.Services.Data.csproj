@@ -69,10 +69,12 @@
   <ItemGroup>
     <Compile Include="AnswersDataService.cs" />
     <Compile Include="Contracts\IAnswersDataService.cs" />
+    <Compile Include="Contracts\IFeedbackDataService.cs" />
     <Compile Include="Contracts\IModulesDataService.cs" />
     <Compile Include="Contracts\IModuleSessionDataService.cs" />
     <Compile Include="Contracts\IQuestionsDataService.cs" />
     <Compile Include="Contracts\IUsersDataService.cs" />
+    <Compile Include="FeedbackDataService.cs" />
     <Compile Include="ModulesDataService.cs" />
     <Compile Include="ModuleSessionDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
