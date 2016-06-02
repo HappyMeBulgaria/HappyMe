@@ -54,7 +54,6 @@
         public ActionResult Create()
         {
             this.PopulateViewBag();
-
             return this.View();
         }
 
@@ -80,6 +79,7 @@
                 return this.RedirectToAction(nameof(this.Index));
             }
 
+            this.PopulateViewBag();
             return this.View(model);
         }
 
