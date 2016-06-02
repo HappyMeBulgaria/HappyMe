@@ -2,30 +2,213 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+@section styles{
+    @Styles.Render("~/Content/home-page-styles")
+}
+
+<div>
+    <div class="content-under hidden-sm hidden-xs">
+        <div class="content-above">
+            <img src="~/Content/images/homepage-ipad-mockup.png" alt="IPad Mockup">
+        </div>
+    </div>
+
+    <section id="homepage" class="home">
+        <div class="slogan-container cell col-md-6">
+            <h1 class="homepage-slogan">Щастливо дете - щастливи родители!</h1>
+            <a href="/play" class="play-button btn btn-warning">Играй!</a>
+        </div>
+    </section>
+
+    <section id="mission">
+        <h3 class="section-title">нашата мисия</h3>
+
+        <ul class="mission-list">
+            <li class="col-md-4">
+                <article class="mission-item">
+                    <i class="fa fa-rocket fa-5x mission-icon" aria-hidden="true"></i>
+                    <p>Да създадем иновативно и достъпно приложение на български, което да спомогне и обогати процеса на работа и обучение на деца с аутизъм</p>
+                </article>
+            </li>
+
+            <li class="col-md-4">
+                <article class="mission-item">
+                    <i class="fa fa-universal-access fa-5x mission-icon" aria-hidden="true"></i>
+                    <p>Да интегрираме модерни и интуитивни технологии, с цел подпомагане нуждите и развитието на дечица с аутизъм.</p>
+                </article>
+            </li>
+
+            <li class="col-md-4">
+                <article class="mission-item">
+                    <i class="fa fa-smile-o fa-5x mission-icon" aria-hidden="true"></i>
+                    <p>Да направим ежедневието на децата с аутизъм по-леко и усмихнато</p>
+                </article>
+            </li>
+
+        </ul>
+
+        <section class="slider">
+            <div>
+                <img src="#" alt="">
+                <p> Децата се нуждаят от нещо си - М.Иванова</p>
+            </div>
+            <div>
+                <img src="#" alt="">
+                <p> Липсва друго нещо си - И.Иванов</p>
+            </div>
+            <div>
+                <img src="#" alt="">
+                <p> Няма такова приложение на български - И.Петкова</p>
+            </div>
+            <div>
+                <img src="#" alt="">
+                <p>СЪществуващите приложения са неефективни - П.Петров</p>
+            </div>
+
+        </section>
+    </section>
+
+    <section id="functions" class="functions-section">
+        <div class="col-md-6 cell">
+            <img src="~/Content/images/use-happyme-left-content.png" alt="Let's Play Screen" class="">
+        </div>
+
+        <div class="col-md-6 cell">
+            <h3 class="section-title">с happy me можете да</h3>
+            <ul class="functions-list">
+                <li class="functions-item">
+                    <div class="cell">
+                        <i class="fa fa-pencil-square-o fa-5x" aria-hidden="true"></i>
+                    </div>
+                    <div class="cell">
+                        <p class="functions-text">правите персонализирани модули от въпроси, както и създавате различни въпроси в тях</p>
+                    </div>
+                </li>
+
+                <li class="functions-item">
+                    <div class="cell">
+                        <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+                    </div>
+                    <div class="cell">
+                        <p class="functions-text">
+                            контролирате достъпа на потребителите до тези модули
+                        </p>
+                    </div>
+                </li>
+
+                <li class="functions-item">
+                    <div class="cell">
+                        <i class="fa fa-bar-chart fa-5x" aria-hidden="true"></i>
+                    </div>
+                    <div class="cell">
+                        <p class="functions-text">следите развитието на децата, което е предпоставка за по-добри резултати</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="modules">
+        <h3 class="section-title">модули</h3>
+
+        <ul class="modules-list">
+            <li class="module col-md-3">
+                <div class="flip">
+                    <div class="card">
+                        <div class="face front">
+                            <h3 id="module-title-alphabet">азбука</h3>
+                            <img src="~/Content/images/modules-alphabet.png" alt="Module ALphabet Sheep">
+                        </div>
+                        <div class="face back">
+                            <p>Offal neutra helvetica, sustainable beard next level plaid. Gastropub four loko health goth, chicharrones etsy kale chips sustainable. Pork belly fanny pack readymade intelligentsia XOXO.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="module col-md-3">
+                <div class="flip">
+                    <div class="card">
+                        <div class="face front">
+                            <h3 id="module-title-colours">цветове</h3>
+                            <img src="~/Content/images/module-colours.png" alt="Module Colours Apple">
+                        </div>
+                        <div class="face back">
+                            <p>Offal neutra helvetica, sustainable beard next level plaid. Gastropub four loko health goth, chicharrones etsy kale chips sustainable. Pork belly fanny pack readymade intelligentsia XOXO.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="module col-md-3">
+                <div class="flip">
+                    <div class="card">
+                        <div class="face front">
+                            <h3 id="module-title-family">семейство</h3>
+                            <img src="~/Content/images/module-family.png" alt="Module Family">
+                        </div>
+                        <div class="face back">
+                            <p>Offal neutra helvetica, sustainable beard next level plaid. Gastropub four loko health goth, chicharrones etsy kale chips sustainable. Pork belly fanny pack readymade intelligentsia XOXO.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="module col-md-3">
+                <div class="flip">
+                    <div class="card">
+                        <div class="face front">
+                            <h3 id="module-title-connect">свържи</h3>
+                            <img src="~/Content/images/modules-connect.png" alt="Module Connect">
+                        </div>
+                        <div class="face back">
+                            <p>Offal neutra helvetica, sustainable beard next level plaid. Gastropub four loko health goth, chicharrones etsy kale chips sustainable. Pork belly fanny pack readymade intelligentsia XOXO.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+@section scripts{
+    @Scripts.Render("~/bundles/slick");
+    <script>
+        // TODO: Extract these in external js file
+        $(function () {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                var dest = 0;
+                if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+                    dest = $(document).height() - $(window).height();
+                } else {
+                    dest = $(this.hash).offset().top;
+                }
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top - 50
+                }, 1000, 'swing');
+            });
+
+            $(".slider").slick({
+                autoplay: true,
+                dots: true,
+                arrows: false,
+                responsive: [{
+                    breakpoint: 500,
+                    settings: {
+                        dots: false,
+                        arrows: false,
+                        infinite: false,
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }]
+            });
+        });
+
+        $(".flip").hover(function () {
+            $(this).find(".card").toggleClass("flipped");
+            return false;
+        });
+    </script>
+}

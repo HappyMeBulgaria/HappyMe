@@ -14,7 +14,9 @@
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/vendor/bootstrap/bootstrap.css",
-                "~/Content/custom/site.css"));
+                "~/Content/custom/reset-css.css",
+                "~/Content/custom/site.css",
+                "~/Content/custom/override.css"));
 
             bundles.Add(new StyleBundle("~/Content/administration-css").Include(
                 "~/Content/vendor/MvcGrid/mvc-grid.css",
@@ -24,7 +26,7 @@
                 "~/Content/custom/administration-styles.css"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
-                "~/Content/vendor/bootstrap/bootstrap.css"));
+                "~/Content/vendor/bootstrap/bootstrap.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/jquery-gritter").Include(
                 "~/Scripts/vendor/jquery/gritter/css/jquery.gritter.css"));
@@ -37,6 +39,13 @@
 
             bundles.Add(new StyleBundle("~/Content/guillotine").Include(
                 "~/Content/vendor/guillotine/jquery.guillotine.css"));
+
+            bundles.Add(new StyleBundle("~/Content/home-page-styles").Include(
+                "~/Content/custom/home-page-styles.css"));
+
+            bundles.Add(new StyleBundle("~/Content/slick").Include(
+                "~/Scripts/vendor/SlickSlider/slick/slick.css",
+                "~/Scripts/vendor/SlickSlider/slick/slick-theme.css"));
         }
 
         private static void RegisterScriptBundles(BundleCollection bundles)
@@ -71,6 +80,9 @@
 
             bundles.Add(new ScriptBundle("~/bundles/guillotine").Include(
                 "~/Scripts/vendor/guillotine/jquery.guillotine.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/slick").Include(
+                "~/Scripts/vendor/SlickSlider/slick/slick.min.js"));
         }
     }
 }

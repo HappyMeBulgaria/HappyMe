@@ -1,0 +1,252 @@
+﻿.content-above {
+    position: absolute;
+    right: 0;
+    top: 5.5em;
+}
+
+section.home {
+    background: url("/Content/images/homepage-background.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 739px;
+}
+
+    section.home .slogan-container {
+        padding-top: 10%;
+        padding-left: 5%;
+    }
+
+        section.home .slogan-container h1 {
+            font: 3.5em Lato Light;
+            color: #FFF;
+        }
+
+        section.home .slogan-container .play-button {
+            margin: 60px 0;
+            padding: 18px 20%;
+            font: 3em Lato Black;
+            border-radius: 0.938em;
+            background: #eb5270;
+        }
+
+            section.home .slogan-container .play-button:hover {
+                background: #656565;
+                transform: scale(1.1);
+                transition-duration: 0.3s;
+                transition-property: transform;
+            }
+
+.section-title {
+    position: relative;
+    text-transform: uppercase;
+    font: 1.225em Lato Black;
+    color: #ff8a5b;
+    text-align: center;
+    padding: 1.625em 0 0.625em 0;
+}
+
+    .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 47.5%;
+        right: 50%;
+        width: 70px;
+        height: 5px;
+        background: #25ced1;
+    }
+
+.mission-list {
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+}
+
+    .mission-list li {
+        margin: 40px 0px;
+    }
+
+        .mission-list li .mission-item {
+            display: inline-block;
+        }
+
+            .mission-list li .mission-item .mission-icon {
+                color: #eb5270;
+                margin: 0 0 0.325em 0;
+            }
+
+@media (min-width: 1200px) {
+    .mission-list {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.slider {
+    width: 100%;
+}
+
+    .slider img {
+        padding: 0.5em;
+    }
+
+.slick-slide {
+    background: #fceade;
+    padding: 7.1em 0;
+    font: 1.225em Lato Light;
+    text-align: center;
+}
+
+.slick-dots {
+    bottom: -30px;
+}
+
+.fa-pencil-square-o {
+    color: #eb5270;
+}
+
+.fa-users {
+    color: #ff8a5b;
+}
+
+.fa-bar-chart {
+    color: #42c2c9;
+}
+
+.functions-section {
+    display: inline-block;
+}
+
+    .functions-section .functions-text {
+        margin: 0 25px;
+    }
+
+.modules-list {
+    display: flex;
+    margin-top: 35px;
+}
+
+    .modules-list .module {
+        text-align: center;
+    }
+
+        .modules-list .module h3 {
+            font: 1.225em Lato Black;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 1.225em;
+        }
+
+        .modules-list .module p {
+            padding: 3.125em;
+        }
+
+@media (max-width: 991px) {
+    .modules-list {
+        display: block;
+        margin-top: 35px;
+    }
+
+        .modules-list .module {
+            margin-bottom: 20px;
+        }
+}
+
+#module-title-alphabet {
+    color: #42c2c9;
+}
+
+#module-title-colours {
+    color: #eb5270;
+}
+
+#module-title-family {
+    color: #ff8a5b;
+}
+
+#module-title-connects {
+    color: #565656;
+}
+/*=========Flipping animations==========*/
+.flip {
+    -webkit-perspective: 800;
+    -ms-perspective: 800;
+    -moz-perspective: 800;
+    -o-perspective: 800;
+    height: 18em;
+    position: relative;
+}
+
+    .flip .card.flipped {
+        transform: rotatey(-180deg);
+        -ms-transform: rotatey(-180deg);
+        /* IE 9 */
+        -moz-transform: rotatey(-180deg);
+        /* Firefox */
+        -webkit-transform: rotatey(-180deg);
+        /* Safari and Chrome */
+        -o-transform: rotatey(-180deg);
+        /* Opera */
+    }
+
+    .flip .card {
+        width: 100%;
+        height: 100%;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition: 0.5s;
+        -moz-transform-style: preserve-3d;
+        -moz-transition: 0.5s;
+        -ms-transform-style: preserve-3d;
+        -ms-transition: 0.5s;
+        -o-transform-style: preserve-3d;
+        -o-transition: 0.5s;
+        transform-style: preserve-3d;
+        transition: 0.5s;
+    }
+
+        .flip .card .face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            text-align: center;
+            backface-visibility: hidden;
+            /* W3C */
+            -webkit-backface-visibility: hidden;
+            /* Safari & Chrome */
+            -moz-backface-visibility: hidden;
+            /* Firefox */
+            -ms-backface-visibility: hidden;
+            /* Internet Explorer */
+            -o-backface-visibility: hidden;
+            /* Opera */
+            ;
+        }
+
+        .flip .card .front {
+            position: absolute;
+            z-index: 1;
+            background: #fceade;
+            box-shadow: 0.3em rgba(0, 0, 0, 0.5);
+            border-radius: 1em;
+            color: #565656;
+            cursor: pointer;
+        }
+
+        .flip .card .back {
+            background: #fceade;
+            box-shadow: 0.3em rgba(0, 0, 0, 0.5);
+            border-radius: 1em;
+            color: #565656;
+            cursor: pointer;
+            transform: rotatey(-180deg);
+            -ms-transform: rotatey(-180deg);
+            /* IE 9 */
+            -moz-transform: rotatey(-180deg);
+            /* Firefox */
+            -webkit-transform: rotatey(-180deg);
+            /* Safari and Chrome */
+            -o-transform: rotatey(-180deg);
+            /* Opera */
+        }
+/*=========End Flipping animations==========*/
