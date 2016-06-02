@@ -414,36 +414,45 @@
         line-height: 0.5em;
         margin: 0 auto;
         position: relative;
-        z-index:5;
+        z-index: 5;
     }
-
-#why-happy{
-    padding: 2em 0 0 0;
-    background: #eb5270;
-    color: white;
-}
-
-#why-happy h3{
-    color:white;
-}
-
-#team{
-    background: #fceadd;
-    text-align: center;
-}
-
-.team-list{
-    margin: 2em;
-}
-
-.team-member{
-    display: inline-block;
-    width: 15%;
-    margin: 0.625em;
-}
-
-.contact-form{
-    display: block;
-    position: absolute;
-    text-align: center;
-}
+    
+    #why-happy {
+        padding: 2em 0 0 0;
+        background: #eb5270;
+        color: white;
+    }
+    
+    #why-happy h3 {
+        color: white;
+    }
+    
+    #team {
+        background: #fceadd;
+        text-align: center;
+    }
+    
+    .team-list {
+        margin: 2em;
+    }
+    
+    .team-member {
+        display: inline-block;
+        width: 15%;
+        margin: 0.625em;
+    }
+    
+    .contact-us,
+    .contact-form,
+    .contacts-form {
+        display: block;
+        position: absolute;
+        text-align: center;
+    }
+    
+    input {
+        font: 1.125em Lato-Light;
+        color: #565656;
+        border-radius: 0.515em;
+        padding: 0.125em;
+    }
