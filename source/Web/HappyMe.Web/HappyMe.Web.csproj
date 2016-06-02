@@ -276,6 +276,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Modules\ModuleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\custom\administration-styles.css" />
