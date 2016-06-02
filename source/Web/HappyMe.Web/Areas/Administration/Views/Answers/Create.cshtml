@@ -8,10 +8,10 @@
 <h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm(
-                nameof(AnswersController.Create),
-                "Answers",
-                FormMethod.Post,
-                new { enctype = "multipart/form-data" }))
+    nameof(AnswersController.Create),
+    "Answers",
+    FormMethod.Post,
+    new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 

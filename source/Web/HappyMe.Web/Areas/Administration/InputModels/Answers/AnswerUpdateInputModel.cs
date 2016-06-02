@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace HappyMe.Web.Areas.Administration.InputModels.Answers
+﻿namespace HappyMe.Web.Areas.Administration.InputModels.Answers
 {
     using System.Web.Mvc;
     using AutoMapper;
     using Data.Models;
     using HappyMe.Common.Mapping;
-    using Questions;
 
     public class AnswerUpdateInputModel : AnswerCreateInputModel, IHaveCustomMappings
     {

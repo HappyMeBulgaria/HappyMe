@@ -1,8 +1,23 @@
-﻿@model HappyMe.Web.Areas.Administration.InputModels.Answers.AnswerUpdateInputModel
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@model HappyMe.Web.Areas.Administration.InputModels.Answers.AnswerUpdateInputModel
 
 @{
-    ViewBag.Title = "title";
-    Layout = "~/Views/Home/About.cshtml";
+    ViewBag.Title = "Промяна на модул";
 }
 
-<h2>title</h2>
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(
+    nameof(AnswersController.Update),
+    "Answers",
+    FormMethod.Post,
+    new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    @Html.EditorFor(m => m.ImageData)
+
+    <input type="submit" value="Редактирай" />
+}
