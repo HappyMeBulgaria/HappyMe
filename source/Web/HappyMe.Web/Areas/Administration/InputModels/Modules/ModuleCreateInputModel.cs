@@ -8,15 +8,18 @@
 
     public class ModuleCreateInputModel : IMapTo<Module>, IMapFrom<Module>
     {
+        [Display(Name = "Име на модул")]
         public string Name { get; set; }
 
         [AllowHtml]
+        [Display(Name = "Описание на модул")]
         [UIHint("CKeditor")]
         public string Description { get; set; }
-
+        
         [HiddenInput(DisplayValue = false)]
         public string AuthorId { get; set; }
-
+        
+        [Display(Name = "Активен ли е модула?")]
         public bool IsActive { get; set; }
     }
 }
