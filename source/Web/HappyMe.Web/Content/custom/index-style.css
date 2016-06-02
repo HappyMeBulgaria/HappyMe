@@ -171,7 +171,7 @@
     }
     
     #mission {
-        padding: 3.225em 0;
+        padding: 3.125em 0;
     }
     
     .mission-list {
@@ -217,14 +217,14 @@
     
     #functions {
         display: inline-block;
-        padding: 4.25em 0;
+        padding: 1.825em 0;
     }
     
     .functions-content-left,
     .function-content-right {
         width: 50%;
         display: inline-block;
-        padding: 4em 0;
+        padding: 2.625em 0 0.625em 0;
     }
     
     .functions-content-left {
@@ -234,7 +234,7 @@
     .functions-content-right {
         float: right;
         width: 50%;
-        padding: 4em 0;
+        padding: 4em 0 0 0;
     }
     
     .functions-content-right p {
@@ -271,14 +271,14 @@
     }
     
     #modules {
-        padding: 5.625em 0;
+        padding: 2.625em 0em 0em 0em;
     }
     
     .module {
         display: inline-block;
         width: 20%;
         margin: 2em 2em;
-        padding: 1.225em;
+        padding: 1.225em 0em;
         text-align: center;
     }
     
@@ -393,7 +393,7 @@
     }
     
     #tutorial {
-        padding: 4em 0;
+        padding: 2.625em 0 0 0;
     }
     
     .single-step {
@@ -418,7 +418,7 @@
     }
 
 #why-happy{
-    padding: 4em 0;
+    padding: 2em 0;
     background: #eb5270;
     color: white;
 }
@@ -440,4 +440,10 @@
     display: inline-block;
     width: 15%;
     margin: 0.625em;
+}
+
+.contact-form{
+    display: block;
+    position: absolute;
+    text-align: center;
 }
