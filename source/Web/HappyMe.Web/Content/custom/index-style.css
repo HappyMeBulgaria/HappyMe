@@ -453,6 +453,8 @@
     input {
         font: 1.125em Lato-Light;
         color: #565656;
+        border: none;
         border-radius: 0.515em;
-        padding: 0.125em;
+        padding: 0.225em;
+        margin: 0.325em;
     }
