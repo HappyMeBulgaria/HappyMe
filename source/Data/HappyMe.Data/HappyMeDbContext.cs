@@ -9,6 +9,7 @@
     using System.Threading;
     using System.Threading.Tasks;
 
+    using HappyMe.Data.Configurations;
     using HappyMe.Data.Contracts.Models;
     using HappyMe.Data.Models;
 
@@ -59,6 +60,8 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new QuestionConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
 

@@ -18,13 +18,15 @@
     {
         private ICollection<User> children;
         private ICollection<UserInModule> userInModules;
-        private ICollection<UserAnswer> userAnswers; 
+        private ICollection<UserAnswer> userAnswers;
+        private ICollection<Question> questions;
 
         public User()
         {
             this.children = new HashSet<User>();
             this.userInModules = new HashSet<UserInModule>();
             this.userAnswers = new HashSet<UserAnswer>();
+            this.questions = new HashSet<Question>();
             this.CreatedOn = DateTime.Now;
         }
 
@@ -56,6 +58,12 @@
         public string ParentId { get; set; }
 
         public virtual User Parent { get; set; }
+
+        public virtual ICollection<Question> Questions
+        {
+            get { return this.questions; }
+            set { this.questions = value; }
+        }
 
         public virtual ICollection<User> Children
         {

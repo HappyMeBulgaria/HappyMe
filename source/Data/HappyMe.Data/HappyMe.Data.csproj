@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\QuestionConfiguration.cs" />
     <Compile Include="Migrations\DefaultMigrationConfiguration.cs" />
     <Compile Include="HappyMeDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
