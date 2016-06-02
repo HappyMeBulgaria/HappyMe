@@ -1,11 +1,14 @@
 ﻿namespace HappyMe.Web.Controllers
 {
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Mvc;
 
+    using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Common.Extensions;
     using HappyMe.Web.Controllers.Base;
+    using HappyMe.Web.ViewModels.Modules;
 
     using Microsoft.AspNet.Identity;
 
@@ -13,13 +16,24 @@
     {
         private readonly IModulesDataService modulesDataService;
         private readonly IModuleSessionDataService moduleSessionDataService;
+        private readonly IMappingService mappingService;
 
         public ModulesController(
             IModulesDataService modulesDataService,
-            IModuleSessionDataService moduleSessionDataService)
+            IModuleSessionDataService moduleSessionDataService,
+            IMappingService mappingService)
         {
             this.modulesDataService = modulesDataService;
             this.moduleSessionDataService = moduleSessionDataService;
+            this.mappingService = mappingService;
+        }
+
+        public ActionResult Index()
+        {
+            var modules =
+                this.mappingService.MapCollection<ModuleViewModel>(this.modulesDataService.AllPublic().AsQueryable());
+
+            return this.View(modules);
         }
 
         [HttpGet]

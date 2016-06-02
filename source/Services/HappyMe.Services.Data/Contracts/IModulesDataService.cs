@@ -10,6 +10,8 @@
 
         IEnumerable<Module> AllActive();
 
+        IEnumerable<Module> AllPublic();
+
         Module GetById(int id);
     }
 }

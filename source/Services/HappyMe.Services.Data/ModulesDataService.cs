@@ -16,19 +16,12 @@
             this.modulesRepository = modulesRepository;
         }
 
-        public IEnumerable<Module> All()
-        {
-            return this.modulesRepository.All();
-        }
+        public IEnumerable<Module> All() => this.modulesRepository.All();
 
-        public IEnumerable<Module> AllActive()
-        {
-            return this.modulesRepository.All().Where(x => x.IsActive);
-        }
+        public IEnumerable<Module> AllActive() => this.modulesRepository.All().Where(m => m.IsActive);
 
-        public Module GetById(int id)
-        {
-            return this.modulesRepository.GetById(id);
-        }
+        public IEnumerable<Module> AllPublic() => this.modulesRepository.All().Where(m => m.IsPublic);
+
+        public Module GetById(int id) => this.modulesRepository.GetById(id);
     }
 }
