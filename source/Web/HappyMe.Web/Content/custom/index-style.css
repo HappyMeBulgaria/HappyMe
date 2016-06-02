@@ -426,3 +426,18 @@
 #why-happy h3{
     color:white;
 }
+
+#team{
+    background: #fceadd;
+    text-align: center;
+}
+
+.team-list{
+    margin: 2em;
+}
+
+.team-member{
+    display: inline-block;
+    width: 15%;
+    margin: 0.625em;
+}
