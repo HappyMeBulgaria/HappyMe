@@ -8,6 +8,6 @@
     {
         IQueryable<UserAnswer> GetChildrenAnswers(string userId);
 
-        bool CheckIfUserHasRights(string userId, params object[] id);
+        bool CheckIfUserHasRights(string userId, int id);
     }
 }

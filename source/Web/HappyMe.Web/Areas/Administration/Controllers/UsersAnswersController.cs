@@ -12,7 +12,8 @@
     using HappyMe.Web.Areas.Administration.ViewModels.UsersAnswers;
     using HappyMe.Web.Common.Extensions;
 
-    public class UsersAnswersController : MvcGridAdministrationReadAndDeleteController<UserAnswer, UserAnswerGridViewModel>
+    public class UsersAnswersController : 
+        MvcGridAdministrationReadAndDeleteController<UserAnswer, UserAnswerGridViewModel>
     {
         public UsersAnswersController(
             IUsersDataService userData,
@@ -43,17 +44,16 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(string id, int secondId)
+        public ActionResult Delete(int id)
         {
             var userHasRight =
                 this.User.IsAdmin() ||
                 (this.AdministrationService as IUsersAnswersAdministrationService).CheckIfUserHasRights(
                     this.UserProfile.Id,
-                    id,
-                    secondId);
+                    id);
             if (userHasRight)
             {
-                this.BaseDestroy(id, secondId);
+                this.BaseDestroy(id);
 
                 this.TempData.AddSuccessMessage("Успешно изтрихте потребителски отговор");
                 return this.RedirectToAction(nameof(this.Index));

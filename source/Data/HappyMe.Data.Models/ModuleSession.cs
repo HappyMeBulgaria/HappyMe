@@ -9,18 +9,31 @@
     {
         private ICollection<UserAnswer> usersAnswers;
 
-        public ModuleSession()
+        public ModuleSession(int moduleId)
+            : this()
+        {
+            this.ModuleId = moduleId;
+        }
+
+        public ModuleSession(string userId, int moduleId)
+            : this(moduleId)
+        {
+            this.UserId = userId;
+        }
+
+        protected ModuleSession()
         {
             this.usersAnswers = new HashSet<UserAnswer>();
-        }    
+        }
 
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        public virtual string UserId { get; set; }
+        public string UserId { get; set; }
 
-        public User User { get; set; }
+        public bool IsFinised { get; set; }
+
+        public virtual User User { get; set; }
 
         public int ModuleId { get; set; }
 

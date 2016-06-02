@@ -38,7 +38,7 @@
         [Required]
         public string AuthorId { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual User Author { get; set; }
 
         public virtual ICollection<Answer> Answers
         {

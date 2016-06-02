@@ -27,8 +27,8 @@
 
         public bool IsPublic { get; set; }
 
-        [UIHint("DropDownList")]
         [Display(Name = "Модул")]
+        [UIHint("DropDownList")]
         public int ModuleId { get; set; }
 
         [HiddenInput(DisplayValue = false)]

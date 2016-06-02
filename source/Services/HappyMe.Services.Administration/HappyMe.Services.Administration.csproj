@@ -44,6 +44,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="MoreDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MoreDotNet.0.3.5\lib\MoreDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -56,15 +60,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswersAdministrationService.cs" />
     <Compile Include="Base\AdministrationService.cs" />
     <Compile Include="Base\DeletableEntityAdministrationService.cs" />
     <Compile Include="Contracts\IAdministrationService.cs" />
+    <Compile Include="Contracts\IAnswersAdministrationService.cs" />
     <Compile Include="Contracts\IDeletableEntityAdministrationService.cs" />
     <Compile Include="Contracts\IImagesAdministrationService.cs" />
     <Compile Include="Contracts\IModulesAdministrationService.cs" />
+    <Compile Include="Contracts\IQuestionsAdministrationService.cs" />
     <Compile Include="Contracts\IUsersAdministrationService.cs" />
     <Compile Include="Contracts\IUsersAnswersAdministrationService.cs" />
     <Compile Include="Contracts\IUsersInRolesAdministrationService.cs" />
+    <Compile Include="QuestionsAdministrationService.cs" />
     <Compile Include="ImagesAdministrationService.cs" />
     <Compile Include="ModulesAdministrationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

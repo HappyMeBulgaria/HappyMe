@@ -211,6 +211,7 @@
     <Compile Include="Areas\Administration\Controllers\UsersAnswersController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersInModulesController.cs" />
+    <Compile Include="Areas\Administration\InputModels\Answers\AnswerUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Images\ImageCreateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Images\ImageUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Modules\ModuleUpdateInputModel.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Areas\Administration\InputModels\Questions\QuestionUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserCreateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserUpdateInputModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Answers\AnswerGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\ChildViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\DashboardIndexViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
@@ -229,6 +231,7 @@
     <Compile Include="Areas\Administration\ViewModels\UsersAnswers\UserAnswerGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\UsersInModules\UserInModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Users\UserGridViewModel.cs" />
+    <Compile Include="Areas\Administration\InputModels\Answers\AnswerCreateInputModel.cs" />
     <Compile Include="Config\ApplicationUserManager.cs" />
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\EmailService.cs" />
@@ -250,15 +253,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Account\ExternalLoginConfirmationViewModel.cs" />
-    <Compile Include="Account\ExternalLoginListViewModel.cs" />
-    <Compile Include="Account\ForgotPasswordViewModel.cs" />
-    <Compile Include="Account\ForgotViewModel.cs" />
-    <Compile Include="Account\LoginViewModel.cs" />
-    <Compile Include="Account\RegisterViewModel.cs" />
-    <Compile Include="Account\ResetPasswordViewModel.cs" />
-    <Compile Include="Account\SendCodeViewModel.cs" />
-    <Compile Include="Account\VerifyCodeViewModel.cs" />
+    <Compile Include="InputModels\Feedback\FeedbackInputModel.cs" />
+    <Compile Include="InputModels\Questions\AnswerQuestionInputModel.cs" />
+    <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Account\ExternalLoginListViewModel.cs" />
+    <Compile Include="ViewModels\Account\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Account\ForgotViewModel.cs" />
+    <Compile Include="ViewModels\Account\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Account\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
+    <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
@@ -425,6 +430,9 @@
     <Content Include="Content\vendor\SlickSlider\slick\slick-theme.scss" />
     <Content Include="Content\vendor\SlickSlider\slick\slick.less" />
     <Content Include="Content\vendor\SlickSlider\slick\slick.scss" />
+    <Content Include="Areas\Administration\Views\Answers\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Answers\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Answers\Update.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\dev\locations.json" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\readme.md" />
@@ -904,9 +912,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\Answers\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
+    <Folder Include="ViewModels\Questions\" />
     <Folder Include="Views\Feedback\" />
     <Folder Include="Views\Modules\" />
     <Folder Include="Views\Questions\" />

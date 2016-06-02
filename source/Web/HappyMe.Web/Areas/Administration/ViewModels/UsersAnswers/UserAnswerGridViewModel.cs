@@ -9,6 +9,8 @@
 
     public class UserAnswerGridViewModel : IMapFrom<UserAnswer>, IHaveCustomMappings
     {
+        public int Id { get; set; }
+
         public string UserName { get; set; }
 
         public string AnswerText { get; set; }

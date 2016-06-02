@@ -1,11 +1,13 @@
 ﻿namespace HappyMe.Web.Controllers.Base
 {
     using System;
+    using System.Web.Mvc;
     using System.Web.Routing;
 
     using HappyMe.Data.Models;
     using HappyMe.Services.Data.Contracts;
 
+    [Authorize]
     public class BaseAuthorizationController : BaseController
     {
         public BaseAuthorizationController(IUsersDataService userData)

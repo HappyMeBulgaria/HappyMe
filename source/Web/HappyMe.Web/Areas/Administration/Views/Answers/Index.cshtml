@@ -1,0 +1,45 @@
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Areas.Administration.ViewModels.Answers
+@using HappyMe.Web.Common.Helpers
+
+@model IEnumerable<AnswerGridViewModel>
+
+@{
+    const string ControllerName = "Answers";
+}
+
+<h2>Отговори</h2>
+
+@(Html.ActionLink("Създадай нов", nameof(AnswersController.Create), null, new { @class = "btn btn-primary bottom-buffer" }))
+
+@(Html.MvcGrid(
+    Model,
+    columns =>
+    {
+        columns.Add(model => model.Id).Titled("№");
+        columns.Add(model => model.Text).Titled("Текст на отговора");
+        columns.Add(model => model.QuestionId).Titled("Към въпрос");
+        columns.Add(model => model.Id)
+            .Titled("Изображение")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => MvcHtmlString.Create($@"<img class=""img-responsive"" width=""150"" src =""{model.ImageUrl}"" />"));
+        columns.Add(model => model.AuthorId).Titled("Автор");
+        columns.Add(model => model.Id)
+            .Titled("Промяна")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.ActionLink("Промяна", nameof(AnswersController.Update), new { id = model.Id }, new { @class = "btn btn-primary" }));
+        columns.Add(model => model.Id)
+            .Titled("Изтриване")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.DeleteForm(nameof(AnswersController.Delete), ControllerName, model.Id.ToString()));
+    }))
+
+@*TODO: Move to _AdministrationLayout, if has .mvc-grid*@
+@section scripts {
+    <script>
+        $('.mvc-grid').mvcgrid()
+    </script>
+}

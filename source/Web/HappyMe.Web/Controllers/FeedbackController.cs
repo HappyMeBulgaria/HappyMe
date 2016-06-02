@@ -3,27 +3,34 @@
     using System.Web.Mvc;
 
     using HappyMe.Services.Data.Contracts;
+    using HappyMe.Web.Common.Extensions;
     using HappyMe.Web.Controllers.Base;
+    using HappyMe.Web.InputModels.Feedback;
 
     public class FeedbackController : BaseController
     {
-        ////private readonly IFeedbackDataService feedbackDataService;
+        private readonly IFeedbackDataService feedbackDataService;
 
-        ////public FeedbackController(IFeedbackDataService feedbackDataService)
-        ////{
-        ////    this.feedbackDataService = feedbackDataService;
-        ////}
-
-        [HttpGet]
-        public ActionResult Index()
+        public FeedbackController(IFeedbackDataService feedbackDataService)
         {
-            return this.View();
+            this.feedbackDataService = feedbackDataService;
         }
 
         [HttpPost]
-        public ActionResult Send()
+        [ValidateAntiForgeryToken]
+        public ActionResult Send(FeedbackInputModel model)
         {
-            return this.View();
+            if (model != null && this.ModelState.IsValid)
+            {
+                this.feedbackDataService.Add(model.Name, model.Email, model.Subject, model.Message);
+
+                return this.RedirectToAction(nameof(this.Success));
+            }
+
+            this.TempData.AddWarningMessage("Невалидна обратна връзка");
+
+            // Redirect to lending page (or wherever is feedback form)
+            return new EmptyResult();
         }
 
         public ActionResult Success()

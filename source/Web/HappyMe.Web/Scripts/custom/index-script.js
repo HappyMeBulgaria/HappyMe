@@ -25,6 +25,7 @@ $(function () {
 $(".slider").slick({
     autoplay: true,
     dots: true,
+    arrows:false,
     responsive: [{
         breakpoint: 500,
         settings: {
@@ -35,4 +36,9 @@ $(".slider").slick({
             slidesToScroll: 2
         }
     }]
+});
+
+$(".flip").hover(function(){
+  $(this).find(".card").toggleClass("flipped");
+  return false;
 });
