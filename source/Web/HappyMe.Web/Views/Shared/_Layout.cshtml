@@ -12,41 +12,13 @@
     @Styles.Render("~/Content/slick")
 </head>
 <body>
-    <header>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="/home/index" class="navbar-brand">
-                        <img class="nav-logo" alt="Happy Me Logo" src="~/Content/images/nav-logo-min.png">
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class=""><a class="scroll" href="#homepage">начало</a></li>
-                        <li class=""><a class="scroll" href="#mission">мисия</a></li>
-                        <li class=""><a class="scroll" href="#functions">функции</a></li>
-                        <li class=""><a class="scroll" href="#modules">модули</a></li>
-                        <li class=""><a class="scroll" href="#tutorial">как да започнем</a></li>
-                        <li class=""><a class="scroll" href="#why-happy">защо happy me?</a></li>
-                        <li class=""><a class="scroll" href="#team">екип</a></li>
-                        <li class=""><a class="scroll" href="#contact-us">контакти</a></li>
-                    </ul>
-                    @*@Html.Partial("_LoginPartial")*@
-                </div>
-            </div>
-        </div>
-    </header>
+<header class="main-header">
+    <img src="~/Content/images/logo-fullcolor.png" alt="happy me logo" class="header-logo"/>
+    <button class="pull-right">Изход</button>
+</header>
 
     @RenderBody()
 
-    <footer>
-        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
