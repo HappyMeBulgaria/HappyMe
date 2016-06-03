@@ -2,7 +2,9 @@
 {
     using System.Threading.Tasks;
 
-    public interface IAnswersDataService
+    using HappyMe.Services.Common;
+
+    public interface IAnswersDataService : IService
     {
         Task AnswerAsUser(string userId, int answerId, int moduleSessionId);
 

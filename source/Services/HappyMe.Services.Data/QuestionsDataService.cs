@@ -15,9 +15,11 @@
             this.questionRepository = questionRepository;
         }
 
-        public bool IsCorrectAnswer(int questionId, int answerId)
-        {
-            return this.questionRepository.GetById(questionId).Answers.Any(x => x.IsCorrect && x.Id == answerId);
-        }
+        public bool IsCorrectAnswer(int questionId, int answerId) => 
+            this.questionRepository
+                .All()
+                .Any(q => 
+                    q.Id == questionId && 
+                    q.Answers.Any(a => a.IsCorrect && a.Id == answerId));
     }
 }
