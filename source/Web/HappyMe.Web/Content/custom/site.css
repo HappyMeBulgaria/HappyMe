@@ -3,5 +3,19 @@
 }
 
 .main-header {
-    padding: 10px;
+    padding: 30px 30px 0 30px;
 }
+
+.page-heading {
+    padding: 30px;
+}
+
+.btn-blue {
+    color: #FFFFFF;
+    background-color: #25CED1;
+}
+
+    .btn.btn-blue:hover {
+        background-color: #68dff0;
+        color: #FFFFFF;
+    }

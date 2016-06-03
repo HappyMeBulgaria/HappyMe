@@ -1,4 +1,5 @@
-﻿@model HappyMe.Web.Areas.Administration.InputModels.Modules.ModuleUpdateInputModel
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@model HappyMe.Web.Areas.Administration.InputModels.Modules.ModuleUpdateInputModel
 
 @{
     ViewBag.Title = "Редактиране на модул";
@@ -6,11 +7,17 @@
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm(FormMethod.Post))
+@using (Html.BeginForm(
+    nameof(ModulesController.Update),
+    "Modules",
+    FormMethod.Post,
+    new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     @Html.EditorForModel()
+
+    @Html.EditorFor(m => m.ImageFile)
 
     <input type="submit" value="Редактирай" />
 }
