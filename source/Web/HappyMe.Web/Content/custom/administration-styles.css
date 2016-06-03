@@ -98,9 +98,8 @@ ul.top-menu > li .logout {
 /*==============End overriding bootstrap=============*/
 
 /*==============Overriding other styles=============*/
-
-.editor-label label {
-    font-size: 18px;
+.editor-label {
+    display: none;
 }
 /* ============ checkboxes =========== */
 input[type=checkbox] {

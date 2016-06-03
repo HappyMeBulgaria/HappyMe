@@ -1,0 +1,8 @@
+﻿@model bool
+
+@{
+    var propertyName = ViewData.ModelMetadata.PropertyName;
+}
+
+<input class="check-box" data-val="true" id="@propertyName" name="@propertyName" type="checkbox" value="true">
+<label for="@propertyName">Публичен?</label>
