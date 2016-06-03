@@ -3,15 +3,8 @@
 var editor = editor || {};
 
 editor = (function () {
-    function loadCKEditor(idSelector, height) {
-        CKEDITOR.replace(idSelector);
-        CKEDITOR.config.height = height || 300;
-    }
-    function unloadCKEditor(idSelector) {
-        CKEDITOR.remove(idSelector);
-    }
-    function checkForUnsavedText(text) {
-        document.body.onbeforeunload = function() {
+    var checkForUnsavedText = function (text) {
+        document.body.onbeforeunload = function () {
             for (var editorName in CKEDITOR.instances) {
                 if (CKEDITOR.instances.hasOwnProperty(editorName)) {
                     if (CKEDITOR.instances[editorName].checkDirty()) {
@@ -19,13 +12,21 @@ editor = (function () {
                     }
                 }
             }
-        };
+        }
     }
 
+    var loadCkEditor = function (idSelector, height) {
+        CKEDITOR.replace(idSelector);
+        CKEDITOR.config.height = height || 300;
+    }
+
+    var unloadCkEditor = function (idSelector) {
+        CKEDITOR.remove(idSelector);
+    }
 
     return {
-        loadCKEditor: loadCKEditor,
-        unloadCKEditor: unloadCKEditor,
+        loadCKEditor: loadCkEditor,
+        unloadCKEditor: unloadCkEditor,
         checkForUnsavedText: checkForUnsavedText
     }
 })()
