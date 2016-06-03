@@ -351,7 +351,6 @@
     <Content Include="Areas\Administration\Views\Modules\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Modules\Update.cshtml" />
     <Content Include="Scripts\custom\administration\common\editorHelper.js" />
-    <Content Include="Scripts\custom\index-script.js" />
     <Content Include="Scripts\vendor\bootstrap\administration-theme-common\common-scripts.js" />
     <Content Include="Scripts\vendor\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\vendor\ckeditor\CHANGES.html" />
@@ -448,6 +447,7 @@
     <Content Include="Areas\Administration\Views\Answers\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Answers\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Answers\Update.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\bool.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\dev\locations.json" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\readme.md" />

@@ -16,11 +16,11 @@
             this.modulesRepository = modulesRepository;
         }
 
-        public IEnumerable<Module> All() => this.modulesRepository.All();
+        public IQueryable<Module> All() => this.modulesRepository.All();
 
-        public IEnumerable<Module> AllActive() => this.modulesRepository.All().Where(m => m.IsActive);
+        public IQueryable<Module> AllActive() => this.modulesRepository.All().Where(m => m.IsActive);
 
-        public IEnumerable<Module> AllPublic() => this.modulesRepository.All().Where(m => m.IsPublic);
+        public IQueryable<Module> AllPublic() => this.modulesRepository.All().Where(m => m.IsPublic);
 
         public Module GetById(int id) => this.modulesRepository.GetById(id);
     }
