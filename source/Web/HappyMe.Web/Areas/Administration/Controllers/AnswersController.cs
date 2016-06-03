@@ -22,7 +22,7 @@
 
         public AnswersController(
             IUsersDataService userData,
-            IAdministrationService<Answer> answersAdministrationService,
+            IAnswersAdministrationService answersAdministrationService,
             IMappingService mappingService,
             IImagesAdministrationService imagesAdministrationService,
             IQuestionsAdministrationService questionsAdministrationService) 
