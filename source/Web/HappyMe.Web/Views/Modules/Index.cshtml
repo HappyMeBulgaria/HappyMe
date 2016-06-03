@@ -1,0 +1,14 @@
+﻿@model IEnumerable<HappyMe.Web.ViewModels.Modules.ModuleViewModel>
+
+@{
+    ViewBag.Title = "Избери модул:";
+}
+
+@Styles.Render("~/Content/custom/modules.css")
+
+<h1 class="section-title large-heading">@ViewBag.Title</h1>
+
+<div class="row modules-container text-center">
+    @Html.DisplayFor(m => m)
+</div>
+

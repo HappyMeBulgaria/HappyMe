@@ -3,8 +3,9 @@
     using System.Threading.Tasks;
 
     using HappyMe.Data.Models;
+    using HappyMe.Services.Common;
 
-    public interface IModuleSessionDataService
+    public interface IModuleSessionDataService : IService
     {
         ModuleSession GetById(int id);
 

@@ -16,6 +16,8 @@
 
         public byte[] ImageData { get; set; }
 
-        public string ImageUrl => this.ImageData != null ? string.Format("data:image/jpeg;base64,{0}", Convert.ToBase64String(this.ImageData)) : string.Empty;
+        public string ImageUrl => this.ImageData != null ?
+            $"data:image/jpeg;base64,{Convert.ToBase64String(this.ImageData)}"
+            : string.Empty;
     }
 }

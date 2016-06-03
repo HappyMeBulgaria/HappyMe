@@ -30,8 +30,9 @@
 
         public ActionResult Index()
         {
-            var modules =
-                this.mappingService.MapCollection<ModuleViewModel>(this.modulesDataService.AllPublic().AsQueryable());
+            var modules = this.mappingService
+                .MapCollection<ModuleViewModel>(this.modulesDataService.AllPublic().AsQueryable())
+                .ToList();
 
             return this.View(modules);
         }

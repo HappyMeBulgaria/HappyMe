@@ -5,26 +5,6 @@
         transform: scale(1.1);
     }
     
-    @font-face {
-        src: url('../fonts/Lato/fonts/Lato-Light.ttf');
-        font-family: Lato Light;
-    }
-    
-    @font-face {
-        src: url('../fonts/Lato/fonts/Lato-Regular.ttf');
-        font-family: Lato;
-    }
-    
-    @font-face {
-        src: url('../fonts/Lato/fonts/Lato-Black.ttf');
-        font-family: Lato Black;
-    }
-    
-    @font-face {
-        src: url('../fonts/Blogger Sans/Blogger_Sans-Light.otf');
-        font-family: Blogger Sans Light;
-    }
-    
     * {
         margin: 0em;
         padding: 0em;
@@ -154,20 +134,6 @@
     
     .play-game:hover {
         background: #565656;
-    }
-    
-    .section-title {
-        text-transform: uppercase;
-        font: 1.225em Lato Black;
-        color: #ff8a5b;
-        text-align: center;
-        padding: 1.625em 0 0.625em 0;
-    }
-    
-    .section-title-underline {
-        width: 4.688em;
-        border-bottom: 0.225em solid #25ced1;
-        margin: 0 auto;
     }
     
     #mission {

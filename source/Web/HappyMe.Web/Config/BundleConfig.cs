@@ -12,11 +12,19 @@
 
         private static void RegisterStyleBundles(BundleCollection bundles)
         {
+            bundles.Add(new StyleBundle("~/Content/lending-page").Include(
+                "~/Content/vendor/bootstrap/bootstrap.css",
+                "~/Content/custom/reset-css.css",
+                "~/Content/custom/lending-page.css",
+                "~/Content/custom/override.css",
+                "~/Content/custom/global.css"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/vendor/bootstrap/bootstrap.css",
                 "~/Content/custom/reset-css.css",
                 "~/Content/custom/site.css",
-                "~/Content/custom/override.css"));
+                "~/Content/custom/override.css",
+                "~/Content/custom/global.css"));
 
             bundles.Add(new StyleBundle("~/Content/administration-css").Include(
                 "~/Content/vendor/MvcGrid/mvc-grid.css",
