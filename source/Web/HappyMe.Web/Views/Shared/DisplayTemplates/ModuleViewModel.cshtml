@@ -1,10 +1,13 @@
-﻿@model HappyMe.Web.ViewModels.Modules.ModuleViewModel
+﻿@using HappyMe.Web.Controllers
+@model HappyMe.Web.ViewModels.Modules.ModuleViewModel
 
 <section class="module-box col-md-3 col-xs-6">
-    <div class="module-information-container">
-        <header class="module-name">           
-            <h3 class="module-heading">@Model.Name</h3>
-        </header>
-        <img class="img-responsive module-img" width="150" src="@Model.ImageUrl" alt="@($"Модул - {Model.Name} изобразение")" />
-    </div>
+    <a href="@Url.Action(nameof(ModulesController.Start), new {id = Model.Id})" class="start-module-link">
+        <div class="module-information-container @(Model.IsActive ? string.Empty : "not-active")">
+            <header class="module-name">
+                <h3 class="module-heading">@Model.Name</h3>
+            </header>
+            <img class="img-responsive module-img" width="150" src="@Model.ImageUrl" alt="@($"Модул - {Model.Name} изобразение")" />
+        </div>
+    </a>
 </section>

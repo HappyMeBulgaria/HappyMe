@@ -393,7 +393,6 @@
     <Content Include="Content\fonts\Lato\fonts\Lato-Regular.woff" />
     <Content Include="Content\fonts\Lato\fonts\Lato-Regular.woff2" />
     <Content Include="Areas\Administration\Views\UsersAnswers\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\ImageUpload.cshtml" />
     <Content Include="Areas\Administration\Views\ChildrenStatistics\Index.cshtml" />
     <Content Include="Content\fonts\Blogger Sans\Blogger_Sans-Light.otf" />
     <Content Include="Content\fonts\Blogger Sans\Blogger_Sans.otf" />
@@ -921,7 +920,6 @@
     <Content Include="Views\Shared\EditorTemplates\DropDownList.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ImageUpload.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Bool.cshtml" />
     <Content Include="Views\Modules\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ModuleViewModel.cshtml" />
