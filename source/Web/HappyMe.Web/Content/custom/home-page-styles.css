@@ -2,6 +2,11 @@
     position: absolute;
     right: 0;
     top: 5.5em;
+    text-align: right;
+}
+
+#ipad-image {
+    max-width: 80%;
 }
 
 section.home {
@@ -80,6 +85,10 @@ section.home {
         width: 90%;
         margin: 0 auto;
     }
+
+    #ipad-image {
+        max-width: 100%;
+    }
 }
 
 .slider {
@@ -150,6 +159,12 @@ section.home {
         .modules-list .module {
             margin-bottom: 20px;
         }
+}
+
+@media (max-width : 768px) {
+    .center-text {
+        text-align: center;
+    }
 }
 
 #module-title-alphabet {
