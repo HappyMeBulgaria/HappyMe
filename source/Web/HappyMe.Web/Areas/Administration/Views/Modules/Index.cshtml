@@ -18,9 +18,13 @@
     {
         columns.Add(model => model.Id).Titled("№");
         columns.Add(model => model.Name).Titled("Име");
-        columns.Add(model => model.Description).Titled("Описание");
         columns.Add(model => model.IsActive).Titled("Активност");
         columns.Add(model => model.UserName).Titled("Автор");
+        columns.Add(model => model.Id)
+            .Titled("Изображение")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => MvcHtmlString.Create($@"<img class=""img-responsive"" width=""100"" src =""{model.ImageUrl}"" />"));
         columns.Add(model => model.Id)
             .Titled("Промяна")
             .Encoded(false)
