@@ -3,8 +3,9 @@
     using System.Collections.Generic;
 
     using HappyMe.Data.Models;
+    using HappyMe.Services.Common;
 
-    public interface IModulesDataService
+    public interface IModulesDataService : IService
     {
         IEnumerable<Module> All();
 
