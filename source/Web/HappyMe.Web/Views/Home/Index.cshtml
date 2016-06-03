@@ -15,7 +15,7 @@
     </div>
 
     <section id="homepage" class="home">
-        <div class="slogan-container cell col-md-6 col-sm-4 col-xs-12 center-text">
+        <div class="slogan-container cell col-md-6 col-sm-4 col-xs-12 center-text-main-landing">
             <h1 class="homepage-slogan">Щастливо дете - щастливи родители!</h1>
             <a href="/play" class="play-button btn btn-warning">Играй!</a>
         </div>
@@ -70,11 +70,11 @@
     </section>
 
     <section id="functions" class="functions-section">
-        <div class="col-md-6 cell">
+        <div class="col-xs-12 col-sm-6 cell center-img-functions">
             <img src="~/Content/images/use-happyme-left-content.png" alt="Let's Play Screen" class="">
         </div>
 
-        <div class="col-md-6 cell">
+        <div class="col-xs-12 col-sm-6 cell">
             <h3 class="section-title">с happy me можете да</h3>
             <ul class="functions-list">
                 <li class="functions-item">
@@ -217,9 +217,9 @@
         // used to be two per screen, not one
         var counter = 0;
         $(window).resize(function() {
-            var slideWidthBySlick = $(".slick-slide").Width();
+            var slideWidthBySlick = $(".slick-slide").width();
 
-            if ($(window).Width() < 500 && counter === 0) {
+            if ($(window).width() < 500 && counter === 0) {
                 debugger;
                 $(".slick-slide").children().children().children()
                     .css({

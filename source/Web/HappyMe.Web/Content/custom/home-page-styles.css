@@ -130,6 +130,14 @@ section.home {
         margin: 0 25px;
     }
 
+.functions-item {
+    margin-bottom: 30px;
+}
+
+.center-img-functions {
+    text-align: center;
+}
+
 .modules-list {
     display: flex;
     margin-top: 35px;
@@ -162,7 +170,7 @@ section.home {
 }
 
 @media (max-width : 768px) {
-    .center-text {
+    .center-text-main-landing {
         text-align: center;
     }
 }
