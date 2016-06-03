@@ -24,6 +24,7 @@
         public bool IsActive { get; set; }
 
         [Display(Name = "Публичен?")]
+        [UIHint("bool")]
         public bool IsPublic { get; set; }
 
         [HiddenInput(DisplayValue = false)]

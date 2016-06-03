@@ -49,7 +49,7 @@
         } 
 
         [HttpGet]
-        public ActionResult Create() => this.View();
+        public ActionResult Create() => this.View(new ModuleCreateInputModel());
 
         [HttpPost]
         [ValidateAntiForgeryToken]
