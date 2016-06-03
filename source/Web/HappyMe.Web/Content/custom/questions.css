@@ -1,0 +1,10 @@
+﻿.color-answer {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
+
+.color-asnwers-wrapper {
+    margin: 100px 0 0 0;
+}

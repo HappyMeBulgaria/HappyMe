@@ -3,27 +3,32 @@
     using System.Threading.Tasks;
     using System.Web.Mvc;
 
+    using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Common.Extensions;
     using HappyMe.Web.Controllers.Base;
     using HappyMe.Web.InputModels.Questions;
+    using HappyMe.Web.ViewModels.Questions;
 
     using Microsoft.AspNet.Identity;
 
     public class QuestionsController : BaseController
     {
         private readonly IQuestionsDataService questionsDataService;
+        private readonly IMappingService mappingService;
         private readonly IModuleSessionDataService moduleSessionDataService;
         private readonly IAnswersDataService answersDataService;
 
         public QuestionsController(
             IModuleSessionDataService moduleSessionDataService,
             IAnswersDataService answersDataService,
-            IQuestionsDataService questionsDataService)
+            IQuestionsDataService questionsDataService,
+            IMappingService mappingService)
         {
             this.moduleSessionDataService = moduleSessionDataService;
             this.answersDataService = answersDataService;
             this.questionsDataService = questionsDataService;
+            this.mappingService = mappingService;
         }
 
         [HttpGet]
@@ -44,9 +49,11 @@
             }
 
             // To VM
-            var nextQuestion = this.moduleSessionDataService.NextQuestion(id.Value, this.User.Identity.GetUserId());
+            var nextQuestion = this.mappingService.Map<QuestionViewModel>(
+                this.moduleSessionDataService.NextQuestion(id.Value, this.User.Identity.GetUserId()));
 
-            return this.View();
+            // TODO: return different view depends of question type
+            return this.View(nextQuestion);
         }
 
         [HttpPost]

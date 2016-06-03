@@ -277,6 +277,8 @@
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Modules\ModuleViewModel.cs" />
+    <Compile Include="ViewModels\Questions\AnswerVIewModel.cs" />
+    <Compile Include="ViewModels\Questions\QuestionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\custom\administration-styles.css" />
@@ -286,6 +288,7 @@
     <Content Include="Content\custom\index-style.css" />
     <Content Include="Content\custom\modules.css" />
     <Content Include="Content\custom\override.css" />
+    <Content Include="Content\custom\questions.css" />
     <Content Include="Content\custom\reset-css.css" />
     <Content Include="Content\custom\site.css" />
     <Content Include="Content\design\index.html" />
@@ -923,14 +926,14 @@
     <Content Include="Views\Modules\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ModuleViewModel.cshtml" />
+    <None Include="Views\Questions\Answer.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\AnswerViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
-    <Folder Include="ViewModels\Questions\" />
     <Folder Include="Views\Feedback\" />
-    <Folder Include="Views\Questions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
