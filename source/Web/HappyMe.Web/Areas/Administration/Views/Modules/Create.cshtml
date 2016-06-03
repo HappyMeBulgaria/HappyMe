@@ -1,4 +1,5 @@
-﻿@model HappyMe.Web.Areas.Administration.InputModels.Modules.ModuleCreateInputModel
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@model HappyMe.Web.Areas.Administration.InputModels.Modules.ModuleCreateInputModel
 
 @{
     ViewBag.Title = "Добавяне на нов модул";
@@ -6,32 +7,17 @@
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm(FormMethod.Post))
+@using (Html.BeginForm(
+    nameof(ModulesController.Create),
+    "Modules",
+    FormMethod.Post,
+    new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Name)
-    </div>
-    <div class="editor-field bottom-buffer">
-        @Html.EditorFor(model => model.Name)
-        @Html.ValidationMessageFor(model => model.Name)
-    </div>
+    @Html.EditorForModel()
 
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Description)
-    </div>
-    <div class="editor-field bottom-buffer">
-        @Html.EditorFor(model => model.Description)
-        @Html.ValidationMessageFor(model => model.Description)
-    </div>
-
-
-    <div class="editor-field top-buffer bottom-buffer">
-        @Html.EditorFor(model => model.IsActive)
-        @Html.LabelFor(model => model.IsActive)
-        @Html.ValidationMessageFor(model => model.IsActive)
-    </div>
+    @Html.EditorFor(m => m.ImageFile)
 
     <input type="submit" value="Създай" class="btn btn-primary bottom-buffer" />
 }

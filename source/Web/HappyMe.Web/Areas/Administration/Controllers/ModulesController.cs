@@ -1,6 +1,7 @@
 ﻿namespace HappyMe.Web.Areas.Administration.Controllers
 {
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Web.Mvc;
     
@@ -16,15 +17,18 @@
     public class ModulesController : 
         MvcGridAdministrationCrudController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
     {
+        private readonly IImagesAdministrationService imagesAdministrationService;
+
         public ModulesController(
             IUsersDataService userData,
             IModulesAdministrationService modulesAdministrationService, 
-            IMappingService mappingService)
+            IMappingService mappingService,
+            IImagesAdministrationService imagesAdministrationService)
             : base(userData, modulesAdministrationService, mappingService)
         {
+            this.imagesAdministrationService = imagesAdministrationService;
         }
 
-        // Pass different modules depend of role of the user
         public ActionResult Index()
         {
             IEnumerable<ModuleGridViewModel> modules;
@@ -37,7 +41,7 @@
                 modules = this.MappingService
                     .MapCollection<ModuleGridViewModel>(
                         (this.AdministrationService as IModulesAdministrationService)
-                            .GetUserAndPublicModules(this.UserProfile.Id))
+                            ?.GetUserAndPublicModules(this.UserProfile.Id))
                     .OrderBy(m => m.Id);
             }
 
@@ -52,6 +56,15 @@
         public ActionResult Create(ModuleCreateInputModel model)
         {
             model.AuthorId = this.UserProfile.Id;
+
+            if (model.ImageFile != null)
+            {
+                var target = new MemoryStream();
+                model.ImageFile.InputStream.CopyTo(target);
+                var data = target.ToArray();
+                model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+            }
+
             var entity = this.BaseCreate(model);
             if (entity != null)
             {
@@ -66,8 +79,8 @@
         public ActionResult Update(int id)
         {
             var userHasRights = this.User.IsAdmin() ||
-                (this.AdministrationService as IModulesAdministrationService)
-                    .CheckIfUserIsModuleAuthor(id, this.UserProfile.Id);
+                ((this.AdministrationService as IModulesAdministrationService)
+                    ?.CheckIfUserIsModuleAuthor(id, this.UserProfile.Id) ?? false);
             if (userHasRights)
             {
                 return this.View(this.GetEditModelData(id));
@@ -82,10 +95,20 @@
         public ActionResult Update(ModuleUpdateInputModel model)
         {
             var userHasRights = this.User.IsAdmin() ||
-                (this.AdministrationService as IModulesAdministrationService)
-                    .CheckIfUserIsModuleAuthor(model.Id, this.UserProfile.Id);
+                ((this.AdministrationService as IModulesAdministrationService)
+                    ?.CheckIfUserIsModuleAuthor(model.Id, this.UserProfile.Id) ?? false);
             if (userHasRights)
             {
+                if (model.ImageFile != null)
+                {
+                    var target = new MemoryStream();
+                    model.ImageFile.InputStream.CopyTo(target);
+                    var data = target.ToArray();
+
+                    // TODO: here we must update the Image, not to create new.
+                    model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+                }
+
                 var entity = this.BaseUpdate(model, model.Id);
                 if (entity != null)
                 {
@@ -105,8 +128,8 @@
         public ActionResult Delete(int id)
         {
             var userHasRights = this.User.IsAdmin() ||
-                (this.AdministrationService as IModulesAdministrationService)
-                    .CheckIfUserIsModuleAuthor(id, this.UserProfile.Id);
+                ((this.AdministrationService as IModulesAdministrationService)
+                    ?.CheckIfUserIsModuleAuthor(id, this.UserProfile.Id) ?? false);
             if (userHasRights)
             {
                 this.BaseDestroy(id);
