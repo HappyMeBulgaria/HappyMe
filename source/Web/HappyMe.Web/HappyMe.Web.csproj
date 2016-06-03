@@ -280,11 +280,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\custom\administration-styles.css" />
+    <Content Include="Content\custom\global.css" />
     <Content Include="Content\custom\home-page-styles.css" />
     <Content Include="Content\custom\hover-animation.css" />
     <Content Include="Content\custom\index-style.css" />
+    <Content Include="Content\custom\modules.css" />
     <Content Include="Content\custom\override.css" />
     <Content Include="Content\custom\reset-css.css" />
+    <Content Include="Content\custom\site.css" />
     <Content Include="Content\design\index.html" />
     <Content Include="Content\fonts\font-awesome\css\font-awesome.css" />
     <Content Include="Content\fonts\font-awesome\css\font-awesome.min.css" />
@@ -292,8 +295,10 @@
     <Content Include="Content\fonts\font-awesome\HELP-US-OUT.txt" />
     <Content Include="Content\fonts\Lato\latofonts.css" />
     <Content Include="Content\fonts\Lato\latostyle.css" />
+    <Content Include="Content\images\background.png" />
     <Content Include="Content\images\homepage-background.png" />
     <Content Include="Content\images\homepage-ipad-mockup.png" />
+    <Content Include="Content\images\logo-fullcolor.png" />
     <Content Include="Content\images\module-colours.png" />
     <Content Include="Content\images\module-family.png" />
     <Content Include="Content\images\modules-alphabet.png" />
@@ -325,7 +330,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\custom\site.css" />
+    <Content Include="Content\custom\lending-page.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -886,7 +891,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LendingPageLayout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -917,6 +922,9 @@
     <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ImageUpload.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Bool.cshtml" />
+    <Content Include="Views\Modules\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ModuleViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -924,7 +932,6 @@
     <Folder Include="Content\fonts\bootstrap\" />
     <Folder Include="ViewModels\Questions\" />
     <Folder Include="Views\Feedback\" />
-    <Folder Include="Views\Modules\" />
     <Folder Include="Views\Questions\" />
   </ItemGroup>
   <ItemGroup>
