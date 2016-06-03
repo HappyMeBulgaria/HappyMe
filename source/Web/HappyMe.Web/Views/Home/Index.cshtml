@@ -211,25 +211,5 @@
             $(this).find(".card").toggleClass("flipped");
             return false;
         });
-
-        // fixes the issue when the screen is under 500px
-        // slides with people comments
-        // used to be two per screen, not one
-        var counter = 0;
-        $(window).resize(function() {
-            var slideWidthBySlick = $(".slick-slide").width();
-
-            if ($(window).width() < 500 && counter === 0) {
-                debugger;
-                $(".slick-slide").children().children().children()
-                    .css({
-                        'width': slideWidthBySlick * 2 + '%'
-                    });
-
-                counter++;
-            } else {
-                debugger;
-            }
-        });
     </script>
 }
