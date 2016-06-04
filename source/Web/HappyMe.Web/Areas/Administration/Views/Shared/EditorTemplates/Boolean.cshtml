@@ -2,7 +2,8 @@
 
 @{
     var propertyName = ViewData.ModelMetadata.PropertyName;
+    var propertyDisplayName = ViewData.ModelMetadata.DisplayName;
 }
 
 <input class="check-box" data-val="true" id="@propertyName" name="@propertyName" type="checkbox" value="true">
-<label for="@propertyName">Публичен?</label>
+<label for="@propertyName">@propertyDisplayName</label>

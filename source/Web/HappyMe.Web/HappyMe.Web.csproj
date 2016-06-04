@@ -223,6 +223,8 @@
     <Compile Include="Areas\Administration\InputModels\Users\UserCreateInputModel.cs" />
     <Compile Include="Areas\Administration\InputModels\Users\UserUpdateInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Answers\AnswerGridViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\AllChildStatisticsViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\AllParentStatisticsViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\ChildViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\DashboardIndexViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
@@ -336,7 +338,7 @@
     <Content Include="Content\images\hand_pencil.png" />
     <Content Include="Content\images\homepage-background.png" />
     <Content Include="Content\images\homepage-ipad-mockup.png" />
-    <Content Include="Content\images\kmarianov.jpg" />
+    <Content Include="Content\images\kmariyanov.jpg" />
     <Content Include="Content\images\logo-fullcolor.png" />
     <Content Include="Content\images\mama.png" />
     <Content Include="Content\images\mama.png" />
@@ -372,8 +374,30 @@
     <Content Include="Content\vendor\guillotine\jquery.guillotine.css" />
     <Content Include="Content\vendor\MvcGrid\mvc-grid.css" />
     <Content Include="favicon.ico" />
+    <Content Include="ImageSeed\alphabet-question.png" />
+    <Content Include="ImageSeed\cherries_colour.png" />
+    <Content Include="ImageSeed\hand_pencil.png" />
+    <Content Include="ImageSeed\mama.png" />
+    <Content Include="ImageSeed\module-colours.png" />
+    <Content Include="ImageSeed\module-family.png" />
+    <Content Include="ImageSeed\modules-alphabet.png" />
+    <Content Include="ImageSeed\modules-connect.png" />
+    <Content Include="ImageSeed\sheep.png" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
+    <Content Include="Scripts\vendor\chart\Chart.js" />
+    <Content Include="Scripts\vendor\jquery-ui\external\jquery\jquery.js" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\vendor\jquery-ui\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Scripts\vendor\jquery-ui\index.html" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.css" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.js" />
@@ -510,7 +534,7 @@
     <Content Include="Areas\Administration\Views\Answers\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Answers\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Answers\Update.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\bool.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Content\images\favicons\manifest.json" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\dev\locations.json" />
@@ -1001,14 +1025,13 @@
     <Content Include="Views\Questions\DragAndDropQuestion.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DragAndDropAnswers.cshtml" />
     <Content Include="Views\Shared\_MasterLayout.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Statistics\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
-    <Folder Include="Scripts\vendor\jquery-ui\external\" />
-    <Folder Include="Scripts\vendor\jquery-ui\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

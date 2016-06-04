@@ -2,22 +2,50 @@
     border-radius: 50%;
     height: 100px;
     width: 100px;
-    display: inline-block;
+    display: inline;
+    padding: 30px 40px;
+    transition: all 0.3s ease-out;
+}
+
+    .color-answer:hover,
+    .color-answer:focus {
+        border: 15px solid rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+
+@media only screen and (max-width: 885px) {
+    .color-answer {
+        padding: 20px 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .color-answer {
+        display: block;
+        margin: 15px auto;
+        padding: 0;
+    }
 }
 
 .questions-page-heading {
     padding: 20px;
 }
 
-.color-asnwers-wrapper {
+.color-answers-wrapper {
     margin: 100px 0 0 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .color-answers-wrapper {
+        margin: 0;
+    }
 }
 
 .alphabet-answers-images {
     margin: 10px;
 }
 
-.image-asnwers-wrapper {
+.image-answers-wrapper {
     margin: 20px;
 }
 
@@ -65,72 +93,7 @@
         cursor: pointer;
     }
 
-/*Result Popup*/
-.ui-dialog.result-popup {
-    border: 10px solid;
-    border-radius: 30px;
-}
-
-.result-popup.success-message {
-    border-color: #b0bb03;
-}
-
-.result-popup.error-message {
-    border-color: #f04f53;
-}
-
-.result-popup .ui-dialog-titlebar {
-    border: none;
-    background: none;
-    text-align: center;
-    color: #f04f53;
-    font-size: 60px;
-}
-
-.result-popup .ui-dialog-titlebar {
-    border: none;
-    background: none;
-    text-align: center;
-    color: #f04f53;
-    font-size: 60px;
-    width: 85%;
-    float: left;
-}
-
-.result-popup .ui-dialog-content {
-    float: left;
-    overflow: visible
-}
-
-.result-popup .ui-widget-content {
-    border: none;
-}
-
-.result-popup .message {
-    text-align: center;
-    color: #565656;
-    font-size: 40px;
-    width: 85%;
-    float: left;
-}
-
-.result-popup.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
-    float: none;
-    text-align: center;
-    width: 85%;
-    float: left;
-}
-
-.result-popup.ui-dialog .ui-dialog-buttonset .ui-button {
-    background: none;
-    background-color: #f04f53;
-    color: #FFFFFF;
-    font-size: 40px;
-}
-
-.charachter-image {
-    position: absolute;
-    right: -6%;
-    top: -124%;
-    width: 225px;
+.color-question-image {
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%);
 }

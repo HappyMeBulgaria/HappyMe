@@ -24,6 +24,7 @@
         [UIHint("EnumDropDownList")]
         public QuestionType Type { get; set; }
 
+        [Display(Name = "Публичен?")]
         public bool IsPublic { get; set; }
 
         [Display(Name = "Присъства в модул")]

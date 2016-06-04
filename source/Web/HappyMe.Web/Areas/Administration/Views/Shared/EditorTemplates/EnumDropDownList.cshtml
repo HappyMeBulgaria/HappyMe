@@ -1,7 +1,3 @@
 ﻿@model Enum
 
-@{
-    var propertyName = ViewData.ModelMetadata.PropertyName;
-}
-
-@Html.EnumDropDownListFor(model => model)
+@Html.EnumDropDownListFor(model => model, new { @class = "form-control" })
