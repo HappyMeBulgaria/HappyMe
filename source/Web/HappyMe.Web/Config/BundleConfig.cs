@@ -79,7 +79,8 @@
             bundles.Add(new ScriptBundle("~/bundles/administration-scripts").Include(
                 "~/Scripts/custom/administration/common/editorHelper.js",
                 "~/Scripts/vendor/MvcGrid/mvc-grid.js",
-                "~/Scripts/vendor/bootstrap/administration-theme-common/common-scripts.js"));
+                "~/Scripts/vendor/bootstrap/administration-theme-common/common-scripts.js",
+                "~/Scripts/vendor/chart/Chart.js"));
 
             bundles.Add(new StyleBundle("~/bundles/jquery-gritter").Include(
                "~/Scripts/vendor/jquery/gritter/js/jquery-gritter.js",

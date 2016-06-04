@@ -21,6 +21,17 @@
         }
 
         [HttpGet]
+        public ActionResult Index(int? id)
+        {
+            if (!id.HasValue)
+            {
+                return this.RedirectToAction("Index", "Dashboard", new { area = "Administration" });
+            }
+
+            return this.View();
+        }
+
+        [HttpGet]
         public ActionResult AllForChild(string id)
         {
             var viewModel = new AllChildStatisticsViewModel
