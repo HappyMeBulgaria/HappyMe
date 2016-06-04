@@ -55,13 +55,18 @@
 
         public void FinishSession(int id)
         {
-            this.moduleSessionsRepository.GetById(id).IsFinised = true;
+            var session = this.moduleSessionsRepository.GetById(id);
+            session.IsFinised = true;
+            session.FinishDate = DateTime.Now;
             this.moduleSessionsRepository.SaveChanges();
         }
 
         public async Task<int> StartAnonymousSession(int moduleId)
         {
-            var newSession = new ModuleSession(moduleId);
+            var newSession = new ModuleSession(moduleId)
+            {
+                StartedDate = DateTime.Now
+            };
             this.moduleSessionsRepository.Add(newSession);
             await this.moduleSessionsRepository.SaveChangesAsync();
 
@@ -75,7 +80,10 @@
                 throw new ArgumentNullException(nameof(userId), "UserId must have a value");
             }
 
-            var newSession = new ModuleSession(userId, moduleId);
+            var newSession = new ModuleSession(userId, moduleId)
+            {
+                StartedDate = DateTime.Now
+            };
             this.moduleSessionsRepository.Add(newSession);
             await this.moduleSessionsRepository.SaveChangesAsync();
 

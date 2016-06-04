@@ -1,5 +1,6 @@
 ﻿namespace HappyMe.Data.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
@@ -32,6 +33,10 @@
         public string UserId { get; set; }
 
         public bool IsFinised { get; set; }
+
+        public DateTime StartedDate { get; set; }
+        
+        public DateTime? FinishDate { get; set; }
 
         public virtual User User { get; set; }
 

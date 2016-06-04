@@ -17,7 +17,6 @@
     margin: 10px;
 }
 
-<<<<<<< HEAD
 .image-asnwers-wrapper {
     margin: 20px;
 }
@@ -40,7 +39,7 @@
     line-height: 2;
     font-size: 60px;
 }
-=======
+
 .question-box {
     padding: 20px;
 }
@@ -49,7 +48,19 @@
         margin: 0 auto;
     }
 
+        .question-box .module-img:hover {
+            cursor: pointer;
+        }
+
 .questions-container {
     margin: 30px 20px;
 }
->>>>>>> b921a7354bb0c53ce4b7d89ec6ce06c09883f2c4
+
+.image-answer-img {
+    border: 15px solid #FF8A5C;
+    border-radius: 50%;
+}
+
+    .image-answer-img:hover {
+        cursor: pointer;
+    }
