@@ -1,61 +1,29 @@
 ﻿@using HappyMe.Web.Areas.Administration.Controllers
 @using HappyMe.Web.Common.Helpers
 
-@Styles.Render("~/Content/bootstrap")
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
 
-@Styles.Render("~/Content/fonts/font-awesome/css/font-awesome.css")
-@Styles.Render("~/Content/lato-font")
-@Styles.Render("~/Content/jquery-gritter")
-@Styles.Render("~/Content/administration-css")
+@section styles {
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/jquery-gritter")
+    @Styles.Render("~/Content/administration-css")
+    @RenderSection("styles", false)
+}
 
-<script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+@section scripts {
+    @Scripts.Render("~/bundles/jquery-gritter")
+    @Scripts.Render("~/bundles/nice-scroll")
+    @Scripts.Render("~/bundles/administration-scripts")
 
-    ga('create', 'UA-78731558-1', 'auto');
-    ga('send', 'pageview');
+    <script type="text/javascript">
+        CKEDITOR_BASEPATH = '@(Url.Content("~/Scripts/vendor/ckeditor/"))';
+    </script>
 
-</script>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter37734825 = new Ya.Metrika({
-                    id:37734825,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true,
-                    trackHash:true
-                });
-            } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/37734825" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    @Scripts.Render("~/bundles/ckeditor")
+    @RenderSection("scripts", required: false)
+}
 
 <div class="administration-container">
     <header class="header black-bg">
@@ -92,11 +60,11 @@
                 <h5 class="centered">Marcel Newman</h5>
 
                 <li class="mt">
-                    @(Html.ActiveActionLinkHelper("Управление", nameof(DashboardController.Index), "Dashboard", new RouteValueDictionary { { "area", "Administration" } },  new RouteValueDictionary { { "class", "dashboard" } }))
+                    @(Html.ActiveActionLinkHelper("Управление", nameof(DashboardController.Index), "Dashboard", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "dashboard" } }))
                 </li>
 
                 <li class="mt">
-                    @(Html.ActiveActionLinkHelper("Модули", nameof(ModulesController.Index), "Modules", new RouteValueDictionary { {"area", "Administration" } } , new RouteValueDictionary { { "class", "modules" } }))
+                    @(Html.ActiveActionLinkHelper("Модули", nameof(ModulesController.Index), "Modules", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "modules" } }))
                 </li>
 
                 <li class="mt">
@@ -108,7 +76,7 @@
                 </li>
 
                 <li class="mt">
-                    @(Html.ActiveActionLinkHelper("Отговори", nameof(AnswersController.Index), "Answers", new RouteValueDictionary { { "area", "Administration" } },  new RouteValueDictionary { { "class", "answers" } }))
+                    @(Html.ActiveActionLinkHelper("Отговори", nameof(AnswersController.Index), "Answers", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "answers" } }))
                 </li>
             </ul>
             <!-- sidebar menu end-->
@@ -135,16 +103,3 @@
     </footer>
     <!--footer end-->
 </div>
-
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
-@Scripts.Render("~/bundles/jquery-gritter")
-@Scripts.Render("~/bundles/nice-scroll")
-@Scripts.Render("~/bundles/administration-scripts")
-
-<script type="text/javascript">
-    CKEDITOR_BASEPATH = '@(Url.Content("~/Scripts/vendor/ckeditor/"))';
-</script>
-
-@Scripts.Render("~/bundles/ckeditor")
-@RenderSection("scripts", required: false)
