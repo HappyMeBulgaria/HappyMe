@@ -18,8 +18,8 @@ HappyMe.Questions = (function () {
     };
 
     var loadAnswerClickEvent = function (questionId, sessionId) {
-        $('.one-answer-question-answers-wrapper').on('click',
-        '.one-answer-question-answer',
+        $('.answers-wrapper').on('click',
+        '.answer',
         function (event) {
             var answerId = event.originalEvent.target.dataset.answerId;
 
