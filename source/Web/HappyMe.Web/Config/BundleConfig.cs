@@ -59,7 +59,9 @@
         private static void RegisterScriptBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                "~/Scripts/vendor/jquery/jquery-{version}.js"));
+                "~/Scripts/vendor/jquery/jquery-{version}.js",
+                "~/Scripts/vendor/q/q.js",
+                "~/Scripts/custom/common/http-requester.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ckeditor").Include(
                 "~/Scripts/vendor/ckeditor/ckeditor.js"));

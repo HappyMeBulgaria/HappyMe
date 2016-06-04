@@ -80,8 +80,10 @@ namespace HappyMe.Data.Migrations
                     {
                         Name = $"Test Name{i}",
                         Description = $"Some description{i}",
-                        IsActive = i % 2 == 0
+                        IsActive = i % 2 == 0,
+                        IsPublic = true
                     };
+
                     context.Modules.AddOrUpdate(module);
                     context.SaveChanges();
                 }
