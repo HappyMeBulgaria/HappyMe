@@ -1,17 +1,18 @@
 ﻿namespace HappyMe.Services.Data.Contracts
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     using HappyMe.Data.Models;
     using HappyMe.Services.Common;
 
     public interface IModulesDataService : IService
     {
-        IEnumerable<Module> All();
+        IQueryable<Module> All();
 
-        IEnumerable<Module> AllActive();
+        IQueryable<Module> AllActive();
 
-        IEnumerable<Module> AllPublic();
+        IQueryable<Module> AllPublic();
 
         Module GetById(int id);
     }

@@ -40,26 +40,6 @@ section.home {
                 transition-property: transform;
             }
 
-.section-title {
-    position: relative;
-    text-transform: uppercase;
-    font: 1.225em Lato Black;
-    color: #ff8a5b;
-    text-align: center;
-    padding: 1.625em 0 0.625em 0;
-}
-
-    .section-title:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 47.5%;
-        right: 50%;
-        width: 70px;
-        height: 5px;
-        background: #25ced1;
-    }
-
 .mission-list {
     display: inline-block;
     text-align: center;

@@ -18,6 +18,10 @@
     font-family: Blogger Sans Light;
 }
 
+.section-title-container {
+    text-align: center;
+}
+
 .section-title {
     text-transform: uppercase;
     font: 1.225em Lato Black;
@@ -25,17 +29,18 @@
     text-align: center;
     padding: 1.625em 0 0.625em 0;
     position: relative;
+    display: inline-block;
+    line-height: 2;
 }
 
     .section-title:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 47.5%;
-        right: 50%;
-        width: 70px;
-        height: 5px;
+        content: '';
+        display: block;
         background: #25ced1;
+        height: 5px;
+        max-width: 70%;
+        width: 100%;
+        margin: 0 auto;
     }
 
 .large-heading {

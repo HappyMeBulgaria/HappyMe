@@ -5,15 +5,17 @@
 
 <h2>@ViewBag.Title</h2>
 
-<h3>Деца</h3>
-
-<div class="row">
-    @if (this.Model.CurrentUserChildren.Any())
-    {
-        @Html.DisplayFor(x => x.CurrentUserChildren)
-    }
-    else
-    {
-        <p>Нямате добавени потребители.</p>
-    }
+<div class="section-title-container">
+    <h3>Деца</h3>
 </div>
+
+    <div class="row">
+        @if (this.Model.CurrentUserChildren.Any())
+        {
+            @Html.DisplayFor(x => x.CurrentUserChildren)
+        }
+        else
+        {
+            <p>Нямате добавени потребители.</p>
+        }
+    </div>

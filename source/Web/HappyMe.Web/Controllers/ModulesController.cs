@@ -31,7 +31,7 @@
         public ActionResult Index()
         {
             var modules = this.mappingService
-                .MapCollection<ModuleViewModel>(this.modulesDataService.AllPublic().AsQueryable())
+                .MapCollection<ModuleViewModel>(this.modulesDataService.AllPublic())
                 .ToList();
 
             return this.View(modules);
@@ -66,6 +66,12 @@
             }
             
             return this.RedirectToAction("Answer", "Questions", new { area = string.Empty, id = sessionId });
+        }
+
+        [HttpGet]
+        public ActionResult Success()
+        {
+            return this.View();
         }
     }
 }
