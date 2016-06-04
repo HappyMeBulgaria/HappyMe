@@ -493,7 +493,7 @@
     <Content Include="Areas\Administration\Views\Answers\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Answers\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Answers\Update.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\bool.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Content\images\favicons\manifest.json" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\dev\locations.json" />
@@ -984,6 +984,7 @@
     <Content Include="Views\Questions\DragAndDropQuestion.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DragAndDropAnswers.cshtml" />
     <Content Include="Views\Shared\_MasterLayout.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

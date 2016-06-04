@@ -15,10 +15,13 @@
         [Display(Name = "Име на въпрос")]
         public string Text { get; set; }
 
+        [Display(Name = "Правилен?")]
         public bool IsCorrect { get; set; }
 
+        [Display(Name = "Публичен?")]
         public bool IsHidden { get; set; }
 
+        [UIHint("Integer")]
         public int OrderBy { get; set; }
 
         [HiddenInput(DisplayValue = false)]

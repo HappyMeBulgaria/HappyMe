@@ -170,3 +170,7 @@ input[type=checkbox] {
     font-size: 14px;
     background-color: #656565;
 }
+
+.editor-field {
+    margin-bottom: 10px;
+}
