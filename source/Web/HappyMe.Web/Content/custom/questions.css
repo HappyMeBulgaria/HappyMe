@@ -5,10 +5,37 @@
     display: inline-block;
 }
 
+.questions-page-heading {
+    padding: 20px;
+}
+
 .color-asnwers-wrapper {
     margin: 100px 0 0 0;
 }
 
 .alphabet-answers-images {
     margin: 10px;
+}
+
+.image-asnwers-wrapper {
+    margin: 20px;
+}
+
+.very-large-heading {
+    font-size: 60px;
+}
+
+.image-question-label {
+    color: #565656;
+    font-weight: 100;
+    font: 0.7em Lato;
+}
+
+.question-title {
+    font: 1.25em Lato Black;
+    color: #ff8a5b;
+    position: relative;
+    display: inline-block;
+    line-height: 2;
+    font-size: 60px;
 }

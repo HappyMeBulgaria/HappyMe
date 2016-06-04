@@ -3,8 +3,8 @@
 HappyMe.Questions = (function () {
 
     var loadAnswerClickEvent = function (questionId, sessionId) {
-        $('.color-asnwers-wrapper').on('click',
-        '.color-answer',
+        $('.answers-wrapper').on('click',
+        '.answer',
         function (event) {
             var answerId = event.originalEvent.target.dataset.answerId;
 

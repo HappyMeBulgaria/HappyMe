@@ -934,8 +934,8 @@
     <Content Include="Views\Modules\Success.cshtml" />
     <None Include="Views\Questions\ColorQuestion.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\AnswerViewModel.cshtml" />
-    <Content Include="Views\Questions\FamilyQuestion.cshtml" />
-    <Content Include="Views\Shared\_FamilyAnswers.cshtml" />
+    <Content Include="Views\Questions\ImageQuestion.cshtml" />
+    <Content Include="Views\Shared\_ImageAnswers.cshtml" />
     <Content Include="Views\Shared\_AlphabetAnswer.cshtml" />
   </ItemGroup>
   <ItemGroup>
