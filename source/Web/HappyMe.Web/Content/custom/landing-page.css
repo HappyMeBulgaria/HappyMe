@@ -103,6 +103,11 @@ section.home {
             font: 3em Lato Black;
             border-radius: 0.938em;
             background: #eb5270;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -ms-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
         }
 
             section.home .slogan-container .play-button:hover {
