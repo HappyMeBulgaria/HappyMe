@@ -20,7 +20,7 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(10), MaxLength(100)]
+        [MinLength(2), MaxLength(100)]
         public string Text { get; set; }
 
         public QuestionType Type { get; set; }

@@ -18,8 +18,7 @@
         [HiddenInput(DisplayValue = false)]
         public string AuthorId { get; set; }
 
-        [AllowHtml]
-        [UIHint("CKeditor")]
+        [Display(Name = "Име на въпроса")]
         public string Text { get; set; }
 
         [UIHint("EnumDropDownList")]
@@ -27,7 +26,7 @@
 
         public bool IsPublic { get; set; }
 
-        [Display(Name = "Модул")]
+        [Display(Name = "Присъства в модул")]
         [UIHint("DropDownList")]
         public int ModuleId { get; set; }
 
