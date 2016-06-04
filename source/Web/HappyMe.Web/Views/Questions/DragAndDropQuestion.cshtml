@@ -1,0 +1,30 @@
+﻿@model HappyMe.Web.ViewModels.Questions.QuestionViewModel
+
+@{
+    ViewBag.Title = Model.Text;
+}
+
+@Styles.Render("~/Content/custom/questions.css")
+
+@section scripts {
+    @Scripts.Render("~/Scripts/custom/questions/answer.js")
+    <script>
+        HappyMe.Questions.loadAnswerDragAndDropEvents(@(Model.Id), @(@Model.SessionId))
+    </script>
+}
+
+<div class="section-title-container">
+    <h1 class="section-title large-heading page-heading">@ViewBag.Title</h1>
+</div>
+
+<div id="question-answer-area">
+    Answer area
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row drag-and-drop-asnwers-wrapper">
+            @Html.DisplayFor(m => m.Answers, "DragAndDropAnswers")
+        </div>
+    </div>
+</div>
