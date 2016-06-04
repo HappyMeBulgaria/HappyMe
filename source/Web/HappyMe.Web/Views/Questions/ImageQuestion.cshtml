@@ -1,0 +1,25 @@
+﻿@model HappyMe.Web.ViewModels.Questions.QuestionViewModel
+
+@{
+    ViewBag.Title = Model.Text;
+}
+
+@section styles {
+
+    @Styles.Render("~/Content/custom/questions.css")
+}
+
+@section scripts {
+    @Scripts.Render("~/Scripts/custom/questions/answer.js")
+    <script>
+        HappyMe.Questions.loadAnswerClickEvent(@(Model.Id), @(@Model.SessionId))
+    </script>
+}
+
+<div class="text-center">
+    <h1 class="question-title very-large-heading questions-page-heading"><span class="image-question-label">посочи</span> @ViewBag.Title</h1>
+</div>
+
+<div class="row answers-wrapper image-asnwers-wrapper">
+    @Html.Partial("_ImageAnswers", Model.Answers)
+</div>

@@ -105,6 +105,8 @@
                 var combineModulePath = Path.Combine(imageSeedPath, "modules-connect.png");
                 var colorQuestionPath = Path.Combine(imageSeedPath, "cherries_colour.png");
                 var alphabetAnswerPath = Path.Combine(imageSeedPath, "sheep.png");
+                var familyAnswerPath = Path.Combine(imageSeedPath, "mama.png");
+                var connectAnswerPath = Path.Combine(imageSeedPath, "hand_pencil.png");
 
                 var alphabetModuleImage = new Image { ImageData = File.ReadAllBytes(alphabetModulePath), AuthorId = user };
                 context.Images.Add(alphabetModuleImage);
@@ -118,6 +120,10 @@
                 context.Images.Add(colorQuestionImage);
                 var alphabetAnswerImage = new Image { ImageData = File.ReadAllBytes(alphabetAnswerPath), AuthorId = user };
                 context.Images.Add(alphabetAnswerImage);
+                var familyAnswerImage = new Image { ImageData = File.ReadAllBytes(familyAnswerPath), AuthorId = user };
+                context.Images.Add(familyAnswerImage);
+                var connectAnswerImage = new Image { ImageData = File.ReadAllBytes(connectAnswerPath), AuthorId = user };
+                context.Images.Add(connectAnswerImage);
 
                 context.SaveChanges();
 
@@ -128,6 +134,7 @@
                     Name = "Азбука",
                     Description = "Some description{i}",
                     IsActive = true,
+                    IsPublic = true,
                     AuthorId = userId,
                     ImageId = alphabetModuleImage.Id
                 };
@@ -138,6 +145,7 @@
                     Name = "Цветове",
                     Description = "Some description{i}",
                     IsActive = true,
+                    IsPublic = true,
                     AuthorId = userId,
                     ImageId = colorModuleImage.Id
                 };
@@ -148,6 +156,7 @@
                     Name = "Семейство",
                     Description = "Some description{i}",
                     IsActive = true,
+                    IsPublic = true,
                     AuthorId = userId,
                     ImageId = familyModuleImage.Id
                 };
@@ -158,6 +167,7 @@
                     Name = "Свържи",
                     Description = "Some description{i}",
                     IsActive = true,
+                    IsPublic = true,
                     AuthorId = userId,
                     ImageId = combineModuleImage.Id
                 };
@@ -186,11 +196,22 @@
                 };
                 context.Questions.AddOrUpdate(colorQuestion);
 
+                var familyQuestion = new Question
+                {
+                    Text = "Мама",
+                    Type = QuestionType.ImageQuestion,
+                    IsPublic = true,
+                    AuthorId = userId,
+                    ModuleId = familyModule.Id
+                };
+                context.Questions.AddOrUpdate(familyQuestion);
+
                 context.SaveChanges();
 
                 var alphabetAnswerRed = new Answer
                 {
                     Text = "red",
+                    IsCorrect = true,
                     QuestionId = alphabetQuestion.Id,
                     AuthorId = userId,
                 };
@@ -255,6 +276,44 @@
                     ImageId = alphabetAnswerImage.Id
                 };
                 context.Answers.AddOrUpdate(alphabetAnswer4);
+
+                var familyAnswer1 = new Answer
+                {
+                    Text = "Изображение на човек",
+                    QuestionId = familyQuestion.Id,
+                    AuthorId = userId,
+                    ImageId = familyAnswerImage.Id
+                };
+                context.Answers.AddOrUpdate(familyAnswer1);
+
+                var familyAnswer2 = new Answer
+                {
+                    Text = "Изображение на човек",
+                    QuestionId = familyQuestion.Id,
+                    AuthorId = userId,
+                    ImageId = familyAnswerImage.Id
+                };
+                context.Answers.AddOrUpdate(familyAnswer2);
+
+                var familyAnswer3 = new Answer
+                {
+                    Text = "Изображение на човек",
+                    QuestionId = familyQuestion.Id,
+                    AuthorId = userId,
+                    ImageId = familyAnswerImage.Id
+                };
+                context.Answers.AddOrUpdate(familyAnswer3);
+
+                var familyAnswer4 = new Answer
+                {
+                    Text = "Изображение на човек",
+                    QuestionId = familyQuestion.Id,
+                    AuthorId = userId,
+                    ImageId = familyAnswerImage.Id
+                };
+                context.Answers.AddOrUpdate(familyAnswer4);
+
+                context.SaveChanges();
             }
         }
     }

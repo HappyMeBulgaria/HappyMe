@@ -9,7 +9,7 @@
 @section scripts {
     @Scripts.Render("~/Scripts/custom/questions/answer.js")
     <script>
-        HappyMe.Questions.loadAnswerClickEvent(@(Model.Id), @(@Model.SessionId))
+        HappyMe.Questions.loadAnswerDragAndDropEvents(@(Model.Id), @(@Model.SessionId))
     </script>
 }
 
@@ -17,13 +17,14 @@
     <h1 class="section-title large-heading page-heading">@ViewBag.Title</h1>
 </div>
 
+<div id="question-answer-area">
+    Answer area
+</div>
+
 <div class="row">
-    <div class="col-sm-4 col-xs-12 text-center">
-        <img src="@Model.ImageUrl" alt="@($"{Model.Text} - изображение")" />
-    </div>
-    <div class="col-sm-8">
-        <div class="row color-asnwers-wrapper one-answer-question-answers-wrapper">
-            @Html.DisplayFor(m => m.Answers)
+    <div class="col-sm-12">
+        <div class="row drag-and-drop-asnwers-wrapper">
+            @Html.DisplayFor(m => m.Answers, "DragAndDropAnswers")
         </div>
     </div>
 </div>
