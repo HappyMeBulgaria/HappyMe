@@ -67,5 +67,11 @@
             
             return this.RedirectToAction("Answer", "Questions", new { area = string.Empty, id = sessionId });
         }
+
+        [HttpGet]
+        public ActionResult Success()
+        {
+            return this.View();
+        }
     }
 }

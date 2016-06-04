@@ -51,15 +51,21 @@
 
             // To VM
             var nextQuestion = this.mappingService.Map<QuestionViewModel>(
-                    this.moduleSessionDataService.NextQuestion(id.Value, this.User.Identity.GetUserId()));
+                this.moduleSessionDataService.NextQuestion(id.Value, this.User.Identity.GetUserId()));
 
+            if (nextQuestion == null)
+            {
+                // No more question in module
+                return this.RedirectToAction("Success", "Modules", new { area = string.Empty });
+            }
+
+            nextQuestion.SessionId = id.Value;
             var type = nextQuestion.Type.ToString();
-            
+
             return this.View(type, nextQuestion);
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Answer(AnswerQuestionInputModel inputModel)
         {
             if (this.ModelState.IsValid)
@@ -78,21 +84,13 @@
 
                 var isAnswerCorrect = this.questionsDataService.IsCorrectAnswer(inputModel.QuestionId, inputModel.AnswerId);
 
-                if (isAnswerCorrect)
+                return this.JsonSuccess(new
                 {
-                    return this.RedirectToAction(
-                        "Answer",
-                        "Questions",
-                        new { area = string.Empty, id = inputModel.SessionId });
-                }
-                else
-                {
-                    // incorrect answer, try again
-                    return this.View(inputModel);
-                }
+                    IsAnswerCorrect = isAnswerCorrect
+                });
             }
 
-            return this.View(inputModel);
+            return this.JsonError("Упс, възникна грешка!");
         }
     }
 }

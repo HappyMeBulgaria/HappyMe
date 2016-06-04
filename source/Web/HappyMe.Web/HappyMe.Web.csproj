@@ -322,6 +322,10 @@
     <Content Include="Content\vendor\bootstrap\bootstrap.min.css" />
     <Content Include="Content\vendor\guillotine\jquery.guillotine.css" />
     <Content Include="Content\vendor\MvcGrid\mvc-grid.css" />
+    <Content Include="Scripts\custom\common\http-requester.js" />
+    <Content Include="Scripts\custom\questions\answer.js" />
+    <Content Include="Scripts\vendor\q\q.js" />
+    <Content Include="Scripts\vendor\q\q.min.js" />
     <Content Include="Scripts\vendor\SlickSlider\.gitignore" />
     <Content Include="Scripts\vendor\SlickSlider\index.html" />
     <Content Include="Scripts\vendor\SlickSlider\slick\ajax-loader.gif" />
@@ -927,6 +931,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ModuleViewModel.cshtml" />
     <Content Include="Views\Questions\AlphabetQuestion.cshtml" />
+    <Content Include="Views\Modules\Success.cshtml" />
     <None Include="Views\Questions\ColorQuestion.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\AnswerViewModel.cshtml" />
     <Content Include="Views\Shared\_AlphabetAnswer.cshtml" />

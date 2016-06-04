@@ -46,3 +46,66 @@
 .large-heading {
     font-size: 30px;
 }
+
+.bottom-buffer {
+    margin-bottom: 10px;
+}
+
+.top-buffer {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+textarea {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+    input:focus,
+    input:active,
+    textarea:focus,
+    textarea:active {
+        outline: none;
+        border-color: #FF8A5B;
+    }
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+    /* style icon */
+    .inner-addon i {
+        position: absolute;
+        padding: 7px;
+        font-size: 1.4em;
+        pointer-events: none;
+    }
+
+/* align icon */
+.left-addon i {
+    left: 15px;
+}
+
+.right-addon i {
+    right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+    padding-left: 40px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}

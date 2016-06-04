@@ -54,11 +54,11 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/37734825" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
-    @RenderSection("styles", required: false)
     @Styles.Render("~/Content/lending-page")
     @Styles.Render("~/Content/font-awesome")
     @Styles.Render("~/Content/lato-font")
     @Styles.Render("~/Content/slick")
+    @RenderSection("styles", required: false)
 </head>
 <body>
     <header>
@@ -80,8 +80,8 @@
                         <li class=""><a class="scroll" href="#mission">мисия</a></li>
                         <li class=""><a class="scroll" href="#functions">функции</a></li>
                         <li class=""><a class="scroll" href="#modules">модули</a></li>
-                        <li class=""><a class="scroll" href="#tutorial">как да започнем</a></li>
-                        <li class=""><a class="scroll" href="#why-happy">защо happy me?</a></li>
+                        @*<li class=""><a class="scroll" href="#tutorial">как да започнем</a></li>
+                        <li class=""><a class="scroll" href="#why-happy">защо happy me?</a></li>*@
                         <li class=""><a class="scroll" href="#team">екип</a></li>
                         <li class=""><a class="scroll" href="#contact-us">контакти</a></li>
                     </ul>

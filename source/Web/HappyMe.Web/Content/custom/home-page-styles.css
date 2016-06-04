@@ -120,7 +120,7 @@ section.home {
 
 .modules-list {
     display: flex;
-    margin-top: 35px;
+    margin: 60px 0;
 }
 
     .modules-list .module {
@@ -176,7 +176,7 @@ section.home {
     -ms-perspective: 800;
     -moz-perspective: 800;
     -o-perspective: 800;
-    height: 18em;
+    height: 20em;
     position: relative;
 }
 
@@ -253,3 +253,82 @@ section.home {
             /* Opera */
         }
 /*=========End Flipping animations==========*/
+.team-section {
+    margin-top: 64px;
+    text-align: center;
+    /*background: #fceadd;*/
+}
+
+    .team-section .team-container {
+        display: inline-block;
+        width: 100%;
+        padding: 5% 0;
+        /*background: #fceadd;*/
+    }
+
+        .team-section .team-container .team-list li {
+            margin: 10px 20px;
+        }
+
+            .team-section .team-container .team-list li .team-profile-picture {
+                width: 100%;
+                border-radius: 50%;
+            }
+
+.contact-form-section {
+    background: #FCEADE;
+}
+
+    .contact-form-section .section-title {
+    }
+
+    .contact-form-section .contacts-form {
+        float: none;
+        margin: 0 auto;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+        .contact-form-section .contacts-form input,
+        .contact-form-section .contacts-form select,
+        .contact-form-section .contacts-form textarea {
+            width: 100%;
+        }
+
+            .contact-form-section .contacts-form input[type="email"]:after {
+                display: block;
+                content: "\f000";
+                font-family: 'FontAwesome', 'Helvetica', 'Arial', sans-serif;
+                /*color: #000;
+                font-size: 18px;
+                padding-right: 0.5em;*/
+                position: absolute;
+                /*top: 10px;
+                left: 0;*/
+            }
+
+        .contact-form-section .contacts-form textarea {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .contact-form-section .contacts-form .contact-form {
+            float: none;
+            margin: 0 auto;
+        }
+
+            .contact-form-section .contacts-form .contact-form .inner-addon i {
+                padding: 7px;
+                font-size: 1.4em;
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+                color: #FFF;
+                background: #FF8A5B;
+            }
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: #FFF;
+    background: #777;
+}
