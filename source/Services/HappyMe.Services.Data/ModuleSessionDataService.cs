@@ -55,7 +55,9 @@
 
         public void FinishSession(int id)
         {
-            this.moduleSessionsRepository.GetById(id).IsFinised = true;
+            var session = this.moduleSessionsRepository.GetById(id);
+            session.IsFinised = true;
+            session.FinishDate = DateTime.Now;
             this.moduleSessionsRepository.SaveChanges();
         }
 
