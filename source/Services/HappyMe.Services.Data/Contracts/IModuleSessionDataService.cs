@@ -11,6 +11,8 @@
 
         Question NextQuestion(int moduleSessionId, string userId);
 
+        void FinishSession(int id);
+
         Task<int> StartAnonymousSession(int moduleId);
 
         Task<int> StartUserSession(string userId, int moduleId);
