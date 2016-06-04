@@ -4,9 +4,9 @@
 
     using HappyMe.Services.Administration.Models;
 
-    public class AllStatisticsViewModel
+    public class AllChildStatisticsViewModel
     {
-        public AllStatisticsViewModel()
+        public AllChildStatisticsViewModel()
         {
             this.ChildAnswerRatoStatistics = new List<ChildAnswerRatoStatistic>();
             this.ModulePlayedTimesStatistics = new List<ModulePlayedTimesStatistic>();
