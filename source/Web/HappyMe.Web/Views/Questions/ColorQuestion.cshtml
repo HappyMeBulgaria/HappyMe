@@ -4,9 +4,7 @@
     ViewBag.Title = Model.Text;
 }
 
-@section styles {
-    @Styles.Render("~/Content/custom/questions.css")
-}
+@Styles.Render("~/Content/custom/questions.css")
 
 @section scripts {
     @Scripts.Render("~/Scripts/custom/questions/answer.js")
@@ -15,7 +13,9 @@
     </script>
 }
 
-<h1 class="section-title large-heading page-heading">@ViewBag.Title</h1>
+<div class="section-title-container">
+    <h1 class="section-title large-heading page-heading">@ViewBag.Title</h1>
+</div>
 
 <div class="row">
     <div class="col-sm-4 col-xs-12 text-center">

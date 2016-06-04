@@ -6,6 +6,7 @@
     using AutoMapper;
 
     using HappyMe.Common.Mapping;
+    using HappyMe.Common.Models;
     using HappyMe.Data.Models;
 
     public class QuestionViewModel : IMapFrom<Question>, IHaveCustomMappings
@@ -13,6 +14,8 @@
         public int Id { get; set; }
 
         public string Text { get; set; }
+
+        public QuestionType Type { get; set; }
 
         public byte[] ImageData { get; set; }
 

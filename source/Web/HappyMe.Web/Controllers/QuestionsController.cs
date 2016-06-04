@@ -1,8 +1,9 @@
 ﻿namespace HappyMe.Web.Controllers
 {
+    using System;
     using System.Threading.Tasks;
     using System.Web.Mvc;
-
+    using HappyMe.Common.Models;
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Common.Extensions;
@@ -59,9 +60,9 @@
             }
 
             nextQuestion.SessionId = id.Value;
+            var type = nextQuestion.Type.ToString();
 
-            // TODO: return different view depends of question type
-            return this.View(nextQuestion);
+            return this.View(type, nextQuestion);
         }
 
         [HttpPost]
