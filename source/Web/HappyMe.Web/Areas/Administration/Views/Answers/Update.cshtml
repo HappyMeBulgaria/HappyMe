@@ -2,7 +2,7 @@
 @model HappyMe.Web.Areas.Administration.InputModels.Answers.AnswerUpdateInputModel
 
 @{
-    ViewBag.Title = "Промяна на модул";
+    ViewBag.Title = "Промяна на отговор";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -19,5 +19,5 @@
 
     @Html.EditorFor(m => m.ImageData)
 
-    <input type="submit" value="Редактирай" />
+    <input type="submit" value="Редактирай" class="btn btn-blue"/>
 }
