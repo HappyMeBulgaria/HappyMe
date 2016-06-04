@@ -1,8 +1,9 @@
 ﻿namespace HappyMe.Web.Controllers
 {
+    using System;
     using System.Threading.Tasks;
     using System.Web.Mvc;
-
+    using HappyMe.Common.Models;
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Common.Extensions;
@@ -50,10 +51,11 @@
 
             // To VM
             var nextQuestion = this.mappingService.Map<QuestionViewModel>(
-                this.moduleSessionDataService.NextQuestion(id.Value, this.User.Identity.GetUserId()));
+                    this.moduleSessionDataService.NextQuestion(id.Value, this.User.Identity.GetUserId()));
 
-            // TODO: return different view depends of question type
-            return this.View(nextQuestion);
+            var type = nextQuestion.Type.ToString();
+            
+            return this.View(type, nextQuestion);
         }
 
         [HttpPost]
