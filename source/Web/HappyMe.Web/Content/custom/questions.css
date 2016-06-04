@@ -12,3 +12,15 @@
 .alphabet-answers-images {
     margin: 10px;
 }
+
+.question-box {
+    padding: 20px;
+}
+
+    .question-box .module-img {
+        margin: 0 auto;
+    }
+
+.questions-container {
+    margin: 30px 20px;
+}
