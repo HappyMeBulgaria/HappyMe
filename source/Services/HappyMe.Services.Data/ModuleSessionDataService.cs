@@ -34,7 +34,7 @@
         {
             var answerdQuestioIds =
                 this.userAnswersRepository.All()
-                    .Where(x => x.ModuleInstanceId == moduleSessionId && x.UserId == userId && x.Answer.IsCorrect)
+                    .Where(x => x.ModuleSessionId == moduleSessionId && x.UserId == userId && x.Answer.IsCorrect)
                     .Select(x => x.Answer.QuestionId);
 
             var unanswerdQuestions =

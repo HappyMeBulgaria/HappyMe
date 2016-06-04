@@ -18,7 +18,7 @@
         {
             this.UserId = userId;
             this.AnswerId = answerId;
-            this.ModuleInstanceId = moduleInstanceId;
+            this.ModuleSessionId = moduleInstanceId;
         }
 
         [Key]
@@ -32,7 +32,7 @@
 
         public virtual Answer Answer { get; set; }
 
-        public int ModuleInstanceId { get; set; }
+        public int ModuleSessionId { get; set; }
 
         public virtual ModuleSession ModuleSession { get; set; }
     }
