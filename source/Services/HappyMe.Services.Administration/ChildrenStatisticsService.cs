@@ -37,14 +37,14 @@
                 this.userAnswersRepository.All()
                     .Include(x => x.ModuleSession)
                     .Include(x => x.ModuleSession.Module)
-                    .Where(x => x.UserId == childId)
+                    .Where(x => x.UserId == childId && x.ModuleSession.FinishDate != null)
                     .ToList()
                     .AsQueryable()
                     .GroupBy(x => x.ModuleSession.Module.Name)
                     .Select(x => new ModuleSessionStatistic
                     {
                         ModuleName = x.Key,
-                        AverageTime = new TimeSpan(Convert.ToInt64(x.Select(y => y.ModuleSession.FinishDate - y.ModuleSession.StartedDate).Average(z => z.Ticks))).TotalMinutes
+                        AverageTime = new TimeSpan(Convert.ToInt64(x.Select(y => y.ModuleSession.FinishDate.Value - y.ModuleSession.StartedDate).Average(z => z.Ticks))).TotalMinutes
                     });
         }
 

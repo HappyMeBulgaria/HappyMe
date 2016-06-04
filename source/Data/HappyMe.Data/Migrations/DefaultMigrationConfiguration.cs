@@ -108,6 +108,7 @@
                 var familyAnswerPath = Path.Combine(imageSeedPath, "mama.png");
                 var connectAnswerPath = Path.Combine(imageSeedPath, "hand_pencil.png");
                 var alphabetQuestionPath = Path.Combine(imageSeedPath, "alphabet-question.png");
+                var connectQuestionPath = Path.Combine(imageSeedPath, "connect-question.png");
 
                 var alphabetModuleImage = new Image { ImageData = File.ReadAllBytes(alphabetModulePath), AuthorId = user };
                 context.Images.Add(alphabetModuleImage);
@@ -127,6 +128,8 @@
                 context.Images.Add(connectAnswerImage);
                 var alphabetQuestionImage = new Image { ImageData = File.ReadAllBytes(alphabetQuestionPath), AuthorId = user };
                 context.Images.Add(alphabetQuestionImage);
+                var connectQuestionImage = new Image { ImageData = File.ReadAllBytes(connectQuestionPath), AuthorId = user };
+                context.Images.Add(connectQuestionImage);
 
                 context.SaveChanges();
 
@@ -209,6 +212,16 @@
                     ModuleId = familyModule.Id
                 };
                 context.Questions.AddOrUpdate(familyQuestion);
+
+                var connectQuestion = new Question
+                {
+                    Text = "Свържи",
+                    Type = QuestionType.DragAndDropQuestion,
+                    IsPublic = true,
+                    AuthorId = userId,
+                    ModuleId = familyModule.Id
+                };
+                context.Questions.AddOrUpdate(connectQuestion);
 
                 context.SaveChanges();
 
@@ -316,6 +329,42 @@
                     ImageId = familyAnswerImage.Id
                 };
                 context.Answers.AddOrUpdate(familyAnswer4);
+
+                var connectAnswer1 = new Answer
+                {
+                    Text = "Молив",
+                    QuestionId = connectQuestion.Id,
+                    AuthorId = userId,
+                    ImageId = connectAnswerImage.Id
+                };
+                context.Answers.AddOrUpdate(connectAnswer1);
+
+                var connectAnswer2 = new Answer
+                {
+                    Text = "Молив",
+                    QuestionId = connectQuestion.Id,
+                    AuthorId = userId,
+                    ImageId = connectAnswerImage.Id
+                };
+                context.Answers.AddOrUpdate(connectAnswer2);
+
+                var connectAnswer3 = new Answer
+                {
+                    Text = "Молив",
+                    QuestionId = connectQuestion.Id,
+                    AuthorId = userId,
+                    ImageId = connectAnswerImage.Id
+                };
+                context.Answers.AddOrUpdate(connectAnswer3);
+
+                var connectAnswer4 = new Answer
+                {
+                    Text = "Молив",
+                    QuestionId = connectQuestion.Id,
+                    AuthorId = userId,
+                    ImageId = connectAnswerImage.Id
+                };
+                context.Answers.AddOrUpdate(connectAnswer4);
 
                 context.SaveChanges();
             }

@@ -374,17 +374,17 @@
     <Content Include="Content\vendor\guillotine\jquery.guillotine.css" />
     <Content Include="Content\vendor\MvcGrid\mvc-grid.css" />
     <Content Include="favicon.ico" />
+    <Content Include="ImageSeed\alphabet-question.png" />
+    <Content Include="ImageSeed\cherries_colour.png" />
+    <Content Include="ImageSeed\hand_pencil.png" />
+    <Content Include="ImageSeed\mama.png" />
+    <Content Include="ImageSeed\module-colours.png" />
+    <Content Include="ImageSeed\module-family.png" />
+    <Content Include="ImageSeed\modules-alphabet.png" />
+    <Content Include="ImageSeed\modules-connect.png" />
+    <Content Include="ImageSeed\sheep.png" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
-    <Content Include="Scripts\vendor\jquery-ui\index.html" />
-    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.css" />
-    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.js" />
-    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.min.css" />
-    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.min.js" />
-    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.structure.css" />
-    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.structure.min.css" />
-    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.css" />
-    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.min.css" />
     <Content Include="Scripts\vendor\kendo.window.js" />
     <Content Include="Scripts\vendor\q\q.js" />
     <Content Include="Scripts\vendor\q\q.min.js" />
@@ -1009,8 +1009,6 @@
     <Folder Include="Areas\Administration\Views\Statistics\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
-    <Folder Include="Scripts\vendor\jquery-ui\external\" />
-    <Folder Include="Scripts\vendor\jquery-ui\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

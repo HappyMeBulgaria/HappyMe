@@ -28,7 +28,7 @@
             <li class="col-md-4">
                 <article class="mission-item">
                     <i class="fa fa-rocket fa-5x mission-icon" aria-hidden="true"></i>
-                    <p>Да създадем иновативно и достъпно приложение на български, което да спомогне и обогати процеса на работа и обучение на деца с аутизъм</p>
+                    <p>Да създадем иновативно и достъпно приложение на български, което да спомогне и обогати процеса на работа и обучението на деца с аутизъм</p>
                 </article>
             </li>
 
@@ -219,10 +219,10 @@
         </div>
 
         @using (Html.BeginForm(
-                    nameof(FeedbackController.Send),
-                    "Feedback",
-                    FormMethod.Post,
-                    new { enctype = "multipart/form-data", @class = "contacts-form col-md-12" }))
+            nameof(FeedbackController.Send),
+            "Feedback",
+            FormMethod.Post,
+            new { enctype = "multipart/form-data", @class = "contacts-form col-md-12" }))
         {
             @Html.AntiForgeryToken()
 
