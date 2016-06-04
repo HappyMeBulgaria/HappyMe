@@ -39,9 +39,9 @@
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 
-            var module = this.moduleSessionDataService.GetById(id.Value);
+            var session = this.moduleSessionDataService.GetById(id.Value);
 
-            if (module == null)
+            if (session == null)
             {
                 this.TempData.AddDangerMessage("Упс! Няма такъв модул.");
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
@@ -54,6 +54,7 @@
             if (nextQuestion == null)
             {
                 // No more question in module
+                this.moduleSessionDataService.FinishSession(session.Id);
                 return this.RedirectToAction("Success", "Modules", new { area = string.Empty });
             }
 

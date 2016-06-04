@@ -53,6 +53,12 @@
             return RandomGenerator.Instance.OneOf(unanswerdQuestions);
         }
 
+        public void FinishSession(int id)
+        {
+            this.moduleSessionsRepository.GetById(id).IsFinised = true;
+            this.moduleSessionsRepository.SaveChanges();
+        }
+
         public async Task<int> StartAnonymousSession(int moduleId)
         {
             var newSession = new ModuleSession(moduleId);
