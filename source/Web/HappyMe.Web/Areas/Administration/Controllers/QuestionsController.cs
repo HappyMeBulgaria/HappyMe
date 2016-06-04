@@ -53,7 +53,7 @@
         [HttpGet]
         public ActionResult Create()
         {
-            this.PopulateViewBag();
+            this.PopulateViewBag(null);
             return this.View(new QuestionCreateInputModel());
         }
 
@@ -79,7 +79,7 @@
                 return this.RedirectToAction(nameof(this.Index));
             }
 
-            this.PopulateViewBag();
+            this.PopulateViewBag(null);
             return this.View(model);
         }
 
@@ -92,8 +92,10 @@
 
             if (userHasRights)
             {
-                this.PopulateViewBag();
-                return this.View(this.GetEditModelData(id));
+                var question = this.GetEditModelData(id);
+                this.PopulateViewBag(question.ModuleId);
+
+                return this.View(question);
             }
 
             this.TempData.AddDangerMessage("Нямате права за да променяте този въпрос");
@@ -127,7 +129,7 @@
                     return this.RedirectToAction(nameof(this.Index));
                 }
 
-                this.PopulateViewBag();
+                this.PopulateViewBag(model.ModuleId);
                 return this.View(model);
             }
 
@@ -155,13 +157,13 @@
             return this.RedirectToAction(nameof(this.Index));
         }
 
-        private void PopulateViewBag()
+        private void PopulateViewBag(int? id)
         {
             var modules = this.User.IsAdmin() 
                 ? this.modulesAdministrationService.Read() 
                 : this.modulesAdministrationService.GetUserModules(this.UserProfile.Id);
 
-            this.ViewBag.ModuleIdData = modules.Select(m => new SelectListItem { Text = m.Name, Value = m.Id.ToString() });
+            this.ViewBag.ModuleIdData = modules.Select(m => new SelectListItem { Text = m.Name, Value = m.Id.ToString(), Selected = m.Id == id });          
         }
     }
 }

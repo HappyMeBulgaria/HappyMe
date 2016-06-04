@@ -46,7 +46,7 @@ HappyMe.Questions = (function () {
     };
 
     var loadAnswerClickEvent = function (questionId, sessionId) {
-        $('.answers-wrapper').on('click',
+        $('.color-answers-wrapper').on('click',
         '.answer',
         function (event) {
             var answerId = event.originalEvent.target.dataset.answerId;
@@ -62,7 +62,7 @@ HappyMe.Questions = (function () {
     };
 
     var loadAnswerDragAndDropEvents = function (questionId, sessionId) {
-        $('.drag-and-drop-asnwers-wrapper')
+        $('.drag-and-drop-answers-wrapper')
             .on('dragstart',
                 '.drag-and-drop-answer',
                 function (event) {

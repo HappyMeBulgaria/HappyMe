@@ -5,7 +5,10 @@
 
 <h2>Изображения</h2>
 
+
+<input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer" />
 @Html.ActionLink("Създай ново", "Create", "Images", new { @class = "btn btn-primary bottom-buffer" })
+
 
 @(Html.MvcGrid(
     Model,
@@ -22,7 +25,7 @@
             .Titled("Промяна")
             .Encoded(false)
             .Filterable(false)
-            .RenderedAs(model => Html.ActionLink("Промяна", nameof(ImagesController.Update), new { id = model.Id }, new { @class= "btn btn-primary" }));
+            .RenderedAs(model => Html.ActionLink("Промяна", nameof(ImagesController.Update), new { id = model.Id }, new { @class = "btn btn-primary" }));
         columns.Add(model => model.Id)
             .Titled("Изтриване")
             .Encoded(false)
