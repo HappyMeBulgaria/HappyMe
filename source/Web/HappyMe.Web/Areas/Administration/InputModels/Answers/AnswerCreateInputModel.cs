@@ -12,8 +12,7 @@
         [Display(Name = "Въпрос")]
         public int QuestionId { get; set; }
 
-        [AllowHtml]
-        [UIHint("CKeditor")]
+        [Display(Name = "Име на въпрос")]
         public string Text { get; set; }
 
         public bool IsCorrect { get; set; }
