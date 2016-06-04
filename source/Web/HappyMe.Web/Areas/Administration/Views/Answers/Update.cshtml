@@ -19,5 +19,6 @@
 
     @Html.EditorFor(m => m.ImageData)
 
-    <input type="submit" value="Редактирай" class="btn btn-blue"/>
+    <input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue" />
+    <input type="submit" value="Редактирай" class="btn btn-primary pull-right"/>
 }

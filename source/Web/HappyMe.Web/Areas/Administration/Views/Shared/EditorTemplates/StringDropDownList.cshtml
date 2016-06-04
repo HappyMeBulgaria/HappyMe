@@ -5,4 +5,6 @@
     var viewDataName = $"{propertyName}Data";
 }
 
-@Html.DropDownListFor(m => m, ViewData[viewDataName] as IEnumerable<SelectListItem>)
+<div>
+    @Html.DropDownListFor(m => m, ViewData[viewDataName] as IEnumerable<SelectListItem>, new { @class = "form-control" })
+</div>
