@@ -353,6 +353,7 @@
     <Content Include="Content\vendor\bootstrap\bootstrap.min.css" />
     <Content Include="Content\vendor\guillotine\jquery.guillotine.css" />
     <Content Include="Content\vendor\MvcGrid\mvc-grid.css" />
+    <Content Include="favicon.ico" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
     <Content Include="Scripts\vendor\q\q.js" />
