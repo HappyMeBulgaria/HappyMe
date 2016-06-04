@@ -367,6 +367,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
+    <Content Include="Scripts\vendor\kendo.window.js" />
     <Content Include="Scripts\vendor\q\q.js" />
     <Content Include="Scripts\vendor\q\q.min.js" />
     <Content Include="Scripts\vendor\SlickSlider\.gitignore" />

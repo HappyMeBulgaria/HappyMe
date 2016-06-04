@@ -1,20 +1,20 @@
 ﻿@font-face {
-    src: url('../fonts/Lato/fonts/Lato-Light.ttf');
+    src: url('/Content/fonts/Lato/fonts/Lato-Light.ttf');
     font-family: Lato Light;
 }
 
 @font-face {
-    src: url('../fonts/Lato/fonts/Lato-Regular.ttf');
+    src: url('/Content/fonts/Lato/fonts/Lato-Regular.ttf');
     font-family: Lato;
 }
 
 @font-face {
-    src: url('../fonts/Lato/fonts/Lato-Black.ttf');
+    src: url('/Content/fonts/Lato/fonts/Lato-Black.ttf');
     font-family: Lato Black;
 }
 
 @font-face {
-    src: url('../fonts/Blogger Sans/Blogger_Sans-Light.otf');
+    src: url('/Content/fonts/Blogger Sans/Blogger_Sans-Light.otf');
     font-family: Blogger Sans Light;
 }
 
