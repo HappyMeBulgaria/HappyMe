@@ -7,10 +7,12 @@
 @section styles {
 
     @Styles.Render("~/Content/custom/questions.css")
+    @Styles.Render("~/Scripts/vendor/jquery-ui/jquery-ui.css")
 }
 
 @section scripts {
     @Scripts.Render("~/Scripts/custom/questions/answer.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.js")
     <script>
         HappyMe.Questions.loadAnswerClickEvent(@(Model.Id), @(@Model.SessionId))
     </script>
@@ -22,4 +24,12 @@
 
 <div class="row answers-wrapper image-asnwers-wrapper">
     @Html.Partial("_ImageAnswers", Model.Answers)
+</div>
+
+<div id="success-message" title="success-result" style="display: none;">
+    <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+
+<div id="error-message" title="error-result" style="display: none;">
+    <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
 </div>

@@ -299,6 +299,7 @@
     <Content Include="Content\fonts\Lato\latofonts.css" />
     <Content Include="Content\fonts\Lato\latostyle.css" />
     <Content Include="Content\images\background.png" />
+    <Content Include="Content\images\banana_picture.png" />
     <Content Include="Content\images\cherries_colour.png" />
     <Content Include="Content\images\favicons\android-icon-144x144.png" />
     <Content Include="Content\images\favicons\android-icon-192x192.png" />
@@ -326,6 +327,8 @@
     <Content Include="Content\images\favicons\ms-icon-150x150.png" />
     <Content Include="Content\images\favicons\ms-icon-310x310.png" />
     <Content Include="Content\images\favicons\ms-icon-70x70.png" />
+    <Content Include="Content\images\grapes-colours.png" />
+    <Content Include="Content\images\hand_dragdropmodule.png" />
     <Content Include="Content\images\hand_pencil.png" />
     <Content Include="Content\images\character_green.png" />
     <Content Include="Content\images\character_pink.png" />
@@ -344,11 +347,15 @@
     <Content Include="Content\images\modules-connect.png" />
     <Content Include="Content\images\nav-logo-min.png" />
     <Content Include="Content\images\nav-logo.png" />
+    <Content Include="Content\images\orange-colours.png" />
+    <Content Include="Content\images\pear_colours.png" />
     <Content Include="Content\images\Screen_Alphabet_Question_A.png" />
     <Content Include="Content\images\sheep.png" />
     <Content Include="Content\images\rpopova.jpg" />
     <Content Include="Content\images\sheep.png" />
+    <Content Include="Content\images\strawberry-colours.png" />
     <Content Include="Content\images\tkurtev.jpg" />
+    <Content Include="Content\images\tomato-colours.png" />
     <Content Include="Content\images\ui-zac.jpg" />
     <Content Include="Content\images\use-happyme-left-content.png" />
     <Content Include="Content\images\user-default-image.jpg" />
@@ -367,6 +374,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
+    <Content Include="Scripts\vendor\jquery-ui\index.html" />
+    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.css" />
+    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.js" />
+    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.structure.css" />
+    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.css" />
+    <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.min.css" />
     <Content Include="Scripts\vendor\kendo.window.js" />
     <Content Include="Scripts\vendor\q\q.js" />
     <Content Include="Scripts\vendor\q\q.min.js" />
@@ -991,6 +1007,8 @@
     <Folder Include="Areas\Administration\Views\Statistics\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
+    <Folder Include="Scripts\vendor\jquery-ui\external\" />
+    <Folder Include="Scripts\vendor\jquery-ui\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -9,10 +9,38 @@ HappyMe.Questions = (function () {
                 console.log(data);
 
                 if (data.isAnswerCorrect) {
-                    alert('Correct answer!');
+                    $("#success-message").dialog({
+                        modal: true,
+                        draggable: false,
+                        resizable: false,
+                        position: ['center', 'top'],
+                        show: 'blind',
+                        hide: 'blind',
+                        width: 400,
+                        dialogClass: 'ui-dialog-osx',
+                        buttons: {
+                            "I've read and understand this": function () {
+                                $(this).dialog("close");
+                            }
+                        }
+                    });
                     window.location = '/questions/answer/' + data.sessionId;
                 } else {
-                    alert('Wrong answer!');
+                    $("#error-message").dialog({
+                        modal: true,
+                        draggable: false,
+                        resizable: false,
+                        position: ['center', 'top'],
+                        show: 'blind',
+                        hide: 'blind',
+                        width: 400,
+                        dialogClass: 'ui-dialog-osx',
+                        buttons: {
+                            "I've read and understand this": function () {
+                                $(this).dialog("close");
+                            }
+                        }
+                    });
                 }
             });
     };
