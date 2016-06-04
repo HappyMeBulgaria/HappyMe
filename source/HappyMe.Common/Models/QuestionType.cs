@@ -15,5 +15,8 @@
 
         [Description("Въпрос с цвят")]
         AlphabetQuestion = 4,
+
+        [Description("Drag and Drop въпрос")]
+        DragAndDropQuestion = 5
     }
 }

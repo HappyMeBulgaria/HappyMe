@@ -937,6 +937,8 @@
     <Content Include="Views\Questions\FamilyQuestion.cshtml" />
     <Content Include="Views\Shared\_FamilyAnswers.cshtml" />
     <Content Include="Views\Shared\_AlphabetAnswer.cshtml" />
+    <Content Include="Views\Questions\DragAndDropQuestion.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DragAndDropAnswers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
