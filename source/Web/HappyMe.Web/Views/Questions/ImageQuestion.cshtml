@@ -26,10 +26,13 @@
     @Html.Partial("_ImageAnswers", Model.Answers)
 </div>
 
-<div id="success-message" title="success-result" style="display: none;">
-    <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+<div id="success-message" title="БРАВО!" style="display: none;" class="result-popup">
+    <p>Това е правилен отговор.</p>
+    <p>Справяш се страхотно!</p>
 </div>
 
-<div id="error-message" title="error-result" style="display: none;">
-    <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+<div id="error-message" title="Опитай пак :)" style="display: none;" class="result-popup">
+    <p class="message">Справяш се страхотно,</p>
+    <p class="message">но опитай пак!</p>
+    <img src="~/Content/images/character_pink.png" class="charachter-image"/>
 </div>

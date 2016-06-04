@@ -13,11 +13,10 @@ HappyMe.Questions = (function () {
                         modal: true,
                         draggable: false,
                         resizable: false,
-                        position: ['center', 'top'],
                         show: 'blind',
                         hide: 'blind',
-                        width: 400,
-                        dialogClass: 'ui-dialog-osx',
+                        width: $(window).width() * 0.7,
+                        dialogClass: 'result-popup success-message',
                         buttons: {
                             "I've read and understand this": function () {
                                 $(this).dialog("close");
@@ -30,16 +29,19 @@ HappyMe.Questions = (function () {
                         modal: true,
                         draggable: false,
                         resizable: false,
-                        position: ['center', 'top'],
                         show: 'blind',
+                        closeOnEscape: false,
                         hide: 'blind',
-                        width: 400,
-                        dialogClass: 'ui-dialog-osx',
+                        width: $(window).width() * 0.6,
+                        dialogClass: 'result-popup error-message',
                         buttons: {
-                            "I've read and understand this": function () {
+                            "Продължи": function () {
                                 $(this).dialog("close");
                             }
-                        }
+                        },
+                        open: function (event, ui) {
+                            $(this).parent().children().children('.ui-dialog-titlebar-close').hide();
+                        },
                     });
                 }
             });
