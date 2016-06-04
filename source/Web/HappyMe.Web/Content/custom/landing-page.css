@@ -358,7 +358,37 @@ section.home {
                 margin-top: 20px;
             }
 
+@media only screen and (max-width: 1200px) {
+    .team-section .team-container .team-list {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .team-section .team-container .team-list li.team-member {
+        margin: 10px auto;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .team-section .team-container .team-list {
+        display: inline-block;
+        width: 50%;
+    }
+
+        .team-section .team-container .team-list li.team-member {
+            margin: 5px auto;
+        }
+
+            .team-section .team-container .team-list li.team-member p {
+                margin-top: 5px;
+            }
+}
+
 .contact-form-section {
+    padding: 30px 0;
     background: #FCEADE;
 }
 
@@ -368,7 +398,7 @@ section.home {
     .contact-form-section .contacts-form {
         float: none;
         margin: 0 auto;
-        padding: 50px 0;
+        padding-top: 30px;
         text-align: center;
     }
 
@@ -381,6 +411,10 @@ section.home {
         .contact-form-section .contacts-form textarea {
             width: 100%;
             max-width: 100%;
+        }
+
+        .contact-form-section .contacts-form .submit-btn-container {
+            float: none;
         }
 
         .contact-form-section .contacts-form .contact-form {
@@ -396,6 +430,24 @@ section.home {
                 color: #FFF;
                 background: #FF8A5B;
             }
+
+@media only screen and (max-width: 991px) {
+    .contact-form-section .contacts-form input[type="text"],
+    .contact-form-section .contacts-form input[type="email"],
+    .contact-form-section .contacts-form input[type="password"],
+    .contact-form-section .contacts-form select,
+    .contact-form-section .contacts-form textarea {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .contact-form-section .contacts-form input,
+    .contact-form-section .contacts-form select,
+    .contact-form-section .contacts-form textarea {
+        width: 100%;
+    }
+}
 
 footer {
     padding: 20px;
