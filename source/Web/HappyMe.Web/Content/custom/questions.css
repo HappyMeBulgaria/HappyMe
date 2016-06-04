@@ -2,22 +2,51 @@
     border-radius: 50%;
     height: 100px;
     width: 100px;
-    display: inline-block;
+    display: inline;
+    padding: 30px 40px;
+    transition: all 0.3s ease-out;
+}
+
+    .color-answer:hover,
+    .color-answer:focus {
+        border: 15px solid rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
+@media only screen and (max-width: 885px) {
+    .color-answer {
+        padding: 20px 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .color-answer {
+        display: block;
+        margin: 15px auto;
+        padding: 0;
+    }
 }
 
 .questions-page-heading {
     padding: 20px;
 }
 
-.color-asnwers-wrapper {
+.color-answers-wrapper {
     margin: 100px 0 0 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .color-answers-wrapper {
+        margin: 0;
+    }
 }
 
 .alphabet-answers-images {
     margin: 10px;
 }
 
-.image-asnwers-wrapper {
+.image-answers-wrapper {
     margin: 20px;
 }
 
