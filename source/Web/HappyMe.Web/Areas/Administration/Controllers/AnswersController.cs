@@ -55,7 +55,7 @@
         [HttpGet]
         public ActionResult Create()
         {
-            this.PopulateViewBag();
+            this.PopulateViewBag(null);
             return this.View();
         }
 
@@ -93,8 +93,9 @@
 
             if (hasRights)
             {
-                this.PopulateViewBag();
-                return this.View(this.GetEditModelData(id));
+                var answer = this.GetEditModelData(id);
+                this.PopulateViewBag(answer.QuestionId);
+                return this.View(answer);
             }
 
             this.TempData.AddDangerMessage("Нямате право да редактирате този отговор");
@@ -127,7 +128,7 @@
                     return this.RedirectToAction(nameof(this.Index));
                 }
 
-                this.PopulateViewBag();
+                this.PopulateViewBag(model.QuestionId);
                 return this.View(model);
             }
 
@@ -155,14 +156,14 @@
             return this.RedirectToAction(nameof(this.Index));
         }
 
-        private void PopulateViewBag()
+        private void PopulateViewBag(int? id)
         {
             var questions = this.User.IsAdmin()
                 ? this.questionsAdministrationService.Read()
                 : this.questionsAdministrationService.GetUserQuestions(this.UserProfile.Id);
 
             this.ViewBag.QuestionIdData = 
-                questions.Select(m => new SelectListItem { Text = m.Text, Value = m.Id.ToString() });
+                questions.Select(m => new SelectListItem { Text = m.Text, Value = m.Id.ToString(), Selected = m.Id == id });
         }
     }
 }
