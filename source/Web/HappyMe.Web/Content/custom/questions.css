@@ -48,6 +48,10 @@
         margin: 0 auto;
     }
 
+        .question-box .module-img:hover {
+            cursor: pointer;
+        }
+
 .questions-container {
     margin: 30px 20px;
 }
@@ -56,3 +60,7 @@
     border: 15px solid #FF8A5C;
     border-radius: 50%;
 }
+
+    .image-answer-img:hover {
+        cursor: pointer;
+    }

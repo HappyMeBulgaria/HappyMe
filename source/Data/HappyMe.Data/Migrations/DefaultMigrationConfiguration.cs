@@ -42,7 +42,7 @@
                 var user1 = new User
                 {
                     CreatedOn = DateTime.Now,
-                    UserName = "SuperUser",
+                    UserName = "superUser@fake.com",
                     Email = "superUser@fake.com",
                 };
 
@@ -107,6 +107,7 @@
                 var alphabetAnswerPath = Path.Combine(imageSeedPath, "sheep.png");
                 var familyAnswerPath = Path.Combine(imageSeedPath, "mama.png");
                 var connectAnswerPath = Path.Combine(imageSeedPath, "hand_pencil.png");
+                var alphabetQuestionPath = Path.Combine(imageSeedPath, "alphabet-question.png");
 
                 var alphabetModuleImage = new Image { ImageData = File.ReadAllBytes(alphabetModulePath), AuthorId = user };
                 context.Images.Add(alphabetModuleImage);
@@ -124,6 +125,8 @@
                 context.Images.Add(familyAnswerImage);
                 var connectAnswerImage = new Image { ImageData = File.ReadAllBytes(connectAnswerPath), AuthorId = user };
                 context.Images.Add(connectAnswerImage);
+                var alphabetQuestionImage = new Image { ImageData = File.ReadAllBytes(alphabetQuestionPath), AuthorId = user };
+                context.Images.Add(alphabetQuestionImage);
 
                 context.SaveChanges();
 
@@ -181,7 +184,8 @@
                     Type = QuestionType.AlphabetQuestion,
                     IsPublic = true,
                     AuthorId = userId,
-                    ModuleId = alphabetModule.Id
+                    ModuleId = alphabetModule.Id,
+                    ImageId = alphabetQuestionImage.Id
                 };
                 context.Questions.AddOrUpdate(alphabetQuestion);
 
@@ -212,7 +216,7 @@
                 {
                     Text = "red",
                     IsCorrect = true,
-                    QuestionId = alphabetQuestion.Id,
+                    QuestionId = colorQuestion.Id,
                     AuthorId = userId,
                 };
                 context.Answers.AddOrUpdate(alphabetAnswerRed);
