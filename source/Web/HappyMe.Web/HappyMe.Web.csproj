@@ -277,7 +277,7 @@
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Modules\ModuleViewModel.cs" />
-    <Compile Include="ViewModels\Questions\AnswerVIewModel.cs" />
+    <Compile Include="ViewModels\Questions\AnswerViewModel.cs" />
     <Compile Include="ViewModels\Questions\QuestionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -926,7 +926,7 @@
     <Content Include="Views\Modules\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ModuleViewModel.cshtml" />
-    <None Include="Views\Questions\Answer.cshtml" />
+    <None Include="Views\Questions\ColorQuestion.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\AnswerViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
