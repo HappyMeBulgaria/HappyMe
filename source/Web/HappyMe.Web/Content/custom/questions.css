@@ -17,6 +17,7 @@
     margin: 10px;
 }
 
+<<<<<<< HEAD
 .image-asnwers-wrapper {
     margin: 20px;
 }
@@ -39,3 +40,16 @@
     line-height: 2;
     font-size: 60px;
 }
+=======
+.question-box {
+    padding: 20px;
+}
+
+    .question-box .module-img {
+        margin: 0 auto;
+    }
+
+.questions-container {
+    margin: 30px 20px;
+}
+>>>>>>> b921a7354bb0c53ce4b7d89ec6ce06c09883f2c4

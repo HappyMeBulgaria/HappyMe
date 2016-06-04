@@ -6,10 +6,17 @@
 
 @Styles.Render("~/Content/custom/questions.css")
 
-<div class="row">
-    <div class="col-sm-12 col-xs-12 text-center">
-        <img src="@Model.ImageUrl" alt="@($"{Model.Text} - изображение")"/>
-    </div>
+@section scripts {
+    @Scripts.Render("~/Scripts/custom/questions/answer.js")
+    <script>
+        HappyMe.Questions.loadAnswerClickEvent(@(Model.Id), @(@Model.SessionId))
+    </script>
+}
 
-    @Html.Partial("_AlphabetAnswer", Model.Answers);
+<div class="row">
+    <div class="col-md-12 text-center">
+        <img src="@Model.ImageUrl" alt="@($"{Model.Text} - изображение")" />
+    </div>
 </div>
+
+@Html.Partial("_AlphabetAnswer", Model.Answers);

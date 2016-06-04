@@ -1,0 +1,8 @@
+﻿@model IEnumerable<HappyMe.Web.ViewModels.Questions.AnswerViewModel>
+
+@foreach (var answerViewModel in Model)
+{
+    <div class="col-sm-3 text-center">
+        <div class="drag-and-drop-answer" draggable="true" data-answer-id="@answerViewModel.Id">@answerViewModel.Text</div>
+    </div>
+}
