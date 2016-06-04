@@ -1,20 +1,47 @@
 ﻿namespace HappyMe.Web.Areas.Administration.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
 
+    using HappyMe.Services.Administration.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
+    using HappyMe.Web.Areas.Administration.ViewModels.ChildrenStatistics;
 
     public class ChildrenStatisticsController : AdministrationController
     {
-        public ChildrenStatisticsController(IUsersDataService userData) 
+        private readonly IChildrenStatisticsService childrenStatisticsService;
+
+        public ChildrenStatisticsController(
+            IUsersDataService userData,
+            IChildrenStatisticsService childrenStatisticsService)
             : base(userData)
         {
+            this.childrenStatisticsService = childrenStatisticsService;
         }
 
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult AllForChild(string id)
         {
-            return this.View();
+            var viewModel = new AllChildStatisticsViewModel
+            {
+                ModuleSessionStatistics = this.childrenStatisticsService.GetModuleSessionStatistics(id).ToList(),
+                ChildAnswerRatoStatistics = this.childrenStatisticsService.GetWrongRightAnswersStatistics(id).ToList(),
+                ModulePlayedTimesStatistics = this.childrenStatisticsService.GetModulePlayedTimesStatistics(id).ToList()
+            };
+
+            return this.Json(viewModel, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult AllForParent(string id)
+        {
+            var viewModel = new AllParentStatisticsViewModel
+            {
+                ModulePlayedTimesStatisticsFull = this.childrenStatisticsService.GetModulePlayedTimesStatisticsForParentsChildren(id)
+            };
+
+            return this.Json(viewModel, JsonRequestBehavior.AllowGet);
         }
     }
 }
