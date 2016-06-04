@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<HappyMe.Web.ViewModels.Questions.AnswerViewModel>
 
-<div class="row">
+<div class="row questions-container one-answer-question-answers-wrapper">
     @foreach (var item in Model)
     {
-        <div class="col-sm-6 col-md-3 col-xs-12">
-            <img class="img-responsive alphabet-answers-images" src="@item.ImageUrl" alt="@($"{item.Text} - изображение")" />
+        <div class="col-sm-6 col-md-3 col-xs-12 question-box one-answer-question-answer">
+            <img class="img-responsive module-img" src="@item.ImageUrl" alt="@($"{item.Text} - изображение")" data-answer-id="@item.Id"/>
         </div>
     }
 </div>
