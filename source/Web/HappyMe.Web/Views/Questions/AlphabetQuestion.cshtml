@@ -1,0 +1,15 @@
+﻿@model HappyMe.Web.ViewModels.Questions.QuestionViewModel
+
+@{
+    ViewBag.Title = Model.Text;
+}
+
+@Styles.Render("~/Content/custom/questions.css")
+
+<div class="row">
+    <div class="col-sm-12 col-xs-12 text-center">
+        <img src="@Model.ImageUrl" alt="@($"{Model.Text} - изображение")"/>
+    </div>
+
+    @Html.Partial("_AlphabetAnswer", Model.Answers);
+</div>
