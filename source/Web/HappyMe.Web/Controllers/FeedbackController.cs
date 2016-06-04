@@ -29,9 +29,8 @@
             }
 
             this.TempData.AddWarningMessage("Невалидна обратна връзка");
-
-            // Redirect to lending page (or wherever is feedback form)
-            return new EmptyResult();
+            
+            return this.RedirectToAction<HomeController>(c => c.Index());
         }
 
         public ActionResult Success()

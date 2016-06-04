@@ -283,13 +283,13 @@
   <ItemGroup>
     <Content Include="Content\custom\administration-styles.css" />
     <Content Include="Content\custom\global.css" />
-    <Content Include="Content\custom\home-page-styles.css" />
     <Content Include="Content\custom\hover-animation.css" />
     <Content Include="Content\custom\index-style.css" />
     <Content Include="Content\custom\modules.css" />
     <Content Include="Content\custom\override.css" />
     <Content Include="Content\custom\questions.css" />
     <Content Include="Content\custom\reset-css.css" />
+    <Content Include="Content\custom\result-screens.css" />
     <Content Include="Content\custom\site.css" />
     <Content Include="Content\design\index.html" />
     <Content Include="Content\fonts\font-awesome\css\font-awesome.css" />
@@ -299,18 +299,29 @@
     <Content Include="Content\fonts\Lato\latofonts.css" />
     <Content Include="Content\fonts\Lato\latostyle.css" />
     <Content Include="Content\images\background.png" />
+    <Content Include="Content\images\character_green.png" />
+    <Content Include="Content\images\character_pink.png" />
+    <Content Include="Content\images\cherries_colour.png" />
+    <Content Include="Content\images\hand_pencil.png" />
     <Content Include="Content\images\homepage-background.png" />
     <Content Include="Content\images\homepage-ipad-mockup.png" />
+    <Content Include="Content\images\kmarianov.jpg" />
     <Content Include="Content\images\logo-fullcolor.png" />
+    <Content Include="Content\images\mama.png" />
+    <Content Include="Content\images\mhristoforova.jpg" />
     <Content Include="Content\images\module-colours.png" />
     <Content Include="Content\images\module-family.png" />
     <Content Include="Content\images\modules-alphabet.png" />
     <Content Include="Content\images\modules-connect.png" />
     <Content Include="Content\images\nav-logo-min.png" />
     <Content Include="Content\images\nav-logo.png" />
+    <Content Include="Content\images\rpopova.jpg" />
+    <Content Include="Content\images\sheep.png" />
+    <Content Include="Content\images\tkurtev.jpg" />
     <Content Include="Content\images\ui-zac.jpg" />
     <Content Include="Content\images\use-happyme-left-content.png" />
     <Content Include="Content\images\user-default-image.jpg" />
+    <Content Include="Content\images\yslavcheva.png" />
     <Content Include="Content\vendor\bootstrap\administration\style-responsive.css" />
     <Content Include="Content\vendor\bootstrap\administration\style.css" />
     <Content Include="Content\vendor\bootstrap\administration\table-responsive.css" />
@@ -337,7 +348,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\custom\lending-page.css" />
+    <Content Include="Content\custom\landing-page.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -897,7 +908,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LendingPageLayout.cshtml" />
+    <Content Include="Views\Shared\_LandingPageLayout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -931,6 +942,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ModuleViewModel.cshtml" />
     <Content Include="Views\Modules\Success.cshtml" />
+    <Content Include="Views\Feedback\Success.cshtml" />
     <None Include="Views\Questions\ColorQuestion.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\AnswerViewModel.cshtml" />
   </ItemGroup>
@@ -938,7 +950,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
-    <Folder Include="Views\Feedback\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,10 +1,7 @@
-﻿@{
+﻿@using HappyMe.Web.Controllers
+@{
     ViewBag.Title = "Home Page";
-    Layout = "~/Views/Shared/_LendingPageLayout.cshtml";
-}
-
-@section styles{
-    @Styles.Render("~/Content/home-page-styles")
+    Layout = "~/Views/Shared/_LandingPageLayout.cshtml";
 }
 
 <div>
@@ -183,29 +180,32 @@
         </div>
 
         <div class="team-container">
+            <div class="team-description col-md-6">
+                Ние сме група ентусиазирани позитивни хора, водени от идеята да направим себе си и света около нас по-добър.
+            </div>
             <ul class="team-list">
                 <li class="team-member col-md-2">
-                    <img src="#" class="team-profile-picture">
+                    <img src="~/Content/images/kmarianov.jpg" class="team-profile-picture">
                     <p>Кристиан Мариянов</p>
                 </li>
 
                 <li class="team-member col-md-2">
-                    <img src="#" class="team-profile-picture">
+                    <img src="~/Content/images/mhristoforova.jpg" class="team-profile-picture">
                     <p>Мария Христофорова</p>
                 </li>
 
                 <li class="team-member col-md-2">
-                    <img src="#" class="team-profile-picture">
+                    <img src="~/Content/images/rpopova.jpg" class="team-profile-picture">
                     <p>Росица Попова</p>
                 </li>
 
                 <li class="team-member col-md-2">
-                    <img src="#" class="team-profile-picture">
+                    <img src="~/Content/images/tkurtev.jpg" class="team-profile-picture">
                     <p>Теодор Куртев</p>
                 </li>
 
                 <li class="team-member col-md-2">
-                    <img src="#" class="team-profile-picture">
+                    <img src="~/Content/images/yslavcheva.png" class="team-profile-picture">
                     <p>Яна Славчева</p>
                 </li>
             </ul>
@@ -217,7 +217,14 @@
             <h3 class="section-title">контакти</h3>
         </div>
 
-        <form class="contacts-form col-md-12" action="#" method="post">
+        @using (Html.BeginForm(
+                    nameof(FeedbackController.Send),
+                    "Feedback",
+                    FormMethod.Post,
+                    new { enctype = "multipart/form-data", @class = "contacts-form col-md-12" }))
+        {
+            @Html.AntiForgeryToken()
+
             <fieldset class="contact-form col-md-6 bottom-buffer">
                 <div class="row bottom-buffer">
                     <div class="inner-addon left-addon col-md-4">
@@ -239,7 +246,7 @@
             <div class="text-center bottom-buffer top-buffer">
                 <input type="submit" id="submit" value="Submit" class="btn btn-success">
             </div>
-        </form>
+        }
     </section>
 </div>
 

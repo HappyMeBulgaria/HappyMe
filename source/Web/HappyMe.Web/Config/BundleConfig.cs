@@ -12,11 +12,11 @@
 
         private static void RegisterStyleBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/lending-page").Include(
+            bundles.Add(new StyleBundle("~/Content/landing-page").Include(
                 "~/Content/vendor/bootstrap/bootstrap.css",
                 "~/Content/custom/global.css",
                 "~/Content/custom/reset-css.css",
-                "~/Content/custom/lending-page.css",
+                "~/Content/custom/landing-page.css",
                 "~/Content/custom/override.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -48,12 +48,12 @@
             bundles.Add(new StyleBundle("~/Content/guillotine").Include(
                 "~/Content/vendor/guillotine/jquery.guillotine.css"));
 
-            bundles.Add(new StyleBundle("~/Content/home-page-styles").Include(
-                "~/Content/custom/home-page-styles.css"));
-
             bundles.Add(new StyleBundle("~/Content/slick").Include(
                 "~/Scripts/vendor/SlickSlider/slick/slick.css",
                 "~/Scripts/vendor/SlickSlider/slick/slick-theme.css"));
+
+            bundles.Add(new StyleBundle("~/Content/result-screens").Include(
+                "~/Content/custom/result-screens.css"));
         }
 
         private static void RegisterScriptBundles(BundleCollection bundles)

@@ -1,4 +1,75 @@
-﻿.content-above {
+﻿body {
+    padding-top: 50px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+/*===============Navbar styles===============*/
+header .navbar {
+    background: #656565;
+    border-color: #656565;
+    font-family: 'Blogger Sans Light';
+    font-size: 1.255em;
+}
+
+header .navbar-inverse .navbar-nav > li {
+    position: relative;
+}
+
+    header .navbar-inverse .navbar-nav > li > a {
+        color: #FFF;
+    }
+
+        header .navbar-inverse .navbar-nav > li > a:hover {
+            color: #26cfd1;
+        }
+
+        header .navbar-inverse .navbar-nav > li > a:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 50%;
+            right: 50%;
+            top: 0;
+            background: #26cfd1;
+            height: 4px;
+            -webkit-transition-property: left, right;
+            transition-property: left, right;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+
+        header .navbar-inverse .navbar-nav > li > a:hover:before {
+            left: 0;
+            right: 0;
+        }
+/*===============End Navbar styles===============*/
+
+.content-above {
     position: absolute;
     right: 0;
     top: 5.5em;
@@ -12,6 +83,7 @@
 section.home {
     background: url("/Content/images/homepage-background.png") no-repeat center center fixed;
     background-size: cover;
+    background-position-y: -170px;
     height: 739px;
 }
 
@@ -262,17 +334,28 @@ section.home {
     .team-section .team-container {
         display: inline-block;
         width: 100%;
-        padding: 5% 0;
+        padding-bottom: 5%;
+        color: #565656;
         /*background: #fceadd;*/
     }
 
-        .team-section .team-container .team-list li {
+        .team-section .team-container .team-description {
+            margin: 30px auto;
+            float: none;
+        }
+
+        .team-section .team-container .team-list li.team-member {
             margin: 10px 20px;
         }
 
-            .team-section .team-container .team-list li .team-profile-picture {
+            .team-section .team-container .team-list li.team-member .team-profile-picture {
                 width: 100%;
                 border-radius: 50%;
+                border: 15px solid rgba(255, 137, 91, 0.5);
+            }
+
+            .team-section .team-container .team-list li.team-member p {
+                margin-top: 20px;
             }
 
 .contact-form-section {
@@ -294,18 +377,6 @@ section.home {
         .contact-form-section .contacts-form textarea {
             width: 100%;
         }
-
-            .contact-form-section .contacts-form input[type="email"]:after {
-                display: block;
-                content: "\f000";
-                font-family: 'FontAwesome', 'Helvetica', 'Arial', sans-serif;
-                /*color: #000;
-                font-size: 18px;
-                padding-right: 0.5em;*/
-                position: absolute;
-                /*top: 10px;
-                left: 0;*/
-            }
 
         .contact-form-section .contacts-form textarea {
             width: 100%;
