@@ -219,7 +219,7 @@
                     Type = QuestionType.DragAndDropQuestion,
                     IsPublic = true,
                     AuthorId = userId,
-                    ModuleId = familyModule.Id
+                    ModuleId = connectModule.Id
                 };
                 context.Questions.AddOrUpdate(connectQuestion);
 
