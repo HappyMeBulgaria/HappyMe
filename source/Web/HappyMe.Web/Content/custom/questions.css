@@ -92,3 +92,8 @@
     .image-answer-img:hover {
         cursor: pointer;
     }
+
+.color-question-image {
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+}

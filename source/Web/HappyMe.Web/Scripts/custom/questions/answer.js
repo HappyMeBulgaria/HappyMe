@@ -9,6 +9,9 @@ HappyMe.Questions = (function () {
                 console.log(data);
 
                 if (data.isAnswerCorrect) {
+                    $('.color-question-image').css('filter', 'none');
+                    $('.color-question-image').css('-webkit-filter', 'none');
+
                     $("#success-message").dialog({
                         modal: true,
                         draggable: false,
