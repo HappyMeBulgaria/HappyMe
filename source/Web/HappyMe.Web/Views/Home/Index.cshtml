@@ -1,4 +1,5 @@
 ﻿@using HappyMe.Web.Controllers
+
 @{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_LandingPageLayout.cshtml";
@@ -184,27 +185,27 @@
                 Ние сме група ентусиазирани позитивни хора, водени от идеята да направим себе си и света около нас по-добър.
             </div>
             <ul class="team-list">
-                <li class="team-member col-md-2">
+                <li class="team-member col-md-2 col-sm-2">
                     <img src="~/Content/images/kmarianov.jpg" class="team-profile-picture">
                     <p>Кристиан Мариянов</p>
                 </li>
 
-                <li class="team-member col-md-2">
+                <li class="team-member col-md-2 col-sm-2">
                     <img src="~/Content/images/mhristoforova.jpg" class="team-profile-picture">
                     <p>Мария Христофорова</p>
                 </li>
 
-                <li class="team-member col-md-2">
+                <li class="team-member col-md-2 col-sm-2">
                     <img src="~/Content/images/rpopova.jpg" class="team-profile-picture">
                     <p>Росица Попова</p>
                 </li>
 
-                <li class="team-member col-md-2">
+                <li class="team-member col-md-2 col-sm-2">
                     <img src="~/Content/images/tkurtev.jpg" class="team-profile-picture">
                     <p>Теодор Куртев</p>
                 </li>
 
-                <li class="team-member col-md-2">
+                <li class="team-member col-md-2 col-sm-2">
                     <img src="~/Content/images/yslavcheva.png" class="team-profile-picture">
                     <p>Яна Славчева</p>
                 </li>
@@ -225,26 +226,26 @@
         {
             @Html.AntiForgeryToken()
 
-            <fieldset class="contact-form col-md-6 bottom-buffer">
+            <fieldset class="contact-form col-md-6 col-sm-6 col-xs-12 bottom-buffer">
                 <div class="row bottom-buffer">
-                    <div class="inner-addon left-addon col-md-4">
+                    <div class="inner-addon left-addon bottom-buffer col-md-4 col-sm-12 col-xs-12">
                         <i class="fa fa-user"></i>
-                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="text" name="name" placeholder="Име" required>
                     </div>
-                    <div class="inner-addon left-addon col-md-4">
+                    <div class="inner-addon left-addon bottom-buffer col-md-4 col-sm-12 col-xs-12">
                         <i class="fa fa-envelope-o"></i>
-                        <input type="email" name="email" placeholder="Email address" required>
+                        <input type="email" name="email" placeholder="Имейл" required>
                     </div>
-                    <div class="inner-addon left-addon col-md-4">
+                    <div class="inner-addon left-addon bottom-buffer col-md-4 col-sm-12 col-xs-12">
                         <i class="fa fa-pencil"></i>
-                        <input type="text" name="subject" placeholder="Subject" required>
+                        <input type="text" name="subject" placeholder="Тема" required>
                     </div>
                 </div>
 
-                <textarea name="message" placeholder="Add your message here" rows="10" required></textarea>
+                <textarea name="message" placeholder="Напиши своето съобщение..." rows="10" required></textarea>
             </fieldset>
-            <div class="text-center bottom-buffer top-buffer">
-                <input type="submit" id="submit" value="Submit" class="btn btn-success">
+            <div class="submit-btn-container col-sm-12 col-xs-12 text-center bottom-buffer top-buffer">
+                <input type="submit" id="submit" value="Изпрати" class="btn btn-success">
             </div>
         }
     </section>
