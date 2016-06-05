@@ -35,7 +35,8 @@
     padding: 20px;
 }
 
-.start-module-link:hover {
+.start-module-link:hover,
+.start-module-link:focus {
     text-decoration: none;
 }
 

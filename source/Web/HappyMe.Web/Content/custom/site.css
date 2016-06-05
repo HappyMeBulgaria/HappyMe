@@ -15,7 +15,8 @@
     background-color: #25CED1;
 }
 
-    .btn.btn-blue:hover {
+    .btn.btn-blue:hover,
+    .btn.btn-blue:focus {
         background-color: #68dff0;
         color: #FFFFFF;
     }
