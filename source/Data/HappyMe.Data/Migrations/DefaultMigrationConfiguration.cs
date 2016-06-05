@@ -226,7 +226,8 @@
                     Type = QuestionType.DragAndDropQuestion,
                     IsPublic = true,
                     AuthorId = userId,
-                    ModuleId = connectModule.Id
+                    ModuleId = connectModule.Id,
+                    ImageId = connectQuestionImage.Id
                 };
                 context.Questions.AddOrUpdate(connectQuestion);
 

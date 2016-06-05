@@ -3,6 +3,8 @@
 @foreach (var answerViewModel in Model)
 {
     <div class="col-sm-3 text-center">
-        <div class="drag-and-drop-answer" draggable="true" data-answer-id="@answerViewModel.Id">@answerViewModel.Text</div>
+        <div class="drag-and-drop-answer text-center" draggable="true" data-answer-id="@answerViewModel.Id">
+            <img src="@answerViewModel.ImageUrl" alt="answer image"/>
+        </div>
     </div>
 }

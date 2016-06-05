@@ -80,7 +80,7 @@ HappyMe.Questions = (function () {
                 '.drag-and-drop-answer',
                 function (event) {
                     console.log(event.originalEvent.target.dataset);
-                    event.originalEvent.dataTransfer.setData('answerId', event.originalEvent.target.dataset.answerId);
+                    event.originalEvent.dataTransfer.setData('answerId', event.currentTarget.dataset.answerId);
                 });
 
         $('#question-answer-area')
