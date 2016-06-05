@@ -47,6 +47,10 @@
     font-size: 30px;
 }
 
+.huge-heading {
+    font-size: 35px;
+}
+
 .bottom-buffer {
     margin-bottom: 10px;
 }
@@ -111,3 +115,4 @@ textarea {
     display: table-cell;
     vertical-align: middle;
 }
+

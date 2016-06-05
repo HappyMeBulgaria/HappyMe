@@ -65,6 +65,13 @@
 
                 context.SaveChanges();
             }
+
+            ////for (int i = 0; i < 8; i++)
+            ////{
+            ////    var newFuckingUser = new User() { Email = "test" + i + "@test.me", UserName = "Test User" + i, };
+            ////    context.Users.AddOrUpdate(newFuckingUser);
+            ////    context.SaveChanges();
+            ////}
         }
 
         private void SeedRoles(HappyMeDbContext context)
