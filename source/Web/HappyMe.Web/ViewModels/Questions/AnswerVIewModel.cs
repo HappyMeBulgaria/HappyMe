@@ -18,6 +18,8 @@
             $"data:image/jpeg;base64,{Convert.ToBase64String(this.ImageData)}"
             : string.Empty;
 
+        public bool IsCorrect { get; set; }
+
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<Answer, AnswerViewModel>()
