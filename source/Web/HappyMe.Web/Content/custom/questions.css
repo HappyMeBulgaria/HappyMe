@@ -219,3 +219,35 @@
         right: -160px;
     }
 }
+
+.drag-and-drop-question-area {
+    margin-bottom: 40px;
+}
+
+    .drag-and-drop-question-area .drag-and-drop-box {
+        width: 120px;
+        height: 120px;
+        display: inline-block;
+        overflow: hidden;
+        padding: 10px;
+        border: 10px solid #565656;
+    }
+
+.drag-and-drop-question-container {
+    margin: 0 auto;
+    float: none;
+}
+
+.drag-and-drop-question-area .plus {
+    margin: 50px;
+    font-size: 3em;
+    color: #FF8A5C;
+}
+
+.drag-and-drop-answer img {
+    width: 40%;
+}
+
+.drag-and-drop-question-area .question-image {
+    width: 80%;
+}
