@@ -12,7 +12,7 @@
 
 <header class="main-header">
     <a href="@Url.Action("Index", "Home", new { area = string.Empty })"><img src="~/Content/images/logo-fullcolor.png" alt="happy me logo" class="header-logo" /></a>
-    <button class="pull-right btn btn-blue btn-exit-main-layout">Изход</button>
+    <a href="@Url.Action("Index", "Home", new { area = string.Empty })" class="pull-right btn btn-success btn-exit-main-layout">Към началото</a>
 </header>
 
 @RenderBody()
