@@ -190,7 +190,7 @@
                     string code = await this.UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = this.Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await this.UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    return this.RedirectToAction("Index", "Home");
+                    return this.RedirectToAction("Index", "Dashboard", new { area = "Administration" });
                 }
 
                 this.AddErrors(result);

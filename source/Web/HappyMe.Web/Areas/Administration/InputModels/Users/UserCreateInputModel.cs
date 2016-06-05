@@ -13,7 +13,6 @@
         public string UserName { get; set; }
 
         [Required]
-        [DataType(DataType.EmailAddress)]
         [PlaceHolder("Имейл")]
         public string Email { get; set; }
 
