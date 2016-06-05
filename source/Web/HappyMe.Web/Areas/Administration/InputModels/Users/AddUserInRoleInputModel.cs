@@ -20,7 +20,7 @@ namespace HappyMe.Web.Areas.Administration.InputModels.Users
         [ReadOnly(true)]
         [DisplayName("Потребител")]
         [Enabled(false)]
-        [PlaceHolder("Име на въпроса")]
+        [PlaceHolder("Потребител")]
         public string Username { get; set; }
 
         [DisplayName("Роля")]
