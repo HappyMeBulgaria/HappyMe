@@ -6,6 +6,7 @@ HappyMe.Questions = (function () {
     var sendUserAnswer = function (data) {
         HttpRequester.postJson('/Questions/Answer', data)
             .then(function (data) {
+                debugger;
                 if (data.isAnswerCorrect) {
                     $('.color-question-image').css('filter', 'none');
                     $('.color-question-image').css('-webkit-filter', 'none');
@@ -79,7 +80,7 @@ HappyMe.Questions = (function () {
                 '.drag-and-drop-answer',
                 function (event) {
                     console.log(event.originalEvent.target.dataset);
-                    event.originalEvent.dataTransfer.setData('answerId', event.originalEvent.target.dataset.answerId);
+                    event.originalEvent.dataTransfer.setData('answerId', event.currentTarget.dataset.answerId);
                 });
 
         $('#question-answer-area')
