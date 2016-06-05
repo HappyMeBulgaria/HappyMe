@@ -320,6 +320,9 @@
     <Content Include="Content\images\crab-alphabet.png" />
     <Content Include="Content\images\ear-alphabet.png" />
     <Content Include="Content\images\elephant-alphabet.png" />
+    <Content Include="Content\images\father1.png" />
+    <Content Include="Content\images\father2.png" />
+    <Content Include="Content\images\father4.png" />
     <Content Include="Content\images\favicons\android-icon-144x144.png" />
     <Content Include="Content\images\favicons\android-icon-192x192.png" />
     <Content Include="Content\images\favicons\android-icon-36x36.png" />
@@ -349,6 +352,10 @@
     <Content Include="Content\images\flower-alphabet.png" />
     <Content Include="Content\images\foot-dragdrop.png" />
     <Content Include="Content\images\frog-alphabet.png" />
+    <Content Include="Content\images\grandma_1.png" />
+    <Content Include="Content\images\grandmother2.png" />
+    <Content Include="Content\images\grandmother3.png" />
+    <Content Include="Content\images\grandmother4.png" />
     <Content Include="Content\images\grapes-colours.png" />
     <Content Include="Content\images\hand_dragdropmodule.png" />
     <Content Include="Content\images\hand_pencil.png" />
@@ -373,6 +380,10 @@
     <Content Include="Content\images\module-family.png" />
     <Content Include="Content\images\modules-alphabet.png" />
     <Content Include="Content\images\modules-connect.png" />
+    <Content Include="Content\images\mother1.png" />
+    <Content Include="Content\images\mother2.png" />
+    <Content Include="Content\images\mother3.png" />
+    <Content Include="Content\images\mother4.png" />
     <Content Include="Content\images\mushroom-alphabet.png" />
     <Content Include="Content\images\nav-logo-min.png" />
     <Content Include="Content\images\nav-logo.png" />

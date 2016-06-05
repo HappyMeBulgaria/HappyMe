@@ -22,18 +22,25 @@
     <h1 class="section-title large-heading page-heading">@ViewBag.Title</h1>
 </div>
 
-<div id="question-answer-area">
-    Answer area
+<div id="question-answer-area" class="text-center drag-and-drop-question-area">
+    <div class="col-md-8 drag-and-drop-question-container">
+        <span class="drag-and-drop-box">
+            <img src="@Model.ImageUrl" class="question-image"/>
+        </span>
+        <span class="plus">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </span>
+        <span class="drag-and-drop-box"></span>
+    </div>
 </div>
 
-<div class="row">
+<div>
     <div class="col-sm-12">
-        <div class="row drag-and-drop-answers-wrapper">
+        <div class="drag-and-drop-answers-wrapper">
             @Html.DisplayFor(m => m.Answers, "DragAndDropAnswers")
         </div>
     </div>
 </div>
-
 @*TODO: Add to partial view*@
 <div id="success-message" title="БРАВО!" style="display: none;" class="result-popup">
     <div class="modal-text cell">

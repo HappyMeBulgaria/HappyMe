@@ -5,7 +5,7 @@
 
 <h2>Здравей, <strong class="dashboard-username">@this.User.Identity.Name</strong></h2>
 
-<a href="@Url.Action("Create", "Users", new { area = "Administration" })" class="btn btn-lg btn-primary pull-left">Добави дете</a>
+<a href="@Url.Action("Create", "Users", new { area = "Administration" })" class="btn btn-lg btn-primary">Добави дете</a>
 <div class="section-title-container">
     <h3 class="section-title huge-heading">Деца</h3>
 </div>
@@ -17,7 +17,7 @@
     }
     else
     {
-        <p>Нямате добавени потребители.</p>
+        <h3 class="text-center">Нямате добавени потребители.</h3>
     }
 </div>
 
