@@ -1,13 +1,14 @@
-namespace HappyMe.Web.ViewModels.Account
+﻿namespace HappyMe.Web.ViewModels.Account
 {
     using System.ComponentModel.DataAnnotations;
+
+    using HappyMe.Web.Common.Attributes;
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Потребителско име")]
+        public string Username { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

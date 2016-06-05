@@ -3,67 +3,68 @@
 @model LoginViewModel
 
 @section styles {
-    @Scripts.Render("~/Content/custom/authentication.css")
+    @Styles.Render("~/Content/custom/authentication.css")
 }
 
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Вход за потребители";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+<div class="container container-holder">
+    <div class="section-title-container">
+        <h1 class="section-title">@ViewBag.Title</h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 external-login-container">
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+        </div>
+        <div class="col-md-12">
+            <section id="loginForm" class="login-form">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    <div class="col-sm-4 authentication-field">
+                        <div class="inner-addon left-addon">
+                            <i class="fa fa-user"></i>
+                            @Html.TextBoxFor(m => m.Username, new {@class = "form-control", placeholder = "Въведете потребител..."})
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Username, "", new {@class = "text-danger"})
                     </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    <div class="col-sm-4 authentication-field">
+                        <div class="inner-addon left-addon">
+                            <i class="fa fa-lock"></i>
+                            @Html.PasswordFor(m => m.Password, new {@class = "form-control", placeholder = "Въведете парола..."})
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Password, "", new {@class = "text-danger"})
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
+                    <div class="col-sm-2 authentication-field">
                         <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.CheckBoxFor(m => m.RememberMe, new {@class = "check-box"})
                             @Html.LabelFor(m => m.RememberMe)
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
+                    <div class="col-sm-2 authentication-field">
+                        <input type="submit" value="Влез" class="btn btn-success btn-block"/>
                     </div>
                 </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
-                @* Enable this once you have account confirmation enabled for password reset functionality*@
-                <p>
-                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                </p>
-            }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
+                <div class="register-buttons-login-page">
+                    <p class="text-center bottom-buffer register-button-login-page">
+                        @Html.ActionLink("Нямате регистрация?", "Register")
+                    </p>
+                    <p class="text-center top-buffer register-button-login-page">
+                        @Html.ActionLink("Забравена парола?", "ForgotPassword")
+                    </p>
+                </div>
+                }
+            </section>
+        </div>
     </div>
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

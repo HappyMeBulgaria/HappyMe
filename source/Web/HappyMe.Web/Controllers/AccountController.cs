@@ -72,7 +72,7 @@
         {
             this.ViewBag.ReturnUrl = returnUrl;
 
-            var viewModel = new LoginViewModel { Email = username };
+            var viewModel = new LoginViewModel { Username = username };
             return this.View(viewModel);
         }
         
@@ -91,7 +91,7 @@
             var result =
                 await
                 this.SignInManager.PasswordSignInAsync(
-                    model.Email,
+                    model.Username,
                     model.Password,
                     model.RememberMe,
                     shouldLockout: false);
