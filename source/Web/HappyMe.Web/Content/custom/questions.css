@@ -178,6 +178,8 @@
 .result-popup.ui-dialog .ui-dialog-buttonset .ui-button {
     background: none;
     color: #FFFFFF;
+    outline: none;
+    border: none;
 }
 
 .result-popup.ui-dialog.error-message .ui-dialog-buttonset .ui-button {

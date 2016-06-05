@@ -6,7 +6,6 @@ HappyMe.Questions = (function () {
     var sendUserAnswer = function (data) {
         HttpRequester.postJson('/Questions/Answer', data)
             .then(function (data) {
-                debugger;
                 if (data.isAnswerCorrect) {
                     $('.color-question-image').css('filter', 'none');
                     $('.color-question-image').css('-webkit-filter', 'none');
@@ -15,6 +14,7 @@ HappyMe.Questions = (function () {
                         modal: true,
                         draggable: false,
                         resizable: false,
+                        closeOnEscape: false,
                         show: 'blind',
                         hide: 'blind',
                         width: 'auto',
@@ -26,6 +26,9 @@ HappyMe.Questions = (function () {
                             "Продължи": function () {
                                 window.location = '/questions/answer/' + data.sessionId;
                             }
+                        },
+                        open: function (event, ui) {
+                            $(this).parent().children().children('.ui-dialog-titlebar-close').hide();
                         }
                     });
                 } else {
@@ -33,22 +36,22 @@ HappyMe.Questions = (function () {
                         modal: true,
                         draggable: false,
                         resizable: false,
+                        closeOnEscape: true,
                         show: 'blind',
-                        closeOnEscape: false,
                         hide: 'blind',
-                        width: 'auto', 
+                        width: 'auto',
                         height: 300,
                         maxWidth: 900,
                         responsive: true,
                         dialogClass: 'result-popup error-message',
                         buttons: {
                             "Продължи": function () {
-                                window.location = '/questions/answer/' + data.sessionId;
+                                $(this).dialog("close");
                             }
                         },
                         open: function (event, ui) {
                             $(this).parent().children().children('.ui-dialog-titlebar-close').hide();
-                        },
+                        }
                     });
                 }
             });

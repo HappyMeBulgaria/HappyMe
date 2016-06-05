@@ -85,7 +85,8 @@
 
                 return this.JsonSuccess(new
                 {
-                    IsAnswerCorrect = isAnswerCorrect
+                    IsAnswerCorrect = isAnswerCorrect,
+                    inputModel.SessionId
                 });
             }
 
