@@ -6,7 +6,7 @@
     margin-top: 20px;
 }
 
-.login-form .inner-addon i {
+.login-form .inner-addon i, .register-form .inner-addon i {
     padding: 6px 12px;
     font-size: 1.4em;
     border-top-left-radius: 6px;
@@ -32,4 +32,63 @@
 
 .register-buttons-login-page {
     margin-top: 30px;
+}
+
+.register-form {
+    border: 10px solid #ff8a5b;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 20px
+}
+
+.input-image-icon {
+    font-size: 50px;
+    display: block;
+    text-align: center
+}
+
+.input-image-text {
+    text-align: center;
+}
+
+.input-file-container {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+
+.input-names-container {
+    margin-top: 12px;
+    border-radius: 20px;
+}
+
+input[type="text"].first-name-input {
+    height: 45px;
+    border-radius: initial;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 1px solid #565656;
+}
+
+input[type="text"].last-name-input {
+    height: 45px;
+    border-radius: initial;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.register-info {
+    font-size: 35px;
+    color: #565656;
+    font-family: Lato Light;
+    padding: 50px
+}
+
+.register-button {
+    background: #FF8A58;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 12px;
+    margin-top: 10px
 }
