@@ -11,6 +11,8 @@
     using HappyMe.Common.Models;
     using HappyMe.Data.Models;
     using HappyMe.Web.Areas.Administration.InputModels.Images;
+    using HappyMe.Web.Common.Attributes;
+
     using MoreDotNet.Extentions.Common;
 
     public class QuestionCreateInputModel : IMapTo<Question>, IMapFrom<Question>
@@ -19,6 +21,7 @@
         public string AuthorId { get; set; }
 
         [Display(Name = "Име на въпроса")]
+        [PlaceHolder("Име на въпроса")]
         public string Text { get; set; }
 
         [UIHint("EnumDropDownList")]
