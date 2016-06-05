@@ -5,6 +5,7 @@
     using System.Web.Mvc;
     using Data.Models;
     using HappyMe.Common.Mapping;
+    using HappyMe.Web.Common.Attributes;
 
     public class AnswerCreateInputModel : IMapTo<Answer>, IMapFrom<Answer>
     {
@@ -13,6 +14,7 @@
         public int QuestionId { get; set; }
 
         [Display(Name = "Име на въпрос")]
+        [PlaceHolder("Име на въпрос")]
         public string Text { get; set; }
 
         [Display(Name = "Правилен?")]

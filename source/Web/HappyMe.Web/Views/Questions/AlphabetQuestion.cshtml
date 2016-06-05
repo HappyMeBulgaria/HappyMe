@@ -4,10 +4,15 @@
     ViewBag.Title = Model.Text;
 }
 
-@Styles.Render("~/Content/custom/questions.css")
+@section styles {
+    @Styles.Render("~/Content/custom/questions.css")
+    @Styles.Render("~/Scripts/vendor/jquery-ui/jquery-ui.css")
+}
 
 @section scripts {
     @Scripts.Render("~/Scripts/custom/questions/answer.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.js")
+
     <script>
         HappyMe.Questions.loadAnswerClickEvent(@(Model.Id), @(@Model.SessionId))
     </script>
@@ -18,3 +23,21 @@
 </div>
 
 @Html.Partial("_AlphabetAnswer", Model.Answers);
+
+@*TODO: Add to partial view*@
+<div id="success-message" title="БРАВО!" style="display: none;" class="result-popup">
+    <div class="modal-text cell">
+        <p class="message">Това е правилен отговор.</p>
+        <p class="message">Справяш се страхотно!</p>
+    </div>
+    <img src="~/Content/images/character_green.png" class="charachter-image cell" />
+</div>
+
+@*TODO: Add to partial view*@
+<div id="error-message" title="Опитай пак :)" style="display: none;" class="result-popup">
+    <div class="modal-text cell">
+        <p class="message">Справяш се страхотно,</p>
+        <p class="message">но опитай пак!</p>
+    </div>
+    <img src="~/Content/images/character_pink.png" class="charachter-image cell" />
+</div>

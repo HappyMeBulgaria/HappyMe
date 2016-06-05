@@ -6,15 +6,18 @@
 
     using HappyMe.Common.Mapping;
     using HappyMe.Data.Models;
+    using HappyMe.Web.Common.Attributes;
 
     public class ModuleCreateInputModel : IMapTo<Module>, IMapFrom<Module>
     {
         [Display(Name = "Име на модул")]
+        [PlaceHolder("Име на модул")]
         public string Name { get; set; }
 
         [AllowHtml]
         [Display(Name = "Описание на модул")]
         [UIHint("CKeditor")]
+        [PlaceHolder("Описание на модул")]
         public string Description { get; set; }
         
         [HiddenInput(DisplayValue = false)]

@@ -4,10 +4,15 @@
     ViewBag.Title = Model.Text;
 }
 
-@Styles.Render("~/Content/custom/questions.css")
+@section styles{
+    @Styles.Render("~/Content/custom/questions.css")
+    @Styles.Render("~/Scripts/vendor/jquery-ui/jquery-ui.css")
+}
 
 @section scripts {
     @Scripts.Render("~/Scripts/custom/questions/answer.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.js")
+
     <script>
         HappyMe.Questions.loadAnswerDragAndDropEvents(@(Model.Id), @(@Model.SessionId))
     </script>
