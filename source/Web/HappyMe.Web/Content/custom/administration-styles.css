@@ -106,45 +106,6 @@ ul.top-menu > li .logout {
 .editor-label {
     display: none;
 }
-/* ============ checkboxes =========== */
-input[type=checkbox] {
-    position: absolute;
-    opacity: 0;
-}
-
-    /* to hide the checkbox itself */
-    input[type=checkbox] + label, input[type=checkbox] ~ label {
-        position: relative;
-        padding-left: 25px;
-        font-size: 16px;
-    }
-
-        input[type=checkbox] + label:before, input[type=checkbox] ~ label:before {
-            font-family: FontAwesome;
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            font-size: 20px;
-            line-height: 100%;
-            color: #656565;
-            position: absolute;
-            left: 1px;
-            top: 0px;
-        }
-
-        input[type=checkbox] + label:before, input[type=checkbox] ~ label:before {
-            content: "\f096";
-        }
-
-        /* unchecked icon */
-        input[type=checkbox] + label:before, input[type=checkbox] ~ label:before {
-            margin-right: 8px;
-        }
-
-    /* space between checkbox and label */
-    input[type=checkbox]:checked + label:before, input[type=checkbox]:checked ~ label:before {
-        content: "\f14a";
-    }
 /*==============End overriding other styles=============*/
 
 .bottom-buffer {

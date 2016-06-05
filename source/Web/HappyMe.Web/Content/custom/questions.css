@@ -97,3 +97,123 @@
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(100%);
 }
+/*Result Popup*/
+.ui-dialog.result-popup {
+    top: 25%;
+    left: 20%;
+    border: 10px solid;
+    border-radius: 30px;
+    overflow: visible;
+    font-size: 1.6em;
+}
+
+.result-popup.success-message {
+    border-color: #AED138;
+}
+
+.result-popup.error-message {
+    border-color: #f04f53;
+}
+
+.result-popup .ui-dialog-titlebar {
+    border: none;
+    background: none;
+    text-align: center;
+    color: #f04f53;
+}
+
+.result-popup.success-message .ui-dialog-titlebar {
+    color: #AED138;
+}
+
+.result-popup.error-message .ui-dialog-titlebar {
+    color: #f04f53;
+}
+
+.ui-dialog.result-popup .ui-dialog-titlebar {
+    padding-right: 60px;
+    border: none;
+    background: none;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Lato Black', 'Helvica', 'Arial', sans-serif;
+}
+
+.ui-dialog.result-popup.error-message .ui-dialog-titlebar {
+    color: #f04f53;
+}
+
+.ui-dialog.result-popup.success-message .ui-dialog-titlebar {
+    color: #AED138;
+}
+
+.ui-dialog .ui-dialog-content {
+    overflow: visible !important;
+}
+
+.result-popup.ui-dialog-content {
+}
+
+.result-popup .ui-widget-content {
+    border: none;
+}
+
+.result-popup .message {
+    padding-right: 60px;
+    text-align: center;
+    color: #565656;
+}
+
+.result-popup.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: none;
+    text-align: center;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    width: auto;
+    margin: 0 auto;
+    padding-right: 60px !important;
+}
+
+.result-popup.ui-dialog .ui-dialog-buttonset .ui-button {
+    background: none;
+    color: #FFFFFF;
+}
+
+.result-popup.ui-dialog.error-message .ui-dialog-buttonset .ui-button {
+    background-color: #f04f53;
+}
+
+.result-popup.ui-dialog.success-message .ui-dialog-buttonset .ui-button {
+    background-color: #AED138;
+}
+
+.charachter-image {
+    position: absolute;
+    top: -60px;
+    right: -110px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .ui-dialog .ui-dialog-buttonpane {
+        margin-top: 0 !important;
+        margin: 0 auto;
+        padding: 0 !important;
+        padding-right: 60px !important;
+    }
+
+    .ui-dialog .ui-dialog-content {
+        height: auto !important;
+    }
+
+    .ui-dialog.result-popup {
+        padding: 5px 70px;
+        margin-left: -70px;
+    }
+
+    .charachter-image {
+        position: absolute;
+        top: -90px;
+        right: -160px;
+    }
+}
