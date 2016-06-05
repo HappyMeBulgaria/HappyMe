@@ -1041,7 +1041,6 @@
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
@@ -1066,6 +1065,8 @@
     <Content Include="Views\Questions\AlphabetQuestion.cshtml" />
     <Content Include="Views\Modules\Success.cshtml" />
     <Content Include="Views\Feedback\Success.cshtml" />
+    <Content Include="Views\Questions\ColorQuestion.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
     <None Include="Views\Questions\ColorQuestion.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\AnswerViewModel.cshtml" />
     <Content Include="Views\Questions\ImageQuestion.cshtml" />
