@@ -206,6 +206,7 @@
     <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationReadAndDeleteController.cs" />
     <Compile Include="Areas\Administration\Controllers\ChildrenStatisticsController.cs" />
     <Compile Include="Areas\Administration\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Administration\Controllers\FeedbackController.cs" />
     <Compile Include="Areas\Administration\Controllers\ImagesController.cs" />
     <Compile Include="Areas\Administration\Controllers\ModulesController.cs" />
     <Compile Include="Areas\Administration\Controllers\QuestionsController.cs" />
@@ -228,6 +229,7 @@
     <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\AllParentStatisticsViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\ChildViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\DashboardIndexViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Feedback\FeedbackGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Modules\ModuleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Questions\QuestionGridViewModel.cs" />
@@ -585,6 +587,7 @@
     <Content Include="Areas\Administration\Views\Answers\Update.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Content\images\favicons\manifest.json" />
+    <Content Include="Areas\Administration\Views\Feedback\Index.cshtml" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\dev\locations.json" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\readme.md" />

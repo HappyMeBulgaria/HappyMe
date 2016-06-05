@@ -1,0 +1,28 @@
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Common.Helpers
+
+@model IEnumerable<HappyMe.Web.Areas.Administration.ViewModels.Feedback.FeedbackGridViewModel>
+
+@{
+    ViewBag.Title = "Обратна връзка";
+    const string ControllerName = "Feedback";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@(Html.MvcGrid(
+    Model,
+    columns =>
+    {
+        columns.Add(model => model.Id).Titled("№");
+        columns.Add(model => model.Email).Titled("Потребител");
+        columns.Add(model => model.Title).Titled("Отговор");
+        columns.Add(model => model.Name).Titled("Дата на създаване");
+        columns.Add(model => model.Message).Encoded(false);
+        columns.Add(model => model.Id)
+            .Titled("Изтриване")
+            .Encoded(false)
+            .Filterable(false)
+            .RenderedAs(model => Html.DeleteForm(nameof(FeedbackController.Delete), ControllerName, model.Id.ToString()));
+    }))
+
