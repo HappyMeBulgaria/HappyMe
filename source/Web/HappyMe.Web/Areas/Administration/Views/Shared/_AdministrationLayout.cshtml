@@ -56,9 +56,9 @@
             <ul class="sidebar-menu" id="nav-accordion">
 
                 <p class="centered">
-                    <a href="/profile"><img src="/Content/images/ui-zac.jpg" class="img-circle" width="60"></a>
+                    <a href="@this.Url.Action("Index", "Dashboard", new { area = "Administration" })"><img src="/Content/images/user-default-image.png" class="img-circle" width="60"></a>
                 </p>
-                <h5 class="centered">Marcel Newman</h5>
+                <h5 class="centered">@this.User.Identity.Name</h5>
 
                 <li class="mt">
                     @(Html.ActiveActionLinkHelper("Управление", nameof(DashboardController.Index), "Dashboard", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "dashboard" } }))
