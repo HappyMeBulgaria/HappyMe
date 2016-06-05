@@ -53,13 +53,13 @@
             // clientId: "",
             // clientSecret: "");
 
-            // app.UseTwitterAuthentication(
-            // consumerKey: "",
-            // consumerSecret: "");
+            //// app.UseTwitterAuthentication(
+            //// consumerKey: "",
+            //// consumerSecret: "");
 
-            // app.UseFacebookAuthentication(
-            // appId: "",
-            // appSecret: "");
+            app.UseFacebookAuthentication(
+            appId: "590357781141491",
+            appSecret: "bdb39d047b5f47610e840db09e8e875b");
 
             // app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             // {

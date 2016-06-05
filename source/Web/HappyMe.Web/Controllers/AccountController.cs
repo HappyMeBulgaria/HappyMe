@@ -65,15 +65,8 @@
             }
         }
 
-        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
-                return this.HttpContext.GetOwinContext().Authentication;
-            }
-        }
-
-        // GET: /Account/Login
+        private IAuthenticationManager AuthenticationManager => this.HttpContext.GetOwinContext().Authentication;
+        
         [AllowAnonymous]
         public ActionResult Login(string returnUrl, string username)
         {
@@ -82,8 +75,7 @@
             var viewModel = new LoginViewModel { Email = username };
             return this.View(viewModel);
         }
-
-        // POST: /Account/Login
+        
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
