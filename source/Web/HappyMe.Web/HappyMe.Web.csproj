@@ -309,6 +309,12 @@
     <Content Include="Content\images\bread-alphabet.png" />
     <Content Include="Content\images\butterfly-alphabet.png" />
     <Content Include="Content\images\camera-alphabet.png" />
+    <Content Include="Content\images\character_blue-sm.png" />
+    <Content Include="Content\images\character_blue.png" />
+    <Content Include="Content\images\character_green-sm.png" />
+    <Content Include="Content\images\character_orange-sm.png" />
+    <Content Include="Content\images\character_orange.png" />
+    <Content Include="Content\images\character_pink-sm.png" />
     <Content Include="Content\images\cherries_colour.png" />
     <Content Include="Content\images\christmastree-alphabet.png" />
     <Content Include="Content\images\crab-alphabet.png" />
