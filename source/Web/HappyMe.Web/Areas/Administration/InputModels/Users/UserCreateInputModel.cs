@@ -4,20 +4,21 @@
 
     using HappyMe.Common.Mapping;
     using HappyMe.Data.Models;
+    using HappyMe.Web.Common.Attributes;
 
     public class UserCreateInputModel : IMapFrom<User>, IMapTo<User>
     {
         [Required]
+        [PlaceHolder("Потребителско име")]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
+        [PlaceHolder("Имейл")]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        public bool IsSamePassword { get; set; }
     }
 }

@@ -43,7 +43,7 @@
         public ActionResult Index() => this.View(this.GetData().OrderBy(u => u.Id));
 
         [HttpGet]
-        public ActionResult Create() => this.View();
+        public ActionResult Create() => this.View(new UserCreateInputModel());
 
         [HttpPost]
         [ValidateAntiForgeryToken]

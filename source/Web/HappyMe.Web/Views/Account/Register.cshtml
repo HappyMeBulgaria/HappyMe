@@ -1,40 +1,79 @@
 ﻿@model HappyMe.Web.ViewModels.Account.RegisterViewModel
+
+@section styles {
+    @Styles.Render("~/Content/custom/authentication.css")
+}
+
 @{
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="form-group">
+    <div class="col-sm-6">
+        <div class="section-title-container">
+            <h2 class="section-title">
+                Защо да се рагистрирам?
+            </h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            <p class="register-info">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus felis nec ultrices mattis. Donec a ornare mauris. Quisque egestas molestie vulputate. Vestibulum elit nulla, imperdiet et dictum vel, eleifend a ante. Aenean facilisis sapien in mauris egestas, quis scelerisque turpis dapibus. Aenean vel bibendum dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+            </p>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
+    <div class="col-sm-6">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal register-form", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <div class="input-file-container col-xs-4">
+                    <i class="fa fa-user input-image-icon"></i>
+                    <p class="input-image-text top-buffer">Добави снимка</p>
+                </div>
+                <div class="input-names-container col-xs-8">
+                    @Html.TextBoxFor(m => m.FirstName, new {@class = "form-control first-name-input", placeholder = "Име"})
+                    @Html.TextBoxFor(m => m.LastName, new {@class = "form-control last-name-input", placeholder = "Фамилия"})
+                </div>
+            </div>
+
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="inner-addon left-addon">
+                    <i class="fa fa-user"></i>
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Потребителско име" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="inner-addon left-addon">
+                    <i class="fa fa-envelope-o"></i>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Имейл" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="inner-addon left-addon">
+                    <i class="fa fa-lock"></i>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Парола" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="inner-addon left-addon">
+                    <i class="fa fa-lock"></i>
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Повтори парола" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text-center">
+                    <input type="submit" class="btn btn-warning register-button" value="Регистрация"/>
+                </div>
+            </div>
+
+            <p class="text-center bottom-buffer register-button-login-page">
+                @Html.ActionLink("Регистриран потребител", "Login")
+            </p>
+        }
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+</div>
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

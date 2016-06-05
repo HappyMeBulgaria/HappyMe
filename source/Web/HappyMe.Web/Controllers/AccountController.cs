@@ -66,7 +66,7 @@
         }
 
         private IAuthenticationManager AuthenticationManager => this.HttpContext.GetOwinContext().Authentication;
-        
+
         [AllowAnonymous]
         public ActionResult Login(string returnUrl, string username)
         {
@@ -75,7 +75,7 @@
             var viewModel = new LoginViewModel { Username = username };
             return this.View(viewModel);
         }
-        
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -177,7 +177,7 @@
         {
             if (this.ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                var user = new User { UserName = model.Username, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
                 var result = await this.UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

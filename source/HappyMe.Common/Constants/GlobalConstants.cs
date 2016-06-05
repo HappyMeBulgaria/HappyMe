@@ -14,6 +14,6 @@ namespace HappyMe.Common.Constants
         public const string DangerMessage = "DangerMessage";
 
         public const int DefaultPageSize = 10;
-        public const string DefaultUserImagePath = "/Content/images/user-default-image.jpg";
+        public const string DefaultUserImagePath = "/Content/images/user-default-image.png";
     }
 }
