@@ -1,5 +1,11 @@
 ﻿@using HappyMe.Web.ViewModels.Account
-@model HappyMe.Web.ViewModels.Account.LoginViewModel
+
+@model LoginViewModel
+
+@section styles {
+    @Scripts.Render("~/Content/custom/authentication.css")
+}
+
 @{
     ViewBag.Title = "Log in";
 }

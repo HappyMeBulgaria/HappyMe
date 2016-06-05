@@ -284,6 +284,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\custom\administration-styles.css" />
+    <Content Include="Content\custom\authentication.css" />
     <Content Include="Content\custom\global.css" />
     <Content Include="Content\custom\hover-animation.css" />
     <Content Include="Content\custom\index-style.css" />
