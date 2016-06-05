@@ -6,6 +6,7 @@ HappyMe.Questions = (function () {
     var sendUserAnswer = function (data) {
         HttpRequester.postJson('/Questions/Answer', data)
             .then(function (data) {
+                debugger;
                 if (data.isAnswerCorrect) {
                     $('.color-question-image').css('filter', 'none');
                     $('.color-question-image').css('-webkit-filter', 'none');

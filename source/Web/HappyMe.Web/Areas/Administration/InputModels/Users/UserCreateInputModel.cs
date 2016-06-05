@@ -19,6 +19,7 @@
 
         [Required]
         [DataType(DataType.Password)]
+        [PlaceHolder("Парола")]
         public string Password { get; set; }
     }
 }
