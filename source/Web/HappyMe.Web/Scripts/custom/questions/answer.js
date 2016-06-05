@@ -61,7 +61,9 @@ HappyMe.Questions = (function () {
         $('.answers-wrapper').on('click',
         '.answer',
         function (event) {
-            var answerId = event.currentTarget.dataset.answerId;
+
+            // TODO: Check
+            var answerId = event.currentTarget.dataset.answerId || event.originalEvent.target.dataset.answerId;
 
             var data = {
                 answerId: answerId,
