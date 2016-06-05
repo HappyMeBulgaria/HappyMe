@@ -6,8 +6,7 @@ HappyMe.Questions = (function () {
     var sendUserAnswer = function (data) {
         HttpRequester.postJson('/Questions/Answer', data)
             .then(function (data) {
-                console.log(data);
-
+                debugger;
                 if (data.isAnswerCorrect) {
                     $('.color-question-image').css('filter', 'none');
                     $('.color-question-image').css('-webkit-filter', 'none');
@@ -18,15 +17,17 @@ HappyMe.Questions = (function () {
                         resizable: false,
                         show: 'blind',
                         hide: 'blind',
-                        width: $(window).width() * 0.7,
+                        width: 'auto',
+                        height: 300,
+                        maxWidth: 900,
+                        responsive: true,
                         dialogClass: 'result-popup success-message',
                         buttons: {
-                            "I've read and understand this": function () {
-                                $(this).dialog("close");
+                            "Продължи": function () {
+                                window.location = '/questions/answer/' + data.sessionId;
                             }
                         }
                     });
-                    window.location = '/questions/answer/' + data.sessionId;
                 } else {
                     $("#error-message").dialog({
                         modal: true,
@@ -35,11 +36,14 @@ HappyMe.Questions = (function () {
                         show: 'blind',
                         closeOnEscape: false,
                         hide: 'blind',
-                        width: $(window).width() * 0.6,
+                        width: 'auto', 
+                        height: 300,
+                        maxWidth: 900,
+                        responsive: true,
                         dialogClass: 'result-popup error-message',
                         buttons: {
                             "Продължи": function () {
-                                $(this).dialog("close");
+                                window.location = '/questions/answer/' + data.sessionId;
                             }
                         },
                         open: function (event, ui) {
@@ -51,10 +55,10 @@ HappyMe.Questions = (function () {
     };
 
     var loadAnswerClickEvent = function (questionId, sessionId) {
-        $('.color-answers-wrapper').on('click',
+        $('.answers-wrapper').on('click',
         '.answer',
         function (event) {
-            var answerId = event.originalEvent.target.dataset.answerId;
+            var answerId = event.currentTarget.dataset.answerId;
 
             var data = {
                 answerId: answerId,
