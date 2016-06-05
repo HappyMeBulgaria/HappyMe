@@ -39,7 +39,8 @@
             this.usersInRolesAdministrationService = usersInRolesAdministrationService;
             this.userManager = userManager;
         }
-        
+
+        [AuthorizeRoles(RoleConstants.Administrator)]
         public ActionResult Index() => this.View(this.GetData().OrderBy(u => u.Id));
 
         [HttpGet]
@@ -51,15 +52,17 @@
         {
             // TODO: Conform the case if model.IsSamePassword is true
             var entity = this.MappingService.Map<User>(model);
+            entity.ParentId = this.UserProfile.Id;
             var userCreateResult = this.userManager.Create(entity, model.Password);
             if (this.ModelState.IsValid)
             {
                 var roleAssigned = this.userManager.AddToRole(entity.Id, RoleConstants.Child);
+                this.UserProfile.Children.Add(entity);
 
                 if (userCreateResult.Succeeded && roleAssigned.Succeeded)
                 {
                     this.TempData.AddSuccessMessage("Успешно създадохте потребител");
-                    return this.RedirectToAction(nameof(this.Index));
+                    return this.RedirectToAction<DashboardController>(c => c.Index());
                 }
 
                 this.TempData.AddDangerMessage(string.Join(";", userCreateResult.Errors));
@@ -70,10 +73,12 @@
         }
 
         [HttpGet]
+        [AuthorizeRoles(RoleConstants.Administrator)]
         public ActionResult Update(string id) => this.View(this.GetEditModelData(id));
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AuthorizeRoles(RoleConstants.Administrator)]
         public ActionResult Update(UserUpdateInputModel model)
         {
             var entity = this.BaseUpdate(model, model.Id);
@@ -97,6 +102,7 @@
         }
 
         [HttpGet]
+        [AuthorizeRoles(RoleConstants.Administrator)]
         public ActionResult AddUserInRole(string id)
         {
             // TODO: Don't get role, if user is in it

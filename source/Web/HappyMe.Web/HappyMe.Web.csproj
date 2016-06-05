@@ -1065,6 +1065,7 @@
     <Content Include="Views\Questions\AlphabetQuestion.cshtml" />
     <Content Include="Views\Modules\Success.cshtml" />
     <Content Include="Views\Feedback\Success.cshtml" />
+    <Content Include="Views\Questions\ColorQuestion.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <None Include="Views\Questions\ColorQuestion.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\AnswerViewModel.cshtml" />
