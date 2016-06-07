@@ -19,7 +19,7 @@
 }
 
 <div class="col-md-12 text-center">
-    <img src="@Model.ImageUrl" alt="@($"{Model.Text} - изображение")" />
+    <img class="alphabet-question-letter-image" src="@Model.ImageUrl" alt="@($"{Model.Text} - изображение")" />
 </div>
 
 @Html.Partial("_AlphabetAnswer", Model.Answers);
