@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    using HappyMe.Common.Constants;
     using HappyMe.Common.Models;
     using HappyMe.Data.Contracts;
     using HappyMe.Data.Contracts.Models;
@@ -20,7 +21,8 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(2), MaxLength(100)]
+        [MinLength(GlobalConstants.QuestionTextMinLength)]
+        [MaxLength(GlobalConstants.QuestionTextMaxLength)]
         public string Text { get; set; }
 
         public QuestionType Type { get; set; }

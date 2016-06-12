@@ -2,6 +2,8 @@ namespace HappyMe.Web.ViewModels.Manage
 {
     using System.ComponentModel.DataAnnotations;
 
+    using HappyMe.Common.Constants;
+
     public class ChangePasswordViewModel
     {
         [Required]
@@ -10,7 +12,10 @@ namespace HappyMe.Web.ViewModels.Manage
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(
+            UserValidationConstants.PasswordMaxLength, 
+            ErrorMessage = "The {0} must be at least {2} characters long.", 
+            MinimumLength = UserValidationConstants.PasswordMinLength)]
         [DataType(DataType.Password)]
         [Display(Name = "New password")]
         public string NewPassword { get; set; }

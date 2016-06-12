@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    using HappyMe.Common.Constants;
     using HappyMe.Data.Contracts;
     using HappyMe.Data.Contracts.Models;
 
@@ -21,10 +22,12 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(5), MaxLength(100)]
+        [MinLength(GlobalConstants.ModuleDescriptionMinLength)]
+        [MaxLength(GlobalConstants.ModuleDescriptionMaxLength)]
         public string Name { get; set; }
 
-        [MinLength(10), MaxLength(5000)]
+        [MinLength(GlobalConstants.ModuleDescriptionMinLength)]
+        [MaxLength(GlobalConstants.ModuleDescriptionMaxLength)]
         public string Description { get; set; }
 
         public bool IsActive { get; set; }

@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    using HappyMe.Common.Constants;
     using HappyMe.Data.Contracts;
     using HappyMe.Data.Contracts.Models;
 
@@ -24,7 +25,7 @@
         [Key]
         public int Id { get; set; }
 
-        [MaxLength(500)]
+        [MaxLength(GlobalConstants.ImagePathMaxLength)]
         public string Path { get; set; }
 
         public byte[] ImageData { get; set; }
