@@ -54,6 +54,12 @@
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 
+            if (!module.IsActive || !module.IsPublic)
+            {
+                this.TempData.AddDangerMessage("Упс! Няма такъв модул.");
+                return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
+            }
+
             int sessionId;
 
             if (this.User.IsLoggedIn())
