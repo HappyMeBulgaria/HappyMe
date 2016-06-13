@@ -251,3 +251,7 @@
 .drag-and-drop-question-area .question-image {
     width: 80%;
 }
+
+.alphabet-question-letter-image {
+    max-height: 200px;
+}

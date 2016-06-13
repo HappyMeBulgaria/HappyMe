@@ -56,7 +56,7 @@
         public ActionResult Create()
         {
             this.PopulateViewBag(null);
-            return this.View();
+            return this.View(new AnswerCreateInputModel());
         }
 
         [HttpPost]

@@ -2,6 +2,7 @@ namespace HappyMe.Web
 {
     using System;
 
+    using HappyMe.Common.Constants;
     using HappyMe.Data;
     using HappyMe.Data.Models;
     using HappyMe.Web.Config;
@@ -32,13 +33,13 @@ namespace HappyMe.Web
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6
+                RequiredLength = UserValidationConstants.PasswordMinLength
             };
 
             // Configure user lockout defaults
             manager.UserLockoutEnabledByDefault = true;
-            manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
-            manager.MaxFailedAccessAttemptsBeforeLockout = 5;
+            manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(GlobalConstants.DefaultAccountLockoutTimeInMinutes);
+            manager.MaxFailedAccessAttemptsBeforeLockout = GlobalConstants.MaxFailedAccessAttemptsBeforeLockout;
 
             // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
             // You can write your own provider and plug it in here.

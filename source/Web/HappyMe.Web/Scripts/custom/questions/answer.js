@@ -6,7 +6,6 @@ HappyMe.Questions = (function () {
     var sendUserAnswer = function (data) {
         HttpRequester.postJson('/Questions/Answer', data)
             .then(function (data) {
-                debugger;
                 if (data.isAnswerCorrect) {
                     $('.color-question-image').css('filter', 'none');
                     $('.color-question-image').css('-webkit-filter', 'none');
@@ -62,7 +61,9 @@ HappyMe.Questions = (function () {
         $('.answers-wrapper').on('click',
         '.answer',
         function (event) {
-            var answerId = event.currentTarget.dataset.answerId;
+
+            // TODO: Check
+            var answerId = event.currentTarget.dataset.answerId || event.originalEvent.target.dataset.answerId;
 
             var data = {
                 answerId: answerId,
