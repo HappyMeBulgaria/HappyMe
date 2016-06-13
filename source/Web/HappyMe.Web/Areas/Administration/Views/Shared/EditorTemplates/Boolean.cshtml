@@ -1,9 +1,4 @@
 ﻿@model bool
 
-@{
-    var propertyName = ViewData.ModelMetadata.PropertyName;
-    var propertyDisplayName = ViewData.ModelMetadata.DisplayName;
-}
-
-<input class="check-box" data-val="true" id="@propertyName" name="@propertyName" type="checkbox" value="true">
-<label for="@propertyName">@propertyDisplayName</label>
+@Html.CheckBoxFor(m => m)
+@Html.LabelFor(m => m)

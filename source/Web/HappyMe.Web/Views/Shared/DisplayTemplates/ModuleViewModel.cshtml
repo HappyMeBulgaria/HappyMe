@@ -2,8 +2,8 @@
 @model HappyMe.Web.ViewModels.Modules.ModuleViewModel
 
 <section class="module-box col-md-3 col-xs-6">
-    <a href="@Url.Action(nameof(ModulesController.Start), new {id = Model.Id})" class="start-module-link">
-        <div class="module-information-container @(Model.IsActive ? string.Empty : "not-active")">
+    <a href="@Url.Action(nameof(ModulesController.Start), new {id = Model.Id})" class="start-module-link @(Model.IsActive ? string.Empty : "not-active")">
+        <div class="module-information-container">
             <header class="module-name">
                 <h3 class="module-heading">@Model.Name</h3>
             </header>

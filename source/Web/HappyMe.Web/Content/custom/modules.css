@@ -3,25 +3,8 @@
 }
 
 .module-box {
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    padding: 20px;
 }
-
-    .module-box:hover {
-        -webkit-transition: all .2s ease-in-out;
-        -moz-transition: all .2s ease-in-out;
-        -ms-transition: all .2s ease-in-out;
-        -o-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        -o-transform: scale(1.1);
-        transform: scale(1.1);
-    }
 
     .module-box .module-name {
         margin: 10px 0 20px 0;
@@ -31,9 +14,60 @@
         margin: 0 auto;
     }
 
-.module-box {
-    padding: 20px;
-}
+    .module-box .start-module-link {
+        display: block;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+
+        .module-box .start-module-link:hover {
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -ms-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        .module-box .start-module-link.not-active {
+            cursor: default;
+            -webkit-transition: none;
+            -moz-transition: none;
+            -ms-transition: none;
+            -o-transition: none;
+            transition: none;
+        }
+
+            .module-box .start-module-link.not-active:hover {
+                -webkit-transform: none;
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                transform: none;
+            }
+
+            .module-box .start-module-link.not-active .module-information-container {
+                border-color: #999;
+            }
+
+                .module-box .start-module-link.not-active .module-information-container .module-name {
+                    color: #999;
+                }
+
+                .module-box .start-module-link.not-active .module-information-container img {
+                    -webkit-filter: gray;
+                    -moz-filter: gray;
+                    -o-filter: gray;
+                    filter: gray;
+                    -webkit-filter: grayscale(100%);
+                }
 
 .start-module-link:hover,
 .start-module-link:focus {
