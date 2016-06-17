@@ -50,7 +50,14 @@
                 return null;
             }
 
-            return RandomGenerator.Instance.OneOf(unanswerdQuestions);
+            var selectedQuestion = RandomGenerator.Instance
+                .OneOf(unanswerdQuestions);
+
+            selectedQuestion.Answers = selectedQuestion.Answers
+                .Shuffle(RandomGenerator.Instance)
+                .ToList();
+
+            return selectedQuestion;
         }
 
         public void FinishSession(int id)
