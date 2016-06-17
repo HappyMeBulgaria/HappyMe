@@ -58,8 +58,8 @@
             //// consumerSecret: "");
 
             app.UseFacebookAuthentication(
-            appId: "590357781141491",
-            appSecret: "bdb39d047b5f47610e840db09e8e875b");
+            appId: "268156436879888",
+            appSecret: "7f29be1b96fcf12ae6727b0c18484ce6");
 
             // app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             // {
