@@ -369,7 +369,7 @@
     <Content Include="Content\images\homepage-background.png" />
     <Content Include="Content\images\homepage-ipad-mockup.png" />
     <Content Include="Content\images\iron-alphabet.png" />
-    <Content Include="Content\images\kmariyanov.jpg" />
+    <Content Include="Content\images\teamMembers\kmariyanov.jpg" />
     <Content Include="Content\images\ladybug-alphabet.png" />
     <Content Include="Content\images\leaf-colours.png" />
     <Content Include="Content\images\lettuce-colours.png" />
@@ -377,7 +377,7 @@
     <Content Include="Content\images\logo-fullcolor.png" />
     <Content Include="Content\images\mama.png" />
     <Content Include="Content\images\mama.png" />
-    <Content Include="Content\images\mhristoforova.jpg" />
+    <Content Include="Content\images\teamMembers\mhristoforova.jpg" />
     <Content Include="Content\images\module-colours.png" />
     <Content Include="Content\images\module-family.png" />
     <Content Include="Content\images\modules-alphabet.png" />
@@ -397,7 +397,7 @@
     <Content Include="Content\images\scissors-alphabet.png" />
     <Content Include="Content\images\Screen_Alphabet_Question_A.png" />
     <Content Include="Content\images\sheep.png" />
-    <Content Include="Content\images\rpopova.jpg" />
+    <Content Include="Content\images\teamMembers\rpopova.jpg" />
     <Content Include="Content\images\sheep.png" />
     <Content Include="Content\images\shoe-no-border.png" />
     <Content Include="Content\images\shoes-dragdrop.png" />
@@ -405,14 +405,14 @@
     <Content Include="Content\images\snake-alphabet.png" />
     <Content Include="Content\images\stork-alphabet.png" />
     <Content Include="Content\images\strawberry-colours.png" />
-    <Content Include="Content\images\tkurtev.jpg" />
+    <Content Include="Content\images\teamMembers\tkurtev.jpg" />
     <Content Include="Content\images\tomato-colours.png" />
     <Content Include="Content\images\train-alphabet.png" />
     <Content Include="Content\images\ui-zac.jpg" />
     <Content Include="Content\images\use-happyme-left-content.png" />
     <Content Include="Content\images\user-default-image.png" />
     <Content Include="Content\images\watermellon-alphabet.png" />
-    <Content Include="Content\images\yslavcheva.png" />
+    <Content Include="Content\images\teamMembers\yslavcheva.png" />
     <Content Include="Content\vendor\bootstrap\administration\style-responsive.css" />
     <Content Include="Content\vendor\bootstrap\administration\style.css" />
     <Content Include="Content\vendor\bootstrap\administration\table-responsive.css" />
