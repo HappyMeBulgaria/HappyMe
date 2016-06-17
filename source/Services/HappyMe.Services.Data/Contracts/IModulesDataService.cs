@@ -10,9 +10,15 @@
     {
         IQueryable<Module> All();
 
+        IQueryable<Module> AllWithQuestions();
+
         IQueryable<Module> AllActive();
 
+        IQueryable<Module> AllActiveWithQuestions();
+
         IQueryable<Module> AllPublic();
+
+        IQueryable<Module> AllPublicWithQuestions();
 
         Module GetById(int id);
     }
