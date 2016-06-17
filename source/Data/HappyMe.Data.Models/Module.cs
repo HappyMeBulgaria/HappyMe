@@ -22,8 +22,8 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.ModuleDescriptionMinLength)]
-        [MaxLength(GlobalConstants.ModuleDescriptionMaxLength)]
+        [MinLength(GlobalConstants.ModuleNameMinLength)]
+        [MaxLength(GlobalConstants.ModuleNameMaxLength)]
         public string Name { get; set; }
 
         [MinLength(GlobalConstants.ModuleDescriptionMinLength)]
