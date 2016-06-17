@@ -11,6 +11,7 @@
 <h2>Отговори</h2>
 
 <input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer" />
+@Html.DashboardLink()
 @(Html.ActionLink("Създадай нов", nameof(AnswersController.Create), null, new { @class = "btn btn-primary bottom-buffer" }))
 
 

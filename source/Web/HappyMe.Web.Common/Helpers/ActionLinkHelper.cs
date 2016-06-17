@@ -19,5 +19,10 @@
 
             return helper.ActionLink(linkText, actionName, controllerName, routeValues, htmlAttributes);
         }
+
+        public static MvcHtmlString DashboardLink(this HtmlHelper helper)
+        {
+            return helper.ActionLink("Dashboard", "Index", new { controller = "Начална страница", area = "Administration" }, new { @class = "btn btn-primary bottom-buffer" });
+        }
     }
 }

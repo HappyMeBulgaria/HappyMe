@@ -6,7 +6,8 @@
 <h2>Изображения</h2>
 
 
-<input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer" />
+<input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer"/>
+@Html.DashboardLink()
 @Html.ActionLink("Създай ново", "Create", "Images", new { @class = "btn btn-primary bottom-buffer" })
 
 

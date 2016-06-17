@@ -9,6 +9,7 @@
 
 <h2>Потребители</h2>
 
+@Html.DashboardLink()
 @(Html.ActionLink("Създай нов", nameof(UsersController.Create), null, new { @class = "btn btn-primary bottom-buffer" }))
 
 @(Html.MvcGrid(
