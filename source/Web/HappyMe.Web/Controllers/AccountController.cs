@@ -6,19 +6,16 @@
     using System.Web.Mvc;
 
     using HappyMe.Common.Constants;
-    using HappyMe.Data.Contracts.Repositories;
     using HappyMe.Data.Models;
     using HappyMe.Web.Controllers.Base;
     using HappyMe.Web.ViewModels.Account;
 
     using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
 
-    using Ninject;
-
-    [Authorize]
+    ////[Authorize]
+    [Authorize(Roles = RoleConstants.Administrator)]
     public class AccountController : BaseController
     {
         // Used for XSRF protection when adding external logins
