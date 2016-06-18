@@ -11,10 +11,12 @@
     public class Question : DeletableEntity, IIdentifiable<int>
     {
         private ICollection<Answer> answers;
+        private ICollection<Module> modules;
 
         public Question()
         {
             this.answers = new HashSet<Answer>();
+            this.modules = new HashSet<Module>();
         }
 
         [Key]
@@ -29,10 +31,6 @@
 
         public bool IsPublic { get; set; }
 
-        public int? ModuleId { get; set; }
-
-        public virtual Module Module { get; set; }
-
         public int? ImageId { get; set; }
 
         public virtual Image Image { get; set; }
@@ -46,6 +44,12 @@
         {
             get { return this.answers; }
             set { this.answers = value; }
+        }
+
+        public virtual ICollection<Module> Modules
+        {
+            get { return this.modules; }
+            set { this.modules = value; }
         }
     }
 }

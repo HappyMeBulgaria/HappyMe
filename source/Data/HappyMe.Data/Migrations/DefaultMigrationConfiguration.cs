@@ -194,9 +194,10 @@
                     Type = QuestionType.AlphabetQuestion,
                     IsPublic = true,
                     AuthorId = userId,
-                    ModuleId = alphabetModule.Id,
                     ImageId = alphabetQuestionImage.Id
                 };
+
+                alphabetQuestion.Modules.Add(alphabetModule);
                 context.Questions.AddOrUpdate(alphabetQuestion);
 
                 var colorQuestion = new Question
@@ -206,8 +207,9 @@
                     IsPublic = true,
                     AuthorId = userId,
                     ImageId = colorQuestionImage.Id,
-                    ModuleId = colorModule.Id
                 };
+
+                colorQuestion.Modules.Add(colorModule);
                 context.Questions.AddOrUpdate(colorQuestion);
 
                 var familyQuestion = new Question
@@ -216,8 +218,9 @@
                     Type = QuestionType.ImageQuestion,
                     IsPublic = true,
                     AuthorId = userId,
-                    ModuleId = familyModule.Id
                 };
+
+                familyQuestion.Modules.Add(familyModule);
                 context.Questions.AddOrUpdate(familyQuestion);
 
                 var connectQuestion = new Question
@@ -226,9 +229,10 @@
                     Type = QuestionType.DragAndDropQuestion,
                     IsPublic = true,
                     AuthorId = userId,
-                    ModuleId = connectModule.Id,
                     ImageId = connectQuestionImage.Id
                 };
+
+                context.Modules.Add(connectModule);
                 context.Questions.AddOrUpdate(connectQuestion);
 
                 context.SaveChanges();
