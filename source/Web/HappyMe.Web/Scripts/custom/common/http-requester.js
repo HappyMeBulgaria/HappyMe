@@ -1,12 +1,15 @@
 ﻿/// <reference path="Scripts/q.js" />
 /// <reference path="../jquery-1.10.2.js" />
 
-var HttpRequester = (function () {
+var HappyMe = HappyMe || {};
+
+HappyMe.HttpRequester = (function () {
+    'use strict';
 
     var promiseAjaxRequest = function (url, type, data) {
         var ajaxDeferred = Q.defer();
 
-        if(data){
+        if (data) {
             data = JSON.stringify(data);
         }
 
@@ -14,7 +17,7 @@ var HttpRequester = (function () {
             url: url,
             type: type,
             data: data,
-            contentType: "application/json",
+            contentType: 'application/json',
             success: function (responseData) {
                 ajaxDeferred.resolve(responseData);
             },
@@ -24,19 +27,18 @@ var HttpRequester = (function () {
         });
 
         return ajaxDeferred.promise;
-    }
+    };
 
     var promiseAjaxRequestGet = function (url) {
-        return promiseAjaxRequest(url, "get");
-    }
+        return promiseAjaxRequest(url, 'get');
+    };
 
     var promiseAjaxRequestPost = function (url, data) {
-        return promiseAjaxRequest(url, "post", data);
-    }
+        return promiseAjaxRequest(url, 'post', data);
+    };
 
     return {
         getJson: promiseAjaxRequestGet,
-
         postJson: promiseAjaxRequestPost
-    }
-}())
+    };
+}());

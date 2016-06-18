@@ -1,16 +1,16 @@
 ﻿var HappyMe = HappyMe || {};
 
-HappyMe.Questions = (function () {
+HappyMe.Questions = (function (httpRequester) {
     'use strict';
 
     var sendUserAnswer = function (data) {
-        HttpRequester.postJson('/Questions/Answer', data)
-            .then(function (data) {
-                if (data.isAnswerCorrect) {
+        httpRequester.postJson('/Questions/Answer', data)
+            .then(function (answerData) {
+                if (answerData.isAnswerCorrect) {
                     $('.color-question-image').css('filter', 'none');
                     $('.color-question-image').css('-webkit-filter', 'none');
 
-                    $("#success-message").dialog({
+                    $('#success-message').dialog({
                         modal: true,
                         draggable: false,
                         resizable: false,
@@ -23,16 +23,16 @@ HappyMe.Questions = (function () {
                         responsive: true,
                         dialogClass: 'result-popup success-message',
                         buttons: {
-                            "Продължи": function () {
-                                window.location = '/questions/answer/' + data.sessionId;
+                            'Продължи': function () {
+                                window.location = '/questions/answer/' + answerData.sessionId;
                             }
                         },
-                        open: function (event, ui) {
+                        open: function () {
                             $(this).parent().children().children('.ui-dialog-titlebar-close').hide();
                         }
                     });
                 } else {
-                    $("#error-message").dialog({
+                    $('#error-message').dialog({
                         modal: true,
                         draggable: false,
                         resizable: false,
@@ -45,11 +45,11 @@ HappyMe.Questions = (function () {
                         responsive: true,
                         dialogClass: 'result-popup error-message',
                         buttons: {
-                            "Продължи": function () {
-                                $(this).dialog("close");
+                            'Продължи': function () {
+                                $(this).dialog('close');
                             }
                         },
-                        open: function (event, ui) {
+                        open: function () {
                             $(this).parent().children().children('.ui-dialog-titlebar-close').hide();
                         }
                     });
@@ -109,4 +109,4 @@ HappyMe.Questions = (function () {
         loadAnswerClickEvent: loadAnswerClickEvent,
         loadAnswerDragAndDropEvents: loadAnswerDragAndDropEvents
     };
-})();
+})(HappyMe.HttpRequester);

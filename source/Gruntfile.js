@@ -4,7 +4,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         eslint: {
             te4FestWeb: {
-                src: ["Web/HappyMe.Web/Scripts/custom/*.js"]
+                src: ['Web/HappyMe.Web/Scripts/custom/**/*.js']
             }
         },
         jasmine: {
@@ -36,8 +36,8 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks('grunt-concurrent');
-    grunt.loadNpmTasks("gruntify-eslint");
+    grunt.loadNpmTasks('gruntify-eslint');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-notify');
-    grunt.registerTask("default", ["concurrent:lintingAndTesting"]);
+    grunt.registerTask('default', ['concurrent:lintingAndTesting']);
 };
