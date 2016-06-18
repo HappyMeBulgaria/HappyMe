@@ -588,6 +588,7 @@
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Content\images\favicons\manifest.json" />
     <Content Include="Areas\Administration\Views\Feedback\Index.cshtml" />
+    <Content Include=".csslintrc" />
     <None Include="Properties\PublishProfiles\HappyMe PRODUCTION.pubxml" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\dev\locations.json" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\readme.md" />

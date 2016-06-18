@@ -2,9 +2,11 @@
   "name": "Te4Fest",
   "version": "1.0.0",
   "devDependencies": {
+    "csslint-stylish": "0.0.4",
     "eslint-grunt": "^1.0.0",
     "grunt": "~0.4.5",
     "grunt-concurrent": "^2.3.0",
+    "grunt-contrib-csslint": "^1.0.0",
     "grunt-contrib-jasmine": "^1.0.3",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",

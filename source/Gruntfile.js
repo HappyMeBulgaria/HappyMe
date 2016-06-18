@@ -28,10 +28,25 @@ module.exports = function (grunt) {
                 }
             }
         },
+        csslint: {
+            options: {
+                csslintrc: 'Web/HappyMe.Web/.csslintrc',
+                formatters: [{ id: require('csslint-stylish'), dest: 'report/csslint_stylish.xml' }]
+            },
+            te4FestWeb: {
+                options: {
+                    import: 2
+                },
+                src: [
+                    'Web/HappyMe.Web/Content/custom/*.css',
+                    'Web/HappyMe.Web/Content/custom/**/*.css']
+            }
+        },
         concurrent: {
             lintingAndTesting: [
                 'jasmine:te4FestWeb',
-                'eslint:te4FestWeb']
+                'eslint:te4FestWeb',
+                'csslint:te4FestWeb']
         }
     });
 
@@ -39,5 +54,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('gruntify-eslint');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-notify');
+    grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.registerTask('default', ['concurrent:lintingAndTesting']);
 };
