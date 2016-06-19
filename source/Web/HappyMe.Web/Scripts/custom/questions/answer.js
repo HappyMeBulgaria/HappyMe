@@ -76,33 +76,59 @@ HappyMe.Questions = (function (httpRequester) {
     };
 
     var loadAnswerDragAndDropEvents = function (questionId, sessionId) {
-        $('.drag-and-drop-answers-wrapper')
-            .on('dragstart',
-                '.drag-and-drop-answer',
-                function (event) {
-                    console.log(event.originalEvent.target.dataset);
-                    event.originalEvent.dataTransfer.setData('answerId', event.currentTarget.dataset.answerId);
-                });
 
-        $('#question-answer-area')
-            .on('dragover',
-                function (event) {
-                    event.originalEvent.preventDefault();
-                });
+        $("#question-answer-area").droppable({
+            drop: function () {
+                debugger;
 
-        $('#question-answer-area')
-            .on('drop',
-                function (event) {
-                    var answerId = event.originalEvent.dataTransfer.getData('answerId');
+                var answerId = localStorage.getItem('answerId');
+                localStorage.removeItem('answerId');
 
-                    var data = {
-                        answerId: answerId,
-                        questionId: questionId,
-                        sessionId: sessionId
-                    };
+                var data = {
+                    answerId: answerId,
+                    questionId: questionId,
+                    sessionId: sessionId
+                };
 
-                    sendUserAnswer(data);
-                });
+                sendUserAnswer(data);
+            }
+        });
+
+        $('.drag-and-drop-answers-wrapper').draggable({
+            revert: true,
+            start: function (event) {
+                console.log(event.originalEvent);
+                localStorage.setItem('answerId', event.originalEvent.target.dataset.answerId);
+            }
+        });
+
+        //$('.drag-and-drop-answers-wrapper')
+        //    .on('dragstart',
+        //        '.drag-and-drop-answer',
+        //        function (event) {
+        //            console.log(event.originalEvent.target.dataset);
+        //            event.originalEvent.dataTransfer.setData('answerId', event.currentTarget.dataset.answerId);
+        //        });
+
+        //$('#question-answer-area')
+        //    .on('dragover',
+        //        function (event) {
+        //            event.originalEvent.preventDefault();
+        //        });
+
+        //$('#question-answer-area')
+        //    .on('drop',
+        //        function (event) {
+        //            var answerId = event.originalEvent.dataTransfer.getData('answerId');
+
+        //            var data = {
+        //                answerId: answerId,
+        //                questionId: questionId,
+        //                sessionId: sessionId
+        //            };
+
+        //            sendUserAnswer(data);
+        //        });
     };
 
     return {
