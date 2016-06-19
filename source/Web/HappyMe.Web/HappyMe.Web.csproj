@@ -425,6 +425,7 @@
     <Content Include="Content\vendor\guillotine\jquery.guillotine.css" />
     <Content Include="Content\vendor\MvcGrid\mvc-grid.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="ImageSeed\alphabet-question.png" />
     <Content Include="ImageSeed\cherries_colour.png" />
     <Content Include="ImageSeed\hand_pencil.png" />
@@ -436,6 +437,10 @@
     <Content Include="ImageSeed\sheep.png" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\vendor\chart\Chart.js" />
     <Content Include="Scripts\vendor\jquery-ui\external\jquery\jquery.js" />
     <Content Include="Scripts\vendor\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -458,6 +463,11 @@
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.structure.min.css" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.css" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.min.css" />
+    <None Include="Scripts\vendor\jquery\jquery-3.0.0.intellisense.js" />
+    <Content Include="Scripts\vendor\jquery\jquery-3.0.0.js" />
+    <Content Include="Scripts\vendor\jquery\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\vendor\jquery\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\vendor\jquery\jquery-3.0.0.slim.min.js" />
     <Content Include="Scripts\vendor\kendo.window.js" />
     <Content Include="Scripts\vendor\q\q.js" />
     <Content Include="Scripts\vendor\q\q.min.js" />
@@ -616,7 +626,6 @@
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\scss\config\_config.scss" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\scss\config\_defaults.scss" />
     <Content Include="Scripts\vendor\ckeditor\skins\bootstrapck\scss\dialog\dialog.scss" />
-    <None Include="Scripts\vendor\jquery\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\vendor\ckeditor\ckeditor_source.js" />
     <Content Include="Scripts\vendor\ckeditor\config.js" />
     <Content Include="Scripts\vendor\ckeditor\contents.css" />
@@ -1011,8 +1020,8 @@
     <Content Include="Scripts\specs\test-spec.js" />
     <Content Include="Scripts\vendor\bootstrap\bootstrap.js" />
     <Content Include="Scripts\vendor\bootstrap\bootstrap.min.js" />
-    <Content Include="Scripts\vendor\jquery\jquery-2.2.3.js" />
-    <Content Include="Scripts\vendor\jquery\jquery-2.2.3.min.js" />
+    <Content Include="Scripts\vendor\jquery\jquery-3.0.0.min.map" />
+    <Content Include="Scripts\vendor\jquery\jquery-3.0.0.slim.min.map" />
     <None Include="Scripts\vendor\jquery\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\vendor\jquery\jquery.validate.js" />
     <Content Include="Scripts\vendor\jquery\jquery.validate.min.js" />
@@ -1089,7 +1098,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Scripts\vendor\jquery\jquery-2.2.3.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data\HappyMe.Data.Contracts\HappyMe.Data.Contracts.csproj">
