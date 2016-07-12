@@ -83,15 +83,26 @@
                 return this.View(model);
             }
 
+            var user =
+                this.SignInManager.UserManager.Users.FirstOrDefault(
+                    x => x.Email == model.Username || x.UserName == model.Username);
+
+            if (user == null)
+            {
+                this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                return this.View(model);
+            }
+
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result =
                 await
                 this.SignInManager.PasswordSignInAsync(
-                    model.Username,
+                    user.UserName,
                     model.Password,
                     model.RememberMe,
                     shouldLockout: false);
+
             switch (result)
             {
                 case SignInStatus.Success:
