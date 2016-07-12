@@ -21,14 +21,25 @@
         }
 
         [HttpGet]
-        public ActionResult Index(int? id)
+        public ActionResult Index(string username)
         {
-            if (!id.HasValue)
+            var child = this.UsersData.GetUserByUsername(username);
+            if (child == null)
             {
                 return this.ItemNotFound("Няма такова дете.");
             }
 
-            return this.View();
+            if (child.ParentId != this.UserProfile.Id)
+            {
+                return this.ItemNotFound("Няма такова дете.");
+            }
+
+            var viewModel = new ChildStatisticsIndexViewModel
+            {
+                UserName = username
+            };
+
+            return this.View(viewModel);
         }
 
         [HttpGet]

@@ -3,8 +3,9 @@
     using System.Linq;
 
     using HappyMe.Services.Administration.Models;
+    using HappyMe.Services.Common;
 
-    public interface IChildrenStatisticsService
+    public interface IChildrenStatisticsService : IService
     {
         IQueryable<ChildAnswerRatoStatistic> GetWrongRightAnswersStatistics(string childId);
 

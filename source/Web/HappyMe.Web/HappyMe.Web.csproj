@@ -227,6 +227,7 @@
     <Compile Include="Areas\Administration\ViewModels\Answers\AnswerGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\AllChildStatisticsViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\AllParentStatisticsViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\ChildStatisticsIndexViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\ChildViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\DashboardIndexViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Feedback\FeedbackGridViewModel.cs" />

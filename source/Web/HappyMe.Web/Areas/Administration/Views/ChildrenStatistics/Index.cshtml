@@ -1,7 +1,32 @@
-﻿
+﻿@model HappyMe.Web.Areas.Administration.ViewModels.ChildrenStatistics.ChildStatisticsIndexViewModel
+
 @{
-    ViewBag.Title = "Статистика за";
+    ViewBag.Title = "Статистика за " + Model.UserName;
 }
 
 <h2>@ViewBag.Title</h2>
 
+<div class="row">
+    <div class="col-md-12">
+        <h3>Брой играни пъти на модул:</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Съотношение правилни към грешни отговори по модул:</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Средно време прекарано в модул:</h3>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+        });
+    </script>
+}
