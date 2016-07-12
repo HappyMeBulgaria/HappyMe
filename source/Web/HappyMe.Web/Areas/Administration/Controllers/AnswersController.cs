@@ -10,6 +10,9 @@
     using HappyMe.Web.Areas.Administration.Controllers.Base;
 
     using InputModels.Answers;
+
+    using MoreDotNet.Extentions.Common;
+
     using Services.Administration.Contracts;
     using Services.Common.Mapping.Contracts;
     using ViewModels.Answers;
@@ -25,7 +28,7 @@
             IAnswersAdministrationService answersAdministrationService,
             IMappingService mappingService,
             IImagesAdministrationService imagesAdministrationService,
-            IQuestionsAdministrationService questionsAdministrationService) 
+            IQuestionsAdministrationService questionsAdministrationService)
             : base(userData, answersAdministrationService, mappingService)
         {
             this.imagesAdministrationService = imagesAdministrationService;
@@ -63,33 +66,41 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(AnswerCreateInputModel model)
         {
-            model.AuthorId = this.UserProfile.Id;
-
-            var imageData = model.ImageData;
-            if (imageData != null)
+            if (this.ModelState.IsValid)
             {
-                var target = new MemoryStream();
-                imageData.InputStream.CopyTo(target);
-                var data = target.ToArray();
-                model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
-            }
+                model.AuthorId = this.UserProfile.Id;
 
-            var entity = this.BaseCreate(model);
-            if (entity != null)
-            {
-                this.TempData.AddSuccessMessage("Успешно създадохте отговор");
-                return this.RedirectToAction(nameof(this.Index));
+                var imageData = model.ImageData;
+                if (imageData != null)
+                {
+                    var target = new MemoryStream();
+                    imageData.InputStream.CopyTo(target);
+                    var data = target.ToArray();
+                    model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+                }
+
+                var entity = this.BaseCreate(model);
+                if (entity != null)
+                {
+                    this.TempData.AddSuccessMessage("Успешно създадохте отговор");
+                    return this.RedirectToAction(nameof(this.Index));
+                }
             }
 
             return this.View(model);
         }
 
         [HttpGet]
-        public ActionResult Update(int id)
+        public ActionResult Update(int? id)
         {
+            if (!id.HasValue)
+            {
+                return this.ItemNotFound("Няма такъв отговор.");
+            }
+
             var hasRights = this.User.IsAdmin() ||
-                (this.AdministrationService as IAnswersAdministrationService)
-                    .CheckIfUserIsAnswerAuthor(id, this.UserProfile.Id);
+                this.AdministrationService.As<IAnswersAdministrationService>()
+                    .CheckIfUserIsAnswerAuthor(id.Value, this.UserProfile.Id);
 
             if (hasRights)
             {
@@ -107,25 +118,28 @@
         public ActionResult Update(AnswerUpdateInputModel model)
         {
             var hasRights = this.User.IsAdmin() ||
-                (this.AdministrationService as IAnswersAdministrationService)
+                this.AdministrationService.As<IAnswersAdministrationService>()
                     .CheckIfUserIsAnswerAuthor(model.Id, this.UserProfile.Id);
 
             if (hasRights)
             {
-                var imageData = model.ImageData;
-                if (imageData != null)
+                if (this.ModelState.IsValid)
                 {
-                    var target = new MemoryStream();
-                    imageData.InputStream.CopyTo(target);
-                    var data = target.ToArray();
-                    model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
-                }
+                    var imageData = model.ImageData;
+                    if (imageData != null)
+                    {
+                        var target = new MemoryStream();
+                        imageData.InputStream.CopyTo(target);
+                        var data = target.ToArray();
+                        model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+                    }
 
-                var entity = this.BaseUpdate(model, model.Id);
-                if (entity != null)
-                {
-                    this.TempData.AddSuccessMessage("Успешно редактирахте отговор");
-                    return this.RedirectToAction(nameof(this.Index));
+                    var entity = this.BaseUpdate(model, model.Id);
+                    if (entity != null)
+                    {
+                        this.TempData.AddSuccessMessage("Успешно редактирахте отговор");
+                        return this.RedirectToAction(nameof(this.Index));
+                    }
                 }
 
                 this.PopulateViewBag(model.QuestionId);
@@ -138,11 +152,16 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
+            if (!id.HasValue)
+            {
+                return this.ItemNotFound("Няма такъв отговор.");
+            }
+
             var hasRights = this.User.IsAdmin() ||
-                (this.AdministrationService as IAnswersAdministrationService)
-                    .CheckIfUserIsAnswerAuthor(id, this.UserProfile.Id);
+                this.AdministrationService.As<IAnswersAdministrationService>()
+                    .CheckIfUserIsAnswerAuthor(id.Value, this.UserProfile.Id);
 
             if (hasRights)
             {
@@ -162,7 +181,7 @@
                 ? this.questionsAdministrationService.Read()
                 : this.questionsAdministrationService.GetUserQuestions(this.UserProfile.Id);
 
-            this.ViewBag.QuestionIdData = 
+            this.ViewBag.QuestionIdData =
                 questions.Select(m => new SelectListItem { Text = m.Text, Value = m.Id.ToString(), Selected = m.Id == id });
         }
     }
