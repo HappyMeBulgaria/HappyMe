@@ -13,8 +13,8 @@
         [Display(Name = "Въпрос")]
         public int QuestionId { get; set; }
 
-        [Display(Name = "Име на въпрос")]
-        [PlaceHolder("Име на въпрос")]
+        [Display(Name = "Сдържание на отговор")]
+        [PlaceHolder("Сдържание на отговор")]
         public string Text { get; set; }
 
         [Display(Name = "Правилен?")]
