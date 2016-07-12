@@ -1,15 +1,11 @@
 ﻿namespace HappyMe.Web.Areas.Administration.ViewModels.Answers
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
     using Data.Contracts;
     using Data.Models;
     using HappyMe.Common.Mapping;
-    using HappyMe.Common.Models;
 
     public class AnswerGridViewModel : IMapFrom<Answer>, IMapTo<Answer>, IIdentifiable<int>
     {
