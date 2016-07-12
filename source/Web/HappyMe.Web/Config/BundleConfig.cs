@@ -30,7 +30,7 @@
                 "~/Content/vendor/MvcGrid/mvc-grid.css",
                 "~/Content/vendor/bootstrap/administration/style.css",
                 "~/Content/vendor/bootstrap/administration/style-responsive.css",
-                "~/Content/vendor/choosen/chosen.css",
+                "~/Content/vendor/chosen/chosen.css",
                 "~/Content/fonts/lato/latostyle.css",
                 "~/Content/custom/administration-styles.css",
                 "~/Content/custom/global.css"));

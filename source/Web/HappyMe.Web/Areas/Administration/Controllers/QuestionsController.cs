@@ -1,5 +1,6 @@
 ﻿namespace HappyMe.Web.Areas.Administration.Controllers
 {
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -13,7 +14,9 @@
     using HappyMe.Web.Areas.Administration.ViewModels.Questions;
     using HappyMe.Web.Common.Extensions;
 
-    public class QuestionsController : 
+    using MoreDotNet.Extentions.Common;
+
+    public class QuestionsController :
         MvcGridAdministrationCrudController<Question, QuestionGridViewModel, QuestionCreateInputModel, QuestionUpdateInputModel>
     {
         private readonly IModulesAdministrationService modulesAdministrationService;
@@ -21,10 +24,10 @@
 
         public QuestionsController(
             IUsersDataService userData,
-            IQuestionsAdministrationService questionsAdministrationService, 
+            IQuestionsAdministrationService questionsAdministrationService,
             IMappingService mappingService,
             IModulesAdministrationService modulesAdministrationService,
-            IImagesAdministrationService imagesAdministrationService) 
+            IImagesAdministrationService imagesAdministrationService)
             : base(userData, questionsAdministrationService, mappingService)
         {
             this.modulesAdministrationService = modulesAdministrationService;
@@ -40,15 +43,15 @@
             }
             else
             {
-                questions = this.MappingService
-                    .MapCollection<QuestionGridViewModel>(
-                        (this.AdministrationService as IQuestionsAdministrationService)
+                questions =
+                    this.MappingService.MapCollection<QuestionGridViewModel>(
+                        this.AdministrationService.As<IQuestionsAdministrationService>()
                             .GetUserQuestions(this.UserProfile.Id))
-                    .OrderBy(m => m.Id);
+                            .OrderBy(m => m.Id);
             }
 
             return this.View(questions);
-        } 
+        }
 
         [HttpGet]
         public ActionResult Create()
@@ -61,39 +64,43 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(QuestionCreateInputModel model)
         {
-            model.AuthorId = this.UserProfile.Id;
-            var imageData = model.ImageData;
-
-            if (imageData != null)
+            if (this.ModelState.IsValid)
             {
-                var target = new MemoryStream();
-                imageData.InputStream.CopyTo(target);
-                var data = target.ToArray();
-                model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
-            }
+                model.AuthorId = this.UserProfile.Id;
+                var imageData = model.ImageData;
 
-            var entity = this.BaseCreate(model);
-            if (entity != null)
-            {
+                if (imageData != null)
+                {
+                    var target = new MemoryStream();
+                    imageData.InputStream.CopyTo(target);
+                    var data = target.ToArray();
+                    model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+                }
+
+                var entity = this.MappingService.Map<Question>(model);
+                var allSelectedModules = this.modulesAdministrationService.GetAllByIds(model.ModulesIds);
+                entity.Modules.AddRange(allSelectedModules);
+                this.AdministrationService.Create(entity);
+
                 this.TempData.AddSuccessMessage("Успешно създадохте въпрос");
                 return this.RedirectToAction(nameof(this.Index));
             }
 
-            this.PopulateViewBag(null);
+            this.PopulateViewBag(model.ModulesIds);
             return this.View(model);
         }
 
         [HttpGet]
         public ActionResult Update(int id)
         {
-            var userHasRights = this.User.IsAdmin() ||
-                 (this.AdministrationService as IQuestionsAdministrationService)
-                    .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, id);
+            var userHasRights = this.User.IsAdmin()
+                                || this.AdministrationService.As<IQuestionsAdministrationService>()
+                                       .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, id);
 
             if (userHasRights)
             {
                 var question = this.GetEditModelData(id);
-                this.PopulateViewBag(question.ModuleId);
+                this.PopulateViewBag(null);
 
                 return this.View(question);
             }
@@ -106,30 +113,36 @@
         [ValidateAntiForgeryToken]
         public ActionResult Update(QuestionUpdateInputModel model)
         {
-            var userHasRights = this.User.IsAdmin() ||
-                 (this.AdministrationService as IQuestionsAdministrationService)
-                    .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, model.Id);
+            var userHasRights = this.User.IsAdmin()
+                                || this.AdministrationService.As<IQuestionsAdministrationService>()
+                                       .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, model.Id);
 
             if (userHasRights)
             {
-                var imageData = model.ImageData;
-
-                if (imageData != null)
+                if (this.ModelState.IsValid)
                 {
-                    var target = new MemoryStream();
-                    imageData.InputStream.CopyTo(target);
-                    var data = target.ToArray();
-                    model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
-                }
+                    var imageData = model.ImageData;
 
-                var entity = this.BaseUpdate(model, model.Id);
-                if (entity != null)
-                {
+                    if (imageData != null)
+                    {
+                        var target = new MemoryStream();
+                        imageData.InputStream.CopyTo(target);
+                        var data = target.ToArray();
+                        model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+                    }
+
+                    var entity = this.AdministrationService.Get(model.Id);
+                    this.MappingService.Map(model, entity);
+                    var allSelectedModules = this.modulesAdministrationService.GetAllByIds(model.ModulesIds);
+                    entity.Modules.Clear();
+                    entity.Modules.AddRange(allSelectedModules);
+                    this.AdministrationService.Update(entity);
+
                     this.TempData.AddSuccessMessage("Успешно редактирахте въпрос");
                     return this.RedirectToAction(nameof(this.Index));
                 }
 
-                this.PopulateViewBag(model.ModuleId);
+                this.PopulateViewBag(model.ModulesIds);
                 return this.View(model);
             }
 
@@ -141,9 +154,9 @@
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-            var userHasRights = this.User.IsAdmin() ||
-                 (this.AdministrationService as IQuestionsAdministrationService)
-                    .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, id);
+            var userHasRights = this.User.IsAdmin()
+                                || this.AdministrationService.As<IQuestionsAdministrationService>()
+                                       .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, id);
 
             if (userHasRights)
             {
@@ -157,13 +170,17 @@
             return this.RedirectToAction(nameof(this.Index));
         }
 
-        private void PopulateViewBag(int? id)
+        private void PopulateViewBag(int[] selectedIds)
         {
-            var modules = this.User.IsAdmin() 
-                ? this.modulesAdministrationService.Read() 
+            var modules = this.User.IsAdmin()
+                ? this.modulesAdministrationService.Read()
                 : this.modulesAdministrationService.GetUserModules(this.UserProfile.Id);
 
-            this.ViewBag.ModuleIdData = modules.Select(m => new SelectListItem { Text = m.Name, Value = m.Id.ToString(), Selected = m.Id == id });          
+            var projectedModules = modules
+                .Select(x => new { Text = x.Name, Value = x.Id })
+                .ToList();
+
+            this.ViewBag.ModulesIdsData = new MultiSelectList(projectedModules, "Value", "Text", selectedIds);
         }
     }
 }

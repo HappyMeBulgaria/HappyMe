@@ -9,7 +9,7 @@
 
     public class ModulesAdministrationService : AdministrationService<Module>, IModulesAdministrationService
     {
-        public ModulesAdministrationService(IRepository<Module> entities) 
+        public ModulesAdministrationService(IRepository<Module> entities)
             : base(entities)
         {
         }
@@ -18,10 +18,12 @@
 
         public IQueryable<Module> GetUserModules(string userId) => this.Read().Where(m => m.AuthorId == userId);
 
-        public IQueryable<Module> GetUserAndPublicModules(string userId) => 
+        public IQueryable<Module> GetUserAndPublicModules(string userId) =>
             this.Read().Where(m => m.AuthorId == userId || m.IsPublic);
 
-        public bool CheckIfUserIsModuleAuthor(int moduleId, string userId) => 
+        public IQueryable<Module> GetAllByIds(int[] ids) => this.Read().Where(x => ids.Any(y => y == x.Id));
+
+        public bool CheckIfUserIsModuleAuthor(int moduleId, string userId) =>
             this.Read().Any(m => m.Id == moduleId && m.AuthorId == userId);
     }
 }

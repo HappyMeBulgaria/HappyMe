@@ -7,18 +7,24 @@
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm(
-    nameof(QuestionsController.Create), 
-    "Questions", 
-    FormMethod.Post, 
-    new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm(nameof(QuestionsController.Create), "Questions", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     @Html.EditorForModel()
 
-    @Html.EditorFor(m => m.ImageData)
+    @Html.EditorFor(x => x.ModulesIds)
+
+    @Html.EditorFor(m => m.ImageData, new { htmlAttributes = new { @class = "top-buffer" }})
 
     <input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue" />
     <input type="submit" value="Създай" class="btn btn-primary pull-right" />
+}
+
+@section scripts {
+    <script type="text/javascript">
+        $('#ModulesIds').chosen({
+            allow_single_deselect: true
+        });
+    </script>
 }

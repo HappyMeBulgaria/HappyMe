@@ -1,19 +1,14 @@
 ﻿namespace HappyMe.Web.Areas.Administration.InputModels.Questions
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
     using System.Web;
     using System.Web.Mvc;
-    using AutoMapper;
+
     using HappyMe.Common.Mapping;
     using HappyMe.Common.Models;
     using HappyMe.Data.Models;
-    using HappyMe.Web.Areas.Administration.InputModels.Images;
     using HappyMe.Web.Common.Attributes;
-
-    using MoreDotNet.Extentions.Common;
 
     public class QuestionCreateInputModel : IMapTo<Question>, IMapFrom<Question>
     {
@@ -30,9 +25,13 @@
         [Display(Name = "Публичен?")]
         public bool IsPublic { get; set; }
 
-        [Display(Name = "Присъства в модул")]
-        [UIHint("DropDownList")]
-        public int ModuleId { get; set; }
+        ////[Display(Name = "Присъства в модул")]
+        ////[UIHint("DropDownList")]
+        ////public int ModuleId { get; set; }
+
+        [Display(Name = "Присъства в модули")]
+        [UIHint("MultiSelectDropDownList")]
+        public int[] ModulesIds { get; set; }
 
         [HiddenInput(DisplayValue = false)]
         public int? ImageId { get; set; }

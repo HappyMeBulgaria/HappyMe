@@ -1093,6 +1093,7 @@
     <Content Include="Views\Shared\DisplayTemplates\DragAndDropAnswers.cshtml" />
     <Content Include="Views\Shared\_MasterLayout.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MultiSelectDropDownList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

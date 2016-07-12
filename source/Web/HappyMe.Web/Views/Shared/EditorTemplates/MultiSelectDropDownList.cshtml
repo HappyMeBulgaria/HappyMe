@@ -1,0 +1,8 @@
+﻿@model int[]
+
+@{
+    var propertyName = ViewData.ModelMetadata.PropertyName;
+    var viewDataName = $"{propertyName}Data";
+}
+
+@Html.ListBoxFor(m => m, ViewData[viewDataName] as MultiSelectList, new { @class = "form-control" })
