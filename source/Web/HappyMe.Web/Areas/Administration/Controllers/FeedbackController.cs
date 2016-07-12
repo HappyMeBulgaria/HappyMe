@@ -23,8 +23,13 @@
         
         public ActionResult Index() => this.View(this.GetData().OrderBy(f => f.Id));
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
+            if (!id.HasValue)
+            {
+                return this.ItemNotFound("Няма такава обратна връзка.");
+            }
+
             this.BaseDestroy(id);
 
             this.TempData.AddSuccessMessage("Успешно изтрихте потребителски отговор");

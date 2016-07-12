@@ -47,7 +47,7 @@
             {
                 answers = this.MappingService
                     .MapCollection<AnswerGridViewModel>(
-                        (this.AdministrationService as IAnswersAdministrationService)
+                        this.AdministrationService.As<IAnswersAdministrationService>()
                             .GetAllUserAnswers(this.UserProfile.Id))
                     .OrderBy(m => m.Id);
             }
@@ -98,9 +98,7 @@
                 return this.ItemNotFound("Няма такъв отговор.");
             }
 
-            var hasRights = this.User.IsAdmin() ||
-                this.AdministrationService.As<IAnswersAdministrationService>()
-                    .CheckIfUserIsAnswerAuthor(id.Value, this.UserProfile.Id);
+            var hasRights = this.CheckIfUserHasRightsForAnswer(id.Value);
 
             if (hasRights)
             {
@@ -117,9 +115,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult Update(AnswerUpdateInputModel model)
         {
-            var hasRights = this.User.IsAdmin() ||
-                this.AdministrationService.As<IAnswersAdministrationService>()
-                    .CheckIfUserIsAnswerAuthor(model.Id, this.UserProfile.Id);
+            var hasRights = this.CheckIfUserHasRightsForAnswer(model.Id);
 
             if (hasRights)
             {
@@ -159,9 +155,7 @@
                 return this.ItemNotFound("Няма такъв отговор.");
             }
 
-            var hasRights = this.User.IsAdmin() ||
-                this.AdministrationService.As<IAnswersAdministrationService>()
-                    .CheckIfUserIsAnswerAuthor(id.Value, this.UserProfile.Id);
+            var hasRights = this.CheckIfUserHasRightsForAnswer(id.Value);
 
             if (hasRights)
             {
@@ -183,6 +177,13 @@
 
             this.ViewBag.QuestionIdData =
                 questions.Select(m => new SelectListItem { Text = m.Text, Value = m.Id.ToString(), Selected = m.Id == id });
+        }
+
+        private bool CheckIfUserHasRightsForAnswer(int answerId)
+        {
+            return this.User.IsAdmin() ||
+                this.AdministrationService.As<IAnswersAdministrationService>()
+                    .CheckIfUserIsAnswerAuthor(answerId, this.UserProfile.Id);
         }
     }
 }

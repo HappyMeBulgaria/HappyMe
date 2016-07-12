@@ -12,13 +12,15 @@
     using HappyMe.Web.Areas.Administration.ViewModels.UsersAnswers;
     using HappyMe.Web.Common.Extensions;
 
-    public class UsersAnswersController : 
+    using MoreDotNet.Extentions.Common;
+
+    public class UsersAnswersController :
         MvcGridAdministrationReadAndDeleteController<UserAnswer, UserAnswerGridViewModel>
     {
         public UsersAnswersController(
             IUsersDataService userData,
-            IUsersAnswersAdministrationService dataRepository, 
-            IMappingService mappingService) 
+            IUsersAnswersAdministrationService dataRepository,
+            IMappingService mappingService)
             : base(userData, dataRepository, mappingService)
         {
         }
@@ -34,7 +36,7 @@
             {
                 usersAnswers = this.MappingService
                     .MapCollection<UserAnswerGridViewModel>(
-                        (this.AdministrationService as IUsersAnswersAdministrationService)
+                        this.AdministrationService.As<IUsersAnswersAdministrationService>()
                             .GetChildrenAnswers(this.UserProfile.Id))
                     .OrderBy(m => m.CreatedOn);
             }
@@ -44,13 +46,19 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
+            if (!id.HasValue)
+            {
+                return this.ItemNotFound("Няма такъв отговор.");
+            }
+
             var userHasRight =
                 this.User.IsAdmin() ||
-                (this.AdministrationService as IUsersAnswersAdministrationService).CheckIfUserHasRights(
+                this.AdministrationService.As<IUsersAnswersAdministrationService>().CheckIfUserHasRights(
                     this.UserProfile.Id,
-                    id);
+                    id.Value);
+
             if (userHasRight)
             {
                 this.BaseDestroy(id);

@@ -95,12 +95,10 @@
         {
             if (!id.HasValue)
             {
-                return this.HttpNotFound();
+                return this.ItemNotFound("Няма такъв въпрос.");
             }
 
-            var userHasRights = this.User.IsAdmin()
-                                || this.AdministrationService.As<IQuestionsAdministrationService>()
-                                       .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, id.Value);
+            var userHasRights = this.CheckIfUserHasRightsForQuestion(id.Value);
 
             if (userHasRights)
             {
@@ -118,9 +116,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult Update(QuestionUpdateInputModel model)
         {
-            var userHasRights = this.User.IsAdmin()
-                                || this.AdministrationService.As<IQuestionsAdministrationService>()
-                                       .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, model.Id);
+            var userHasRights = this.CheckIfUserHasRightsForQuestion(model.Id);
 
             if (userHasRights)
             {
@@ -157,11 +153,14 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            var userHasRights = this.User.IsAdmin()
-                                || this.AdministrationService.As<IQuestionsAdministrationService>()
-                                       .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, id);
+            if (!id.HasValue)
+            {
+                return this.ItemNotFound("Няма такъв въпрос.");
+            }
+
+            var userHasRights = this.CheckIfUserHasRightsForQuestion(id.Value);
 
             if (userHasRights)
             {
@@ -186,6 +185,13 @@
                 .ToList();
 
             this.ViewBag.ModulesIdsData = new MultiSelectList(projectedModules, "Value", "Text", selectedIds);
+        }
+
+        private bool CheckIfUserHasRightsForQuestion(int questionId)
+        {
+            return this.User.IsAdmin()
+                                || this.AdministrationService.As<IQuestionsAdministrationService>()
+                                       .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, questionId);
         }
     }
 }

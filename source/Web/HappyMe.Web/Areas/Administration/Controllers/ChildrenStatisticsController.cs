@@ -25,7 +25,7 @@
         {
             if (!id.HasValue)
             {
-                return this.RedirectToAction("Index", "Dashboard", new { area = "Administration" });
+                return this.ItemNotFound("Няма такова дете.");
             }
 
             return this.View();

@@ -53,11 +53,5 @@
 
             return entity;
         }
-
-        protected ActionResult ItemNotFound(string message)
-        {
-            this.TempData.AddDangerMessage(message);
-            return this.RedirectToAction("Index", "Dashboard", new { area = "Administration" });
-        }
     }
 }
