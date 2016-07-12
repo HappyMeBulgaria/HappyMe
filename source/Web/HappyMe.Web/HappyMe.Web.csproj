@@ -469,6 +469,7 @@
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.structure.min.css" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.css" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="Xapp_offline.htm" />
     <None Include="Scripts\vendor\jquery\jquery-3.0.0.intellisense.js" />
     <Content Include="Scripts\vendor\jquery\jquery-3.0.0.js" />
     <Content Include="Scripts\vendor\jquery\jquery-3.0.0.min.js" />
