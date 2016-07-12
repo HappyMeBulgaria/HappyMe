@@ -30,6 +30,7 @@
                 "~/Content/vendor/MvcGrid/mvc-grid.css",
                 "~/Content/vendor/bootstrap/administration/style.css",
                 "~/Content/vendor/bootstrap/administration/style-responsive.css",
+                "~/Content/vendor/choosen/chosen.css",
                 "~/Content/fonts/lato/latostyle.css",
                 "~/Content/custom/administration-styles.css",
                 "~/Content/custom/global.css"));
@@ -81,7 +82,8 @@
                 "~/Scripts/custom/administration/common/editorHelper.js",
                 "~/Scripts/vendor/MvcGrid/mvc-grid.js",
                 "~/Scripts/vendor/bootstrap/administration-theme-common/common-scripts.js",
-                "~/Scripts/vendor/chart/Chart.js"));
+                "~/Scripts/vendor/chart/Chart.js",
+                "~/Scripts/vendor/chosen/chosen.jquery.js"));
 
             bundles.Add(new StyleBundle("~/bundles/jquery-gritter").Include(
                "~/Scripts/vendor/jquery/gritter/js/jquery-gritter.js",

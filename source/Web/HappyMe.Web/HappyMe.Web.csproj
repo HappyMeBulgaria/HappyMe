@@ -422,6 +422,8 @@
     <Content Include="Content\vendor\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\vendor\chosen\chosen.css" />
+    <Content Include="Content\vendor\chosen\chosen.min.css" />
     <Content Include="Content\vendor\guillotine\jquery.guillotine.css" />
     <Content Include="Content\vendor\MvcGrid\mvc-grid.css" />
     <Content Include="favicon.ico" />
@@ -442,6 +444,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\vendor\chart\Chart.js" />
+    <Content Include="Scripts\vendor\chosen\chosen.jquery.js" />
+    <Content Include="Scripts\vendor\chosen\chosen.jquery.min.js" />
     <Content Include="Scripts\vendor\jquery-ui\external\jquery\jquery.js" />
     <Content Include="Scripts\vendor\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
     <Content Include="Scripts\vendor\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
