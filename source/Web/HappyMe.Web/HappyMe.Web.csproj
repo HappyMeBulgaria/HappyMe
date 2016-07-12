@@ -422,6 +422,7 @@
     <Content Include="Content\vendor\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap.css" />
     <Content Include="Content\vendor\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\vendor\chosen\chosen-sprite.png" />
     <Content Include="Content\vendor\chosen\chosen.css" />
     <Content Include="Content\vendor\chosen\chosen.min.css" />
     <Content Include="Content\vendor\guillotine\jquery.guillotine.css" />
@@ -437,6 +438,7 @@
     <Content Include="ImageSeed\modules-alphabet.png" />
     <Content Include="ImageSeed\modules-connect.png" />
     <Content Include="ImageSeed\sheep.png" />
+    <Content Include="Scripts\custom\administration\common\multiSelectHelper.js" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

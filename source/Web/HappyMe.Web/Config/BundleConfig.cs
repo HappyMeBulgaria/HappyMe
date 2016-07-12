@@ -79,7 +79,7 @@
                 "~/Scripts/vendor/respond/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/administration-scripts").Include(
-                "~/Scripts/custom/administration/common/editorHelper.js",
+                "~/Scripts/custom/administration/common/*.js",
                 "~/Scripts/vendor/MvcGrid/mvc-grid.js",
                 "~/Scripts/vendor/bootstrap/administration-theme-common/common-scripts.js",
                 "~/Scripts/vendor/chart/Chart.js",
