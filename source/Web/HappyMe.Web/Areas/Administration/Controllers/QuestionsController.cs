@@ -91,16 +91,21 @@
         }
 
         [HttpGet]
-        public ActionResult Update(int id)
+        public ActionResult Update(int? id)
         {
+            if (!id.HasValue)
+            {
+                return this.HttpNotFound();
+            }
+
             var userHasRights = this.User.IsAdmin()
                                 || this.AdministrationService.As<IQuestionsAdministrationService>()
-                                       .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, id);
+                                       .CheckIfUserIsAuthorOnQuestion(this.UserProfile.Id, id.Value);
 
             if (userHasRights)
             {
                 var question = this.GetEditModelData(id);
-                this.PopulateViewBag(null);
+                this.PopulateViewBag(question.ModulesIds);
 
                 return this.View(question);
             }
