@@ -442,6 +442,8 @@
     <Content Include="ImageSeed\sheep.png" />
     <Content Include="Scripts\custom\administration\common\multiSelectHelper.js" />
     <Content Include="Scripts\custom\administration\data\dataLayer.js" />
+    <Content Include="Scripts\custom\administration\statistics\child-statistics.js" />
+    <Content Include="Scripts\custom\common\color-utils.js" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1102,7 +1104,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\Statistics\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
   </ItemGroup>
