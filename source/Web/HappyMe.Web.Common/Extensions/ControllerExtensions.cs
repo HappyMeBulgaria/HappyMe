@@ -16,6 +16,14 @@
             return new EmptyResult();
         }
 
+        public static ActionResult JsonCamelCase(
+            this Controller controler, 
+            object data, 
+            JsonRequestBehavior behavior)
+        {
+            return new JsonCamelCaseResult(data, behavior);
+        }
+
         public static ActionResult JsonSuccess(
             this Controller controller,
             object data,

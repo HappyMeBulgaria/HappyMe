@@ -88,6 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionResults\JsonCamelCaseResult.cs" />
     <Compile Include="ActionResults\Models\JsonResponse.cs" />
     <Compile Include="ActionResults\RssResult.cs" />
     <Compile Include="ActionResults\StandardJsonResult.cs" />

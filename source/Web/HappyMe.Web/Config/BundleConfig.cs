@@ -80,6 +80,7 @@
 
             bundles.Add(new ScriptBundle("~/bundles/administration-scripts").Include(
                 "~/Scripts/custom/administration/common/*.js",
+                "~/Scripts/custom/administration/data/*.js",
                 "~/Scripts/vendor/MvcGrid/mvc-grid.js",
                 "~/Scripts/vendor/bootstrap/administration-theme-common/common-scripts.js",
                 "~/Scripts/vendor/chart/Chart.js",

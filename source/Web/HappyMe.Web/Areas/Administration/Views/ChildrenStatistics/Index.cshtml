@@ -1,7 +1,7 @@
 ﻿@model HappyMe.Web.Areas.Administration.ViewModels.ChildrenStatistics.ChildStatisticsIndexViewModel
 
 @{
-    ViewBag.Title = "Статистика за " + Model.UserName;
+    ViewBag.Title = "Статистика за " + Model.ChildUserName;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -26,7 +26,12 @@
 
 @section scripts {
     <script type="text/javascript">
-        $(document).ready(function () {
-        });
+        var persister = HappyMe.Data.getAdminDataPersister();
+        persister.childrenStatistics.getAllForChild('@Model.ChildId')
+            .then(function (data) {
+                console.log(data);
+            }, function (error) {
+                console.error(error);
+            });
     </script>
 }

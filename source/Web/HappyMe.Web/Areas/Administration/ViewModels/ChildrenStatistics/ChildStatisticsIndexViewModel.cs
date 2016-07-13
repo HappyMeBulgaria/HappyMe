@@ -2,6 +2,8 @@
 {
     public class ChildStatisticsIndexViewModel
     {
-        public string UserName { get; set; }
+        public string ChildId { get; set; }
+
+        public string ChildUserName { get; set; }
     }
 }

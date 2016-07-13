@@ -95,6 +95,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -440,6 +441,7 @@
     <Content Include="ImageSeed\modules-connect.png" />
     <Content Include="ImageSeed\sheep.png" />
     <Content Include="Scripts\custom\administration\common\multiSelectHelper.js" />
+    <Content Include="Scripts\custom\administration\data\dataLayer.js" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

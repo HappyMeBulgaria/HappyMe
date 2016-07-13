@@ -7,6 +7,7 @@
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
     using HappyMe.Web.Areas.Administration.ViewModels.ChildrenStatistics;
+    using HappyMe.Web.Common.Extensions;
 
     public class ChildrenStatisticsController : AdministrationController
     {
@@ -36,7 +37,8 @@
 
             var viewModel = new ChildStatisticsIndexViewModel
             {
-                UserName = username
+                ChildId = child.Id,
+                ChildUserName = child.UserName
             };
 
             return this.View(viewModel);
@@ -52,7 +54,7 @@
                 ModulePlayedTimesStatistics = this.childrenStatisticsService.GetModulePlayedTimesStatistics(id).ToList()
             };
 
-            return this.Json(viewModel, JsonRequestBehavior.AllowGet);
+            return this.JsonCamelCase(viewModel, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -63,7 +65,7 @@
                 ModulePlayedTimesStatisticsFull = this.childrenStatisticsService.GetModulePlayedTimesStatisticsForParentsChildren(id)
             };
 
-            return this.Json(viewModel, JsonRequestBehavior.AllowGet);
+            return this.JsonCamelCase(viewModel, JsonRequestBehavior.AllowGet);
         }
     }
 }
