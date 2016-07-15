@@ -42,7 +42,6 @@ namespace HappyMe.Common.Colors
                 {
                     this.Current = this.Current.ChildA;
                 }
-
             }
         }
     }
