@@ -1,11 +1,15 @@
 ﻿var HappyMe = HappyMe || {};
 
 HappyMe.ChildStatistics = (function (colorUtils) {
-
+    'use strict';
 
     var loadWinLoseRatioStatistics = function (selector, data) {
         var context = document.getElementById(selector);
-        
+        var chart = new Chart(context, {
+            data: data
+        });
+
+        return chart;
     };
 
     var loadAverageTimePerModuleStatistics = function (selector, data) {
@@ -32,6 +36,11 @@ HappyMe.ChildStatistics = (function (colorUtils) {
 
     var loadPlayedModuleStatistics = function (selector, data) {
         var context = document.getElementById(selector);
+        var chart = new Chart(context, {
+            data: data
+        });
+
+        return chart;
     };
 
     return {
