@@ -1,5 +1,6 @@
 ﻿namespace HappyMe.Services.Data.Contracts
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     using HappyMe.Common.Models;
@@ -12,6 +13,6 @@
 
         Task AnswerAsAnonymous(int answerId, int moduleSessionId);
 
-        Task<Answer> GetRandomAnswersForQuestionType(QuestionType questionType);
+        Task<IEnumerable<Answer>> GetRandomAnswersForQuestion(Question question, int answersCount);
     }
 }
