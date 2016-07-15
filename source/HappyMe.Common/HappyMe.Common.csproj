@@ -57,6 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colors\IntensityGenerator.cs" />
+    <Compile Include="Colors\IntensityValue.cs" />
+    <Compile Include="Colors\IntensityValueWalker.cs" />
+    <Compile Include="Colors\PatternGenerator.cs" />
     <Compile Include="Constants\AssemblyConstants.cs" />
     <Compile Include="Constants\ContentTypeConstants.cs" />
     <Compile Include="Constants\GlobalConstants.cs" />
@@ -72,6 +76,7 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
+    <Compile Include="Tools\ColourGenerator.cs" />
     <Compile Include="Tools\RandomGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
