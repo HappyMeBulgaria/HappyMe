@@ -1,6 +1,5 @@
 ﻿namespace HappyMe.Services.Data
 {
-    using System.Collections.Generic;
     using System.Linq;
 
     using HappyMe.Data.Contracts.Repositories;
@@ -26,7 +25,8 @@
 
         public IQueryable<Module> AllPublic() => this.modulesRepository.All().Where(m => m.IsPublic);
 
-        public IQueryable<Module> AllPublicWithQuestions() => this.AllPublic().Where(x => x.Questions.Any());
+        public IQueryable<Module> AllPublicWithQuestionsWithCorrectAnswer() => 
+            this.AllPublic().Where(x => x.Questions.Any(q => q.Answers.Any(a => a.IsCorrect)));
 
         public Module GetById(int id) => this.modulesRepository.GetById(id);
     }
