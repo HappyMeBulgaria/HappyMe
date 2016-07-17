@@ -81,7 +81,7 @@ header .navbar-inverse .navbar-nav > li {
 }
 
 section.home {
-    background: url("/Content/images/homepage-background.png") no-repeat center center fixed;
+    background: url("/Content/images/homepage-background.jpg") no-repeat center center fixed;
     background-size: cover;
     background-position-y: -170px;
     height: 739px;
