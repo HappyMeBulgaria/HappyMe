@@ -180,11 +180,15 @@ section.home {
     }
 
 .slick-slide {
-    background: #fceade;
-    padding: 7.1em 0;
-    font: Lato Light;
+    background: url('/Content/images/background.png');
+    padding: 3em 5%;
+    font-family: "Lato Light";
     text-align: center;
 }
+
+    .slick-slide .cell:first-child {
+        width: 30%;
+    }
 
 .slick-dots {
     bottom: -30px;
@@ -353,6 +357,11 @@ section.home {
             /* Opera */
             display: table;
         }
+
+            .flip .card .back p {
+                display: table-cell;
+                vertical-align: middle;
+            }
 /*=========End Flipping animations==========*/
 .team-section {
     margin-top: 64px;
@@ -426,7 +435,11 @@ section.home {
     background: #FCEADE;
 }
 
-    .contact-form-section .section-title {
+    .contact-form-section .section-description {
+        text-align: center;
+        padding: 10px 30% 30px 30%;
+        margin: 0 auto;
+        font-family: "Lato Light";
     }
 
     .contact-form-section .contacts-form {
@@ -618,3 +631,10 @@ footer {
         -webkit-animation-direction: normal, alternate;
         animation-direction: normal, alternate;
     }
+}
+
+.facebook-likebox-section {
+    background: #FCEADE;
+    text-align: center;
+    padding-bottom: 50px;
+}
