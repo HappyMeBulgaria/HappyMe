@@ -1,6 +1,5 @@
 ﻿namespace HappyMe.Services.Data.Contracts
 {
-    using System.Collections.Generic;
     using System.Linq;
 
     using HappyMe.Data.Models;
@@ -18,7 +17,7 @@
 
         IQueryable<Module> AllPublic();
 
-        IQueryable<Module> AllPublicWithQuestions();
+        IQueryable<Module> AllPublicWithQuestionsWithCorrectAnswer();
 
         Module GetById(int id);
     }
