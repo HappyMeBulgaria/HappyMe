@@ -240,11 +240,16 @@
             <h3 class="section-title">контакти</h3>
         </div>
 
+        <div class="section-description">
+            Ще се радваме да се свържете с нас с въпроси относно приложението,
+            предложения за подобрения, възникнали проблеми или всичко друго, което Ви е направило впечетление.
+        </div>
+
         @using (Html.BeginForm(
-                        nameof(FeedbackController.Send),
-                        "Feedback",
-                        FormMethod.Post,
-                        new { enctype = "multipart/form-data", @class = "contacts-form col-md-12" }))
+            nameof(FeedbackController.Send),
+            "Feedback",
+            FormMethod.Post,
+            new { enctype = "multipart/form-data", @class = "contacts-form col-md-12" }))
         {
             @Html.AntiForgeryToken()
 

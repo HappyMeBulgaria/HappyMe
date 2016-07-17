@@ -415,7 +415,11 @@ section.home {
     background: #FCEADE;
 }
 
-    .contact-form-section .section-title {
+    .contact-form-section .section-description {
+        text-align: center;
+        padding: 10px 30% 30px 30%;
+        margin: 0 auto;
+        font-family: "Lato Light";
     }
 
     .contact-form-section .contacts-form {
