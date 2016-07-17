@@ -86,7 +86,6 @@ header .navbar-inverse .navbar-nav > li {
 section.home {
     background: url("/Content/images/homepage-background.jpg") no-repeat center center fixed;
     background-size: cover;
-    background-position-y: -170px;
     height: 739px;
 }
 
@@ -118,6 +117,27 @@ section.home {
                 transform: scale(1.1);
                 transition-duration: 0.3s;
                 transition-property: transform;
+            }
+
+    section.home #scroll-down-arrow-container {
+        position: fixed;
+        bottom: 5em;
+        width: 100%;
+    }
+
+    section.home #scroll-down-arrow-container {
+        position: fixed;
+        bottom: 5em;
+        width: 100%;
+    }
+
+        section.home #scroll-down-arrow-container .fa-chevron-circle-down {
+            font-size: 5em;
+            color: #eb5270;
+        }
+
+            section.home #scroll-down-arrow-container .fa-chevron-circle-down:hover {
+                cursor: pointer;
             }
 
 .mission-list {
@@ -333,11 +353,6 @@ section.home {
             /* Opera */
             display: table;
         }
-
-        .flip .card .back p {           
-            display: table-cell;
-            vertical-align: middle;
-        }
 /*=========End Flipping animations==========*/
 .team-section {
     margin-top: 64px;
@@ -450,9 +465,9 @@ section.home {
                 background: #FF8A5B;
             }
 
-                .contact-form-section .contacts-form .contact-form .inner-addon input[type="email"] {
-                    padding-left: 45px;
-                }
+            .contact-form-section .contacts-form .contact-form .inner-addon input[type="email"] {
+                padding-left: 45px;
+            }
 
 footer {
     padding: 20px;
@@ -484,9 +499,9 @@ footer {
         color: white;
     }
 
-        .linkedin .fa-linkedin:before {
-            color: white;
-        }
+    .linkedin .fa-linkedin:before {
+        color: white;
+    }
 
 @media only screen and (max-width: 991px) {
     .contact-form-section .contacts-form input[type="text"],
@@ -505,3 +520,101 @@ footer {
         width: 100%;
     }
 }
+
+/* Icon Hang */
+@-webkit-keyframes hvr-icon-hang {
+    0% {
+        -webkit-transform: translateY(18px);
+        transform: translateY(18px);
+    }
+
+    50% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+
+    100% {
+        -webkit-transform: translateY(18px);
+        transform: translateY(18px);
+    }
+}
+
+@keyframes hvr-icon-hang {
+    0% {
+        -webkit-transform: translateY(18px);
+        transform: translateY(18px);
+    }
+
+    50% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+
+    100% {
+        -webkit-transform: translateY(18px);
+        transform: translateY(18px);
+    }
+}
+
+@-webkit-keyframes hvr-icon-hang-sink {
+    100% {
+        -webkit-transform: translateY(18px);
+        transform: translateY(18px);
+    }
+}
+
+@-moz-keyframes hvr-icon-hang-sink {
+    100% {
+        -webkit-transform: translateY(18px);
+        transform: translateY(18px);
+    }
+}
+
+@keyframes hvr-icon-hang-sink {
+    100% {
+        -webkit-transform: translateY(px);
+        transform: translateY(18px);
+    }
+}
+
+.hvr-icon-hang {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    padding-right: 2.2em;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+    .hvr-icon-hang:before {
+        content: "\f078";
+        position: absolute;
+        right: 1em;
+        padding: 0 1px;
+        font-family: FontAwesome;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .hvr-icon-hang:hover:before, .hvr-icon-hang:focus:before, .hvr-icon-hang:active:before {
+        -webkit-animation-name: hvr-icon-hang-sink, hvr-icon-hang;
+        animation-name: hvr-icon-hang-sink, hvr-icon-hang;
+        -webkit-animation-duration: .3s, 1.5s;
+        animation-duration: .3s, 1.5s;
+        -webkit-animation-delay: 0s, .3s;
+        animation-delay: 0s, .3s;
+        -webkit-animation-timing-function: ease-out, ease-in-out;
+        animation-timing-function: ease-out, ease-in-out;
+        -webkit-animation-iteration-count: 1, infinite;
+        animation-iteration-count: 1, infinite;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-direction: normal, alternate;
+        animation-direction: normal, alternate;
+    }

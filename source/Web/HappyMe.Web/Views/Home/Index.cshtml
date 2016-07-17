@@ -17,6 +17,12 @@
             <h1 class="homepage-slogan">Щастливо дете - щастливи родители!</h1>
             <a href="@Url.Action("Index", "Modules", new { area = string.Empty })" class="play-button btn btn-warning">Играй!</a>
         </div>
+
+        <div id="scroll-down-arrow-container" class="col-md-12 text-center">
+            <a class="scroll" href="#mission">
+                <i class="fa fa-chevron-circle-down hvr-icon-hang" aria-hidden="true"></i>
+            </a>
+        </div>
     </section>
 
     <section id="mission">
@@ -239,10 +245,10 @@
         </div>
 
         @using (Html.BeginForm(
-                                                nameof(FeedbackController.Send),
-                                                "Feedback",
-                                                FormMethod.Post,
-                                                new { enctype = "multipart/form-data", @class = "contacts-form col-md-12" }))
+                                                        nameof(FeedbackController.Send),
+                                                        "Feedback",
+                                                        FormMethod.Post,
+                                                        new { enctype = "multipart/form-data", @class = "contacts-form col-md-12" }))
         {
             @Html.AntiForgeryToken()
 
@@ -309,6 +315,16 @@
         $(".flip").hover(function () {
             $(this).find(".card").toggleClass("flipped");
             return false;
+        });
+
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if (document.body.scrollTop === 0) {
+                    $("#scroll-down-arrow-container").show();
+                } else {
+                    $("#scroll-down-arrow-container").hide();
+                }
+            });
         });
     </script>
 }
