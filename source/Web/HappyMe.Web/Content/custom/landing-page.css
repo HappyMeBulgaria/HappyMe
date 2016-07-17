@@ -1,5 +1,7 @@
 ﻿body {
     padding-top: 50px;
+    font-size: 1.225em;
+    line-height: 1.225;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -159,7 +161,7 @@ section.home {
 .slick-slide {
     background: #fceade;
     padding: 7.1em 0;
-    font: 1.225em Lato Light;
+    font: Lato Light;
     text-align: center;
 }
 
@@ -328,6 +330,12 @@ section.home {
             /* Safari and Chrome */
             -o-transform: rotatey(-180deg);
             /* Opera */
+            display: table;
+        }
+
+        .flip .card .back p {           
+            display: table-cell;
+            vertical-align: middle;
         }
 /*=========End Flipping animations==========*/
 .team-section {
@@ -444,6 +452,10 @@ section.home {
                 background: #FF8A5B;
             }
 
+                .contact-form-section .contacts-form .contact-form .inner-addon input[type="email"] {
+                    padding-left: 45px;
+                }
+
 @media only screen and (max-width: 991px) {
     .contact-form-section .contacts-form input[type="text"],
     .contact-form-section .contacts-form input[type="email"],
@@ -467,4 +479,8 @@ footer {
     text-align: center;
     color: #FFF;
     background: #777;
+}
+
+.btn {
+    font-size: 100%;
 }
