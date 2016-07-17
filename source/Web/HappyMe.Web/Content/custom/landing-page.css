@@ -160,11 +160,15 @@ section.home {
     }
 
 .slick-slide {
-    background: #fceade;
-    padding: 3em 0;
-    font: Lato Light;
+    background: url('/Content/images/background.png');
+    padding: 3em 5%;
+    font-family: "Lato Light";
     text-align: center;
 }
+
+    .slick-slide .cell:first-child {
+        width: 30%;
+    }
 
 .slick-dots {
     bottom: -30px;
@@ -334,10 +338,10 @@ section.home {
             display: table;
         }
 
-        .flip .card .back p {           
-            display: table-cell;
-            vertical-align: middle;
-        }
+            .flip .card .back p {
+                display: table-cell;
+                vertical-align: middle;
+            }
 /*=========End Flipping animations==========*/
 .team-section {
     margin-top: 64px;
@@ -450,9 +454,9 @@ section.home {
                 background: #FF8A5B;
             }
 
-                .contact-form-section .contacts-form .contact-form .inner-addon input[type="email"] {
-                    padding-left: 45px;
-                }
+            .contact-form-section .contacts-form .contact-form .inner-addon input[type="email"] {
+                padding-left: 45px;
+            }
 
 footer {
     padding: 20px;
@@ -484,9 +488,9 @@ footer {
         color: white;
     }
 
-        .linkedin .fa-linkedin:before {
-            color: white;
-        }
+    .linkedin .fa-linkedin:before {
+        color: white;
+    }
 
 @media only screen and (max-width: 991px) {
     .contact-form-section .contacts-form input[type="text"],
@@ -504,4 +508,10 @@ footer {
     .contact-form-section .contacts-form textarea {
         width: 100%;
     }
+}
+
+.facebook-likebox-section {
+    background: #FCEADE;
+    text-align: center;
+    padding-bottom: 50px;
 }
