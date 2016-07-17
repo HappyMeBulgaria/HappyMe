@@ -1,6 +1,7 @@
 ﻿namespace HappyMe.Web.Areas.Administration.ViewModels.ChildrenStatistics
 {
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
 
     using HappyMe.Services.Administration.Models;
 

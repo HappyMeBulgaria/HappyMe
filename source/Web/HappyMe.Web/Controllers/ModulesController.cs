@@ -31,7 +31,7 @@
         public ActionResult Index()
         {
             var modules = this.mappingService
-                .MapCollection<ModuleViewModel>(this.modulesDataService.AllPublicWithQuestions())
+                .MapCollection<ModuleViewModel>(this.modulesDataService.AllPublicWithQuestionsWithCorrectAnswer())
                 .ToList();
 
             return this.View(modules);

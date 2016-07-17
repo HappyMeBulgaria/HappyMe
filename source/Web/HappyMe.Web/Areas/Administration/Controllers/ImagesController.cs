@@ -53,15 +53,14 @@
         {
             if (!id.HasValue)
             {
-                this.TempData.AddDangerMessage("Няма такава снимка.");
-                return this.RedirectToAction<ImagesController>(x => x.Index());
+                return this.ItemNotFound("Няма такава снимка.");
             }
 
             var editModel = this.GetEditModelData(id);
             if (editModel == null)
             {
                 this.TempData.AddDangerMessage("Няма такава снимка.");
-                return this.RedirectToAction<ImagesController>(x => x.Index());
+                return this.ItemNotFound("Няма такава снимка.");
             }
 
             return this.View(editModel);
@@ -86,8 +85,7 @@
         {
             if (!id.HasValue)
             {
-                this.TempData.AddDangerMessage("Няма такава снимка.");
-                return this.RedirectToAction<ImagesController>(x => x.Index());
+                return this.ItemNotFound("Няма такава снимка.");
             }
 
             this.BaseDestroy(id);

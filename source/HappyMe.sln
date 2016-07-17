@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{71607662-388C-4C99-B630-F24F931416D9}"
 EndProject
@@ -36,6 +36,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Gruntfile.js = Gruntfile.js
 		package.json = package.json
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyMe.Tests.Common", "Tests\HappyMe.Tests.Common\HappyMe.Tests.Common.csproj", "{F855A95E-405E-4415-8263-D2B9ACC2783D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyMe.Tests.Web", "Tests\HappyMe.Tests.Web\HappyMe.Tests.Web.csproj", "{41FE5B25-918D-4B50-BCA7-D647A5BC4BFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +83,14 @@ Global
 		{BE0B0219-3996-433E-B63B-5BF485F9230C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE0B0219-3996-433E-B63B-5BF485F9230C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE0B0219-3996-433E-B63B-5BF485F9230C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F855A95E-405E-4415-8263-D2B9ACC2783D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F855A95E-405E-4415-8263-D2B9ACC2783D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F855A95E-405E-4415-8263-D2B9ACC2783D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F855A95E-405E-4415-8263-D2B9ACC2783D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41FE5B25-918D-4B50-BCA7-D647A5BC4BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41FE5B25-918D-4B50-BCA7-D647A5BC4BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41FE5B25-918D-4B50-BCA7-D647A5BC4BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41FE5B25-918D-4B50-BCA7-D647A5BC4BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +104,7 @@ Global
 		{39A959EB-97EB-4FFD-BDF4-6BF9DDFE24A4} = {ABBC0AA2-1F43-4FAA-9485-E73A7CA838F1}
 		{7A3B6260-F9CD-4C02-8E6A-FAB82D12C539} = {27782304-ABCA-473C-A2CB-50DBD09563F6}
 		{93689A76-EBBA-45A7-8DA4-CC1376BD0D1D} = {27782304-ABCA-473C-A2CB-50DBD09563F6}
+		{F855A95E-405E-4415-8263-D2B9ACC2783D} = {8213308F-E05D-42A4-B424-958EA9D86457}
+		{41FE5B25-918D-4B50-BCA7-D647A5BC4BFD} = {8213308F-E05D-42A4-B424-958EA9D86457}
 	EndGlobalSection
 EndGlobal

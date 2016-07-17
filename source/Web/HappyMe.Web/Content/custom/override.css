@@ -67,3 +67,12 @@
     border: none;
     background-color: #EA256F;
 }
+
+.slick-dots li button:before {
+    font-size: 20px;
+}
+
+.slick-dots {
+  bottom: 15px; 
+  left: 0;
+}

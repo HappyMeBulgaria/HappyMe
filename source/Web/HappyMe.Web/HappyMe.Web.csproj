@@ -95,6 +95,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -227,6 +228,7 @@
     <Compile Include="Areas\Administration\ViewModels\Answers\AnswerGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\AllChildStatisticsViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\AllParentStatisticsViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\ChildStatisticsIndexViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\ChildViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Dashboard\DashboardIndexViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Feedback\FeedbackGridViewModel.cs" />
@@ -304,6 +306,12 @@
     <Content Include="Content\fonts\font-awesome\HELP-US-OUT.txt" />
     <Content Include="Content\fonts\Lato\latofonts.css" />
     <Content Include="Content\fonts\Lato\latostyle.css" />
+    <Content Include="Content\images\alphabet-a.png" />
+    <Content Include="Content\images\alphabet-b.png" />
+    <Content Include="Content\images\alphabet-d.png" />
+    <Content Include="Content\images\alphabet-i.png" />
+    <Content Include="Content\images\alphabet-K.png" />
+    <Content Include="Content\images\alphabet-v.png" />
     <Content Include="Content\images\background.png" />
     <Content Include="Content\images\ball-alphabet.png" />
     <Content Include="Content\images\banana_picture.png" />
@@ -366,9 +374,15 @@
     <Content Include="Content\images\cherries_colour.png" />
     <Content Include="Content\images\hand_pencil.png" />
     <Content Include="Content\images\hat-alphabet.png" />
-    <Content Include="Content\images\homepage-background.png" />
+    <Content Include="Content\images\homepage-background.jpg" />
     <Content Include="Content\images\homepage-ipad-mockup.png" />
     <Content Include="Content\images\iron-alphabet.png" />
+    <Content Include="Content\images\letter-b.png" />
+    <Content Include="Content\images\letter-d.png" />
+    <Content Include="Content\images\letter-E.png" />
+    <Content Include="Content\images\letter-g.png" />
+    <Content Include="Content\images\letter-v.png" />
+    <Content Include="Content\images\letter-ж.png" />
     <Content Include="Content\images\teamMembers\kmariyanov.jpg" />
     <Content Include="Content\images\ladybug-alphabet.png" />
     <Content Include="Content\images\leaf-colours.png" />
@@ -439,6 +453,9 @@
     <Content Include="ImageSeed\modules-connect.png" />
     <Content Include="ImageSeed\sheep.png" />
     <Content Include="Scripts\custom\administration\common\multiSelectHelper.js" />
+    <Content Include="Scripts\custom\administration\data\dataLayer.js" />
+    <Content Include="Scripts\custom\administration\statistics\child-statistics.js" />
+    <Content Include="Scripts\custom\common\color-utils.js" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1100,7 +1117,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\Statistics\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
   </ItemGroup>

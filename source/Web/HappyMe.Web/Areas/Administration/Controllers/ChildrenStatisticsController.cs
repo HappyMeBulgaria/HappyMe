@@ -7,6 +7,7 @@
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
     using HappyMe.Web.Areas.Administration.ViewModels.ChildrenStatistics;
+    using HappyMe.Web.Common.Extensions;
 
     public class ChildrenStatisticsController : AdministrationController
     {
@@ -21,14 +22,26 @@
         }
 
         [HttpGet]
-        public ActionResult Index(int? id)
+        public ActionResult Index(string username)
         {
-            if (!id.HasValue)
+            var child = this.UsersData.GetUserByUsername(username);
+            if (child == null)
             {
-                return this.RedirectToAction("Index", "Dashboard", new { area = "Administration" });
+                return this.ItemNotFound("Няма такова дете.");
             }
 
-            return this.View();
+            if (child.ParentId != this.UserProfile.Id)
+            {
+                return this.ItemNotFound("Няма такова дете.");
+            }
+
+            var viewModel = new ChildStatisticsIndexViewModel
+            {
+                ChildId = child.Id,
+                ChildUserName = child.UserName
+            };
+
+            return this.View(viewModel);
         }
 
         [HttpGet]
@@ -41,7 +54,7 @@
                 ModulePlayedTimesStatistics = this.childrenStatisticsService.GetModulePlayedTimesStatistics(id).ToList()
             };
 
-            return this.Json(viewModel, JsonRequestBehavior.AllowGet);
+            return this.JsonCamelCase(viewModel, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -52,7 +65,7 @@
                 ModulePlayedTimesStatisticsFull = this.childrenStatisticsService.GetModulePlayedTimesStatisticsForParentsChildren(id)
             };
 
-            return this.Json(viewModel, JsonRequestBehavior.AllowGet);
+            return this.JsonCamelCase(viewModel, JsonRequestBehavior.AllowGet);
         }
     }
 }

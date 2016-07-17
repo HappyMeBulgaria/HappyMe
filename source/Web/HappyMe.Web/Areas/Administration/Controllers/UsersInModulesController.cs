@@ -43,11 +43,14 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(UserInModuleCreateInputModel model)
         {
-            var entity = this.BaseCreate(model);
-            if (entity != null)
+            if (this.ModelState.IsValid)
             {
-                this.TempData.AddSuccessMessage("Успешно добавихте потребител в модул");
-                return this.RedirectToAction(nameof(this.Index));
+                var entity = this.BaseCreate(model);
+                if (entity != null)
+                {
+                    this.TempData.AddSuccessMessage("Успешно добавихте потребител в модул");
+                    return this.RedirectToAction(nameof(this.Index));
+                }
             }
 
             return this.View(model);
