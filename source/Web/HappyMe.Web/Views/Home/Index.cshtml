@@ -186,37 +186,47 @@
             </div>
             <ul class="team-list">
                 <li class="team-member col-md-2 col-sm-2">
-                    <a class="team-member-link" href="https://www.linkedin.com/in/kristian-mariyanov-265439b2" title="Кристиан Мариянов">
-                        <img src="~/Content/images/teamMembers/kmariyanov.jpg" class="team-profile-picture">
-                        <p class="team-member-name">Кристиан Мариянов</p>
+                    <img src="~/Content/images/teamMembers/kmariyanov.jpg" class="team-profile-picture" title="Кристиан Мариянов">
+                    <p class="team-member-name">Кристиан Мариянов</p>
+
+                    <a href="https://www.linkedin.com/in/kristian-mariyanov-265439b2" target="_blank" class="primary-btn linkedin">
+                        <i class="fa fa-linkedin"></i> LinkedIn
                     </a>
                 </li>
 
                 <li class="team-member col-md-2 col-sm-2">
-                    <a class="team-member-link" href="https://bg.linkedin.com/in/maria-hristoforova-b0a32155" title="Мария Христофорова">
-                        <img src="~/Content/images/teamMembers/mhristoforova.jpg" class="team-profile-picture">
-                        <p class="team-member-name">Мария Христофорова</p>
+                    <img src="~/Content/images/teamMembers/mhristoforova.jpg" class="team-profile-picture">
+                    <p class="team-member-name">Мария Христофорова</p>
+
+                    <a href="https://bg.linkedin.com/in/maria-hristoforova-b0a32155" target="_blank" class="primary-btn linkedin">
+                        <i class="fa fa-linkedin"></i> LinkedIn
                     </a>
                 </li>
 
                 <li class="team-member col-md-2 col-sm-2">
-                    <a class="team-member-link" href="https://www.linkedin.com/in/rositsap" title="Росица Попова">
-                        <img src="~/Content/images/teamMembers/rpopova.jpg" class="team-profile-picture">
-                        <p class="team-member-name">Росица Попова</p>
+                    <img src="~/Content/images/teamMembers/rpopova.jpg" class="team-profile-picture">
+                    <p class="team-member-name">Росица Попова</p>
+
+                    <a href="https://www.linkedin.com/in/rositsap" target="_blank" class="primary-btn linkedin">
+                        <i class="fa fa-linkedin"></i> LinkedIn
                     </a>
                 </li>
 
                 <li class="team-member col-md-2 col-sm-2">
-                    <a class="team-member-link" href="https://bg.linkedin.com/in/teodorkurtev" title="Теодор Куртев">
-                        <img src="~/Content/images/teamMembers/tkurtev.jpg" class="team-profile-picture">
-                        <p class="team-member-name">Теодор Куртев</p>
+                    <img src="~/Content/images/teamMembers/tkurtev.jpg" class="team-profile-picture">
+                    <p class="team-member-name">Теодор Куртев</p>
+
+                    <a href="https://bg.linkedin.com/in/teodorkurtev" target="_blank" class="primary-btn linkedin">
+                        <i class="fa fa-linkedin"></i> LinkedIn
                     </a>
                 </li>
 
                 <li class="team-member col-md-2 col-sm-2">
-                    <a class="team-member-link" href="https://bg.linkedin.com/in/yana-slavcheva-b3a99621" title="Яна Славчева">
-                        <img src="~/Content/images/teamMembers/yslavcheva.png" class="team-profile-picture">
-                        <p class="team-member-name">Яна Славчева</p>
+                    <img src="~/Content/images/teamMembers/yslavcheva.png" target="_blank" class="team-profile-picture">
+                    <p class="team-member-name">Яна Славчева</p>
+
+                    <a href="https://bg.linkedin.com/in/yana-slavcheva-b3a99621" target="_blank" class="primary-btn linkedin">
+                        <i class="fa fa-linkedin"></i> LinkedIn
                     </a>
                 </li>
             </ul>
@@ -229,10 +239,10 @@
         </div>
 
         @using (Html.BeginForm(
-                            nameof(FeedbackController.Send),
-                            "Feedback",
-                            FormMethod.Post,
-                            new { enctype = "multipart/form-data", @class = "contacts-form col-md-12" }))
+                                                nameof(FeedbackController.Send),
+                                                "Feedback",
+                                                FormMethod.Post,
+                                                new { enctype = "multipart/form-data", @class = "contacts-form col-md-12" }))
         {
             @Html.AntiForgeryToken()
 

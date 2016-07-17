@@ -372,12 +372,9 @@ section.home {
                 margin-top: 20px;
             }
 
-.team-member-link .team-member-name {
+.team-member-name {
     color: #565656;
-}
-
-.team-member-link:hover {
-    text-decoration: none;
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -457,6 +454,40 @@ section.home {
                     padding-left: 45px;
                 }
 
+footer {
+    padding: 20px;
+    text-align: center;
+    color: #FFF;
+    background: #777;
+}
+
+.btn {
+    font-size: 100%;
+}
+
+.linkedin {
+    background: #ff8a5b;
+    padding: 10px 30px;
+    border-radius: 4px;
+    color: white;
+}
+
+    .linkedin:hover {
+        background: rgba(255, 137, 91, 0.5);
+        text-decoration: none;
+        color: white;
+    }
+
+    .linkedin:visited {
+        background: rgba(255, 137, 91, 0.5);
+        text-decoration: none;
+        color: white;
+    }
+
+        .linkedin .fa-linkedin:before {
+            color: white;
+        }
+
 @media only screen and (max-width: 991px) {
     .contact-form-section .contacts-form input[type="text"],
     .contact-form-section .contacts-form input[type="email"],
@@ -473,15 +504,4 @@ section.home {
     .contact-form-section .contacts-form textarea {
         width: 100%;
     }
-}
-
-footer {
-    padding: 20px;
-    text-align: center;
-    color: #FFF;
-    background: #777;
-}
-
-.btn {
-    font-size: 100%;
 }
