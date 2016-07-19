@@ -7,7 +7,7 @@
     using System.Threading.Tasks;
 
     using HappyMe.Common.Models;
-    using HappyMe.Data.Contracts.Repositories;
+    using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Data.Models;
     using HappyMe.Services.Data.Contracts;
 
@@ -26,6 +26,11 @@
 
         public async Task AnswerAsUser(string userId, int answerId, int moduleSessionId)
         {
+            if (userId == null)
+            {
+                throw new ArgumentNullException(nameof(userId), "User id must be non-null");
+            }
+
             var newAnswer = new UserAnswer(userId, answerId, moduleSessionId);
             this.userAnswersRepository.Add(newAnswer);
             await this.userAnswersRepository.SaveChangesAsync();
@@ -56,7 +61,7 @@
 
             var randomAnswers =
                 this.answersRepository.All()
-                    .Where(x => x.Question.Type == question.Type 
+                    .Where(x => x.Question.Type == question.Type
                     && correctAnswersForQuestion.All(y => x.Id != y.Id))
                     .OrderBy(x => new Guid())
                     .Take(answersCount)

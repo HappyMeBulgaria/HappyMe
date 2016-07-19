@@ -70,17 +70,32 @@
         <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="AnswersDataServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\HappyMe.Data.Contracts\HappyMe.Data.Contracts.csproj">
+      <Project>{9BC2B1CD-C05D-40CA-A972-C4B16F3CB064}</Project>
+      <Name>HappyMe.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\HappyMe.Data.Models\HappyMe.Data.Models.csproj">
+      <Project>{C4A645C4-329D-42E1-87C0-494AD19775EA}</Project>
+      <Name>HappyMe.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\HappyMe.Services.Common\HappyMe.Services.Common.csproj">
+      <Project>{98D63F27-173E-4A8A-978D-27300694536E}</Project>
+      <Name>HappyMe.Services.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\HappyMe.Services.Data\HappyMe.Services.Data.csproj">
+      <Project>{862bd9d3-a1c0-4d9b-93a0-dd65a443e97b}</Project>
+      <Name>HappyMe.Services.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -4,6 +4,7 @@
 
     using HappyMe.Data.Contracts;
     using HappyMe.Data.Contracts.Repositories;
+    using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Services.Administration.Contracts;
 
     public class AdministrationService<TEntity> : IAdministrationService<TEntity>

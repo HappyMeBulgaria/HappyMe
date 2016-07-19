@@ -5,6 +5,7 @@
     using System.Linq;
 
     using HappyMe.Data.Contracts.Models;
+    using HappyMe.Data.Contracts.Repositories.Contracts;
 
     public class EfDeletableEntityRepository<T> : EfRepository<T>, IDeletableEntityRepository<T>
             where T : class, IDeletableEntity

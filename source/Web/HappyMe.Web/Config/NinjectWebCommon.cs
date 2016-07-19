@@ -12,6 +12,7 @@ namespace HappyMe.Web
     using HappyMe.Common.Constants;
     using HappyMe.Data;
     using HappyMe.Data.Contracts.Repositories;
+    using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Services.Common;
     using HappyMe.Services.Common.Mapping;
     using HappyMe.Services.Common.Mapping.Contracts;
