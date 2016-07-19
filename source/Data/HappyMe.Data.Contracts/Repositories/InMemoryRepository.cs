@@ -1,6 +1,5 @@
 ﻿namespace HappyMe.Data.Contracts.Repositories
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -8,8 +7,8 @@
 
     using MoreDotNet.Extentions.Common;
 
-    public class InMemoryRepository<T> : IRepository<T>
-        where T : class, IIdentifiable<int>
+    public class InMemoryRepository<T, TKey> : IRepository<T>
+        where T : class, IIdentifiable<TKey>
     {
         private readonly IList<T> databaseStore;
 
@@ -30,7 +29,7 @@
 
         public void Delete(params object[] id)
         {
-            this.databaseStore.RemoveAll(x => id.Any(y => x.Id == Convert.ToInt32(y)));
+            this.databaseStore.RemoveAll(x => id.As<TKey[]>().Any(y => x.Id.Equals(y)));
         }
 
         public void Delete(T entity)
@@ -44,7 +43,7 @@
 
         public T GetById(params object[] id)
         {
-            return this.databaseStore.FirstOrDefault(x => id.Any(y => x.Id == Convert.ToInt32(y)));
+            return this.databaseStore.FirstOrDefault(x => id.As<TKey[]>().Any(y => x.Id.Equals(y)));
         }
 
         public int SaveChanges()

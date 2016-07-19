@@ -20,8 +20,8 @@
 
         public AnswersDataServiceTests()
         {
-            this.userAnswerRepositoryMock = new InMemoryRepository<UserAnswer>();
-            this.answerRepositoryMock = new InMemoryRepository<Answer>();
+            this.userAnswerRepositoryMock = new InMemoryRepository<UserAnswer, int>();
+            this.answerRepositoryMock = new InMemoryRepository<Answer, int>();
 
             this.answersDataService = new AnswersDataService(
                 this.userAnswerRepositoryMock,
