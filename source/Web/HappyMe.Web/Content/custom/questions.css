@@ -3,7 +3,7 @@
     height: 100px;
     width: 100px;
     display: inline;
-    padding: 30px 40px;
+    padding: 50px 60px;
     transition: all 0.3s ease-out;
 }
 
@@ -86,7 +86,7 @@
         transition-property: transform;
     }
 
-.question-box .module-img:hover {
+        .question-box .module-img:hover {
             cursor: pointer;
             -webkit-transform: scale(1.1);
             -moz-transform: scale(1.1);
@@ -111,11 +111,15 @@
 .color-question-image {
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(100%);
+    max-width: 300px;
 }
 /*Result Popup*/
 .ui-dialog.result-popup {
-    top: 25%;
-    left: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50% !important;
+    transform: translate(-50%, -50%);
     border: 10px solid;
     border-radius: 30px;
     overflow: visible;
@@ -269,4 +273,8 @@
 
 .alphabet-question-letter-image {
     max-height: 200px;
+}
+
+.ui-dialog-titlebar-close {
+    visibility: hidden;
 }
