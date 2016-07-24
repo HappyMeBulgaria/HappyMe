@@ -73,6 +73,7 @@
     <Compile Include="Repositories\EfDeletableEntityRepository.cs" />
     <Compile Include="Repositories\EfRepository.cs" />
     <Compile Include="Repositories\Contracts\IDeletableRepository.cs" />
+    <Compile Include="Repositories\InMemoryDeletableEntityRepository.cs" />
     <Compile Include="Repositories\InMemoryRepository.cs" />
     <Compile Include="Repositories\Contracts\IRepository.cs" />
   </ItemGroup>

@@ -10,31 +10,31 @@
     public class InMemoryRepository<T, TKey> : IRepository<T>
         where T : class, IIdentifiable<TKey>
     {
-        private readonly IList<T> databaseStore;
+        protected readonly IList<T> DatabaseStore;
 
         public InMemoryRepository()
         {
-            this.databaseStore = new List<T>();
+            this.DatabaseStore = new List<T>();
         }
 
         public void Add(T entity)
         {
-            this.databaseStore.Add(entity);
+            this.DatabaseStore.Add(entity);
         }
 
-        public IQueryable<T> All()
+        public virtual IQueryable<T> All()
         {
-            return this.databaseStore.AsQueryable();
+            return this.DatabaseStore.AsQueryable();
         }
 
-        public void Delete(params object[] id)
+        public virtual void Delete(params object[] id)
         {
-            this.databaseStore.RemoveAll(x => id.As<TKey[]>().Any(y => x.Id.Equals(y)));
+            this.DatabaseStore.RemoveAll(x => id.As<TKey[]>().Any(y => x.Id.Equals(y)));
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
-            this.databaseStore.Remove(entity);
+            this.DatabaseStore.Remove(entity);
         }
 
         public void Dispose()
@@ -43,7 +43,7 @@
 
         public T GetById(params object[] id)
         {
-            return this.databaseStore.FirstOrDefault(x => id.As<TKey[]>().Any(y => x.Id.Equals(y)));
+            return this.DatabaseStore.FirstOrDefault(x => id.As<TKey[]>().Any(y => x.Id.Equals(y)));
         }
 
         public int SaveChanges()
