@@ -22,36 +22,40 @@
             this.feedbackDataService = new FeedbackDataService(this.feedbackRepository);
         }
 
-        [Fact]
-        public async Task Add_ShouldThrowExceptionIfInvalidNameIsGiven()
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData("            ")]
+        public async Task Add_ShouldThrowExceptionIfInvalidNameIsGiven(string name)
         {
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add(null, "Test", "Test", "Test"));
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add(string.Empty, "Test", "Test", "Test"));
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add(new string(' ', 20), "Test", "Test", "Test"));
+            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add(name, "Test", "Test", "Test"));
         }
 
-        [Fact]
-        public async Task Add_ShouldThrowExceptionIfInvalidEmailIsGiven()
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData("            ")]
+        public async Task Add_ShouldThrowExceptionIfInvalidEmailIsGiven(string email)
         {
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", null, "Test", "Test"));
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", string.Empty, "Test", "Test"));
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", new string(' ', 20), "Test", "Test"));
+            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", email, "Test", "Test"));
         }
 
-        [Fact]
-        public async Task Add_ShouldThrowExceptionIfInvalidSubjectIsGiven()
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData("            ")]
+        public async Task Add_ShouldThrowExceptionIfInvalidSubjectIsGiven(string subject)
         {
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", "Test", null, "Test"));
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", "Test", string.Empty, "Test"));
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", "Test", new string(' ', 20), "Test"));
+            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", "Test", subject, "Test"));
         }
 
-        [Fact]
-        public async Task Add_ShouldThrowExceptionIfInvalidMessageIsGiven()
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData("            ")]
+        public async Task Add_ShouldThrowExceptionIfInvalidMessageIsGiven(string message)
         {
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", "Test", "Test", null));
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", "Test", "Test", string.Empty));
-            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", "Test", "Test", new string(' ', 20)));
+            await Assert.ThrowsAsync<ArgumentNullException>(() => this.feedbackDataService.Add("Test", "Test", "Test", message));
         }
 
         [Fact]

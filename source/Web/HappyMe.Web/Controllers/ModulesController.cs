@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
     using System.Web.Mvc;
 
+    using HappyMe.Data.Models;
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Common.Extensions;
@@ -60,18 +61,18 @@
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 
-            int sessionId;
+            ModuleSession session;
 
             if (this.User.IsLoggedIn())
             {
-                sessionId = await this.moduleSessionDataService.StartUserSession(this.User.Identity.GetUserId(), id.Value);
+                session = await this.moduleSessionDataService.StartUserSession(this.User.Identity.GetUserId(), id.Value);
             }
             else
             {
-                sessionId = await this.moduleSessionDataService.StartAnonymousSession(id.Value);
+                session = await this.moduleSessionDataService.StartAnonymousSession(id.Value);
             }
             
-            return this.RedirectToAction("Answer", "Questions", new { area = string.Empty, id = sessionId });
+            return this.RedirectToAction("Answer", "Questions", new { area = string.Empty, id = session.Id });
         }
 
         [HttpGet]

@@ -43,31 +43,31 @@
             await this.userAnswersRepository.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Answer>> GetRandomAnswersForQuestion(Question question, int answersCount)
-        {
-            var correctAnswersForQuestion = question.Answers
-                .Where(x => x.IsCorrect)
-                .ToList();
+        ////public async Task<IEnumerable<Answer>> GetRandomAnswersForQuestion(Question question, int answersCount)
+        ////{
+        ////    var correctAnswersForQuestion = question.Answers
+        ////        .Where(x => x.IsCorrect)
+        ////        .ToList();
 
-            if (correctAnswersForQuestion == null || !correctAnswersForQuestion.Any())
-            {
-                throw new ArgumentException("Question must have atleast one correct answer!", nameof(question));
-            }
+        ////    if (correctAnswersForQuestion == null || !correctAnswersForQuestion.Any())
+        ////    {
+        ////        throw new ArgumentException("Question must have atleast one correct answer!", nameof(question));
+        ////    }
 
-            if (question.Type == QuestionType.ColorQuestion)
-            {
-                return null;
-            }
+        ////    if (question.Type == QuestionType.ColorQuestion)
+        ////    {
+        ////        return null;
+        ////    }
 
-            var randomAnswers =
-                this.answersRepository.All()
-                    .Where(x => x.Question.Type == question.Type
-                    && correctAnswersForQuestion.All(y => x.Id != y.Id))
-                    .OrderBy(x => new Guid())
-                    .Take(answersCount)
-                    .ToListAsync();
+        ////    var randomAnswers =
+        ////        this.answersRepository.All()
+        ////            .Where(x => x.Question.Type == question.Type
+        ////            && correctAnswersForQuestion.All(y => x.Id != y.Id))
+        ////            .OrderBy(x => new Guid())
+        ////            .Take(answersCount)
+        ////            .ToListAsync();
 
-            return await randomAnswers;
-        }
+        ////    return await randomAnswers;
+        ////}
     }
 }

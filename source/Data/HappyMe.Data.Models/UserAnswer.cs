@@ -14,11 +14,11 @@
         {
         }
 
-        public UserAnswer(string userId, int answerId, int moduleInstanceId)
+        public UserAnswer(string userId, int answerId, int moduleSessionId)
         {
             this.UserId = userId;
             this.AnswerId = answerId;
-            this.ModuleSessionId = moduleInstanceId;
+            this.ModuleSessionId = moduleSessionId;
         }
 
         [Key]

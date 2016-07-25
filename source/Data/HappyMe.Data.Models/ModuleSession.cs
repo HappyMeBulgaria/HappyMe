@@ -4,9 +4,10 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    using HappyMe.Data.Contracts;
     using HappyMe.Data.Contracts.Models;
 
-    public class ModuleSession : AuditInfo
+    public class ModuleSession : AuditInfo, IIdentifiable<int>
     {
         private ICollection<UserAnswer> usersAnswers;
 
@@ -22,7 +23,7 @@
             this.UserId = userId;
         }
 
-        protected ModuleSession()
+        public ModuleSession()
         {
             this.usersAnswers = new HashSet<UserAnswer>();
         }

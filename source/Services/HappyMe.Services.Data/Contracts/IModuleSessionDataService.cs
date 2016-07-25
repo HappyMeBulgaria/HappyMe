@@ -13,8 +13,8 @@
 
         void FinishSession(int id);
 
-        Task<int> StartAnonymousSession(int moduleId);
+        Task<ModuleSession> StartAnonymousSession(int moduleId);
 
-        Task<int> StartUserSession(string userId, int moduleId);
+        Task<ModuleSession> StartUserSession(string userId, int moduleId);
     }
 }
