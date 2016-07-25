@@ -3,9 +3,10 @@
     using System.ComponentModel.DataAnnotations;
 
     using HappyMe.Common.Constants;
+    using HappyMe.Data.Contracts;
     using HappyMe.Data.Contracts.Models;
 
-    public class Feedback : AuditInfo
+    public class Feedback : AuditInfo, IIdentifiable<int>
     {
         [Key]
         public int Id { get; set; }

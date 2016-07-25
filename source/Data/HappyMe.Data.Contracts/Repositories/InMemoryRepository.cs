@@ -29,7 +29,7 @@
 
         public virtual void Delete(params object[] id)
         {
-            this.DatabaseStore.RemoveAll(x => id.As<TKey[]>().Any(y => x.Id.Equals(y)));
+            this.DatabaseStore.RemoveAll(x => id.Any(y => x.Id.Equals(y)));
         }
 
         public virtual void Delete(T entity)
@@ -43,7 +43,7 @@
 
         public T GetById(params object[] id)
         {
-            return this.DatabaseStore.FirstOrDefault(x => id.As<TKey[]>().Any(y => x.Id.Equals(y)));
+            return this.DatabaseStore.FirstOrDefault(x => id.Any(y => x.Id.Equals(y)));
         }
 
         public int SaveChanges()

@@ -91,7 +91,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AnswersDataServiceTests.cs" />
+    <Compile Include="ModulesDataServiceTests.cs" />
+    <Compile Include="ModuleSessionDataServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FeedbackDataServiceTests.cs" />
+    <Compile Include="QuestionsDataServiceTests.cs" />
     <Compile Include="UsersDataServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
