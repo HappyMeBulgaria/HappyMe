@@ -29,10 +29,11 @@
             }
 
             this.TempData.AddWarningMessage("Невалидна обратна връзка");
-            
+
             return this.RedirectToAction<HomeController>(c => c.Index());
         }
 
+        [HttpGet]
         public ActionResult Success()
         {
             return this.View();

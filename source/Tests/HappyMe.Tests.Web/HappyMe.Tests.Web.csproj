@@ -42,11 +42,45 @@
       <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.5.16.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Moq.4.5.16\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MoreDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MoreDotNet.0.4\lib\MoreDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
       <Private>True</Private>
@@ -73,10 +107,43 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Common\BaseWebTests.cs" />
+    <Compile Include="FeedbackControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\HappyMe.Data.Contracts\HappyMe.Data.Contracts.csproj">
+      <Project>{9bc2b1cd-c05d-40ca-a972-c4b16f3cb064}</Project>
+      <Name>HappyMe.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\HappyMe.Data.Models\HappyMe.Data.Models.csproj">
+      <Project>{c4a645c4-329d-42e1-87c0-494ad19775ea}</Project>
+      <Name>HappyMe.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\HappyMe.Data\HappyMe.Data.csproj">
+      <Project>{72c1b581-35d3-4913-9056-7fd98700b010}</Project>
+      <Name>HappyMe.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HappyMe.Common\HappyMe.Common.csproj">
+      <Project>{BE0B0219-3996-433E-B63B-5BF485F9230C}</Project>
+      <Name>HappyMe.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\HappyMe.Services.Common\HappyMe.Services.Common.csproj">
+      <Project>{98D63F27-173E-4A8A-978D-27300694536E}</Project>
+      <Name>HappyMe.Services.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\HappyMe.Services.Data\HappyMe.Services.Data.csproj">
+      <Project>{862BD9D3-A1C0-4D9B-93A0-DD65A443E97B}</Project>
+      <Name>HappyMe.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Web\HappyMe.Web\HappyMe.Web.csproj">
+      <Project>{7a3b6260-f9cd-4c02-8e6a-fab82d12c539}</Project>
+      <Name>HappyMe.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
