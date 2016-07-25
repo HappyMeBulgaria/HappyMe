@@ -31,11 +31,13 @@
 
         public ActionResult Index()
         {
-            var modules = this.mappingService
-                .MapCollection<ModuleViewModel>(this.modulesDataService.AllPublicWithQuestionsWithCorrectAnswer())
+            var modules = this.modulesDataService.AllPublicWithQuestionsWithCorrectAnswer();
+
+            var viewModels = this.mappingService
+                .MapCollection<ModuleViewModel>(modules)
                 .ToList();
 
-            return this.View(modules);
+            return this.View(viewModels);
         }
 
         [HttpGet]

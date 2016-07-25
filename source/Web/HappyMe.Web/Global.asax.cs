@@ -14,6 +14,11 @@
 
     public class MvcApplication : HttpApplication
     {
+        public MvcApplication()
+        {
+            AutoMapperConfig.RegisterMappings(Assembly.GetExecutingAssembly());
+        }
+
         protected void Application_Start()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<HappyMeDbContext, DefaultMigrationConfiguration>());
