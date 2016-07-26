@@ -2,8 +2,10 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
     using System.Web.Mvc;
 
+    using HappyMe.Common.Constants;
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Tests.Web.Common;
@@ -73,12 +75,69 @@
         }
 
         [Fact]
-        public void Index_SouldReturnEmptyView()
+        public async Task Start_ShouldRedirectModulesIndexIfGivenNullId()
         {
-            var result = this.modulesController.Index();
+            var result = await this.modulesController.Start(null);
+
+            this.ValidateRedirectToModulesIndex(result);
+        }
+
+        [Fact]
+        public async Task Start_ShouldRedirectModulesIndexIfGivenInvalidId()
+        {
+            this.modulesDataServiceMock.Setup(x => x.GetById(It.IsAny<int>())).Returns(() => null);
+
+            var result = await this.modulesController.Start(null);
+
+            this.ValidateRedirectToModulesIndex(result);
+        }
+
+        [Fact]
+        public async Task Start_ShouldRedirectModulesIndexIfGivenModuleIsInactive()
+        {
+            var inactiveModule = new Module { IsActive = false };
+
+            this.modulesDataServiceMock.Setup(x => x.GetById(It.IsAny<int>())).Returns(() => inactiveModule);
+
+            var result = await this.modulesController.Start(null);
+
+            this.ValidateRedirectToModulesIndex(result);
+        }
+
+        [Fact]
+        public async Task Start_ShouldRedirectModulesIndexIfGivenModuleIsNotPublic()
+        {
+            var inactiveModule = new Module { IsActive = true, IsPublic = false };
+
+            this.modulesDataServiceMock.Setup(x => x.GetById(It.IsAny<int>())).Returns(() => inactiveModule);
+
+            var result = await this.modulesController.Start(null);
+
+            this.ValidateRedirectToModulesIndex(result);
+        }
+
+        [Fact]
+        public void Success_SouldReturnEmptyView()
+        {
+            var result = this.modulesController.Success();
             Assert.IsType<ViewResult>(result);
             var castResult = result.As<ViewResult>();
             Assert.Null(castResult.ViewData.Model);
+        }
+
+        private void ValidateRedirectToModulesIndex(ActionResult result)
+        {
+            Assert.IsType<RedirectToRouteResult>(result);
+
+            var castResult = result.As<RedirectToRouteResult>();
+
+            Assert.Equal(1, this.modulesController.TempData.Keys.Count);
+            Assert.True(this.modulesController.TempData.ContainsKey(GlobalConstants.DangerMessage));
+            Assert.Equal("Упс! Няма такъв модул.", this.modulesController.TempData[GlobalConstants.DangerMessage]);
+
+            Assert.Equal("Index", castResult.RouteValues["Action"]);
+            Assert.Equal("Modules", castResult.RouteValues["Controller"]);
+            Assert.Equal(string.Empty, castResult.RouteValues["Area"]);
         }
     }
 }
