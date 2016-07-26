@@ -2,13 +2,9 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using System.Reflection;
     using System.Web.Mvc;
 
-    using HappyMe.Common.Mapping;
-    using HappyMe.Services.Common.Mapping;
     using HappyMe.Services.Common.Mapping.Contracts;
-    using HappyMe.Services.Data;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Tests.Web.Common;
     using HappyMe.Web.Controllers;
@@ -74,6 +70,15 @@
             Assert.NotNull(model);
             Assert.NotEmpty(model);
             Assert.Equal(3, model.Count());
+        }
+
+        [Fact]
+        public void Index_SouldReturnEmptyView()
+        {
+            var result = this.modulesController.Index();
+            Assert.IsType<ViewResult>(result);
+            var castResult = result.As<ViewResult>();
+            Assert.Null(castResult.ViewData.Model);
         }
     }
 }
