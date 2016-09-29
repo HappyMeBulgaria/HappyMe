@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Resources.Manage {
+namespace Resources.Account {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Resources.Manage {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ManageController {
+    public class AccountController {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ManageController() {
+        internal AccountController() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Resources.Manage {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HappyMe.Web.App_GlobalResources.Manage.ManageController", typeof(ManageController).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HappyMe.Web.App_GlobalResources.Account.AccountController", typeof(AccountController).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,75 +61,56 @@ namespace Resources.Manage {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Метода за външно влизане бе премахнат..
+        ///   Looks up a localized string similar to Моля потвърдете имейла си като кликенте ето &lt;a href=&quot;{0}&quot;&gt;тук&lt;/a&gt;.
         /// </summary>
-        public static string External_login_removed {
+        public static string Confirm_email_content {
             get {
-                return ResourceManager.GetString("External_login_removed", resourceCulture);
+                return ResourceManager.GetString("Confirm_email_content", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Неуспешно потвърждаване на телефон..
+        ///   Looks up a localized string similar to Потвърдете акаунта си.
         /// </summary>
-        public static string Failed_to_verify_phone {
+        public static string Confirm_your_account {
             get {
-                return ResourceManager.GetString("Failed_to_verify_phone", resourceCulture);
+                return ResourceManager.GetString("Confirm_your_account", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Паролата бе сменена..
+        ///   Looks up a localized string similar to Невалиден код..
         /// </summary>
-        public static string Password_has_been_changed {
+        public static string Invalid_code {
             get {
-                return ResourceManager.GetString("Password_has_been_changed", resourceCulture);
+                return ResourceManager.GetString("Invalid_code", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Паролата бе въведена..
+        ///   Looks up a localized string similar to Неуспешно влизане..
         /// </summary>
-        public static string Password_has_been_set {
+        public static string Invalid_login_attempt {
             get {
-                return ResourceManager.GetString("Password_has_been_set", resourceCulture);
+                return ResourceManager.GetString("Invalid_login_attempt", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Телефония номер бе добавен..
+        ///   Looks up a localized string similar to За да смените паролата си кликнете &lt;a href=&quot;{0}&quot;&gt;тук&lt;/a&gt;.
         /// </summary>
-        public static string Phone_number_added {
+        public static string Reset_password_email_content {
             get {
-                return ResourceManager.GetString("Phone_number_added", resourceCulture);
+                return ResourceManager.GetString("Reset_password_email_content", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Телефония номер бе премахнат.
-        ///.
+        ///   Looks up a localized string similar to Смяна на паролата.
         /// </summary>
-        public static string Phone_number_removed {
+        public static string Reset_password_email_title {
             get {
-                return ResourceManager.GetString("Phone_number_removed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Кодът ви е:.
-        /// </summary>
-        public static string Security_code_sms {
-            get {
-                return ResourceManager.GetString("Security_code_sms", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Системата за влизане в две стъпки бе активирана..
-        /// </summary>
-        public static string Two_factor_authentication_set {
-            get {
-                return ResourceManager.GetString("Two_factor_authentication_set", resourceCulture);
+                return ResourceManager.GetString("Reset_password_email_title", resourceCulture);
             }
         }
     }

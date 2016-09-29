@@ -8,6 +8,8 @@
     using HappyMe.Web.Controllers.Base;
     using HappyMe.Web.InputModels.Feedback;
 
+    using Resource = Resources.Feedback.FeedbackController;
+
     public class FeedbackController : BaseController
     {
         private readonly IFeedbackDataService feedbackDataService;
@@ -28,7 +30,7 @@
                 return this.RedirectToAction(nameof(this.Success));
             }
 
-            this.TempData.AddWarningMessage("Невалидна обратна връзка");
+            this.TempData.AddWarningMessage(Resource.Invalid_feedback_error);
 
             return this.RedirectToAction<HomeController>(c => c.Index());
         }

@@ -117,29 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Security_code_sms" xml:space="preserve">
-    <value>Кодът ви е:</value>
+  <data name="Confirm_email_content" xml:space="preserve">
+    <value>Моля потвърдете имейла си като кликенте ето &lt;a href="{0}"&gt;тук&lt;/a&gt;</value>
   </data>
-  <data name="Failed_to_verify_phone" xml:space="preserve">
-    <value>Неуспешно потвърждаване на телефон.</value>
+  <data name="Confirm_your_account" xml:space="preserve">
+    <value>Потвърдете акаунта си</value>
   </data>
-  <data name="External_login_removed" xml:space="preserve">
-    <value>Метода за външно влизане бе премахнат.</value>
+  <data name="Invalid_code" xml:space="preserve">
+    <value>Невалиден код.</value>
   </data>
-  <data name="Password_has_been_changed" xml:space="preserve">
-    <value>Паролата бе сменена.</value>
+  <data name="Invalid_login_attempt" xml:space="preserve">
+    <value>Неуспешно влизане.</value>
   </data>
-  <data name="Password_has_been_set" xml:space="preserve">
-    <value>Паролата бе въведена.</value>
+  <data name="Reset_password_email_content" xml:space="preserve">
+    <value>За да смените паролата си кликнете &lt;a href="{0}"&gt;тук&lt;/a&gt;</value>
   </data>
-  <data name="Two_factor_authentication_set" xml:space="preserve">
-    <value>Системата за влизане в две стъпки бе активирана.</value>
-  </data>
-  <data name="Phone_number_added" xml:space="preserve">
-    <value>Телефония номер бе добавен.</value>
-  </data>
-  <data name="Phone_number_removed" xml:space="preserve">
-    <value>Телефония номер бе премахнат.
-</value>
+  <data name="Reset_password_email_title" xml:space="preserve">
+    <value>Смяна на паролата</value>
   </data>
 </root>

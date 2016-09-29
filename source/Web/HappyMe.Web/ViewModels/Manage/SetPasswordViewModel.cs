@@ -5,6 +5,7 @@ namespace HappyMe.Web.ViewModels.Manage
     using HappyMe.Common.Constants;
 
     using GlobalCommonResource = Resources.GlobalCommon;
+    using Resource = Resources.Manage.ViewModels.SetPasswordViewModel;
 
     public class SetPasswordViewModel
     {
@@ -13,15 +14,23 @@ namespace HappyMe.Web.ViewModels.Manage
             ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [StringLength(
             UserValidationConstants.PasswordMaxLength, 
-            ErrorMessage = "The {0} must be at least {2} characters long.", 
-            MinimumLength = UserValidationConstants.PasswordMinLength)]
+            ErrorMessageResourceName = "Length_error_generic", 
+            MinimumLength = UserValidationConstants.PasswordMinLength,
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(
+            ResourceType = typeof(Resource), 
+            Name = "New_password")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(
+            ResourceType = typeof(Resource), 
+            Name = "Confirm_new_password")]
+        [Compare(
+            "NewPassword", 
+            ErrorMessageResourceType = typeof(Resource), 
+            ErrorMessageResourceName = "Password_do_not_match")]
         public string ConfirmPassword { get; set; }
     }
 }

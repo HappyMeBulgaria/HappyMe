@@ -206,6 +206,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountCommon.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\Account\AccountController.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountController.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_GlobalResources\Account\ViewModels\LoginViewModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1388,6 +1393,11 @@
     <EmbeddedResource Include="App_GlobalResources\Account\AccountCommon.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AccountCommon.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\AccountController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountController.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources.Account</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Account\ViewModels\LoginViewModel.resx">

@@ -13,6 +13,8 @@
 
     using Microsoft.AspNet.Identity;
 
+    using Resource = Resources.Modules.ModulesController;
+
     public class ModulesController : BaseController
     {
         private readonly IModulesDataService modulesDataService;
@@ -45,7 +47,7 @@
         {
             if (!id.HasValue)
             {
-                this.TempData.AddDangerMessage("Упс! Няма такъв модул.");
+                this.TempData.AddDangerMessage(Resource.Module_does_not_exist);
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 
@@ -53,13 +55,13 @@
 
             if (module == null)
             {
-                this.TempData.AddDangerMessage("Упс! Няма такъв модул.");
+                this.TempData.AddDangerMessage(Resource.Module_does_not_exist);
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 
             if (!module.IsActive || !module.IsPublic)
             {
-                this.TempData.AddDangerMessage("Упс! Няма такъв модул.");
+                this.TempData.AddDangerMessage(Resource.Module_does_not_exist);
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 

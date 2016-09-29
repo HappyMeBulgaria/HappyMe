@@ -11,6 +11,9 @@
 
     using Microsoft.AspNet.Identity;
 
+    using GlobalCommonResource = Resources.GlobalCommon;
+    using ModulesControllerResource = Resources.Modules.ModulesController;
+
     public class QuestionsController : BaseController
     {
         private readonly IQuestionsDataService questionsDataService;
@@ -35,7 +38,7 @@
         {
             if (!id.HasValue)
             {
-                this.TempData.AddDangerMessage("Упс! Няма такъв модул.");
+                this.TempData.AddDangerMessage(ModulesControllerResource.Module_does_not_exist);
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 
@@ -43,7 +46,7 @@
 
             if (session == null)
             {
-                this.TempData.AddDangerMessage("Упс! Няма такъв модул.");
+                this.TempData.AddDangerMessage(ModulesControllerResource.Module_does_not_exist);
                 return this.RedirectToAction("Index", "Modules", new { area = string.Empty });
             }
 
@@ -90,7 +93,7 @@
                 });
             }
 
-            return this.JsonError("Упс, възникна грешка!");
+            return this.JsonError(GlobalCommonResource.General_error);
         }
     }
 }

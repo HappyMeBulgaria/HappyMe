@@ -59,5 +59,32 @@ namespace Resources.Manage.ViewModels {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Потвърди нова парола.
+        /// </summary>
+        public static string Confirm_new_password {
+            get {
+                return ResourceManager.GetString("Confirm_new_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Нова парола.
+        /// </summary>
+        public static string New_password {
+            get {
+                return ResourceManager.GetString("New_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Паролите не съвпадат.
+        /// </summary>
+        public static string Password_do_not_match {
+            get {
+                return ResourceManager.GetString("Password_do_not_match", resourceCulture);
+            }
+        }
     }
 }

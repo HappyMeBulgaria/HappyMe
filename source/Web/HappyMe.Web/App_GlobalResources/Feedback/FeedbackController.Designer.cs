@@ -59,5 +59,14 @@ namespace Resources.Feedback {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Невалидна обратна връзка.
+        /// </summary>
+        public static string Invalid_feedback_error {
+            get {
+                return ResourceManager.GetString("Invalid_feedback_error", resourceCulture);
+            }
+        }
     }
 }

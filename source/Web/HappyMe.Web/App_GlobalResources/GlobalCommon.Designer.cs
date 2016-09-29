@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Упс, възникна грешка!.
+        /// </summary>
+        public static string General_error {
+            get {
+                return ResourceManager.GetString("General_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Невалиден имейл.
         /// </summary>
         public static string Invalid_email_address_error_generic {

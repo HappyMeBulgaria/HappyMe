@@ -59,5 +59,14 @@ namespace Resources.Modules {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Упс! Няма такъв модул..
+        /// </summary>
+        public static string Module_does_not_exist {
+            get {
+                return ResourceManager.GetString("Module_does_not_exist", resourceCulture);
+            }
+        }
     }
 }

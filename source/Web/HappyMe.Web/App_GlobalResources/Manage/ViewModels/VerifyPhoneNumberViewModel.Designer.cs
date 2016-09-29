@@ -59,5 +59,23 @@ namespace Resources.Manage.ViewModels {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kod.
+        /// </summary>
+        public static string Code {
+            get {
+                return ResourceManager.GetString("Code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Телефон.
+        /// </summary>
+        public static string Phone_number {
+            get {
+                return ResourceManager.GetString("Phone_number", resourceCulture);
+            }
+        }
     }
 }
