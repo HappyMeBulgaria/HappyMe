@@ -4,25 +4,26 @@ namespace HappyMe.Web.ViewModels.Account
 
     using HappyMe.Common.Constants;
 
+    using GlobalCommonResource = Resources.GlobalCommon;
     using ResourceCommon = Resources.Account.AccountCommon;
 
     public class ResetPasswordViewModel
     {
         [Required(
             ErrorMessageResourceName = "Required_field_error_generic",
-            ErrorMessageResourceType = typeof(ResourceCommon))]
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [EmailAddress]
         [Display(Name = "Email", ResourceType = typeof(ResourceCommon))]
         public string Email { get; set; }
 
         [Required(
             ErrorMessageResourceName = "Required_field_error_generic",
-            ErrorMessageResourceType = typeof(ResourceCommon))]
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [StringLength(
             UserValidationConstants.PasswordMaxLength, 
             ErrorMessageResourceName = "Length_error_generic", 
             MinimumLength = UserValidationConstants.PasswordMinLength,
-            ErrorMessageResourceType = typeof(ResourceCommon))]
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [DataType(DataType.Password)]
         [Display(Name = "Password", ResourceType = typeof(ResourceCommon))]
         public string Password { get; set; }

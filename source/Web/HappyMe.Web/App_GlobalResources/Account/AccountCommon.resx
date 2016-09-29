@@ -129,20 +129,11 @@
   <data name="First_name" xml:space="preserve">
     <value>Име</value>
   </data>
-  <data name="Invalid_email_address_error_generic" xml:space="preserve">
-    <value>Невалиден имейл</value>
-  </data>
   <data name="Last_name" xml:space="preserve">
     <value>Фамилия</value>
   </data>
-  <data name="Length_error_generic" xml:space="preserve">
-    <value>{0} трябва да е поне {2} символа.</value>
-  </data>
   <data name="Password" xml:space="preserve">
     <value>Парола</value>
-  </data>
-  <data name="Required_field_error_generic" xml:space="preserve">
-    <value>Моля въведете стойност</value>
   </data>
   <data name="Username" xml:space="preserve">
     <value>Потребителско име</value>

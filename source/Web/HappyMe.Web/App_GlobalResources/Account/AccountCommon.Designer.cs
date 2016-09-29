@@ -97,15 +97,6 @@ namespace Resources.Account {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Невалиден имейл.
-        /// </summary>
-        public static string Invalid_email_address_error_generic {
-            get {
-                return ResourceManager.GetString("Invalid_email_address_error_generic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Фамилия.
         /// </summary>
         public static string Last_name {
@@ -115,29 +106,11 @@ namespace Resources.Account {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} трябва да е поне {2} символа..
-        /// </summary>
-        public static string Length_error_generic {
-            get {
-                return ResourceManager.GetString("Length_error_generic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Парола.
         /// </summary>
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Моля въведете стойност.
-        /// </summary>
-        public static string Required_field_error_generic {
-            get {
-                return ResourceManager.GetString("Required_field_error_generic", resourceCulture);
             }
         }
         

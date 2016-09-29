@@ -8,7 +8,7 @@ namespace HappyMe.Web.ViewModels.Manage
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(ResourceType = typeof(Resources.Manage.ViewModels.ChangePasswordViewModel), Name = "Current_password")]
         public string OldPassword { get; set; }
 
         [Required]

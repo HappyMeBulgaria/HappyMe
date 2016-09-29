@@ -4,9 +4,13 @@ namespace HappyMe.Web.ViewModels.Manage
 
     using HappyMe.Common.Constants;
 
+    using GlobalCommonResource = Resources.GlobalCommon;
+
     public class SetPasswordViewModel
     {
-        [Required]
+        [Required(
+            ErrorMessageResourceName = "Required_field_error_generic",
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [StringLength(
             UserValidationConstants.PasswordMaxLength, 
             ErrorMessage = "The {0} must be at least {2} characters long.", 

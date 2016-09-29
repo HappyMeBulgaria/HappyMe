@@ -221,6 +221,216 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VerifyCodeViewModel.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\ConfirmEmail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfirmEmail.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\ExternalLoginConfirmation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternalLoginConfirmation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\ExternalLoginFailure.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternalLoginFailure.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\ExternalLoginsListPartial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternalLoginsListPartial.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\ForgotPassword.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgotPassword.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\ForgotPasswordConfirmation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgotPasswordConfirmation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\Register.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Register.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\ResetPassword.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPassword.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\ResetPasswordConfirmation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPasswordConfirmation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\SendCode.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SendCode.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\Views\VerifyCode.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VerifyCode.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Feedback\FeedbackController.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedbackController.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Feedback\InputModels\FeedbackInputModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedbackInputModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Feedback\Views\Success.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Success.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\GlobalCommon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalCommon.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Home\Views\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\ManageController.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageController.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\ViewModels\AddPhoneNumberViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddPhoneNumberViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\ViewModels\ChangePasswordViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePasswordViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\ViewModels\ConfigureTwoFactorViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigureTwoFactorViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\ViewModels\FactorViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FactorViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\ViewModels\IndexViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndexViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\ViewModels\SetPasswordViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SetPasswordViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\ViewModels\VerifyPhoneNumberViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VerifyPhoneNumberViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\Views\AddPhoneNumber.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddPhoneNumber.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\Views\ChangePassword.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePassword.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\Views\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\Views\ManageLogins.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageLogins.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\Views\SetPassword.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SetPassword.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Manage\Views\VerifyPhoneNumber.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VerifyPhoneNumber.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Modules\ModulesController.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModulesController.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Modules\ViewModels\ModuleViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModuleViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Modules\Views\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Modules\Views\Success.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Success.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Questions\QuestionsController.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuestionsController.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Questions\ViewModels\AnswerViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnswerViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Questions\ViewModels\QuestionViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuestionViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Questions\Views\AlphabetQuestion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlphabetQuestion.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Questions\Views\ColorQuestion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColorQuestion.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Questions\Views\DragAndDropQuestion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DragAndDropQuestion.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Questions\Views\ImageQuestion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageQuestion.resx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Administration\Controllers\AnswersController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationCrudController.cs" />
@@ -1134,7 +1344,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="App_GlobalResources\Account\Views\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
   </ItemGroup>
@@ -1195,6 +1404,216 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>VerifyCodeViewModel.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources.Account.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\ExternalLoginsListPartial.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExternalLoginsListPartial.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\ConfirmEmail.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConfirmEmail.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\ExternalLoginConfirmation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExternalLoginConfirmation.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\ExternalLoginFailure.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExternalLoginFailure.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\ForgotPassword.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ForgotPassword.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\ForgotPasswordConfirmation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ForgotPasswordConfirmation.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\Login.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\Register.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Register.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\ResetPassword.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResetPassword.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\ResetPasswordConfirmation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResetPasswordConfirmation.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\SendCode.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SendCode.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\Views\VerifyCode.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VerifyCode.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Feedback\Views\Success.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Success.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Feedback.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Feedback\InputModels\FeedbackInputModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeedbackInputModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Feedback.InputModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Feedback\FeedbackController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeedbackController.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Feedback</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\GlobalCommon.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalCommon.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Home\Views\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Home.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\ManageController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ManageController.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\AddPhoneNumberViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AddPhoneNumberViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\ChangePasswordViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePasswordViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\ConfigureTwoFactorViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConfigureTwoFactorViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\FactorViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FactorViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\IndexViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>IndexViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\SetPasswordViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SetPasswordViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\VerifyPhoneNumberViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VerifyPhoneNumberViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\Views\AddPhoneNumber.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AddPhoneNumber.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\Views\ChangePassword.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePassword.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\Views\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\Views\ManageLogins.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ManageLogins.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\Views\SetPassword.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SetPassword.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Manage\Views\VerifyPhoneNumber.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VerifyPhoneNumber.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Modules\ViewModels\ModuleViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ModuleViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Modules.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Modules\Views\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Modules.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Modules\Views\Success.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Success.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Modules.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Modules\ModulesController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ModulesController.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Modules</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Questions\QuestionsController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuestionsController.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Questions\Views\AlphabetQuestion.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AlphabetQuestion.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Questions\Views\ColorQuestion.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ColorQuestion.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Questions\Views\DragAndDropQuestion.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DragAndDropQuestion.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Questions\Views\ImageQuestion.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImageQuestion.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Questions\ViewModels\AnswerViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AnswerViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Questions\ViewModels\QuestionViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuestionViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.ViewModels</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

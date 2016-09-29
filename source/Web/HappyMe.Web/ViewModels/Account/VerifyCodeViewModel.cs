@@ -2,6 +2,7 @@ namespace HappyMe.Web.ViewModels.Account
 {
     using System.ComponentModel.DataAnnotations;
 
+    using GlobalCommonResource = Resources.GlobalCommon;
     using Resource = Resources.Account.ViewModels.VerifyCodeViewModel;
     using ResourceCommon = Resources.Account.AccountCommon;
 
@@ -9,12 +10,12 @@ namespace HappyMe.Web.ViewModels.Account
     {
         [Required(
             ErrorMessageResourceName = "Required_field_error_generic",
-            ErrorMessageResourceType = typeof(ResourceCommon))]
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         public string Provider { get; set; }
 
         [Required(
             ErrorMessageResourceName = "Required_field_error_generic",
-            ErrorMessageResourceType = typeof(ResourceCommon))]
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [Display(Name = "Code", ResourceType = typeof(Resource))]
         public string Code { get; set; }
 

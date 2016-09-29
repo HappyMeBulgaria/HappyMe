@@ -2,13 +2,14 @@
 {
     using System.ComponentModel.DataAnnotations;
 
+    using GlobalCommonResource = Resources.GlobalCommon;
     using ResourceCommon = Resources.Account.AccountCommon;
 
     public class ExternalLoginConfirmationViewModel
     {
         [Required(
             ErrorMessageResourceName = "Required_field_error_generic", 
-            ErrorMessageResourceType = typeof(ResourceCommon))]
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [Display(
             Name = "Email",
             ResourceType = typeof(ResourceCommon))]
