@@ -13,6 +13,6 @@
 
         Task AnswerAsAnonymous(int answerId, int moduleSessionId);
 
-        Task<IEnumerable<Answer>> GetRandomAnswersForQuestion(Question question, int answersCount);
+        ////Task<IEnumerable<Answer>> GetRandomAnswersForQuestion(Question question, int answersCount);
     }
 }

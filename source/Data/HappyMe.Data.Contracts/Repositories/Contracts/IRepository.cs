@@ -1,4 +1,4 @@
-﻿namespace HappyMe.Data.Contracts.Repositories
+﻿namespace HappyMe.Data.Contracts.Repositories.Contracts
 {
     using System;
     using System.Linq;

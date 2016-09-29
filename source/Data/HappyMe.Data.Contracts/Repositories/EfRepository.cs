@@ -5,6 +5,8 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using HappyMe.Data.Contracts.Repositories.Contracts;
+
     public class EfRepository<T> : IRepository<T>
         where T : class
     {

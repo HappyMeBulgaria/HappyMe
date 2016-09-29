@@ -1,12 +1,7 @@
 ﻿namespace HappyMe.Services.Administration
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using HappyMe.Data.Contracts.Repositories;
+    using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Data.Models;
     using HappyMe.Services.Administration.Base;
     using HappyMe.Services.Administration.Contracts;
@@ -22,12 +17,12 @@
         {
             var image = new Image
             {
-                ImageData = imageByteArray,
+                ImageData = imageByteArray, 
                 AuthorId = authorId
             };
 
-            Entities.Add(image);
-            Entities.SaveChanges();
+            this.Entities.Add(image);
+            this.Entities.SaveChanges();
 
             return image;
         }

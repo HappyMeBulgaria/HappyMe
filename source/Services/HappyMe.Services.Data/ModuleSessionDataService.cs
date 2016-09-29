@@ -5,7 +5,7 @@
     using System.Threading.Tasks;
 
     using HappyMe.Common.Tools;
-    using HappyMe.Data.Contracts.Repositories;
+    using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Data.Models;
     using HappyMe.Services.Data.Contracts;
 
@@ -16,13 +16,16 @@
     {
         private readonly IRepository<ModuleSession> moduleSessionsRepository;
         private readonly IRepository<UserAnswer> userAnswersRepository;
+        private readonly IRepository<Module> modulesRepository;
 
         public ModuleSessionDataService(
             IRepository<ModuleSession> moduleSessionsRepository,
-            IRepository<UserAnswer> userAnswersRepository)
+            IRepository<UserAnswer> userAnswersRepository,
+            IRepository<Module> modulesRepository)
         {
             this.moduleSessionsRepository = moduleSessionsRepository;
             this.userAnswersRepository = userAnswersRepository;
+            this.modulesRepository = modulesRepository;
         }
 
         public ModuleSession GetById(int id)
@@ -63,13 +66,25 @@
         public void FinishSession(int id)
         {
             var session = this.moduleSessionsRepository.GetById(id);
+            if (session == null)
+            {
+                throw new InvalidOperationException("No such session exists.");
+            }
+
             session.IsFinised = true;
             session.FinishDate = DateTime.Now;
             this.moduleSessionsRepository.SaveChanges();
         }
 
-        public async Task<int> StartAnonymousSession(int moduleId)
+        public async Task<ModuleSession> StartAnonymousSession(int moduleId)
         {
+            var moduleExists = this.modulesRepository.All().Any(x => x.Id == moduleId);
+
+            if (!moduleExists)
+            {
+                throw new InvalidOperationException("No such module exists");
+            } 
+
             var newSession = new ModuleSession(moduleId)
             {
                 StartedDate = DateTime.Now
@@ -77,14 +92,21 @@
             this.moduleSessionsRepository.Add(newSession);
             await this.moduleSessionsRepository.SaveChangesAsync();
 
-            return newSession.Id;
+            return newSession;
         }
 
-        public async Task<int> StartUserSession(string userId, int moduleId)
+        public async Task<ModuleSession> StartUserSession(string userId, int moduleId)
         {
             if (userId.IsNullOrWhiteSpace())
             {
                 throw new ArgumentNullException(nameof(userId), "UserId must have a value");
+            }
+
+            var moduleExists = this.modulesRepository.All().Any(x => x.Id == moduleId);
+
+            if (!moduleExists)
+            {
+                throw new InvalidOperationException("No such module exists");
             }
 
             var newSession = new ModuleSession(userId, moduleId)
@@ -94,7 +116,7 @@
             this.moduleSessionsRepository.Add(newSession);
             await this.moduleSessionsRepository.SaveChangesAsync();
 
-            return newSession.Id;
+            return newSession;
         }
     }
 }

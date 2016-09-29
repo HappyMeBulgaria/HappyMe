@@ -7,6 +7,8 @@
     using Data.Contracts.Repositories;
     using Data.Models;
 
+    using HappyMe.Data.Contracts.Repositories.Contracts;
+
     public class QuestionsAdministrationService : AdministrationService<Question>, IQuestionsAdministrationService
     {
         public QuestionsAdministrationService(IRepository<Question> entities) 
