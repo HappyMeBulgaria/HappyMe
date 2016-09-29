@@ -14,6 +14,10 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
 
+    using Resources.Account;
+
+    using Resource = Resources.Account.AccountController;
+
     ////[Authorize]
     [Authorize(Roles = RoleConstants.Administrator)]
     public class AccountController : BaseController
@@ -89,7 +93,7 @@
 
             if (user == null)
             {
-                this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                this.ModelState.AddModelError(string.Empty, Resource.Invalid_login_attempt);
                 return this.View(model);
             }
 
@@ -115,7 +119,7 @@
                         new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    this.ModelState.AddModelError(string.Empty, Resource.Invalid_login_attempt);
                     return this.View(model);
             }
         }
@@ -165,7 +169,7 @@
                     return this.View("Lockout");
                 case SignInStatus.Failure:
                 default:
-                    this.ModelState.AddModelError(string.Empty, "Invalid code.");
+                    this.ModelState.AddModelError(string.Empty, Resource.Invalid_code);
                     return this.View(model);
             }
         }
@@ -197,7 +201,10 @@
                     // Send an email with this link
                     string code = await this.UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = this.Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await this.UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    await this.UserManager.SendEmailAsync(
+                        user.Id, 
+                        Resource.Confirm_your_account, 
+                        string.Format(Resource.Confirm_email_content, callbackUrl));
                     return this.RedirectToAction("Index", "Dashboard", new { area = "Administration" });
                 }
 
@@ -247,7 +254,10 @@
                 // Send an email with this link
                 string code = await this.UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = this.Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: this.Request.Url.Scheme);
-                await this.UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                await this.UserManager.SendEmailAsync(
+                    user.Id, 
+                    Resource.Reset_password_email_title, 
+                    string.Format(Resource.Reset_password_email_content, callbackUrl));
                 return this.RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 

@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<HappyMe.Web.ViewModels.Modules.ModuleViewModel>
+@using Resource = Resources.Modules.Views.Index;
 
 @{
-    ViewBag.Title = "Избери модул:";
+    ViewBag.Title = Resource.Title;
 }
 
 @Styles.Render("~/Content/custom/modules.css")
 
 <div class="section-title-container">
-    <h1 class="section-title large-heading page-heading">@ViewBag.Title</h1>
+    <h1 class="section-title large-heading page-heading">@(ViewBag.Title):</h1>
 </div>
 
 <div class="row modules-container text-center">

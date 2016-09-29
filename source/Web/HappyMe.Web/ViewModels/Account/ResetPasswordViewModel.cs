@@ -4,27 +4,36 @@ namespace HappyMe.Web.ViewModels.Account
 
     using HappyMe.Common.Constants;
 
+    using GlobalCommonResource = Resources.GlobalCommon;
+    using ResourceCommon = Resources.Account.AccountCommon;
+
     public class ResetPasswordViewModel
     {
-        [Required]
+        [Required(
+            ErrorMessageResourceName = "Required_field_error_generic",
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "Email", ResourceType = typeof(ResourceCommon))]
         public string Email { get; set; }
 
-        [Required]
+        [Required(
+            ErrorMessageResourceName = "Required_field_error_generic",
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [StringLength(
             UserValidationConstants.PasswordMaxLength, 
-            ErrorMessage = "The {0} must be at least {2} characters long.", 
-            MinimumLength = UserValidationConstants.PasswordMinLength)]
+            ErrorMessageResourceName = "Length_error_generic", 
+            MinimumLength = UserValidationConstants.PasswordMinLength,
+            ErrorMessageResourceType = typeof(GlobalCommonResource))]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", ResourceType = typeof(ResourceCommon))]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Confirm_password", ResourceType = typeof(ResourceCommon))]
         [Compare(
-            "Password", 
-            ErrorMessage = "The password and confirmation password do not match.")]
+            "Password",
+            ErrorMessageResourceName = "Confirm_password_no_match_error",
+            ErrorMessageResourceType = typeof(ResourceCommon))]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }

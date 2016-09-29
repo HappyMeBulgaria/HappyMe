@@ -1,5 +1,8 @@
-﻿@{
+﻿@using Resource = Resources.Feedback.Views.Success;
+
+@{
     Layout = "../Shared/_Layout.cshtml";
+    ViewBag.Title = Resource.Title;
 }
 
 @section styles{
@@ -9,8 +12,7 @@
 <div class="screen-container">
     <div class="screen success-screen">
         <div class="screen-text text-center cell">
-            <div class="screen-title">Благодарим Ви</div>
-            <div>за обратната връзка!</div>
+            @Html.Raw(Resource.Success_message)
         </div>
         <div>
             <img src="~/Content/images/character_green.png" alt="Green character" />

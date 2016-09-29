@@ -1,4 +1,7 @@
 ﻿@using HappyMe.Web.ViewModels.Account
+
+@using Resource = Resources.Account.Views.Login;
+
 @model LoginViewModel
 
 @section styles {
@@ -6,7 +9,7 @@
 }
 
 @{
-    ViewBag.Title = "Вход за потребители";
+    ViewBag.Title = Resource.Title;
 }
 
 <div class="container container-holder">
@@ -25,19 +28,19 @@
                 {
                     @Html.AntiForgeryToken()
 
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.ValidationSummary(true, string.Empty, new { @class = "text-danger" })
                     <div class="form-group">
                         <div class="col-sm-4 authentication-field">
                             <div class="inner-addon left-addon">
                                 <i class="fa fa-user"></i>
-                                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Въведете потребител..." })
+                                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = Resource.Username_placeholder })
                             </div>
                             @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-sm-4 authentication-field">
                             <div class="inner-addon left-addon">
                                 <i class="fa fa-lock"></i>
-                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Въведете парола..." })
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Resource.Password_placeholder })
                             </div>
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </div>
@@ -48,15 +51,15 @@
                             </div>
                         </div>
                         <div class="col-sm-2 authentication-field">
-                            <input type="submit" value="Влез" class="btn btn-success btn-block"/>
+                            <input type="submit" value="@Resource.Login_button" class="btn btn-success btn-block"/>
                         </div>
                     </div>
                     <div class="register-buttons-login-page">
                         <p class="text-center bottom-buffer register-button-login-page">
-                            @Html.ActionLink("Нямате регистрация?", "Register")
+                            @Html.ActionLink(Resource.No_registration_link, "Register")
                         </p>
                         <p class="text-center top-buffer register-button-login-page">
-                            @Html.ActionLink("Забравена парола?", "ForgotPassword")
+                            @Html.ActionLink(Resource.Forgoten_password_link, "ForgotPassword")
                         </p>
                     </div>
                 }
