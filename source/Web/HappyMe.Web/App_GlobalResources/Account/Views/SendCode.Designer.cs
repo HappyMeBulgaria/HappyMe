@@ -59,5 +59,32 @@ namespace Resources.Account.Views {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Изпълнение.
+        /// </summary>
+        public static string Submit_button {
+            get {
+                return ResourceManager.GetString("Submit_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Изпращане на код.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Моля изберете начин за двустепена валидация:.
+        /// </summary>
+        public static string Two_Factor_Choose {
+            get {
+                return ResourceManager.GetString("Two_Factor_Choose", resourceCulture);
+            }
+        }
     }
 }

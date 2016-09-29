@@ -59,5 +59,14 @@ namespace Resources.Account.Views {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Влзете чрез {0} акаунт.
+        /// </summary>
+        public static string External_login_button_title {
+            get {
+                return ResourceManager.GetString("External_login_button_title", resourceCulture);
+            }
+        }
     }
 }

@@ -98,4 +98,13 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
+  <data name="Click_here_to_log_in_link" xml:space="preserve">
+    <value>Натистнете тук за да влезете.</value>
+  </data>
+  <data name="Thank_you_message" xml:space="preserve">
+    <value>Благодаря Ви, че потвърдихте имейла си. Моля</value>
+  </data>
+  <data name="Page_title" xml:space="preserve">
+    <value>Потвърждаване на имейл</value>
+  </data>
 </root>

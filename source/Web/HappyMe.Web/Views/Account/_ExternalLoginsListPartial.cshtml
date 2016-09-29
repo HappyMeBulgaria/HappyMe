@@ -2,6 +2,8 @@
 
 @using Microsoft.Owin.Security
 
+@using Resource = Resources.Account.Views.ExternalLoginsListPartial;
+
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
     if (loginProviders.Any()) {
@@ -10,7 +12,7 @@
             <div id="socialLoginList">
                 <div class="external-login-buttons-container text-center">
                     @foreach (AuthenticationDescription p in loginProviders) {
-                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="@string.Format(Resource.External_login_button_title, p.Caption)">@p.AuthenticationType</button>
                     }
                 </div>
             </div>

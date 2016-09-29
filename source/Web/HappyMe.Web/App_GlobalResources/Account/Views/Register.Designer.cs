@@ -59,5 +59,104 @@ namespace Resources.Account.Views {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Добави снимка.
+        /// </summary>
+        public static string Add_picture {
+            get {
+                return ResourceManager.GetString("Add_picture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Повтори парола.
+        /// </summary>
+        public static string Confirm_password {
+            get {
+                return ResourceManager.GetString("Confirm_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Имейл.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Име.
+        /// </summary>
+        public static string First_name {
+            get {
+                return ResourceManager.GetString("First_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Фамилия.
+        /// </summary>
+        public static string Last_name {
+            get {
+                return ResourceManager.GetString("Last_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Парола.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Регистрация.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Регистриран потребител.
+        /// </summary>
+        public static string Registered_user {
+            get {
+                return ResourceManager.GetString("Registered_user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h2 class=&quot;section-title&quot;&gt;
+        ///                Защо да се рагистрирам?
+        ///            &lt;/h2&gt;
+        ///
+        ///            &lt;p class=&quot;register-info&quot;&gt;
+        ///                Happy Me ви предлага възможността да използвате нашето приложение без да имате регистрация, но ви препоръчваме да се регистрирате в платформата, поради следните причини:
+        ///            &lt;/p&gt;
+        ///            &lt;ul class=&quot;register-info&quot;&gt;
+        ///                &lt;li&gt;Регистрацията отнема малко време и се попълва лесно&lt;/li&gt;
+        ///                &lt;li&gt;Регистрацията ви позволява да създавате  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Registration_info_section {
+            get {
+                return ResourceManager.GetString("Registration_info_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Потребителско име.
+        /// </summary>
+        public static string Username {
+            get {
+                return ResourceManager.GetString("Username", resourceCulture);
+            }
+        }
     }
 }

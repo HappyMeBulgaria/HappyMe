@@ -59,5 +59,24 @@ namespace Resources.Feedback.Views {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;screen-title&quot;&gt;Благодарим Ви&lt;/div&gt;
+        ///            &lt;div&gt;за обратната връзка!&lt;/div&gt;.
+        /// </summary>
+        public static string Success_message {
+            get {
+                return ResourceManager.GetString("Success_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Успещна обратна връзка.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
     }
 }

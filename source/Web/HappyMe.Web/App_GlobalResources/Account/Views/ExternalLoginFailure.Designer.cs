@@ -59,5 +59,23 @@ namespace Resources.Account.Views {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Неуспешен вход, чрез избрания метод..
+        /// </summary>
+        public static string Fail_message {
+            get {
+                return ResourceManager.GetString("Fail_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Неуспешен вход.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
     }
 }

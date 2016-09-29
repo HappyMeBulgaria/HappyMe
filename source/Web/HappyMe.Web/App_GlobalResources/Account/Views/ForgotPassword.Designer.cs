@@ -59,5 +59,32 @@ namespace Resources.Account.Views {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Въведете имейла си.
+        /// </summary>
+        public static string Enter_email {
+            get {
+                return ResourceManager.GetString("Enter_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Възстанови парола.
+        /// </summary>
+        public static string Send_link {
+            get {
+                return ResourceManager.GetString("Send_link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Забравена парола?.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
     }
 }
