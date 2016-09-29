@@ -2,20 +2,25 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using HappyMe.Web.Common.Attributes;
+    using Resource = Resources.Account.ViewModels.LoginViewModel;
+    using ResourceCommon = Resources.Account.AccountCommon;
 
     public class LoginViewModel
     {
-        [Required]
-        [Display(Name = "Потребителско име")]
+        [Required(
+            ErrorMessageResourceName = "Required_field_error_generic",
+            ErrorMessageResourceType = typeof(ResourceCommon))]
+        [Display(Name = "Username", ResourceType = typeof(ResourceCommon))]
         public string Username { get; set; }
 
-        [Required]
+        [Required(
+            ErrorMessageResourceName = "Required_field_error_generic",
+            ErrorMessageResourceType = typeof(ResourceCommon))]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", ResourceType = typeof(ResourceCommon))]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Remember_me", ResourceType = typeof(Resource))]
         public bool RememberMe { get; set; }
     }
 }

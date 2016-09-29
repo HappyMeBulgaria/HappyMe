@@ -201,6 +201,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Account\AccountCommon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountCommon.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\ViewModels\LoginViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\ViewModels\RegisterViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegisterViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Account\ViewModels\VerifyCodeViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VerifyCodeViewModel.resx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Administration\Controllers\AnswersController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\MvcGridAdministrationCrudController.cs" />
@@ -1114,6 +1134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_GlobalResources\Account\Views\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
   </ItemGroup>
@@ -1153,6 +1174,28 @@
       <Project>{93689a76-ebba-45a7-8da4-cc1376bd0d1d}</Project>
       <Name>HappyMe.Web.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Account\AccountCommon.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountCommon.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\ViewModels\LoginViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoginViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\ViewModels\RegisterViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegisterViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Account\ViewModels\VerifyCodeViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VerifyCodeViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Account.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -4,34 +4,55 @@ namespace HappyMe.Web.ViewModels.Account
 
     using HappyMe.Common.Constants;
 
+    using ResourceCommon = Resources.Account.AccountCommon;
+
     public class RegisterViewModel
     {
-        [Required]
+        [Required(
+            ErrorMessageResourceName = "Required_field_error_generic",
+            ErrorMessageResourceType = typeof(ResourceCommon))]
+        [Display(Name = "First_name", ResourceType = typeof(ResourceCommon))]
         public string FirstName { get; set; }
 
-        [Required]
+        [Required(
+            ErrorMessageResourceName = "Required_field_error_generic",
+            ErrorMessageResourceType = typeof(ResourceCommon))]
+        [Display(Name = "Last_name", ResourceType = typeof(ResourceCommon))]
         public string LastName { get; set; }
 
-        [Required]
+        [Required(
+            ErrorMessageResourceName = "Required_field_error_generic",
+            ErrorMessageResourceType = typeof(ResourceCommon))]
+        [Display(Name = "Username", ResourceType = typeof(ResourceCommon))]
         public string Username { get; set; }
 
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
+        [Required(
+            ErrorMessageResourceName = "Required_field_error_generic",
+            ErrorMessageResourceType = typeof(ResourceCommon))]
+        [EmailAddress(
+            ErrorMessageResourceName = "Invalid_email_address_error_generic",
+            ErrorMessageResourceType = typeof(ResourceCommon))]
+        [Display(Name = "Email", ResourceType = typeof(ResourceCommon))]
         public string Email { get; set; }
 
-        [Required]
+        [Required(
+            ErrorMessageResourceName = "Required_field_error_generic",
+            ErrorMessageResourceType = typeof(ResourceCommon))]
         [StringLength(
             UserValidationConstants.PasswordMaxLength, 
-            ErrorMessage = "The {0} must be at least {2} characters long.", 
-            MinimumLength = UserValidationConstants.PasswordMinLength)]
+            ErrorMessageResourceName = "Length_error_generic", 
+            MinimumLength = UserValidationConstants.PasswordMinLength,
+            ErrorMessageResourceType = typeof(ResourceCommon))]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", ResourceType = typeof(ResourceCommon))]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Confirm_password", ResourceType = typeof(ResourceCommon))]
+        [Compare(
+            "Password", 
+            ErrorMessageResourceName = "Confirm_password_no_match_error", 
+            ErrorMessageResourceType = typeof(ResourceCommon))]
         public string ConfirmPassword { get; set; }
     }
 }
