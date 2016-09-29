@@ -13,6 +13,7 @@ namespace HappyMe.Common
     using System.Threading.Tasks;
     using System.Web.Configuration;
 
+    /// TODO: Reimplement as a normal class and use IoC to inject where needed. It would be easier to test
     public sealed class MailSender
     {
 #if DEBUG
