@@ -410,6 +410,7 @@
                     {
                         return GlobalCommonResource.General_error;
                     }
+
                 case ManageMessageId.AddPhoneSuccess:
                     {
                         return Resource.Phone_number_added;

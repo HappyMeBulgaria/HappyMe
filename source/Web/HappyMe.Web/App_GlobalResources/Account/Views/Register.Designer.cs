@@ -117,9 +117,9 @@ namespace Resources.Account.Views {
         /// <summary>
         ///   Looks up a localized string similar to Регистрация.
         /// </summary>
-        public static string Register {
+        public static string Register_button {
             get {
-                return ResourceManager.GetString("Register", resourceCulture);
+                return ResourceManager.GetString("Register_button", resourceCulture);
             }
         }
         
@@ -147,6 +147,15 @@ namespace Resources.Account.Views {
         public static string Registration_info_section {
             get {
                 return ResourceManager.GetString("Registration_info_section", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Регистрация.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
         
