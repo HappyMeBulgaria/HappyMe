@@ -63,7 +63,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MoreDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MoreDotNet.0.5\lib\MoreDotNet.dll</HintPath>
+      <HintPath>..\..\packages\MoreDotNet.0.6\lib\MoreDotNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

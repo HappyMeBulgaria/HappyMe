@@ -5,7 +5,7 @@
     using System.Threading.Tasks;
     using HappyMe.Data.Contracts.Repositories.Contracts;
 
-    using MoreDotNet.Extentions.Collections;
+    using MoreDotNet.Extensions.Collections;
 
     public class InMemoryRepository<T, TKey> : IRepository<T>
         where T : class, IIdentifiable<TKey>

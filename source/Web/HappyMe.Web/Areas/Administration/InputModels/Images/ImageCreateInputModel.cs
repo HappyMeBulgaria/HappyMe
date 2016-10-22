@@ -9,7 +9,7 @@
     using HappyMe.Common.Mapping;
     using HappyMe.Data.Models;
 
-    using MoreDotNet.Extentions.Common;
+    using MoreDotNet.Extensions.Common;
 
     public class ImageCreateInputModel : IMapFrom<Image>, IMapTo<Image>, IHaveCustomMappings
     {

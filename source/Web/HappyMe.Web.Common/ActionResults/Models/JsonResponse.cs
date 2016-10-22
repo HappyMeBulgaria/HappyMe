@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    using MoreDotNet.Extentions.Collections;
+    using MoreDotNet.Extensions.Collections;
 
     internal class JsonResponse
     {

@@ -14,7 +14,7 @@
 
     using Moq;
 
-    using MoreDotNet.Extentions.Common;
+    using MoreDotNet.Extensions.Common;
 
     using Xunit;
 

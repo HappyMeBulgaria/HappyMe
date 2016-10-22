@@ -9,7 +9,7 @@
     using System.Web.Mvc;
     using System.Web.Routing;
 
-    using MoreDotNet.Extentions.Collections;
+    using MoreDotNet.Extensions.Collections;
 
     public static class HtmlHelperExtensions
     {

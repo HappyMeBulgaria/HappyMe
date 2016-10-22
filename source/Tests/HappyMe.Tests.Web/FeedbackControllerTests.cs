@@ -14,7 +14,7 @@
     using HappyMe.Web.Controllers;
     using HappyMe.Web.InputModels.Feedback;
 
-    using MoreDotNet.Extentions.Common;
+    using MoreDotNet.Extensions.Common;
 
     using Xunit;
 

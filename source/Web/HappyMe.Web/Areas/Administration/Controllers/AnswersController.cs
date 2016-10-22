@@ -11,7 +11,7 @@
 
     using InputModels.Answers;
 
-    using MoreDotNet.Extentions.Common;
+    using MoreDotNet.Extensions.Common;
 
     using Services.Administration.Contracts;
     using Services.Common.Mapping.Contracts;
