@@ -10,13 +10,14 @@
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
-    using HappyMe.Web.Areas.Administration.InputModels.Users;
-    using HappyMe.Web.Areas.Administration.ViewModels.Users;
     using HappyMe.Web.Common.Attributes;
     using HappyMe.Web.Common.Extensions;
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+
+    using Models.Areas.Administration.InputModels.Users;
+    using Models.Areas.Administration.ViewModels.Users;
 
     [AuthorizeRoles(RoleConstants.Administrator, RoleConstants.Parent)]
     public class UsersController : 

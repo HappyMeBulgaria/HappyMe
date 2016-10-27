@@ -8,9 +8,10 @@
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
-    using HappyMe.Web.Areas.Administration.ViewModels.Dashboard;
 
     using Microsoft.AspNet.Identity;
+
+    using Models.Areas.Administration.ViewModels.Dashboard;
 
     public class DashboardController : AdministrationController
     {

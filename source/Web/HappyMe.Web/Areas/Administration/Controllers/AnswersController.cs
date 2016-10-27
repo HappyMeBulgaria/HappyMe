@@ -9,13 +9,13 @@
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
 
-    using InputModels.Answers;
+    using Models.Areas.Administration.InputModels.Answers;
+    using Models.Areas.Administration.ViewModels.Answers;
 
     using MoreDotNet.Extensions.Common;
 
     using Services.Administration.Contracts;
     using Services.Common.Mapping.Contracts;
-    using ViewModels.Answers;
 
     public class AnswersController :
         MvcGridAdministrationCrudController<Answer, AnswerGridViewModel, AnswerCreateInputModel, AnswerUpdateInputModel>

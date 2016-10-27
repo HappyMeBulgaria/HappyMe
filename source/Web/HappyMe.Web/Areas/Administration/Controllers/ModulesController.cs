@@ -10,9 +10,10 @@
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
-    using HappyMe.Web.Areas.Administration.InputModels.Modules;
-    using HappyMe.Web.Areas.Administration.ViewModels.Modules;
     using HappyMe.Web.Common.Extensions;
+
+    using Models.Areas.Administration.InputModels.Modules;
+    using Models.Areas.Administration.ViewModels.Modules;
 
     using MoreDotNet.Extensions.Common;
 
