@@ -1,4 +1,6 @@
-﻿namespace HappyMe.Tests.Web
+﻿using HappyMe.Web.Models.ViewModels.Modules;
+
+namespace HappyMe.Tests.Web
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -10,7 +12,6 @@
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Tests.Web.Common;
     using HappyMe.Web.Controllers;
-    using HappyMe.Web.ViewModels.Modules;
 
     using Moq;
 

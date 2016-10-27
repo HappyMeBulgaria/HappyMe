@@ -1,29 +1,27 @@
-namespace HappyMe.Web.ViewModels.Account
+﻿namespace HappyMe.Web.Models.ViewModels.Account
 {
     using System.ComponentModel.DataAnnotations;
 
     using GlobalCommonResource = Resources.GlobalCommon;
-    using Resource = Resources.Account.ViewModels.VerifyCodeViewModel;
+    using Resource = Resources.Account.ViewModels.LoginViewModel;
     using ResourceCommon = Resources.Account.AccountCommon;
 
-    public class VerifyCodeViewModel
+    public class LoginViewModel
     {
         [Required(
             ErrorMessageResourceName = "Required_field_error_generic",
             ErrorMessageResourceType = typeof(GlobalCommonResource))]
-        public string Provider { get; set; }
+        [Display(Name = "Username", ResourceType = typeof(ResourceCommon))]
+        public string Username { get; set; }
 
         [Required(
             ErrorMessageResourceName = "Required_field_error_generic",
             ErrorMessageResourceType = typeof(GlobalCommonResource))]
-        [Display(Name = "Code", ResourceType = typeof(Resource))]
-        public string Code { get; set; }
+        [DataType(DataType.Password)]
+        [Display(Name = "Password", ResourceType = typeof(ResourceCommon))]
+        public string Password { get; set; }
 
-        public string ReturnUrl { get; set; }
-
-        [Display(Name = "Remember_browser", ResourceType = typeof(Resource))]
-        public bool RememberBrowser { get; set; }
-
+        [Display(Name = "Remember_me", ResourceType = typeof(Resource))]
         public bool RememberMe { get; set; }
     }
 }

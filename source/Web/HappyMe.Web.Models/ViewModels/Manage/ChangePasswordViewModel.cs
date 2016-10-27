@@ -1,4 +1,4 @@
-namespace HappyMe.Web.ViewModels.Manage
+namespace HappyMe.Web.Models.ViewModels.Manage
 {
     using System.ComponentModel.DataAnnotations;
 

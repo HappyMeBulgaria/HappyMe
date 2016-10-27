@@ -1,4 +1,6 @@
-﻿namespace HappyMe.Tests.Web
+﻿using HappyMe.Web.Models.InputModels.Feedback;
+
+namespace HappyMe.Tests.Web
 {
     using System.Linq;
     using System.Threading.Tasks;
@@ -12,8 +14,6 @@
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Tests.Web.Common;
     using HappyMe.Web.Controllers;
-    using HappyMe.Web.InputModels.Feedback;
-
     using MoreDotNet.Extensions.Common;
 
     using Xunit;

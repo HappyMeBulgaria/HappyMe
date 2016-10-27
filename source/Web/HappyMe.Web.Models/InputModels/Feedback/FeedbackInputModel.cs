@@ -1,4 +1,4 @@
-﻿namespace HappyMe.Web.InputModels.Feedback
+﻿namespace HappyMe.Web.Models.InputModels.Feedback
 {
     using System.ComponentModel.DataAnnotations;
 

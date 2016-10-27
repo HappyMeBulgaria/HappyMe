@@ -1,4 +1,6 @@
-﻿namespace HappyMe.Web.Controllers
+﻿using HappyMe.Web.Models.InputModels.Feedback;
+
+namespace HappyMe.Web.Controllers
 {
     using System.Threading.Tasks;
     using System.Web.Mvc;
@@ -6,8 +8,6 @@
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Common.Extensions;
     using HappyMe.Web.Controllers.Base;
-    using HappyMe.Web.InputModels.Feedback;
-
     using Resource = Resources.Feedback.FeedbackController;
 
     public class FeedbackController : BaseController

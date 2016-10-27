@@ -1,4 +1,7 @@
-﻿namespace HappyMe.Web.Controllers
+﻿using HappyMe.Web.Models.InputModels.Questions;
+using HappyMe.Web.Models.ViewModels.Questions;
+
+namespace HappyMe.Web.Controllers
 {
     using System.Threading.Tasks;
     using System.Web.Mvc;
@@ -6,9 +9,6 @@
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Common.Extensions;
     using HappyMe.Web.Controllers.Base;
-    using HappyMe.Web.InputModels.Questions;
-    using HappyMe.Web.ViewModels.Questions;
-
     using Microsoft.AspNet.Identity;
 
     using GlobalCommonResource = Resources.GlobalCommon;

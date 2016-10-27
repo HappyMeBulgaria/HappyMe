@@ -1,4 +1,4 @@
-﻿namespace HappyMe.Web.ViewModels.Account
+﻿namespace HappyMe.Web.Models.ViewModels.Account
 {
     using System.ComponentModel.DataAnnotations;
 
