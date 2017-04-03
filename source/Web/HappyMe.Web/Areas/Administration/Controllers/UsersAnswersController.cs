@@ -9,9 +9,8 @@
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
+    using HappyMe.Web.Areas.Administration.ViewModels.UsersAnswers;
     using HappyMe.Web.Common.Extensions;
-
-    using Models.Areas.Administration.ViewModels.UsersAnswers;
 
     using MoreDotNet.Extensions.Common;
 

@@ -8,10 +8,9 @@
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
+    using HappyMe.Web.Areas.Administration.InputModels.UsersInModules;
+    using HappyMe.Web.Areas.Administration.ViewModels.UsersInModules;
     using HappyMe.Web.Common.Extensions;
-
-    using Models.Areas.Administration.InputModels.UsersInModules;
-    using Models.Areas.Administration.ViewModels.UsersInModules;
 
     public class UsersInModulesController :
         MvcGridAdministrationCrudController<UserInModule, UserInModuleGridViewModel, UserInModuleCreateInputModel, UserInModuleCreateInputModel>

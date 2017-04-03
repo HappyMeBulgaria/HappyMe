@@ -9,11 +9,10 @@
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
+    using HappyMe.Web.Areas.Administration.InputModels.Images;
+    using HappyMe.Web.Areas.Administration.ViewModels.Images;
     using HappyMe.Web.Common.Attributes;
     using HappyMe.Web.Common.Extensions;
-
-    using Models.Areas.Administration.InputModels.Images;
-    using Models.Areas.Administration.ViewModels.Images;
 
     [AuthorizeRoles(RoleConstants.Administrator)]
     public class ImagesController : 

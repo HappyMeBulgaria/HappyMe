@@ -6,9 +6,8 @@
     using HappyMe.Services.Administration.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
+    using HappyMe.Web.Areas.Administration.ViewModels.ChildrenStatistics;
     using HappyMe.Web.Common.Extensions;
-
-    using Models.Areas.Administration.ViewModels.ChildrenStatistics;
 
     public class ChildrenStatisticsController : AdministrationController
     {

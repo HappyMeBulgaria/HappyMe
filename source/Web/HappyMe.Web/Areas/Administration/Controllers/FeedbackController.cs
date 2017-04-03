@@ -8,9 +8,8 @@
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Areas.Administration.Controllers.Base;
+    using HappyMe.Web.Areas.Administration.ViewModels.Feedback;
     using HappyMe.Web.Common.Extensions;
-
-    using Models.Areas.Administration.ViewModels.Feedback;
 
     public class FeedbackController : MvcGridAdministrationReadAndDeleteController<Feedback, FeedbackGridViewModel>
     {

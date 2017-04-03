@@ -34,20 +34,8 @@
       <HintPath>..\..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -58,10 +46,6 @@
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MoreDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MoreDotNet.0.6\lib\MoreDotNet.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
@@ -69,7 +53,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -102,31 +85,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Areas\Administration\InputModels\Answers\AnswerCreateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Answers\AnswerUpdateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Images\ImageCreateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Images\ImageUpdateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Modules\ModuleCreateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Modules\ModuleUpdateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Questions\QuestionCreateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Questions\QuestionUpdateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\UsersInModules\UserInModuleCreateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Users\AddUserInRoleInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Users\UserCreateInputModel.cs" />
-    <Compile Include="Areas\Administration\InputModels\Users\UserUpdateInputModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\Answers\AnswerGridViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\AllChildStatisticsViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\AllParentStatisticsViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\ChildrenStatistics\ChildStatisticsIndexViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\Dashboard\ChildViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\Dashboard\DashboardIndexViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\Feedback\FeedbackGridViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\Images\ImageGridViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\Modules\ModuleGridViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\Questions\QuestionGridViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\UsersAnswers\UserAnswerGridViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\UsersInModules\UserInModuleGridViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\Users\UserGridViewModel.cs" />
     <Compile Include="InputModels\Feedback\FeedbackInputModel.cs" />
     <Compile Include="InputModels\Questions\AnswerQuestionInputModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -168,17 +126,8 @@
       <Project>{be0b0219-3996-433e-b63b-5bf485f9230c}</Project>
       <Name>HappyMe.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Services\HappyMe.Services.Administration\HappyMe.Services.Administration.csproj">
-      <Project>{39A959EB-97EB-4FFD-BDF4-6BF9DDFE24A4}</Project>
-      <Name>HappyMe.Services.Administration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HappyMe.Web.Common\HappyMe.Web.Common.csproj">
-      <Project>{93689A76-EBBA-45A7-8DA4-CC1376BD0D1D}</Project>
-      <Name>HappyMe.Web.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
