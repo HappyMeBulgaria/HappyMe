@@ -43,12 +43,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyMe.Tests.Web", "Tests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyMe.Tests.Services.Data", "Tests\HappyMe.Tests.Services.Data\HappyMe.Tests.Services.Data.csproj", "{C9E926BA-713B-4EE8-A073-C5DE532A5AE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyMe.Web.Models", "Web\HappyMe.Web.Models\HappyMe.Web.Models.csproj", "{51F45DA5-B893-4411-9722-D90BEDEFD7DF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{044D64AD-D767-4983-9CE4-0EE63FFAAA30}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyMe.Common.Resources", "Common\HappyMe.Common.Resources\HappyMe.Common.Resources.csproj", "{A3D82381-E2B6-4396-A1E5-ED4B0731B383}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,14 +97,6 @@ Global
 		{C9E926BA-713B-4EE8-A073-C5DE532A5AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9E926BA-713B-4EE8-A073-C5DE532A5AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9E926BA-713B-4EE8-A073-C5DE532A5AE5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51F45DA5-B893-4411-9722-D90BEDEFD7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51F45DA5-B893-4411-9722-D90BEDEFD7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51F45DA5-B893-4411-9722-D90BEDEFD7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51F45DA5-B893-4411-9722-D90BEDEFD7DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3D82381-E2B6-4396-A1E5-ED4B0731B383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3D82381-E2B6-4396-A1E5-ED4B0731B383}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3D82381-E2B6-4396-A1E5-ED4B0731B383}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3D82381-E2B6-4396-A1E5-ED4B0731B383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,7 +113,5 @@ Global
 		{F855A95E-405E-4415-8263-D2B9ACC2783D} = {8213308F-E05D-42A4-B424-958EA9D86457}
 		{41FE5B25-918D-4B50-BCA7-D647A5BC4BFD} = {8213308F-E05D-42A4-B424-958EA9D86457}
 		{C9E926BA-713B-4EE8-A073-C5DE532A5AE5} = {8213308F-E05D-42A4-B424-958EA9D86457}
-		{51F45DA5-B893-4411-9722-D90BEDEFD7DF} = {27782304-ABCA-473C-A2CB-50DBD09563F6}
-		{A3D82381-E2B6-4396-A1E5-ED4B0731B383} = {044D64AD-D767-4983-9CE4-0EE63FFAAA30}
 	EndGlobalSection
 EndGlobal
