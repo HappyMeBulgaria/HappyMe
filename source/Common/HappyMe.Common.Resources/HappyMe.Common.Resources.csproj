@@ -278,286 +278,241 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\AccountCommon.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+    <EmbeddedResource Include="Account\AccountCommon.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AccountCommon.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\AccountController.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\AccountController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AccountController.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\ViewModels\LoginViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\ViewModels\LoginViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LoginViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\ViewModels\RegisterViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\ViewModels\RegisterViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RegisterViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\ViewModels\VerifyCodeViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\ViewModels\VerifyCodeViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>VerifyCodeViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\ConfirmEmail.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\ConfirmEmail.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ConfirmEmail.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\ExternalLoginConfirmation.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\ExternalLoginConfirmation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ExternalLoginConfirmation.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\ExternalLoginFailure.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\ExternalLoginFailure.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ExternalLoginFailure.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\ExternalLoginsListPartial.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\ExternalLoginsListPartial.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ExternalLoginsListPartial.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\ForgotPassword.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\ForgotPassword.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ForgotPassword.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\ForgotPasswordConfirmation.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\ForgotPasswordConfirmation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ForgotPasswordConfirmation.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\Login.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\Login.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Login.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\Register.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\Register.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Register.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\ResetPassword.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\ResetPassword.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ResetPassword.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\ResetPasswordConfirmation.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\ResetPasswordConfirmation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ResetPasswordConfirmation.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\SendCode.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\SendCode.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SendCode.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Account\Views\VerifyCode.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account\Views\VerifyCode.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>VerifyCode.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Feedback\FeedbackController.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Account.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback\FeedbackController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FeedbackController.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Feedback\InputModels\FeedbackInputModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Feedback</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback\InputModels\FeedbackInputModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FeedbackInputModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Feedback\Views\Success.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Feedback.InputModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback\Views\Success.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Success.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Home\Views\Index.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Index.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\ManageController.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>ManageController.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\ViewModels\AddPhoneNumberViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>AddPhoneNumberViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\ViewModels\ChangePasswordViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>ChangePasswordViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\ViewModels\ConfigureTwoFactorViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>ConfigureTwoFactorViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\ViewModels\FactorViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>FactorViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\ViewModels\IndexViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>IndexViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\ViewModels\SetPasswordViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>SetPasswordViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\ViewModels\VerifyPhoneNumberViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>VerifyPhoneNumberViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\Views\AddPhoneNumber.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>AddPhoneNumber.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\Views\ChangePassword.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>ChangePassword.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\Views\Index.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Index.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\Views\ManageLogins.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>ManageLogins.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\Views\SetPassword.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>SetPassword.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Manage\Views\VerifyPhoneNumber.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>VerifyPhoneNumber.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Modules\ModulesController.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>ModulesController.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Modules\ViewModels\ModuleViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>ModuleViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Modules\Views\Index.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Index.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Modules\Views\Success.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Success.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Questions\QuestionsController.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>QuestionsController.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Questions\ViewModels\AnswerViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>AnswerViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Questions\ViewModels\QuestionViewModel.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>QuestionViewModel.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Questions\Views\AlphabetQuestion.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>AlphabetQuestion.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Questions\Views\ColorQuestion.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>ColorQuestion.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Questions\Views\DragAndDropQuestion.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>DragAndDropQuestion.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Questions\Views\ImageQuestion.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>ImageQuestion.Designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GlobalCommon.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <CustomToolNamespace>Resources.Feedback.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalCommon.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GlobalCommon.Designer.cs</LastGenOutput>
-    </Content>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\Views\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Home.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ManageController.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ViewModels\AddPhoneNumberViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AddPhoneNumberViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ViewModels\ChangePasswordViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePasswordViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ViewModels\ConfigureTwoFactorViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConfigureTwoFactorViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ViewModels\FactorViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FactorViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ViewModels\IndexViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>IndexViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ViewModels\SetPasswordViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SetPasswordViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ViewModels\VerifyPhoneNumberViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VerifyPhoneNumberViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Views\AddPhoneNumber.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AddPhoneNumber.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Views\ChangePassword.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePassword.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Views\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Views\ManageLogins.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ManageLogins.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Views\SetPassword.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SetPassword.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Views\VerifyPhoneNumber.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VerifyPhoneNumber.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ModulesController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ModulesController.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Modules</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ViewModels\ModuleViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ModuleViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Modules.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Views\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Modules.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Views\Success.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Success.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Modules.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Questions\QuestionsController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuestionsController.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Questions\ViewModels\AnswerViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AnswerViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Questions\ViewModels\QuestionViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuestionViewModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.ViewModels</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Questions\Views\AlphabetQuestion.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AlphabetQuestion.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Questions\Views\ColorQuestion.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ColorQuestion.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Questions\Views\DragAndDropQuestion.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DragAndDropQuestion.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Questions\Views\ImageQuestion.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImageQuestion.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
