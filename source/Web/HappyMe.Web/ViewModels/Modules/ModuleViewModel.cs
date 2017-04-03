@@ -1,4 +1,4 @@
-﻿namespace HappyMe.Web.Models.ViewModels.Modules
+﻿namespace HappyMe.Web.ViewModels.Modules
 {
     using System;
 

@@ -1,6 +1,4 @@
-﻿using HappyMe.Web.Models.ViewModels.Account;
-
-namespace HappyMe.Web.Controllers
+﻿namespace HappyMe.Web.Controllers
 {
     using System.Linq;
     using System.Threading.Tasks;
@@ -10,6 +8,8 @@ namespace HappyMe.Web.Controllers
     using HappyMe.Common.Constants;
     using HappyMe.Data.Models;
     using HappyMe.Web.Controllers.Base;
+    using HappyMe.Web.ViewModels.Account;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;

@@ -1,4 +1,4 @@
-namespace HappyMe.Web.Models.ViewModels.Account
+namespace HappyMe.Web.ViewModels.Account
 {
     using System.ComponentModel.DataAnnotations;
 
@@ -7,32 +7,12 @@ namespace HappyMe.Web.Models.ViewModels.Account
     using GlobalCommonResource = Resources.GlobalCommon;
     using ResourceCommon = Resources.Account.AccountCommon;
 
-    public class RegisterViewModel
+    public class ResetPasswordViewModel
     {
         [Required(
             ErrorMessageResourceName = "Required_field_error_generic",
             ErrorMessageResourceType = typeof(GlobalCommonResource))]
-        [Display(Name = "First_name", ResourceType = typeof(ResourceCommon))]
-        public string FirstName { get; set; }
-
-        [Required(
-            ErrorMessageResourceName = "Required_field_error_generic",
-            ErrorMessageResourceType = typeof(GlobalCommonResource))]
-        [Display(Name = "Last_name", ResourceType = typeof(ResourceCommon))]
-        public string LastName { get; set; }
-
-        [Required(
-            ErrorMessageResourceName = "Required_field_error_generic",
-            ErrorMessageResourceType = typeof(GlobalCommonResource))]
-        [Display(Name = "Username", ResourceType = typeof(ResourceCommon))]
-        public string Username { get; set; }
-
-        [Required(
-            ErrorMessageResourceName = "Required_field_error_generic",
-            ErrorMessageResourceType = typeof(GlobalCommonResource))]
-        [EmailAddress(
-            ErrorMessageResourceName = "Invalid_email_address_error_generic",
-            ErrorMessageResourceType = typeof(GlobalCommonResource))]
+        [EmailAddress]
         [Display(Name = "Email", ResourceType = typeof(ResourceCommon))]
         public string Email { get; set; }
 
@@ -51,9 +31,11 @@ namespace HappyMe.Web.Models.ViewModels.Account
         [DataType(DataType.Password)]
         [Display(Name = "Confirm_password", ResourceType = typeof(ResourceCommon))]
         [Compare(
-            "Password", 
-            ErrorMessageResourceName = "Confirm_password_no_match_error", 
+            "Password",
+            ErrorMessageResourceName = "Confirm_password_no_match_error",
             ErrorMessageResourceType = typeof(ResourceCommon))]
         public string ConfirmPassword { get; set; }
+
+        public string Code { get; set; }
     }
 }

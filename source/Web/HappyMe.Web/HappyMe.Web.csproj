@@ -260,10 +260,32 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="InputModels\Feedback\FeedbackInputModel.cs" />
+    <Compile Include="InputModels\Questions\AnswerQuestionInputModel.cs" />
+    <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Account\ExternalLoginListViewModel.cs" />
+    <Compile Include="ViewModels\Account\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Account\ForgotViewModel.cs" />
+    <Compile Include="ViewModels\Account\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Account\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
+    <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
+    <Compile Include="ViewModels\Manage\IndexViewModel.cs" />
+    <Compile Include="ViewModels\Manage\ManageLoginsViewModel.cs" />
+    <Compile Include="ViewModels\Manage\ConfigureTwoFactorViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Modules\ModuleViewModel.cs" />
+    <Compile Include="ViewModels\Questions\AnswerViewModel.cs" />
+    <Compile Include="ViewModels\Questions\QuestionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\custom\administration-styles.css" />
@@ -1135,10 +1157,6 @@
     <ProjectReference Include="..\HappyMe.Web.Common\HappyMe.Web.Common.csproj">
       <Project>{93689a76-ebba-45a7-8da4-cc1376bd0d1d}</Project>
       <Name>HappyMe.Web.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HappyMe.Web.Models\HappyMe.Web.Models.csproj">
-      <Project>{51f45da5-b893-4411-9722-d90bedefd7df}</Project>
-      <Name>HappyMe.Web.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

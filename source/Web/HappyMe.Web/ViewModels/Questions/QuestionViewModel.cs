@@ -1,4 +1,4 @@
-﻿namespace HappyMe.Web.Models.ViewModels.Questions
+﻿namespace HappyMe.Web.ViewModels.Questions
 {
     using System;
     using System.Collections.Generic;

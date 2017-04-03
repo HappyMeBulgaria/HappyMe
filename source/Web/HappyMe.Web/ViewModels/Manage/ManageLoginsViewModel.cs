@@ -1,4 +1,4 @@
-namespace HappyMe.Web.Models.ViewModels.Manage
+namespace HappyMe.Web.ViewModels.Manage
 {
     using System.Collections.Generic;
 

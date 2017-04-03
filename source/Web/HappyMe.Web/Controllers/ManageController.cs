@@ -1,12 +1,13 @@
-﻿using HappyMe.Web.Models.ViewModels.Manage;
-
-namespace HappyMe.Web.Controllers
+﻿namespace HappyMe.Web.Controllers
 {
     using System;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
+
+    using HappyMe.Web.ViewModels.Manage;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;

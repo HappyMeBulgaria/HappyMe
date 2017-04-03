@@ -1,6 +1,4 @@
-﻿using HappyMe.Web.Models.ViewModels.Modules;
-
-namespace HappyMe.Web.Controllers
+﻿namespace HappyMe.Web.Controllers
 {
     using System.Linq;
     using System.Threading.Tasks;
@@ -11,6 +9,8 @@ namespace HappyMe.Web.Controllers
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Common.Extensions;
     using HappyMe.Web.Controllers.Base;
+    using HappyMe.Web.ViewModels.Modules;
+
     using Microsoft.AspNet.Identity;
 
     using Resource = Resources.Modules.ModulesController;

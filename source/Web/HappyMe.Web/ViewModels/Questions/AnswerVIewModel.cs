@@ -1,7 +1,6 @@
-﻿namespace HappyMe.Web.Models.ViewModels.Questions
+﻿namespace HappyMe.Web.ViewModels.Questions
 {
     using System;
-
     using AutoMapper;
 
     using HappyMe.Common.Mapping;

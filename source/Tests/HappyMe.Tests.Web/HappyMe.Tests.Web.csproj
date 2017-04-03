@@ -143,10 +143,6 @@
       <Project>{862BD9D3-A1C0-4D9B-93A0-DD65A443E97B}</Project>
       <Name>HappyMe.Services.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Web\HappyMe.Web.Models\HappyMe.Web.Models.csproj">
-      <Project>{51F45DA5-B893-4411-9722-D90BEDEFD7DF}</Project>
-      <Name>HappyMe.Web.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Web\HappyMe.Web\HappyMe.Web.csproj">
       <Project>{7a3b6260-f9cd-4c02-8e6a-fab82d12c539}</Project>
       <Name>HappyMe.Web</Name>

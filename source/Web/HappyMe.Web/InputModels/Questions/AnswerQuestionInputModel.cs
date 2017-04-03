@@ -1,4 +1,4 @@
-﻿namespace HappyMe.Web.Models.InputModels.Questions
+﻿namespace HappyMe.Web.InputModels.Questions
 {
     public class AnswerQuestionInputModel
     {
