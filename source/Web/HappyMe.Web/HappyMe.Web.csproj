@@ -1068,7 +1068,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="App_GlobalResources\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
   </ItemGroup>
