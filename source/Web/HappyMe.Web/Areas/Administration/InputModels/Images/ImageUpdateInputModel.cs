@@ -2,8 +2,6 @@
 {
     using System.Web.Mvc;
 
-    using HappyMe.Common.Mapping;
-
     public class ImageUpdateInputModel : ImageCreateInputModel
     {
         [HiddenInput(DisplayValue = false)]

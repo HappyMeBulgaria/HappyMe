@@ -1,7 +1,6 @@
 ﻿namespace HappyMe.Web.Areas.Administration.InputModels.Images
 {
     using System.ComponentModel.DataAnnotations;
-    using System.IO;
     using System.Web;
 
     using AutoMapper;

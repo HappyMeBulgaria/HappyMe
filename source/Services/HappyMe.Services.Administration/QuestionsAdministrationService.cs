@@ -4,7 +4,6 @@
 
     using Base;
     using Contracts;
-    using Data.Contracts.Repositories;
     using Data.Models;
 
     using HappyMe.Data.Contracts.Repositories.Contracts;

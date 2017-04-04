@@ -117,9 +117,9 @@ namespace Resources.Account.Views {
         /// <summary>
         ///   Looks up a localized string similar to Регистрация.
         /// </summary>
-        public static string Register {
+        public static string Register_text {
             get {
-                return ResourceManager.GetString("Register", resourceCulture);
+                return ResourceManager.GetString("Register_text", resourceCulture);
             }
         }
         

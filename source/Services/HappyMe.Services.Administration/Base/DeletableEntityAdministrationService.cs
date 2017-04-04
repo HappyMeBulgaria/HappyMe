@@ -3,7 +3,6 @@
     using System.Linq;
 
     using HappyMe.Data.Contracts.Models;
-    using HappyMe.Data.Contracts.Repositories;
     using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Services.Administration.Contracts;
 

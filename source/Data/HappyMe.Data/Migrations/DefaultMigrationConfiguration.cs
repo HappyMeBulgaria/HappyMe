@@ -2,11 +2,9 @@
 {
     using System;
     using System.Configuration;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.IO;
     using System.Linq;
-    using System.Net.Http;
     using System.Web.Hosting;
 
     using HappyMe.Common.Constants;

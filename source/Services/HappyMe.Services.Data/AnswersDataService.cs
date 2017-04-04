@@ -1,12 +1,7 @@
 ﻿namespace HappyMe.Services.Data
 {
     using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Linq;
     using System.Threading.Tasks;
-
-    using HappyMe.Common.Models;
     using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Data.Models;
     using HappyMe.Services.Data.Contracts;

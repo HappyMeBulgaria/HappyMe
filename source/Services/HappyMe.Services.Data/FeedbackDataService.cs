@@ -2,8 +2,6 @@
 {
     using System;
     using System.Threading.Tasks;
-
-    using HappyMe.Data.Contracts.Repositories;
     using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Data.Models;
     using HappyMe.Services.Data.Contracts;

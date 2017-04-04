@@ -1,6 +1,5 @@
 ﻿namespace HappyMe.Web.Areas.Administration.InputModels.Questions
 {
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Web;
     using System.Web.Mvc;

@@ -1,10 +1,7 @@
 ﻿namespace HappyMe.Web.Areas.Administration.ViewModels.Questions
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
     using HappyMe.Common.Mapping;
     using HappyMe.Common.Models;

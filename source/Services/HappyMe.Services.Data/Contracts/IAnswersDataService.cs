@@ -1,10 +1,6 @@
 ﻿namespace HappyMe.Services.Data.Contracts
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks;
-
-    using HappyMe.Common.Models;
-    using HappyMe.Data.Models;
     using HappyMe.Services.Common;
 
     public interface IAnswersDataService : IService

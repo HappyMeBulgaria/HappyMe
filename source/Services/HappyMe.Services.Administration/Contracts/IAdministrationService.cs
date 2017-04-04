@@ -1,8 +1,6 @@
 ﻿namespace HappyMe.Services.Administration.Contracts
 {
     using System.Linq;
-
-    using HappyMe.Data.Contracts;
     using HappyMe.Services.Common;
 
     public interface IAdministrationService<TEntity> : IService

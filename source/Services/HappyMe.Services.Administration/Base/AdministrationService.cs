@@ -1,9 +1,6 @@
 ﻿namespace HappyMe.Services.Administration.Base
 {
     using System.Linq;
-
-    using HappyMe.Data.Contracts;
-    using HappyMe.Data.Contracts.Repositories;
     using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Services.Administration.Contracts;
 

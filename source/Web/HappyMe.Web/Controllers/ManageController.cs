@@ -1,6 +1,5 @@
 ﻿namespace HappyMe.Web.Controllers
 {
-    using System;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web;
@@ -392,38 +391,39 @@
             switch (message)
             {
                 case ManageMessageId.ChangePasswordSuccess:
-                    {
-                        return Resource.Password_has_been_changed;
-                    }
+                {
+                    return Resource.Password_has_been_changed;
+                }
 
                 case ManageMessageId.SetPasswordSuccess:
-                    {
-                        return Resource.Password_has_been_set;
-                    }
+                {
+                    return Resource.Password_has_been_set;
+                }
 
                 case ManageMessageId.SetTwoFactorSuccess:
-                    {
-                        return Resource.Two_factor_authentication_set;
-                    }
+                {
+                    return Resource.Two_factor_authentication_set;
+                }
 
                 case ManageMessageId.Error:
-                    {
-                        return GlobalCommonResource.General_error;
-                    }
+                {
+                    return GlobalCommonResource.General_error;
+                }
+
                 case ManageMessageId.AddPhoneSuccess:
-                    {
-                        return Resource.Phone_number_added;
-                    }
+                {
+                    return Resource.Phone_number_added;
+                }
 
                 case ManageMessageId.RemovePhoneSuccess:
-                    {
-                        return Resource.Phone_number_removed;
-                    }
+                {
+                    return Resource.Phone_number_removed;
+                }
 
                 default:
-                    {
-                        return string.Empty;
-                    }
+                {
+                    return string.Empty;
+                }
             }
         }
 
