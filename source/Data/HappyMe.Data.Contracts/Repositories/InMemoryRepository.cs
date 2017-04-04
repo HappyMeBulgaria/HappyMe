@@ -3,9 +3,10 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+
     using HappyMe.Data.Contracts.Repositories.Contracts;
 
-    using MoreDotNet.Extentions.Common;
+    using MoreDotNet.Extensions.Collections;
 
     public class InMemoryRepository<T, TKey> : IRepository<T>
         where T : class, IIdentifiable<TKey>

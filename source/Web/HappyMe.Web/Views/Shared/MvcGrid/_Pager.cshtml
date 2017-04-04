@@ -1,36 +1,42 @@
 ﻿@using NonFactors.Mvc.Grid;
 
 @model IGridPager
+@{
+    Int32 totalPages = Model.TotalPages;
+    Int32 currentPage = Model.CurrentPage;
+    Int32 firstDisplayPage = Model.FirstDisplayPage;
+}
 
-@if (Model.TotalPages > 1)
-{
-    <div class="mvc-grid-pager @Model.CssClasses">
+<div class="mvc-grid-pager @Model.CssClasses">
+    <input class="mvc-grid-pager-rows" type="hidden" value="@Model.RowsPerPage" />
+    @if (totalPages > 0)
+    {
         <ul class="pagination">
-            @if (Model.CurrentPage > 1)
+            @if (currentPage > 1)
             {
-                <li><span data-page="1">&laquo;</span></li>
-                <li><span data-page="@(Model.CurrentPage - 1)">&lsaquo;</span></li>
+                <li data-page="1"><span>&laquo;</span></li>
+                <li data-page="@(currentPage - 1)"><span>&lsaquo;</span></li>
             }
             else
             {
                 <li class="disabled"><span>&laquo;</span></li>
                 <li class="disabled"><span>&lsaquo;</span></li>
             }
-            @for (Int32 page = Model.FirstDisplayPage; page <= Model.TotalPages && page < Model.FirstDisplayPage + Model.PagesToDisplay; page++)
+            @for (Int32 page = firstDisplayPage; page <= totalPages && page < firstDisplayPage + Model.PagesToDisplay; page++)
             {
-                if (page == Model.CurrentPage)
+                if (page == currentPage)
                 {
-                    <li class="active"><span>@page</span></li>
+                    <li class="active" data-page="@page"><span>@page</span></li>
                 }
                 else
                 {
-                    <li><span data-page="@page">@page</span></li>
+                    <li data-page="@page"><span>@page</span></li>
                 }
             }
-            @if (Model.CurrentPage < Model.TotalPages)
+            @if (currentPage < totalPages)
             {
-                <li><span data-page="@(Model.CurrentPage + 1)">&rsaquo;</span></li>
-                <li><span data-page="@(Model.TotalPages)">&raquo;</span></li>
+                <li data-page="@(currentPage + 1)"><span>&rsaquo;</span></li>
+                <li data-page="@totalPages"><span>&raquo;</span></li>
             }
             else
             {
@@ -38,5 +44,5 @@
                 <li class="disabled"><span>&raquo;</span></li>
             }
         </ul>
-    </div>
-}
+    }
+</div>

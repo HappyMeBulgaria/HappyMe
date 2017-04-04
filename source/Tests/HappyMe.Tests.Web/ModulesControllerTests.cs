@@ -14,7 +14,7 @@
 
     using Moq;
 
-    using MoreDotNet.Extentions.Common;
+    using MoreDotNet.Extensions.Common;
 
     using Xunit;
 
@@ -29,6 +29,7 @@
 
         public ModulesControllerTests()
         {
+            IModuleSessionDataService moduleSessionDataService;
             this.modulesDataServiceMock = new Mock<IModulesDataService>();
 
             this.moduleSessionDataService = new Mock<IModuleSessionDataService>().Object;

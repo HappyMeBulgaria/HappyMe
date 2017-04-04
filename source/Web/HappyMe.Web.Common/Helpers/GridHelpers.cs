@@ -8,7 +8,7 @@
 
     public static class GridHelper
     {
-        public static IHtmlGrid<TModel> MvcGrid<TModel>(this HtmlHelper helper, IEnumerable<TModel> source, Action<IGridColumns<TModel>> columns) 
+        public static IHtmlGrid<TModel> MvcGrid<TModel>(this HtmlHelper helper, IEnumerable<TModel> source, Action<IGridColumnsOf<TModel>> columns) 
             where TModel : class
         {
             return helper
@@ -19,7 +19,6 @@
                 .Pageable(p =>
                 {
                     p.PagesToDisplay = 5;
-                    p.InitialPage = 1;
                     p.RowsPerPage = 10;
                 });
         }

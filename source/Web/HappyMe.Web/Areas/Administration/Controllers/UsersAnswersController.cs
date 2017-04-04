@@ -12,7 +12,7 @@
     using HappyMe.Web.Areas.Administration.ViewModels.UsersAnswers;
     using HappyMe.Web.Common.Extensions;
 
-    using MoreDotNet.Extentions.Common;
+    using MoreDotNet.Extensions.Common;
 
     public class UsersAnswersController :
         MvcGridAdministrationReadAndDeleteController<UserAnswer, UserAnswerGridViewModel>

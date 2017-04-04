@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.3.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.3.0\build\Microsoft.Net.Compilers.props')" />
-  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <ExcludeFilesFromDeployment>bin/roslyn/csi.exe</ExcludeFilesFromDeployment>
@@ -58,17 +58,17 @@
       <HintPath>..\..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Build.Tasks.v4.0" />
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MoreDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MoreDotNet.0.4\lib\MoreDotNet.dll</HintPath>
+      <HintPath>..\..\packages\MoreDotNet.0.6\lib\MoreDotNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
@@ -87,8 +87,8 @@
       <HintPath>..\..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NonFactors.Mvc.Grid, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NonFactors.Grid.Core.Mvc5.2.3.2\lib\net45\NonFactors.Mvc.Grid.dll</HintPath>
+    <Reference Include="NonFactors.Mvc.Grid, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NonFactors.Grid.Core.Mvc5.3.4.0\lib\net45\NonFactors.Mvc.Grid.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -145,7 +145,7 @@
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <HintPath>..\..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -215,11 +215,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginViewModel.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Account\ViewModels\RegisterViewModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RegisterViewModel.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Account\ViewModels\VerifyCodeViewModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -291,11 +286,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FeedbackController.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Feedback\InputModels\FeedbackInputModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FeedbackInputModel.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_GlobalResources\Feedback\Views\Success.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -305,11 +295,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GlobalCommon.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Home\Views\Index.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Manage\ManageController.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -326,21 +311,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ChangePasswordViewModel.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Manage\ViewModels\ConfigureTwoFactorViewModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConfigureTwoFactorViewModel.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Manage\ViewModels\FactorViewModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FactorViewModel.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Manage\ViewModels\IndexViewModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IndexViewModel.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_GlobalResources\Manage\ViewModels\SetPasswordViewModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -351,90 +321,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VerifyPhoneNumberViewModel.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Manage\Views\AddPhoneNumber.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AddPhoneNumber.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Manage\Views\ChangePassword.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChangePassword.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Manage\Views\Index.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Manage\Views\ManageLogins.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ManageLogins.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Manage\Views\SetPassword.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SetPassword.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Manage\Views\VerifyPhoneNumber.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VerifyPhoneNumber.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_GlobalResources\Modules\ModulesController.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModulesController.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Modules\ViewModels\ModuleViewModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModuleViewModel.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_GlobalResources\Modules\Views\Index.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Modules\Views\Success.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Success.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Questions\QuestionsController.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuestionsController.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Questions\ViewModels\AnswerViewModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AnswerViewModel.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Questions\ViewModels\QuestionViewModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuestionViewModel.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Questions\Views\AlphabetQuestion.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AlphabetQuestion.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Questions\Views\ColorQuestion.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ColorQuestion.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Questions\Views\DragAndDropQuestion.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DragAndDropQuestion.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Questions\Views\ImageQuestion.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ImageQuestion.resx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Administration\Controllers\AnswersController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\AdministrationController.cs" />
@@ -523,6 +418,10 @@
     <Compile Include="ViewModels\Questions\QuestionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom\administration-styles.css" />
     <Content Include="Content\custom\authentication.css" />
     <Content Include="Content\custom\global.css" />
@@ -662,6 +561,7 @@
     <Content Include="Content\images\user-default-image.png" />
     <Content Include="Content\images\watermellon-alphabet.png" />
     <Content Include="Content\images\teamMembers\yslavcheva.png" />
+    <Content Include="Content\MvcGrid\mvc-grid.css" />
     <Content Include="Content\vendor\bootstrap\administration\style-responsive.css" />
     <Content Include="Content\vendor\bootstrap\administration\style.css" />
     <Content Include="Content\vendor\bootstrap\administration\table-responsive.css" />
@@ -687,6 +587,8 @@
     <Content Include="ImageSeed\modules-alphabet.png" />
     <Content Include="ImageSeed\modules-connect.png" />
     <Content Include="ImageSeed\sheep.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\administration\common\multiSelectHelper.js" />
     <Content Include="Scripts\custom\administration\data\dataLayer.js" />
     <Content Include="Scripts\custom\administration\statistics\child-statistics.js" />
@@ -697,6 +599,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\MvcGrid\mvc-grid.js" />
+    <Content Include="Scripts\MvcGrid\mvc-grid.min.js" />
     <Content Include="Scripts\vendor\chart\Chart.js" />
     <Content Include="Scripts\vendor\chosen\chosen.jquery.js" />
     <Content Include="Scripts\vendor\chosen\chosen.jquery.min.js" />
@@ -721,6 +637,8 @@
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.structure.min.css" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.css" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\vendor\jquery\jquery-3.0.0.intellisense.js" />
     <Content Include="Scripts\vendor\jquery\jquery-3.0.0.js" />
     <Content Include="Scripts\vendor\jquery\jquery-3.0.0.min.js" />
@@ -1322,8 +1240,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
-    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
     <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DropDownList.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
@@ -1346,9 +1262,12 @@
     <Content Include="Views\Shared\_MasterLayout.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\MultiSelectDropDownList.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_GlobalResources\Questions\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
   </ItemGroup>
@@ -1403,11 +1322,6 @@
     <EmbeddedResource Include="App_GlobalResources\Account\ViewModels\LoginViewModel.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LoginViewModel.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Account.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Account\ViewModels\RegisterViewModel.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RegisterViewModel.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources.Account.ViewModels</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Account\ViewModels\VerifyCodeViewModel.resx">
@@ -1480,11 +1394,6 @@
       <LastGenOutput>Success.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources.Feedback.Views</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Feedback\InputModels\FeedbackInputModel.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>FeedbackInputModel.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Feedback.InputModels</CustomToolNamespace>
-    </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Feedback\FeedbackController.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FeedbackController.Designer.cs</LastGenOutput>
@@ -1494,11 +1403,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GlobalCommon.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Home\Views\Index.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Index.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Home.Views</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Manage\ManageController.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -1515,21 +1419,6 @@
       <LastGenOutput>ChangePasswordViewModel.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\ConfigureTwoFactorViewModel.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ConfigureTwoFactorViewModel.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\FactorViewModel.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>FactorViewModel.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\IndexViewModel.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>IndexViewModel.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Manage\ViewModels\SetPasswordViewModel.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SetPasswordViewModel.Designer.cs</LastGenOutput>
@@ -1540,90 +1429,15 @@
       <LastGenOutput>VerifyPhoneNumberViewModel.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Manage\Views\AddPhoneNumber.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AddPhoneNumber.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Manage\Views\ChangePassword.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ChangePassword.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Manage\Views\Index.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Index.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Manage\Views\ManageLogins.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ManageLogins.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Manage\Views\SetPassword.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>SetPassword.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Manage\Views\VerifyPhoneNumber.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>VerifyPhoneNumber.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Modules\ViewModels\ModuleViewModel.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ModuleViewModel.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Modules.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Modules\Views\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Modules.Views</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Modules\Views\Success.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Success.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources.Modules.Views</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Modules\ModulesController.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ModulesController.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources.Modules</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Questions\QuestionsController.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>QuestionsController.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Questions</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Questions\Views\AlphabetQuestion.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AlphabetQuestion.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Questions\Views\ColorQuestion.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ColorQuestion.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Questions\Views\DragAndDropQuestion.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>DragAndDropQuestion.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Questions\Views\ImageQuestion.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ImageQuestion.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Questions.Views</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Questions\ViewModels\AnswerViewModel.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AnswerViewModel.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Questions.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Questions\ViewModels\QuestionViewModel.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>QuestionViewModel.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Questions.ViewModels</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -1654,18 +1468,18 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <BuildDependsOn>$([MSBuild]::Unescape($(BuildDependsOn.Replace(";StyleCop", "").Insert($(BuildDependsOn.IndexOf("BeforeBuild;")),"StyleCop;"))))</BuildDependsOn>
+  </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets'))" />
-    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.3.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.3.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets'))" />
   </Target>
-  <Import Project="..\..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets')" />
-  <PropertyGroup>
-    <BuildDependsOn>$([MSBuild]::Unescape($(BuildDependsOn.Replace(";StyleCop", "").Insert($(BuildDependsOn.IndexOf("BeforeBuild;")),"StyleCop;"))))</BuildDependsOn>
-  </PropertyGroup>
+  <Import Project="..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

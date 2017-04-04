@@ -9,7 +9,8 @@
     using HappyMe.Data.Models;
     using HappyMe.Services.Data.Contracts;
 
-    using MoreDotNet.Extentions.Common;
+    using MoreDotNet.Extensions.Collections;
+    using MoreDotNet.Extensions.Common;
     using MoreDotNet.Wrappers;
 
     public class ModuleSessionDataService : IModuleSessionDataService

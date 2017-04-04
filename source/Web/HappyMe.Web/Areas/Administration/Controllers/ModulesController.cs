@@ -14,7 +14,7 @@
     using HappyMe.Web.Areas.Administration.ViewModels.Modules;
     using HappyMe.Web.Common.Extensions;
 
-    using MoreDotNet.Extentions.Common;
+    using MoreDotNet.Extensions.Common;
 
     public class ModulesController :
         MvcGridAdministrationCrudController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
