@@ -659,6 +659,7 @@
     <Content Include="Content\vendor\chosen\chosen-sprite.png" />
     <Content Include="Content\vendor\chosen\chosen.css" />
     <Content Include="Content\vendor\chosen\chosen.min.css" />
+    <Content Include="Content\vendor\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\vendor\guillotine\jquery.guillotine.css" />
     <Content Include="Content\vendor\MvcGrid\mvc-grid.css" />
     <Content Include="favicon.ico" />
@@ -708,6 +709,10 @@
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.css" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.min.css" />
     <Content Include="Xapp_offline.htm" />
+    <Content Include="Content\vendor\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\vendor\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\vendor\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\vendor\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\vendor\jquery\jquery-3.0.0.intellisense.js" />
     <Content Include="Scripts\vendor\jquery\jquery-3.0.0.js" />
     <Content Include="Scripts\vendor\jquery\jquery-3.0.0.min.js" />

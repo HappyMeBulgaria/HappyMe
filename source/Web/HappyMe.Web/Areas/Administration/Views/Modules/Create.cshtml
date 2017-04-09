@@ -14,22 +14,37 @@
     new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
     
     <div class="form-group">
         @Html.EditorFor(x => x.Name)
+        @Html.ValidationMessageFor(x => x.Name)
     </div>
 
     <div class="form-group">
         @Html.EditorFor(x => x.Description)
+        @Html.ValidationMessageFor(x => x.Description)
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.ImageFile):
+        <span class="glyphicon glyphicon-question-sign" rel="tooltip" title="Изображението, което ще се използва при визуализиране на модула"></span>
+        @Html.EditorFor(x => x.ImageFile)
+        @Html.ValidationMessageFor(x => x.ImageFile)
     </div>
 
     <div class="form-group">
         @Html.EditorFor(x => x.IsActive)
+        @Html.ValidationMessageFor(x => x.IsActive)
+
         <span class="glyphicon glyphicon-question-sign" rel="tooltip" title="Достъпен ли е модула за външния свят?"></span>
     </div>
 
     <div class="form-group">
         @Html.EditorFor(m => m.IsPublic)
+        @Html.ValidationMessageFor(x => x.IsPublic)
+
         <span class="glyphicon glyphicon-question-sign" rel="tooltip" title="Могат ли всички хора да достъпват модула?"></span>
     </div>
 
