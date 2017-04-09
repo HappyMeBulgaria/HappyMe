@@ -20,8 +20,12 @@
     {
         columns.Add(model => model.Id).Titled("№");
         columns.Add(model => model.Name).Titled("Име");
-        columns.Add(model => model.IsActive).Titled("Активност");
-        columns.Add(model => model.UserName).Titled("Автор");
+        columns.Add(model => model.IsActive).Titled("Активен?");
+        columns.Add(model => model.Author).Titled("Автор");
+        columns.Add(model => model.AuthorEmail)
+            .Titled("Автор - имейл")
+            .Encoded(false)
+            .RenderedAs(model => MvcHtmlString.Create($@"<a href=""mailto:{model.AuthorEmail}"">{model.AuthorEmail}</a> "));
         columns.Add(model => model.Id)
             .Titled("Изображение")
             .Encoded(false)

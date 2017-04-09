@@ -12,12 +12,14 @@
         public int Id { get; set; }
 
         public string Name { get; set; }
-        
+
         public string Description { get; set; }
 
         public bool IsActive { get; set; }
 
-        public string UserName { get; set; }
+        public string Author { get; set; }
+
+        public string AuthorEmail { get; set; }
 
         public byte[] ImageData { get; set; }
 
@@ -28,7 +30,8 @@
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<Module, ModuleGridViewModel>()
-                .ForMember(m => m.UserName, opt => opt.MapFrom(e => e.Author.UserName))
+                .ForMember(m => m.Author, opt => opt.MapFrom(e => e.Author.UserName))
+                .ForMember(m => m.AuthorEmail, opt => opt.MapFrom(e => e.Author.Email))
                 .ForMember(m => m.ImageData, opt => opt.MapFrom(e => e.Image.ImageData));
         }
     }
