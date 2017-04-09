@@ -115,8 +115,11 @@
                         model.ImageFile.InputStream.CopyTo(target);
                         var data = target.ToArray();
 
-                        // TODO: here we must update the Image, not to create new.
-                        model.ImageId = this.imagesAdministrationService.Create(data, this.UserProfile.Id).Id;
+                        model.ImageId = this.imagesAdministrationService.Update(
+                            data,
+                            model.ImageId,
+                            this.UserProfile.Id,
+                            this.User.IsAdmin()).Id;
                     }
 
                     var entity = this.BaseUpdate(model, model.Id);

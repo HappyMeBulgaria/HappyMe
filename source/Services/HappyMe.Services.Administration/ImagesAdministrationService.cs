@@ -8,7 +8,7 @@
 
     public class ImagesAdministrationService : AdministrationService<Image>, IImagesAdministrationService
     {
-        public ImagesAdministrationService(IRepository<Image> entities) 
+        public ImagesAdministrationService(IRepository<Image> entities)
             : base(entities)
         {
         }
@@ -17,7 +17,7 @@
         {
             var image = new Image
             {
-                ImageData = imageByteArray, 
+                ImageData = imageByteArray,
                 AuthorId = authorId
             };
 
@@ -25,6 +25,32 @@
             this.Entities.SaveChanges();
 
             return image;
+        }
+
+        public Image Update(byte[] imageByteArray, int? imageId, string authorId, bool isAdmin)
+        {
+            if (!imageId.HasValue)
+            {
+                return this.Create(imageByteArray, authorId);
+            }
+
+            var existingImage = this.Entities.GetById(imageId);
+
+            if (existingImage == null)
+            {
+                return this.Create(imageByteArray, authorId);
+            }
+
+            if (existingImage.AuthorId != authorId && !isAdmin)
+            {
+                return this.Create(imageByteArray, authorId);
+            }
+
+            existingImage.ImageData = imageByteArray;
+            this.Entities.Update(existingImage);
+            this.Entities.SaveChanges();
+
+            return existingImage;
         }
     }
 }
