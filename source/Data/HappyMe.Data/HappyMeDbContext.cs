@@ -22,11 +22,11 @@
         {
         }
 
-        public virtual IDbSet<Answer> Answers { get; set; } 
+        public virtual IDbSet<Answer> Answers { get; set; }
 
-        public virtual IDbSet<Question> Questions { get; set; } 
+        public virtual IDbSet<Question> Questions { get; set; }
 
-        public virtual IDbSet<Image> Images { get; set; } 
+        public virtual IDbSet<Image> Images { get; set; }
 
         public virtual IDbSet<Module> Modules { get; set; }
 
