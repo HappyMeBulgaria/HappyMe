@@ -10,7 +10,7 @@
 
 <h2>Модули</h2>
 
-<input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer"/>
+<input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer" />
 @Html.DashboardLink()
 @(Html.ActionLink("Създай нов", nameof(ModulesController.Create), null, new { @class = "btn btn-primary bottom-buffer" }))
 
@@ -20,7 +20,10 @@
     {
         columns.Add(model => model.Id).Titled("№");
         columns.Add(model => model.Name).Titled("Име");
-        columns.Add(model => model.IsActive).Titled("Активен?");
+        columns.Add(model => model.IsActive)
+            .Titled("Активен?")
+            .Encoded(false)
+            .RenderedAs(model => MvcHtmlString.Create(@"<span class=""glyphicon " + (model.IsActive ? "glyphicon-ok-sign" : "glyphicon glyphicon-remove-sign") + @"""></span>"));
         columns.Add(model => model.Author).Titled("Автор");
         columns.Add(model => model.AuthorEmail)
             .Titled("Автор - имейл")
