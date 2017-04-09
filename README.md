@@ -1,6 +1,6 @@
 # HappyMe
 
-[![Build status](https://ci.appveyor.com/api/projects/status/c9dv1rc5vxg147mn?svg=true)](https://ci.appveyor.com/project/Teodor92/happyme)
+[![Build status](https://ci.appveyor.com/api/projects/status/1l6uxwqf6g4mgs2e?svg=true)](https://ci.appveyor.com/project/Teodor92/happyme)
 
 Online educational platform supporting education, development and happiness of children with autism.
 
