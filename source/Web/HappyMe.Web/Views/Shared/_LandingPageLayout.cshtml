@@ -1,4 +1,5 @@
-﻿@{
+﻿@using HappyMe.Web.Common.Extensions
+@{
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
 
@@ -34,6 +35,11 @@
                         <li class=""><a class="scroll" href="#why-happy">защо happy me?</a></li>*@
                     <li class=""><a class="scroll" href="#team">екип</a></li>
                     <li class=""><a class="scroll" href="#contact-us">контакти</a></li>
+                    @if (this.User.IsAdmin())
+                    {
+                        <li class="">@Html.ActionLink("Администрация", "Index", new { controller = "Dashboard", area = "Administration" }, null)</li>
+                    }
+
                     @*<li class=""><a href="@Url.Action("Login", "Account", new { area = string.Empty })">влез</a></li>*@
                     @*<li class=""><a href="@Url.Action("Register", "Account", new { area = string.Empty })">регистрирай се</a></li>*@
                 </ul>
