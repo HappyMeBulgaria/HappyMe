@@ -1,0 +1,27 @@
+version: 0.1.{build}
+skip_tags: true
+configuration: Release
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+environment:
+  COVERALLS_REPO_TOKEN:
+       secure: h0CL0d02rQ0lXPrpXJ4XeJfgpcvHAbjyry+FK1x+atkOeSjUOCUJVKwIUBjPSK6s
+before_build:
+  - nuget restore ".\HappyMe.sln"
+build:
+  project: .\HappyMe.sln
+  verbosity: minimal
+# test_script:
+# - ps: >-
+#     .\Source\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user 
+#     -target:".\Source\packages\xunit.runner.console.2.1.0\tools\xunit.console.exe" "-targetargs:""Source\MoreDotNet.Test\bin\$env:CONFIGURATION\MoreDotNet.Tests.dll"" -noshadow -appveyor" 
+#     -filter:"+[*]*" 
+#     -output:opencoverCoverage.xml
+
+#     $coveralls = (Resolve-Path "Source/packages/coveralls.net.*/tools/csmacnz.coveralls.exe").ToString()
+
+#     & $coveralls --opencover -i opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_JOB_ID
