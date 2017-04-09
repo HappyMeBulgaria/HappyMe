@@ -19,10 +19,10 @@
         [UIHint("CKeditor")]
         [PlaceHolder("Описание на модул")]
         public string Description { get; set; }
-        
+
         [HiddenInput(DisplayValue = false)]
         public string AuthorId { get; set; }
-        
+
         [Display(Name = "Активен?")]
         public bool IsActive { get; set; }
 

@@ -673,6 +673,7 @@
     <Content Include="ImageSeed\modules-connect.png" />
     <Content Include="ImageSeed\sheep.png" />
     <Content Include="Scripts\custom\administration\common\multiSelectHelper.js" />
+    <Content Include="Scripts\custom\administration\common\style.js" />
     <Content Include="Scripts\custom\administration\data\dataLayer.js" />
     <Content Include="Scripts\custom\administration\statistics\child-statistics.js" />
     <Content Include="Scripts\custom\common\color-utils.js" />
