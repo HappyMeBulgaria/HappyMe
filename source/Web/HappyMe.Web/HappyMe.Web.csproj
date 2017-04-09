@@ -361,11 +361,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ChangePassword.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Manage\Views\Index.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_GlobalResources\Manage\Views\ManageLogins.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -390,16 +385,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModuleViewModel.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Modules\Views\Index.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Index.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Modules\Views\Success.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Success.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Questions\QuestionsController.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1350,6 +1335,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_GlobalResources\Modules\Views\" />
     <Folder Include="Areas\Administration\Views\UsersInRoles\" />
     <Folder Include="Content\fonts\bootstrap\" />
   </ItemGroup>
@@ -1551,11 +1537,6 @@
       <LastGenOutput>ChangePassword.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Manage\Views\Index.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Index.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Manage.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Manage\Views\ManageLogins.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ManageLogins.Designer.cs</LastGenOutput>
@@ -1575,16 +1556,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ModuleViewModel.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources.Modules.ViewModels</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Modules\Views\Index.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Index.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Modules.Views</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Modules\Views\Success.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Success.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources.Modules.Views</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Modules\ModulesController.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
