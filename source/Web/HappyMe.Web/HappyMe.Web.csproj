@@ -587,12 +587,11 @@
     <Content Include="ImageSeed\modules-alphabet.png" />
     <Content Include="ImageSeed\modules-connect.png" />
     <Content Include="ImageSeed\sheep.png" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\administration\common\multiSelectHelper.js" />
     <Content Include="Scripts\custom\administration\data\dataLayer.js" />
     <Content Include="Scripts\custom\administration\statistics\child-statistics.js" />
     <Content Include="Scripts\custom\common\color-utils.js" />
+    <Content Include="Scripts\custom\common\form-helper.js" />
     <Content Include="Scripts\custom\common\http-requester.js" />
     <Content Include="Scripts\custom\questions\answer.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -603,14 +602,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\MvcGrid\mvc-grid.min.js" />
     <Content Include="Scripts\vendor\chart\Chart.js" />
@@ -637,8 +628,6 @@
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.structure.min.css" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.css" />
     <Content Include="Scripts\vendor\jquery-ui\jquery-ui.theme.min.css" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\vendor\jquery\jquery-3.0.0.intellisense.js" />
     <Content Include="Scripts\vendor\jquery\jquery-3.0.0.js" />
     <Content Include="Scripts\vendor\jquery\jquery-3.0.0.min.js" />

@@ -83,6 +83,7 @@
                 "~/Scripts/custom/administration/data/*.js",
                 "~/Scripts/custom/administration/statistics/*.js",
                 "~/Scripts/custom/common/color-utils.js",
+                "~/Scripts/custom/common/form-helper.js",
                 "~/Scripts/vendor/MvcGrid/mvc-grid.js",
                 "~/Scripts/vendor/bootstrap/administration-theme-common/common-scripts.js",
                 "~/Scripts/vendor/chart/Chart.js",
