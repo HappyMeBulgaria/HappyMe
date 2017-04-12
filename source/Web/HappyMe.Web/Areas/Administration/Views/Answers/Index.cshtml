@@ -43,6 +43,8 @@
 @*TODO: Move to _AdministrationLayout, if has .mvc-grid*@
 @section scripts {
     <script>
-        $('.mvc-grid').mvcgrid()
+        HappyMe.FormHelper.confirmSubmit('.delete-form', 'Сигурни ли сте, че искате да изтриете елемента?');
+
+        $('.mvc-grid').mvcgrid();
     </script>
 }
