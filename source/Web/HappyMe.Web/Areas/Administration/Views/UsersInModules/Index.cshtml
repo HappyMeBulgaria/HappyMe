@@ -19,3 +19,9 @@
             .Filterable(false)
             .RenderedAs(model => Html.DeleteForm(nameof(UsersInModulesController.Delete), "UsersInModules", model.ModuleId.ToString(), model.UserId));
     }))
+
+@section scripts {
+    <script>
+        HappyMe.FormHelper.confirmSubmit('.delete-form', 'Сигурни ли сте, че искате да изтриете елемента?');
+    </script>
+}
