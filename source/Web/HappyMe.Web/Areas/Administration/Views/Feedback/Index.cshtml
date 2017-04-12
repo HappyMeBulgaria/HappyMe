@@ -28,3 +28,8 @@
             .RenderedAs(model => Html.DeleteForm(nameof(FeedbackController.Delete), ControllerName, model.Id.ToString()));
     }))
 
+@section scripts {
+    <script>
+        HappyMe.FormHelper.confirmSubmit('.delete-form', 'Сигурни ли сте, че искате да изтриете елемента?');
+    </script>
+}
