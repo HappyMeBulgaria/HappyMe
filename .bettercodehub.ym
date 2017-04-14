@@ -1,0 +1,6 @@
+exclude:
+- /source/Web/HappyMe.Web/Scripts/vendor/.*
+component_depth: 3
+languages:
+- csharp
+- javascript
