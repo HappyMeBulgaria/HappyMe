@@ -11,9 +11,27 @@ Online educational platform supporting education, development and happiness of c
 ## Technology stack
 
 * .NET Framework - C#, EntityFramework 6, ASP.NET MVC 5
-* HTML5, CSS3
+* HTML5, CSS3, Bootstrap 3
 * JavaScript, JQuery, JQuery UI
-* Xunit, Moq
+* Xunit, Jasmine, Moq
+
+## Development guidelines
+
+### Git branching strategy
+Branches:
+- `master` - contains only production ready code.
+- `development` - all active development is conducted in this branch.
+
+When a new feature is started a new `feature` branch is created form the `development` branch. After the feature is complete a pull request from the `feature` branch to the `development` branch is created. Direct merges, without code review are **NOT** allowed.
+
+### Definiton of done (DoD)
+
+For a feature to be considered "Done", the following requirements **must be met**:
+- The code of the feature **must compile**.
+- The code of the feature **must NOT produce any warring**.
+- The code must be **in compliance with the StyleCop and ESLint coding standards**.
+- The code must be **covered by unit tests** (xUnit or Jasmine).
+- The pull request created from the feature branch to the development branch, **must review by at least one person**.
 
 ## Contributors
 
