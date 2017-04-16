@@ -6,13 +6,26 @@
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
+
+    using AutoMapper;
+
     using HappyMe.Common.Mapping;
     using HappyMe.Common.Models;
     using HappyMe.Data.Contracts;
     using HappyMe.Data.Models;
+    using HappyMe.Web.Areas.Administration.ViewModels.Answers;
 
-    public class QuestionGridViewModel : IMapFrom<Question>, IMapTo<Question>, IIdentifiable<int>
+    public class QuestionGridViewModel :
+        IMapFrom<Question>,
+        IMapTo<Question>,
+        IHaveCustomMappings,
+        IIdentifiable<int>
     {
+        public QuestionGridViewModel()
+        {
+            this.Answers = new List<AnswerGridViewModel>();
+        }
+
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
@@ -36,5 +49,13 @@
 
         [HiddenInput(DisplayValue = false)]
         public string AuthorId { get; set; }
+
+        public IEnumerable<AnswerGridViewModel> Answers { get; set; }
+
+        public void CreateMappings(IMapperConfiguration configuration)
+        {
+            configuration.CreateMap<Question, QuestionGridViewModel>()
+                .ForMember(m => m.Answers, opt => opt.MapFrom(e => e.Answers));
+        }
     }
 }

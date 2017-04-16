@@ -10,39 +10,13 @@
 
 <h2>Въпроси</h2>
 
-<input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer"/>
+<input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer" />
 @Html.DashboardLink()
-@(Html.ActionLink("Създадай нов", nameof(QuestionsController.Create), null, new { @class = "btn btn-primary bottom-buffer" }))
+@(Html.ActionLink("Добави въпрос", nameof(QuestionsController.Create), null, new { @class = "btn btn-primary bottom-buffer" }))
 
-@(Html.MvcGrid(
-    Model,
-    columns =>
-    {
-        columns.Add(model => model.Id).Titled("№");
-        columns.Add(model => model.Text).Titled("Текст на въпроса");
-        columns.Add(model => model.Type).Titled("Тип");
-        columns.Add(model => model.ModuleId).Titled("Присъства в модул");
-        columns.Add(model => model.Id)
-            .Titled("Изображение")
-            .Encoded(false)
-            .Filterable(false)
-            .RenderedAs(model => MvcHtmlString.Create(string.Format(@"<img class=""img-responsive"" width=""150"" src =""{0}"" />", model.ImageUrl)));
-        columns.Add(model => model.AuthorId).Titled("Автор");
-        columns.Add(model => model.Id)
-            .Titled("Промяна")
-            .Encoded(false)
-            .Filterable(false)
-            .RenderedAs(model => Html.ActionLink("Промяна", nameof(QuestionsController.Update), new { id = model.Id }, new { @class = "btn btn-primary" }));
-        columns.Add(model => model.Id)
-            .Titled("Изтриване")
-            .Encoded(false)
-            .Filterable(false)
-            .RenderedAs(model => Html.DeleteForm(nameof(QuestionsController.Delete), ControllerName, model.Id.ToString()));
-    }))
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    @Html.DisplayForModel()
+</div>
 
 @section scripts {
-    <script>
-        // TODO: Move to _AdministrationLayout, if has .mvc-grid
-        $('.mvc-grid').mvcgrid();
-    </script>
 }
