@@ -7,11 +7,13 @@ assembly_info:
   assembly_version: '{version}'
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
-environment:
-  COVERALLS_REPO_TOKEN:
-       secure: h0CL0d02rQ0lXPrpXJ4XeJfgpcvHAbjyry+FK1x+atkOeSjUOCUJVKwIUBjPSK6s
 before_build:
   - nuget restore ".\source\HappyMe.sln"
 build:
   project: .\source\HappyMe.sln
   verbosity: minimal
+test_script: 
+    - .\source\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:".\source\packages\xunit.runner.console.2.2.0\tools\xunit.console.x86.exe" -targetargs:".\source\Tests\HappyMe.Tests.Services.Data\bin\Release\HappyMe.Tests.Services.Data.dll .\source\Tests\HappyMe.Tests.Common\bin\Release\HappyMe.Tests.Common.dll .\source\Tests\HappyMe.Tests.Web\bin\Release\HappyMe.Tests.Web.dll -noshadow -appveyor" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:.\HappyMe_coverage.xml
+    - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
+    - pip install codecov
+    - codecov -f "HappyMe_coverage.xml"
