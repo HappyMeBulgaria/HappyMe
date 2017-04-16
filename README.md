@@ -10,8 +10,7 @@ Online educational platform supporting education, development and happiness of c
 
 | Better Code Hub Compliance                                                                                    | Test Coverage |
 |---------------------------------------------------------------------------------------------------------------|---------------|
-| [![BCH compliance](https://bettercodehub.com/edge/badge/HappyMeBulgaria/HappyMe)](https://bettercodehub.com/) | [![codecov](https://codecov.io/gh/Teodor92/MoreDotNet/branch/master/graph/badge.svg)](https://codecov.io/gh/Teodor92/MoreDotNet)
-           |
+| [![BCH compliance](https://bettercodehub.com/edge/badge/HappyMeBulgaria/HappyMe)](https://bettercodehub.com/) | [![codecov](https://codecov.io/gh/HappyMeBulgaria/HappyMe/branch/master/graph/badge.svg)](https://codecov.io/gh/HappyMeBulgaria/HappyMe) |
 
 ## Technology stack
 
