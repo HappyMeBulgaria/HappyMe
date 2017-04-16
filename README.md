@@ -8,7 +8,9 @@ Online educational platform supporting education, development and happiness of c
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [![Build status](https://ci.appveyor.com/api/projects/status/1l6uxwqf6g4mgs2e/branch/master?svg=true)](https://ci.appveyor.com/project/Teodor92/happyme/branch/master) | [![Build status](https://ci.appveyor.com/api/projects/status/8uejjiw2qv4ac4qu?svg=true)](https://ci.appveyor.com/project/Teodor92/happyme-i6axp) |
 
-[![BCH compliance](https://bettercodehub.com/edge/badge/HappyMeBulgaria/HappyMe)](https://bettercodehub.com/)
+| Better Code Hub Compliance                                                                                                                                             |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [![BCH compliance](https://bettercodehub.com/edge/badge/HappyMeBulgaria/HappyMe)](https://bettercodehub.com/) |
 
 ## Technology stack
 
