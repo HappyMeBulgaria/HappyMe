@@ -25,6 +25,7 @@ Online educational platform supporting education, development and happiness of c
 Branches:
 - `master` - contains only production ready code.
 - `development` - all active development is conducted in this branch.
+- `feature-{description}` - contains spesific feature development.
 
 When a new feature is started a new `feature` branch is created form the `development` branch. After the feature is complete a pull request from the `feature` branch to the `development` branch is created. Direct merges, without code review are **NOT** allowed.
 
