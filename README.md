@@ -8,7 +8,7 @@ Online educational platform supporting education, development and happiness of c
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [![Build status](https://ci.appveyor.com/api/projects/status/1l6uxwqf6g4mgs2e/branch/master?svg=true)](https://ci.appveyor.com/project/Teodor92/happyme/branch/master) | [![Build status](https://ci.appveyor.com/api/projects/status/8uejjiw2qv4ac4qu?svg=true)](https://ci.appveyor.com/project/Teodor92/happyme-i6axp) |
 
-| Better Code Hub Compliance                                                                                    | Test Coverage |
+| BCH Compliance                                                                                    | Test Coverage |
 |---------------------------------------------------------------------------------------------------------------|---------------|
 | [![BCH compliance](https://bettercodehub.com/edge/badge/HappyMeBulgaria/HappyMe)](https://bettercodehub.com/) | [![codecov](https://codecov.io/gh/HappyMeBulgaria/HappyMe/branch/master/graph/badge.svg)](https://codecov.io/gh/HappyMeBulgaria/HappyMe) |
 
