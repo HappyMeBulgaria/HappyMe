@@ -3,21 +3,21 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         eslint: {
-            te4FestWeb: {
+            happyMeWeb: {
                 src: ['Web/HappyMe.Web/Scripts/custom/**/*.js']
             }
         },
         jasmine: {
-            te4FestWeb: {
-                src: ['Web/HappyMe.Web/Scripts/custom/*.js'],
+            happyMeWeb: {
+                src: ['Web/HappyMe.Web/Scripts/custom/**/*.js'],
                 options: {
                     specs: 'Web/HappyMe.Web/Scripts/specs/*.js',
-                    vendor: ['Web/HappyMe.Web/Scripts/vendor/jquery/jquery-2.2.3.js'],
-                    outfile: '_SpecRunnerTe4FestWeb.html',
+                    vendor: ['Web/HappyMe.Web/Scripts/vendor/jquery/jquery-3.0.0.min.js'],
+                    outfile: '_SpecRunnerHappyMeWeb.html',
                     template: require('grunt-template-jasmine-istanbul'),
                     templateOptions: {
-                        coverage: 'bin/coverage/Te4FestWeb/coverage.json',
-                        report: 'bin/coverage/Te4FestWeb'
+                        coverage: 'bin/coverage/HappyMeWeb/coverage.json',
+                        report: 'bin/coverage/HappyMeWeb'
                         //thresholds: {
                         //    lines: 80,
                         //    statements: 80,
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                 csslintrc: 'Web/HappyMe.Web/.csslintrc',
                 formatters: [{ id: require('csslint-stylish'), dest: 'report/csslint_stylish.xml' }]
             },
-            te4FestWeb: {
+            happyMeWeb: {
                 options: {
                     import: 2
                 },
@@ -44,9 +44,9 @@ module.exports = function (grunt) {
         },
         concurrent: {
             lintingAndTesting: [
-                'jasmine:te4FestWeb',
-                'eslint:te4FestWeb',
-                'csslint:te4FestWeb']
+                'jasmine:happyMeWeb',
+                'eslint:happyMeWeb',
+                'csslint:happyMeWeb']
         }
     });
 
