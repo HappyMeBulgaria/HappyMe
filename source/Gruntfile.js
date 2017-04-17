@@ -9,7 +9,7 @@ module.exports = function (grunt) {
         },
         jasmine: {
             happyMeWeb: {
-                src: ['Web/HappyMe.Web/Scripts/custom/**/*.js'],
+                src: ['Web/HappyMe.Web/Scripts/custom/**/*.js', 'Web/HappyMe.Web/Scripts/custom/*.js'],
                 options: {
                     specs: 'Web/HappyMe.Web/Scripts/specs/*.js',
                     vendor: ['Web/HappyMe.Web/Scripts/vendor/jquery/jquery-3.0.0.min.js'],

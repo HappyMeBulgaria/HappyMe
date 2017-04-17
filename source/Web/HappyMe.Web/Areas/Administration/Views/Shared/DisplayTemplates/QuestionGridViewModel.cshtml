@@ -19,7 +19,9 @@
     <div id="@colapseId" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@headingId">
         <ul class="list-group">
             @Html.DisplayFor(x => x.Answers)
-            <li class="list-group-item"><button class="btn btn-success">Добави отговор +</button></li>
+            <li class="list-group-item">
+                @Html.ActionLink("Добави отговор +", "Create", "Answers", new { are = "Administration", id = Model.Id }, new { @class = "btn btn-success" })
+            </li>
         </ul>
     </div>
 </div>

@@ -1,0 +1,9 @@
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Common.Helpers
+@model HappyMe.Web.Areas.Administration.ViewModels.Answers.AnswerGridViewModel
+    
+<li class="list-group-item">
+    <span class="col-md-9">@Model.Text</span>
+    @Html.ActionLink("Редактирай отговор", "Update", "Answers", new { area = "Administration", id = Model.Id }, new { @class = "btn btn-danger" })
+    @Html.DeleteForm(nameof(AnswersController.Delete), "Answers", Model.Id)
+</li>

@@ -77,11 +77,7 @@
                 }
 
                 <li class="mt">
-                    @(Html.ActiveActionLinkHelper("Въпроси", nameof(QuestionsController.Index), "Questions", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "questions" } }))
-                </li>
-
-                <li class="mt">
-                    @(Html.ActiveActionLinkHelper("Отговори", nameof(AnswersController.Index), "Answers", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "answers" } }))
+                    @(Html.ActiveActionLinkHelper("Въпроси и отговори", nameof(QuestionsController.Index), "Questions", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "questions" } }))
                 </li>
             </ul>
             <!-- sidebar menu end-->

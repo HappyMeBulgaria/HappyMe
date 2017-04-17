@@ -1338,8 +1338,8 @@
     <Content Include="Views\Shared\_MasterLayout.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\MultiSelectDropDownList.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\QuestionGridViewModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\AnswerGridViewModel.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\DisplayTemplates\QuestionGridViewModel.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\DisplayTemplates\AnswerGridViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

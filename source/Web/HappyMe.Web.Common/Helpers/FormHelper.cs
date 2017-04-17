@@ -1,5 +1,6 @@
 ﻿namespace HappyMe.Web.Common.Helpers
 {
+    using System.Globalization;
     using System.Web;
     using System.Web.Mvc;
 
@@ -8,6 +9,11 @@
     public static class FormHelper
     {
         private const string DefaultArea = "Administration";
+
+        public static HtmlString DeleteForm(this HtmlHelper helper, string action, string controller, int id, string secondId = null, string area = DefaultArea)
+        {
+            return helper.DeleteForm(action, controller, id.ToString(CultureInfo.InvariantCulture), secondId, area);
+        }
 
         public static HtmlString DeleteForm(this HtmlHelper helper, string action, string controller, string id, string secondId = null, string area = DefaultArea)
         {

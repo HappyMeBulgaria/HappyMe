@@ -56,10 +56,30 @@
         }
 
         [HttpGet]
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            this.PopulateViewBag(null);
-            return this.View(new AnswerCreateInputModel());
+            if (!id.HasValue)
+            {
+                return this.ItemNotFound("Не същестува такъв въпрос.");
+            }
+
+            var question = this.questionsAdministrationService.Get(id.Value);
+
+            if (question == null)
+            {
+                return this.ItemNotFound("Не същестува такъв въпрос.");
+            }
+
+            if (question.AuthorId != this.UserProfile.Id && !this.User.IsAdmin())
+            {
+                return this.ItemNotFound("Не същестува такъв въпрос.");
+            }
+
+            this.PopulateViewBag(id);
+            return this.View(new AnswerCreateInputModel
+            {
+                QuestionId = id.Value
+            });
         }
 
         [HttpPost]
@@ -83,7 +103,7 @@
                 if (entity != null)
                 {
                     this.TempData.AddSuccessMessage("Успешно създадохте отговор");
-                    return this.RedirectToAction(nameof(this.Index));
+                    return this.RedirectToAction("Index", "Questions", new { area = "Administration" });
                 }
             }
 
@@ -108,7 +128,7 @@
             }
 
             this.TempData.AddDangerMessage("Нямате право да редактирате този отговор");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToAction("Index", "Questions", new { area = "Administration" });
         }
 
         [HttpPost]
@@ -134,7 +154,7 @@
                     if (entity != null)
                     {
                         this.TempData.AddSuccessMessage("Успешно редактирахте отговор");
-                        return this.RedirectToAction(nameof(this.Index));
+                        return this.RedirectToAction("Index", "Questions", new { area = "Administration" });
                     }
                 }
 
@@ -142,8 +162,7 @@
                 return this.View(model);
             }
 
-            this.TempData.AddDangerMessage("Нямате право да редактирате този отговор");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.ItemNotFound("Няма такъв отговор.");
         }
 
         [HttpPost]
@@ -162,11 +181,10 @@
                 this.BaseDestroy(id);
 
                 this.TempData.AddSuccessMessage("Успешно изтрихте отговор");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToAction("Index", "Questions", new { area = "Administration" });
             }
 
-            this.TempData.AddDangerMessage("Нямате право да изтриете този отговор");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.ItemNotFound("Няма такъв отговор.");
         }
 
         private void PopulateViewBag(int? id)
