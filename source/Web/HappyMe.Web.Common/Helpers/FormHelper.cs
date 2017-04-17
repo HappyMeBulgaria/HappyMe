@@ -23,6 +23,7 @@
             var form = new TagBuilder("form");
             form.Attributes.Add("action", url);
             form.Attributes.Add("method", "POST");
+            form.Attributes.Add("class", "form-inline");
             form.AddCssClass("delete-form");
 
             var antiForgeryToken = helper.AntiForgeryToken();

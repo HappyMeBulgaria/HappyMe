@@ -842,7 +842,6 @@
     <Content Include="Scripts\vendor\SlickSlider\slick\slick-theme.scss" />
     <Content Include="Scripts\vendor\SlickSlider\slick\slick.less" />
     <Content Include="Scripts\vendor\SlickSlider\slick\slick.scss" />
-    <Content Include="Areas\Administration\Views\Answers\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Answers\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Answers\Update.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Boolean.cshtml" />

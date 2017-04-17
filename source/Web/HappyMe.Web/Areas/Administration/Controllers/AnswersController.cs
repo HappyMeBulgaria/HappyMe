@@ -36,26 +36,6 @@
         }
 
         [HttpGet]
-        public ActionResult Index()
-        {
-            IEnumerable<AnswerGridViewModel> answers;
-            if (this.User.IsAdmin())
-            {
-                answers = this.GetData().OrderBy(x => x.Id);
-            }
-            else
-            {
-                answers = this.MappingService
-                    .MapCollection<AnswerGridViewModel>(
-                        this.AdministrationService.As<IAnswersAdministrationService>()
-                            .GetAllUserAnswers(this.UserProfile.Id))
-                    .OrderBy(m => m.Id);
-            }
-
-            return this.View(answers);
-        }
-
-        [HttpGet]
         public ActionResult Create(int? id)
         {
             if (!id.HasValue)

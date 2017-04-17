@@ -1,4 +1,6 @@
-﻿@model HappyMe.Web.Areas.Administration.ViewModels.Questions.QuestionGridViewModel
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Common.Helpers
+@model HappyMe.Web.Areas.Administration.ViewModels.Questions.QuestionGridViewModel
 
 @{
     var headingId = $"heading{Model.Id}";
@@ -7,13 +9,13 @@
 
 <div class="panel panel-default">
     <div class="panel-heading clearfix" role="tab" id="@headingId">
-        <h4 class="panel-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#@colapseId" aria-expanded="true" aria-controls="@colapseId">
-            <a class="col-md-9">
+        <h4 class="panel-title">
+            <a class="col-md-9" role="button" data-toggle="collapse" data-parent="#accordion" href="#@colapseId" aria-expanded="true" aria-controls="@colapseId">
                 @Model.Text
             </a>
             <span class="badge">@Model.Answers.Count()</span>
-            <button class="btn btn-warning">Редактирай въпрос</button>
-            <button class="btn btn-danger">Изтрий въпрос</button>
+            @Html.ActionLink("Редаткирай въпрос", "Update", "Questions", new { area = "Administration", id = Model.Id }, new { @class = "btn btn-warning" })
+            @Html.DeleteForm(nameof(QuestionsController.Delete), "Questions", Model.Id)
         </h4>
     </div>
     <div id="@colapseId" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@headingId">
