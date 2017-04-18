@@ -20,6 +20,7 @@
         public string Text { get; set; }
 
         [UIHint("EnumDropDownList")]
+        [PlaceHolder("Тип на въпроса")]
         public QuestionType Type { get; set; }
 
         [Display(Name = "Публичен?")]
@@ -31,6 +32,7 @@
 
         [Display(Name = "Присъства в модули")]
         [UIHint("MultiSelectDropDownList")]
+        [PlaceHolder("Присъства в модули")]
         public int[] ModulesIds { get; set; }
 
         [HiddenInput(DisplayValue = false)]

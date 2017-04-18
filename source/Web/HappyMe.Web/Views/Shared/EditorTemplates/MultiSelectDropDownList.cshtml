@@ -3,6 +3,12 @@
 @{
     var propertyName = ViewData.ModelMetadata.PropertyName;
     var viewDataName = $"{propertyName}Data";
+
+    var placeholder = string.Empty;
+    if (ViewData.ModelMetadata.AdditionalValues.ContainsKey("placeholder"))
+    {
+        placeholder = ViewData.ModelMetadata.AdditionalValues["placeholder"] as string;
+    }
 }
 
-@Html.ListBoxFor(m => m, ViewData[viewDataName] as MultiSelectList, new { @class = "form-control" })
+@Html.ListBoxFor(m => m, ViewData[viewDataName] as MultiSelectList, new { @class = "form-control", placeholder })

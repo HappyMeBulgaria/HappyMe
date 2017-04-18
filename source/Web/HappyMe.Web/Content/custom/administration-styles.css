@@ -106,6 +106,24 @@ ul.top-menu > li .logout {
 .editor-label {
     display: none;
 }
+
+/*-------- Input styles --------*/
+input, input[type="text"], input[type="password"], input[type="email"], select, .form-control, .chosen-container-multi .chosen-choices {
+    border: 2px solid #FF8A5C;
+    outline: none;
+    border-radius: 4px;
+}
+
+    input:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus, .form-control:focus, .chosen-container-multi .chosen-choices:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+.chosen-container .chosen-results li.highlighted {
+    background-image: none;
+    background: #FF8A5C;
+}
+/*-------- End Input styles --------*/
 /*==============End overriding other styles=============*/
 
 .bottom-buffer {

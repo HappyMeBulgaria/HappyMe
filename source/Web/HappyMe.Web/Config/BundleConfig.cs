@@ -32,8 +32,8 @@
                 "~/Content/vendor/bootstrap/administration/style-responsive.css",
                 "~/Content/vendor/chosen/chosen.css",
                 "~/Content/fonts/lato/latostyle.css",
-                "~/Content/custom/administration-styles.css",
-                "~/Content/custom/global.css"));
+                "~/Content/custom/global.css",
+                "~/Content/custom/administration-styles.css"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
                 "~/Content/vendor/bootstrap/bootstrap.min.css"));
