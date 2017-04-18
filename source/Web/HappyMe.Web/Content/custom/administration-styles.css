@@ -119,6 +119,10 @@ input, input[type="text"], input[type="password"], input[type="email"], select, 
         box-shadow: none;
     }
 
+    input[type="number"], input[type="number"].form-control {
+        width: 15%;
+    }
+
 .chosen-container .chosen-results li.highlighted {
     background-image: none;
     background: #FF8A5C;

@@ -24,6 +24,7 @@
         public bool IsHidden { get; set; }
 
         [UIHint("Integer")]
+        [PlaceHolder("Подредба")]
         public int OrderBy { get; set; }
 
         [HiddenInput(DisplayValue = false)]
