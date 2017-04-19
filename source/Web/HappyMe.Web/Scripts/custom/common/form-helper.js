@@ -4,7 +4,7 @@ HappyMe.FormHelper = (function () {
     'use strict';
 
     function confirmSubmit (formSelector, message) {
-        $(selector).on('submit',
+        $(formSelector).on('submit',
              function () {
                  return confirm(message);
              });
