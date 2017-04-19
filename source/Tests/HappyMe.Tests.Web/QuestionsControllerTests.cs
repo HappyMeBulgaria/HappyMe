@@ -27,9 +27,9 @@
             this.mappingService = new AutoMapperMappingService();
 
             this.questionsController = new QuestionsController(
-                this.moduleSessionDataService, 
-                this.answersDataService, 
-                this.questionsDataService, 
+                this.moduleSessionDataService,
+                this.answersDataService,
+                this.questionsDataService,
                 this.mappingService);
         }
     }

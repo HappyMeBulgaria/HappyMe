@@ -102,6 +102,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Administration\QuestionsControllerTests.cs" />
     <Compile Include="Common\BaseWebTests.cs" />
     <Compile Include="FeedbackControllerTests.cs" />
     <Compile Include="HomeControllerTests.cs" />
@@ -129,6 +130,10 @@
     <ProjectReference Include="..\..\HappyMe.Common\HappyMe.Common.csproj">
       <Project>{BE0B0219-3996-433E-B63B-5BF485F9230C}</Project>
       <Name>HappyMe.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\HappyMe.Services.Administration\HappyMe.Services.Administration.csproj">
+      <Project>{39A959EB-97EB-4FFD-BDF4-6BF9DDFE24A4}</Project>
+      <Name>HappyMe.Services.Administration</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\HappyMe.Services.Common\HappyMe.Services.Common.csproj">
       <Project>{98D63F27-173E-4A8A-978D-27300694536E}</Project>

@@ -17,7 +17,7 @@
         public BaseWebTests()
         {
             AutoMapperConfig.RegisterMappings(
-                Assembly.GetExecutingAssembly(), 
+                Assembly.GetExecutingAssembly(),
                 Assembly.Load(AssemblyConstants.Web));
         }
 
