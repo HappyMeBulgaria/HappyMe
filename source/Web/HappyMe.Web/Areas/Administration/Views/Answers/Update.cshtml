@@ -1,11 +1,14 @@
 ﻿@using HappyMe.Web.Areas.Administration.Controllers
+
 @model HappyMe.Web.Areas.Administration.InputModels.Answers.AnswerUpdateInputModel
 
 @{
     ViewBag.Title = "Промяна на отговор";
 }
 
-<h2>@ViewBag.Title</h2>
+<div class="section-title-container">
+    <h3 class="section-title">@ViewBag.Title</h3>
+</div>
 
 @using (Html.BeginForm(
     nameof(AnswersController.Update),
@@ -20,5 +23,5 @@
     @Html.EditorFor(m => m.ImageData)
 
     <input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue" />
-    <input type="submit" value="Редактирай" class="btn btn-primary pull-right"/>
+    <input type="submit" value="Редактирай" class="btn btn-success pull-right"/>
 }

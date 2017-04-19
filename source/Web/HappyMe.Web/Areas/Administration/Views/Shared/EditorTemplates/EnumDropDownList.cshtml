@@ -1,3 +1,11 @@
 ﻿@model Enum
 
-@Html.EnumDropDownListFor(model => model, new { @class = "form-control" })
+@{
+    var placeholder = string.Empty;
+    if (ViewData.ModelMetadata.AdditionalValues.ContainsKey("placeholder"))
+    {
+        placeholder = ViewData.ModelMetadata.AdditionalValues["placeholder"] as string;
+    }
+}
+
+@Html.EnumDropDownListFor(model => model, placeholder, new { @class = "form-control" })
