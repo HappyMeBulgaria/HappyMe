@@ -44,8 +44,8 @@
 
         public virtual ICollection<Question> Questions
         {
-            get { return this.questions; }
-            set { this.questions = value; }
+            get => this.questions;
+            set => this.questions = value;
         }
 
         public virtual ICollection<UserInModule> UsersInModule

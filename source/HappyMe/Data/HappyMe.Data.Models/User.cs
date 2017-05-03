@@ -52,10 +52,6 @@ namespace HappyMe.Data.Models
 
         public DateTime? ModifiedOn { get; set; }
 
-        public int? ProfileImageId { get; set; }
-
-        public Image ProfileImage { get; set; }
-
         public string ParentId { get; set; }
 
         public virtual User Parent { get; set; }

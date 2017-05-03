@@ -36,12 +36,6 @@
 
         public virtual User Author { get; set; }
 
-        public virtual ICollection<User> Users
-        {
-            get { return this.users; }
-            set { this.users = value; }
-        }
-
         public virtual ICollection<Question> Questions
         {
             get { return this.questions; }
