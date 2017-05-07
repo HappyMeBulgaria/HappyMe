@@ -8,7 +8,6 @@ namespace HappyMe.Web.Controllers
     {
         public HomeController(IEmailSender emailSender, ISmsSender smsSender)
         {
-            Debugger.Break();
         }
 
         public IActionResult Index()
