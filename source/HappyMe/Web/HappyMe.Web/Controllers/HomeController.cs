@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using HappyMe.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HappyMe.Web.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController(IEmailSender emailSender, ISmsSender smsSender)
+        {
+            Debugger.Break();
+        }
+
         public IActionResult Index()
         {
             return View();

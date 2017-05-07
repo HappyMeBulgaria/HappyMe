@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace HappyMe.Web.Services
 {
-    public interface ISmsSender
+    public interface ISmsSender : IService
     {
         Task SendSmsAsync(string number, string message);
     }

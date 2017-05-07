@@ -1,4 +1,6 @@
-﻿using HappyMe.Data.Models;
+﻿using System.Linq;
+using System.Reflection;
+using HappyMe.Data.Models;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,7 +51,36 @@ namespace HappyMe.Web
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
-            services.AddTransient<ISmsSender, AuthMessageSender>();
+            //services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            var serviceAssemblies = new[]
+            {
+                typeof(Startup).GetTypeInfo().Assembly
+            };
+
+            var nonGenericTypeServiceRegistrationsInfo = serviceAssemblies
+                .SelectMany(a => a.GetExportedTypes())
+                .Where(t => typeof(IService).IsAssignableFrom(t) && !t.GetTypeInfo().IsAbstract && !t.GetTypeInfo().IsGenericTypeDefinition)
+                .Select(t => new
+                {
+                    ConcreteType = t,
+                    ServiceTypes = t
+                        .GetInterfaces()
+                        .Where(i =>
+                            i.GetTypeInfo().IsPublic &&
+                            i != typeof(IService) &&
+                            !i.GenericTypeArguments.Any())
+                })
+                .ToList();
+
+            foreach (var serviceType in nonGenericTypeServiceRegistrationsInfo)
+            {
+                foreach (var type in serviceType.ServiceTypes)
+                {
+                    services.Add(new ServiceDescriptor(type, serviceType.ConcreteType, ServiceLifetime.Scoped));
+                }
+            }
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
