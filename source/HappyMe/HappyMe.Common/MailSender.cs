@@ -74,11 +74,11 @@ namespace HappyMe.Common
             }
         }
 
-        public async Task SendMailAsync(string recipient, string subject, string messageBody, IEnumerable<string> bccRecipients = null)
-        {
-            //var message = this.PrepareMessage(recipient, subject, messageBody, bccRecipients);
-            //await this.mailClient.SendMailAsync(message);
-        }
+        ////public async Task SendMailAsync(string recipient, string subject, string messageBody, IEnumerable<string> bccRecipients = null)
+        ////{
+        ////    //var message = this.PrepareMessage(recipient, subject, messageBody, bccRecipients);
+        ////    //await this.mailClient.SendMailAsync(message);
+        ////}
 
         public void SendMail(string recipient, string subject, string messageBody, IEnumerable<string> bccRecipients = null)
         {
