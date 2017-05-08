@@ -3,9 +3,17 @@
 [
   {
     "outputFileName": "wwwroot/css/site.min.css",
-    // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
       "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/landing-page.min.css",
+    "inputFiles": [
+      "wwwroot/css/landing-page.css",
+      "wwwroot/css/global.css",
+      "wwwroot/css/reset-css.css",
+      "wwwroot/css/override.css"
     ]
   },
   {
