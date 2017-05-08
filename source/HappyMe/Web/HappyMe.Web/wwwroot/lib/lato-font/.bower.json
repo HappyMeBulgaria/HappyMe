@@ -1,0 +1,20 @@
+{
+  "name": "lato-font",
+  "version": "3.0.0",
+  "homepage": "https://github.com/betsol/lato-font",
+  "authors": [
+    "Slava Fomin II <s.fomin@betsol.ru>"
+  ],
+  "description": "Bower repository for Lato font",
+  "license": "MIT, SIL 1.1",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "09d8184ab95407ce6008ee54ad962884efb6b9db"
+  },
+  "_source": "https://github.com/betsol/lato-font.git",
+  "_target": "v3.0.0",
+  "_originalSource": "lato-font",
+  "_direct": true
+}
