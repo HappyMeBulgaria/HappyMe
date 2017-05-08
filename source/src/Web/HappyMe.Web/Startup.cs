@@ -16,6 +16,7 @@ namespace HappyMe.Web
     using System;
     using System.Collections.Generic;
 
+    using HappyMe.Common.Mapping;
     using HappyMe.Data;
     using HappyMe.Services.Administration.Base;
     using HappyMe.Services.Administration.Contracts;
@@ -101,6 +102,8 @@ namespace HappyMe.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            AutoMapperConfig.RegisterMappings(typeof(Startup).GetTypeInfo().Assembly);
         }
 
         private void RegesterServiceFromType(
