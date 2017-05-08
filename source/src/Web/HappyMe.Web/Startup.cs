@@ -17,7 +17,10 @@ namespace HappyMe.Web
     using System.Collections.Generic;
 
     using HappyMe.Data;
+    using HappyMe.Services.Administration.Base;
+    using HappyMe.Services.Administration.Contracts;
     using HappyMe.Services.Common;
+    using HappyMe.Services.Data.Contracts;
 
     public class Startup
     {
@@ -60,7 +63,10 @@ namespace HappyMe.Web
             // TODOD: Move to constants or somewhere else
             var serviceAssemblies = new[]
             {
-                typeof(Startup).GetTypeInfo().Assembly
+                typeof(Startup).GetTypeInfo().Assembly,
+                typeof(IService).GetTypeInfo().Assembly,
+                typeof(IAdministrationService<>).GetTypeInfo().Assembly,
+                typeof(IUsersDataService).GetTypeInfo().Assembly
             };
 
             this.RegesterServiceFromType(services, serviceAssemblies, typeof(IService));
