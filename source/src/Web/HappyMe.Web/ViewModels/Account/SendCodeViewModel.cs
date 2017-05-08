@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-
-using Microsoft.AspNetCore.Mvc.Rendering;
-
-namespace HappyMe.Web.Models.AccountViewModels
+﻿namespace HappyMe.Web.ViewModels.Account
 {
+    using System.Collections.Generic;
+
+    using Microsoft.AspNetCore.Mvc.Rendering;
+
     public class SendCodeViewModel
     {
         public string SelectedProvider { get; set; }

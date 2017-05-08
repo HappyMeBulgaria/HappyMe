@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-
-using Microsoft.AspNetCore.Mvc.Rendering;
-
-namespace HappyMe.Web.Models.ManageViewModels
+﻿namespace HappyMe.Web.ViewModels.Manage
 {
+    using System.Collections.Generic;
+
+    using Microsoft.AspNetCore.Mvc.Rendering;
+
     public class ConfigureTwoFactorViewModel
     {
         public string SelectedProvider { get; set; }

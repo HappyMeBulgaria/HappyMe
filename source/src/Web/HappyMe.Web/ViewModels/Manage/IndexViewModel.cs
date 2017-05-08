@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-
-using Microsoft.AspNetCore.Identity;
-
-namespace HappyMe.Web.Models.ManageViewModels
+﻿namespace HappyMe.Web.ViewModels.Manage
 {
+    using System.Collections.Generic;
+
+    using Microsoft.AspNetCore.Identity;
+
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }

@@ -6,12 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-using HappyMe.Web.Models.ManageViewModels;
 using HappyMe.Web.Services;
 using HappyMe.Data.Models;
 
 namespace HappyMe.Web.Controllers
 {
+    using HappyMe.Web.ViewModels.Manage;
+
     [Authorize]
     public class ManageController : Controller
     {

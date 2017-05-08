@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace HappyMe.Web.Models.AccountViewModels
+﻿namespace HappyMe.Web.ViewModels.Account
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class ForgotPasswordViewModel
     {
         [Required]

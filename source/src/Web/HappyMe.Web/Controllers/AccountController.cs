@@ -8,12 +8,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-using HappyMe.Web.Models.AccountViewModels;
 using HappyMe.Web.Services;
 using HappyMe.Data.Models;
 
 namespace HappyMe.Web.Controllers
 {
+    using HappyMe.Web.ViewModels.Account;
+
     [Authorize]
     public class AccountController : Controller
     {

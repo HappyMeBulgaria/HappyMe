@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace HappyMe.Web.Models.ManageViewModels
+﻿namespace HappyMe.Web.ViewModels.Manage
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class SetPasswordViewModel
     {
         [Required]
