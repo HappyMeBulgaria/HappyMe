@@ -1,0 +1,175 @@
+﻿/*==============Overriding the theme=============*/
+body {
+    background-color: #FCEADE;
+}
+
+.black-bg {
+    background-color: #565656;
+    border-color: #565656;
+}
+
+.sidebar-toggle-box .fa-bars {
+    color: #FFF;
+}
+
+#sidebar {
+    background-color: #25CED1;
+}
+
+    #sidebar h5 {
+        color: #FFF;
+    }
+
+ul.sidebar-menu li a {
+    color: #FFF;
+    font-size: 14px;
+}
+
+    ul.sidebar-menu li a:before {
+        font-family: 'FontAwesome';
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    ul.sidebar-menu li a.dashboard:before {
+        content: '\f0e4';
+    }
+
+    ul.sidebar-menu li a.modules:before {
+        content: '\f12e';
+    }
+
+    ul.sidebar-menu li a.images:before {
+        content: '\f030';
+    }
+
+    ul.sidebar-menu li a.questions:before {
+        content: '\f059';
+    }
+
+    ul.sidebar-menu li a.answers:before {
+        content: '\f086';
+    }
+
+ul.top-menu > li .logout {
+    font-size: 14px;
+    color: #eee;
+    border: 1px solid #999 !important;
+    background-color: transparent;
+}
+
+    ul.top-menu > li .logout:hover {
+        color: #f2f2f2 !important;
+        background-color: #EA256F !important;
+        border: 1px solid #EA256F !important;
+    }
+/*==============End overriding the theme=============*/
+
+/*==============Overriding bootstrap=============*/
+.btn {
+}
+
+    .btn:hover,
+    .btn:focus {
+        background-color: #656565;
+    }
+
+.btn-default {
+    color: #656565;
+    border: 1px solid #656565;
+    background-color: transparent;
+}
+
+.btn-success {
+    border: none;
+    color: #FFF;
+    background-color: #25CED1;
+}
+
+.btn-primary {
+    border: none;
+    background-color: #FF8A5B;
+}
+
+.btn-warning {
+    border: none;
+    background-color: #EA256F;
+}
+
+.btn-rounded {
+    border-radius: 10px;
+}
+
+/*==============End overriding bootstrap=============*/
+
+/*==============Overriding other styles=============*/
+.editor-label {
+    display: none;
+}
+/*==============End overriding other styles=============*/
+
+.bottom-buffer {
+    margin-bottom: 10px;
+}
+
+.top-buffer {
+    margin-top: 10px;
+}
+
+.table thead {
+    background-color: #fff2f2;
+}
+
+.table > thead > tr > th {
+    border-bottom-color: #FCEADE;
+}
+
+.table tbody {
+    background-color: #fff2f2;
+}
+
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 14px;
+    background-color: #656565;
+}
+
+.editor-field {
+    margin-bottom: 10px;
+}
+
+.dashboard-username {
+    font-family: Lato Black, sans-serif;
+}
+
+.dasboard-child-container {
+    text-align: center;
+    padding: 35px;
+}
+
+    .dasboard-child-container .inner-container {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .dasboard-child-container a {
+        width: 75%;
+        padding: 5px;
+    }
+
+    .dasboard-child-container img {
+        margin: 0 auto;
+        height: 130px;
+        width: 130px;
+        border: 8px #555555 solid;
+    }
+
+.module-actions a {
+    width: 100%;
+    font-size: 30px;
+    border-radius: 10px;
+}

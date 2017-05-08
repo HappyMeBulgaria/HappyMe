@@ -1,0 +1,160 @@
+﻿@font-face {
+    src: url('../lib/lato-font/fonts/lato-light/lato-light.woff');
+    font-family: Lato Light;
+}
+
+@font-face {
+    src: url('../lib/lato-font/fonts/lato-normal/lato-normal.woff');
+    font-family: Lato;
+}
+
+@font-face {
+    src: url('../lib/lato-font/fonts/lato-black/lato-black.woff');
+    font-family: Lato Black;
+}
+
+@font-face {
+    src: url('/Content/fonts/Blogger Sans/Blogger_Sans-Light.otf');
+    font-family: Blogger Sans Light;
+}
+/* ============ checkboxes =========== */
+input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+}
+
+    /* to hide the checkbox itself */
+    input[type=checkbox] + label, input[type=checkbox] ~ label {
+        position: relative;
+        padding-left: 25px;
+        font-size: 16px;
+    }
+
+        input[type=checkbox] + label:before, input[type=checkbox] ~ label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            font-size: 20px;
+            line-height: 100%;
+            color: #656565;
+            position: absolute;
+            left: 1px;
+            top: 0px;
+        }
+
+        input[type=checkbox] + label:before, input[type=checkbox] ~ label:before {
+            content: "\f096";
+        }
+
+        /* unchecked icon */
+        input[type=checkbox] + label:before, input[type=checkbox] ~ label:before {
+            margin-right: 8px;
+        }
+
+    /* space between checkbox and label */
+    input[type=checkbox]:checked + label:before, input[type=checkbox]:checked ~ label:before {
+        content: "\f14a";
+    }
+
+.section-title-container {
+    text-align: center;
+}
+
+.section-title {
+    text-transform: uppercase;
+    font: 1.225em Lato Black;
+    color: #ff8a5b;
+    text-align: center;
+    padding: 1.625em 0 0.625em 0;
+    position: relative;
+    display: inline-block;
+    line-height: 2;
+}
+
+    .section-title:after {
+        content: '';
+        display: block;
+        background: #25ced1;
+        height: 5px;
+        max-width: 70%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+.large-heading {
+    font-size: 30px;
+}
+
+.huge-heading {
+    font-size: 35px;
+}
+
+.bottom-buffer {
+    margin-bottom: 10px;
+}
+
+.top-buffer {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+textarea {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+    input:focus,
+    input:active,
+    textarea:focus,
+    textarea:active {
+        outline: none;
+        border-color: #FF8A5B;
+    }
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+    /* style icon */
+    .inner-addon i {
+        position: absolute;
+        padding: 7px;
+        font-size: 1.4em;
+        pointer-events: none;
+    }
+
+/* add padding  */
+.left-addon input {
+    padding-left: 40px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+    .left-addon i {
+        left: auto;
+    }
+}
+
+.cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.slider-img-item {
+    margin: 0 auto;
+}

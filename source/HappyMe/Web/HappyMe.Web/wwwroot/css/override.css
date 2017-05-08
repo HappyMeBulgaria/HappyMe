@@ -1,0 +1,78 @@
+﻿/*@media only screen and (min-width: 1365px) {
+    .container {
+        width: 1330px !important;
+    }
+}*/
+
+.navbar-brand {
+    padding: 8px 15px !important;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #FFF;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #656565;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #777;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+        .navbar-collapse.collapse.in {
+            display: block !important;
+        }
+
+    .navbar-header .collapse, .navbar-toggle {
+        display: block !important;
+    }
+
+    .navbar-header {
+        float: none;
+    }
+}
+
+.btn {
+}
+
+    .btn:hover,
+    .btn:focus {
+        background-color: #656565;
+    }
+
+.btn-default {
+    color: #656565;
+    border: 1px solid #656565;
+    background-color: transparent;
+}
+
+.btn-success {
+    border: none;
+    color: #FFF;
+    background-color: #25CED1;
+}
+
+.btn-primary {
+    border: none;
+    background-color: #FF8A5B;
+}
+
+.btn-warning {
+    border: none;
+    background-color: #EA256F;
+}
+
+.slick-dots li button:before {
+    font-size: 20px;
+}
+
+.slick-dots {
+  bottom: 15px; 
+  left: 0;
+}

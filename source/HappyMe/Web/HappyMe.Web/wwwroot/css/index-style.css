@@ -1,0 +1,426 @@
+    .hvr-grow:hover,
+    .hvr-grow:focus,
+    .hvr-grow:active {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    
+    * {
+        margin: 0em;
+        padding: 0em;
+    }
+    
+    .clearfix {
+        clear: both;
+    }
+    
+    .wrapper {
+        margin: 0 auto;
+    }
+    
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 3.125em;
+        background: #565656;
+        color: white;
+        z-index: 10;
+    }
+    
+    header {
+        background: url("../images/homepage-background.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 739px;
+    }
+    
+    main {
+        font: 0.938em Lato-Light;
+        color: #565656;
+    }
+    
+    footer {}
+    
+    .nav-logo {
+        width: 100%;
+        height: 100%;
+        max-width: 8.25em;
+        max-height: 2.25em;
+        margin-left: 3.25em;
+        margin-top: 0.6em;
+        position: absolute;
+        float: left;
+    }
+    
+    #button-menu {
+        font: 1.375em Blogger Sans Light;
+        line-height: 0.938em;
+        float: right;
+        margin-right: 3.25em;
+        padding: 0.835em 0em 0.5em 0em;
+    }
+    
+    .nav-content {
+        list-style-type: none;
+        float: right;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        overflow: hidden;
+        height: 3.125em;
+        display: inline-block;
+        margin-right: 3.125em;
+    }
+    
+    .nav-content-item {
+        list-style-type: none;
+        display: inline-block;
+    }
+    
+    .nav-content-item a {
+        text-decoration: none;
+        font: 1.255em Blogger Sans Light;
+        line-height: 0.938em;
+        color: white;
+        padding: 1em 0em 0.5em 0em;
+        margin: 0 0.825em;
+        float: right;
+        position: relative;
+    }
+    
+    #nav-hidden {
+        display: none;
+    }
+    
+    #button-menu:hover,
+    .nav-content-item:hover,
+    .nav-content-item a:hover {
+        cursor: pointer;
+        color: #26cfd1;
+    }
+    
+    .content-under {
+        position: relative;
+    }
+    
+    .content-above {
+        position: absolute;
+        right: 0;
+        top: 5.5em;
+    }
+    
+    #homepage {
+        color: white;
+    }
+    
+    .homepage-slogan {
+        width: 45%;
+        font: 3em Lato Light;
+        text-align: left;
+        padding: 5.125em 0em 0em 1.925em;
+    }
+    
+    .play-game {
+        width: 9.225em;
+        height: 2.5em;
+        border: none;
+        border-radius: 0.938em;
+        background: #eb5270;
+        font: 2.225em Lato Black;
+        margin: 2.225em 0em 0em 3.225em;
+    }
+    
+    .play-game:hover {
+        background: #565656;
+    }
+    
+    #mission {
+        padding: 3.125em 0;
+    }
+    
+    .mission-list {
+        display: flex;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .mission-list li {
+        display: inline-block;
+        width: 40%;
+        margin: 2em 3em;
+    }
+    
+    .mission-item {
+        display: inline-block;
+    }
+    
+    .mission-icon {
+        color: #eb5270;
+        margin: 0 0 0.325em 0;
+    }
+    
+    .slider {
+        width: 100%;
+    }
+    
+    .slider img {
+        padding: 0.5em;
+    }
+    
+    .slick-slide {
+        background: #fceade;
+        padding: 7.1em 0;
+        font: 1.225em Lato Light;
+        text-align: center;
+    }
+    
+    .slick-dots {
+        bottom: -30px;
+    }
+    
+    #functions {
+        display: inline-block;
+        padding: 1.825em 0;
+    }
+    
+    .functions-content-left,
+    .function-content-right {
+        width: 50%;
+        display: inline-block;
+        padding: 2.625em 0 0.625em 0;
+    }
+    
+    .functions-content-left {
+        float: left;
+    }
+    
+    .functions-content-right {
+        float: right;
+        width: 50%;
+        padding: 4em 0 0 0;
+    }
+    
+    .functions-content-right p {
+        font-size: 1.225em;
+        width: 80%;
+        text-align: left;
+        margin: 2.6em 3.625em 1em 5.625em;
+        padding: 0.5em 0;
+    }
+    
+    .section-title-underline-right {
+        width: 4.688em;
+        border-bottom: 0.225em solid #25ced1;
+        position: absolute;
+        left: 73%;
+    }
+    
+    .fa-pencil-square-o {
+        color: #eb5270;
+    }
+    
+    .fa-users {
+        color: #ff8a5b;
+    }
+    
+    .fa-bar-chart {
+        color: #42c2c9;
+    }
+    
+    .fa-pencil-square-o,
+    .fa-users,
+    .fa-bar-chart {
+        position: absolute;
+    }
+    
+    #modules {
+        padding: 2.625em 0em 0em 0em;
+    }
+    
+    .module {
+        display: inline-block;
+        width: 20%;
+        margin: 2em 2em;
+        padding: 1.225em 0em;
+        text-align: center;
+    }
+    
+    .flip {
+        -webkit-perspective: 800;
+        -ms-perspective: 800;
+        -moz-perspective: 800;
+        -o-perspective: 800;
+        width: 16em;
+        height: 18em;
+        position: relative;
+    }
+    
+    .flip .card.flipped {
+        transform: rotatey(-180deg);
+        -ms-transform: rotatey(-180deg);
+        /* IE 9 */
+        -moz-transform: rotatey(-180deg);
+        /* Firefox */
+        -webkit-transform: rotatey(-180deg);
+        /* Safari and Chrome */
+        -o-transform: rotatey(-180deg);
+        /* Opera */
+    }
+    
+    .flip .card {
+        width: 100%;
+        height: 100%;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition: 0.5s;
+        -moz-transform-style: preserve-3d;
+        -moz-transition: 0.5s;
+        -ms-transform-style: preserve-3d;
+        -ms-transition: 0.5s;
+        -o-transform-style: preserve-3d;
+        -o-transition: 0.5s;
+        transform-style: preserve-3d;
+        transition: 0.5s;
+    }
+    
+    .flip .card .face {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 2;
+        text-align: center;
+        backface-visibility: hidden;
+        /* W3C */
+        -webkit-backface-visibility: hidden;
+        /* Safari & Chrome */
+        -moz-backface-visibility: hidden;
+        /* Firefox */
+        -ms-backface-visibility: hidden;
+        /* Internet Explorer */
+        -o-backface-visibility: hidden;
+        /* Opera */
+        ;
+    }
+    
+    .flip .card .front {
+        position: absolute;
+        z-index: 1;
+        background: #fceade;
+        box-shadow: 0.3em rgba(0, 0, 0, 0.5);
+        border-radius: 1em;
+        color: #565656;
+        cursor: pointer;
+    }
+    
+    .flip .card .back {
+        background: #fceade;
+        box-shadow: 0.3em rgba(0, 0, 0, 0.5);
+        border-radius: 1em;
+        color: #565656;
+        cursor: pointer;
+        transform: rotatey(-180deg);
+        -ms-transform: rotatey(-180deg);
+        /* IE 9 */
+        -moz-transform: rotatey(-180deg);
+        /* Firefox */
+        -webkit-transform: rotatey(-180deg);
+        /* Safari and Chrome */
+        -o-transform: rotatey(-180deg);
+        /* Opera */
+    }
+    
+    .module h3 {
+        font: 1.225em Lato Black;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 1.225em;
+    }
+    
+    .module p {
+        padding: 3.125em;
+    }
+    
+    #module-title-alphabet {
+        color: #42c2c9;
+    }
+    
+    #module-title-colours {
+        color: #eb5270;
+    }
+    
+    #module-title-family {
+        color: #ff8a5b;
+    }
+    
+    #module-title-connects {
+        color: #565656;
+    }
+    
+    #tutorial {
+        padding: 2.225em 0 0 0;
+    }
+    
+    .single-step {
+        display: inline-block;
+        width: 30%;
+        margin: 1.25em;
+        text-align: center;
+    }
+    
+    .number-step {
+        font: 2em Lato-Black;
+        color: white;
+        background: #565656;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 1em;
+        padding: 0.5em 0;
+        line-height: 0.5em;
+        margin: 0 auto;
+        position: relative;
+        z-index: 5;
+    }
+    
+    #why-happy {
+        padding: 1.125em 0 0 0;
+        background: #eb5270;
+        color: white;
+    }
+    
+    #why-happy h3 {
+        color: white;
+    }
+    
+    #team {
+        background: #fceadd;
+        text-align: center;
+    }
+    
+    .team-list {
+        margin: 2em;
+    }
+    
+    .team-member {
+        display: inline-block;
+        width: 15%;
+        margin: 0.625em;
+    }
+    
+    .contact-us,
+    .contact-form,
+    .contacts-form {
+        display: block;
+        position: absolute;
+        text-align: center;
+    }
+    
+    input {
+        font: 1.125em Lato-Light;
+        color: #565656;
+        border: none;
+        border-radius: 0.515em;
+        padding: 0.225em;
+        margin: 0.325em;
+    }
