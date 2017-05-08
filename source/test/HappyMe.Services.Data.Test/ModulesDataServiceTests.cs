@@ -1,4 +1,4 @@
-﻿namespace HappyMe.Tests.Services.Data
+﻿namespace HappyMe.Services.Data.Test
 {
     using System.Collections.Generic;
     using System.Linq;
