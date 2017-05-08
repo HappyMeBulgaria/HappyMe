@@ -37,6 +37,9 @@
     <ProjectReference Include="..\..\Data\HappyMe.Data.Models\HappyMe.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\HappyMe.Data\HappyMe.Data.csproj" />
     <ProjectReference Include="..\..\HappyMe.Common\HappyMe.Common.csproj" />
+    <ProjectReference Include="..\..\Services\HappyMe.Services.Administration\HappyMe.Services.Administration.csproj" />
+    <ProjectReference Include="..\..\Services\HappyMe.Services.Common\HappyMe.Services.Common.csproj" />
+    <ProjectReference Include="..\..\Services\HappyMe.Services.Data\HappyMe.Services.Data.csproj" />
   </ItemGroup>
 
 </Project>

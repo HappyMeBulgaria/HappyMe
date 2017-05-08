@@ -14,6 +14,7 @@ using HappyMe.Web.Services;
 namespace HappyMe.Web
 {
     using HappyMe.Data;
+    using HappyMe.Services.Common;
 
     public class Startup
     {
