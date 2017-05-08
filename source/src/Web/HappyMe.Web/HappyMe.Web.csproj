@@ -34,7 +34,6 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Data\HappyMe.Data.Contracts\HappyMe.Data.Contracts.csproj" />
     <ProjectReference Include="..\..\Data\HappyMe.Data.Models\HappyMe.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\HappyMe.Data\HappyMe.Data.csproj" />
     <ProjectReference Include="..\..\HappyMe.Common\HappyMe.Common.csproj" />
