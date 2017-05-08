@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using HappyMe.Web.Services;
+﻿using HappyMe.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HappyMe.Web.Controllers
@@ -12,26 +11,26 @@ namespace HappyMe.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application ge.";
+            this.ViewData["Message"] = "Your application ge.";
             
-            return View();
+            return this.View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            this.ViewData["Message"] = "Your contact page.";
 
-            return View();
+            return this.View();
         }
 
         public IActionResult Error()
         {
-            return View();
+            return this.View();
         }
     }
 }

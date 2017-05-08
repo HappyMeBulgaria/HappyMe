@@ -44,7 +44,7 @@
                         <li class=""><a class="scroll" href="#why-happy">защо happy me?</a></li>*@
                     <li class=""><a class="scroll" href="#team">екип</a></li>
                     <li class=""><a class="scroll" href="#contact-us">контакти</a></li>
-                    @if (this.User.IsInRole(RoleConstants.Administrator))
+                    @if (User.IsInRole(RoleConstants.Administrator))
                     {
                         <li class="">@Html.ActionLink("Администрация", "Index", new { controller = "Dashboard", area = "Administration" }, null)</li>
                     }

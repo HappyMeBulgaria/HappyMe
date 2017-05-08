@@ -2,9 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
+
 using HappyMe.Data;
-using HappyMe.Common.Models;
 
 namespace HappyMe.Web.Migrations
 {
