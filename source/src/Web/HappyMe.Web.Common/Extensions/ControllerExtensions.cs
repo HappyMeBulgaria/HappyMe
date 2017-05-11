@@ -21,7 +21,7 @@ namespace HappyMe.Web.Common.Extensions
 
         public static IActionResult JsonSuccess(this Controller controller, object data) => new StandardJsonResult(data);
 
-        public static JsonResult JsonError(this Controller controller, string errorMessage)
+        public static IActionResult JsonError(this Controller controller, string errorMessage)
         {
             var result = new StandardJsonResult(null);
 

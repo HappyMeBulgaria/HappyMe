@@ -41,6 +41,7 @@
     <ProjectReference Include="..\..\Services\HappyMe.Services.Administration\HappyMe.Services.Administration.csproj" />
     <ProjectReference Include="..\..\Services\HappyMe.Services.Common\HappyMe.Services.Common.csproj" />
     <ProjectReference Include="..\..\Services\HappyMe.Services.Data\HappyMe.Services.Data.csproj" />
+    <ProjectReference Include="..\HappyMe.Web.Common\HappyMe.Web.Common.csproj" />
   </ItemGroup>
 
 </Project>
