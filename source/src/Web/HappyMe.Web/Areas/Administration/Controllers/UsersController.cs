@@ -22,7 +22,7 @@
 
 
     [AuthorizeRoles(RoleConstants.Administrator, RoleConstants.Parent)]
-    public class UsersController : 
+    public class UsersController :
         MvcGridAdministrationCrudController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>
     {
         private readonly IAdministrationService<IdentityRole> roleAdministrationService;
@@ -63,7 +63,7 @@
                 if (userCreateResult.Succeeded && roleAssigned.Succeeded)
                 {
                     this.TempData.AddSuccessMessage("Успешно създадохте потребител");
-                    return this.RedirectToAction<DashboardController>(c => c.Index());
+                    return this.RedirectToAction("Index", "Dashboard", new { area = "Administration" });
                 }
 
                 this.TempData.AddDangerMessage(string.Join(";", userCreateResult.Errors));
