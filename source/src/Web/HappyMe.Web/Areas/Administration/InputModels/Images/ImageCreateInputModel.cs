@@ -6,28 +6,23 @@
 
     using HappyMe.Common.Mapping;
     using HappyMe.Data.Models;
+    using HappyMe.Web.Common.Extensions;
 
     using Microsoft.AspNetCore.Http;
 
-    ////public class ImageCreateInputModel : IMapFrom<Image>, IMapTo<Image>, IHaveCustomMappings
-    ////{
-    ////    [Required(ErrorMessage = "Моля изберете изображение.")]
-    ////    [UIHint("ImageUpload")]
-    ////    public IFormFile ImageFile { get; set; }
+    public class ImageCreateInputModel : IMapFrom<Image>, IMapTo<Image>, IHaveCustomMappings
+    {
+        [Required(ErrorMessage = "Моля изберете изображение.")]
+        [UIHint("ImageUpload")]
+        public IFormFile ImageFile { get; set; }
 
-    ////    ////public void CreateMappings(IMapperConfigurationExpression configuration)
-    ////    ////{
-    ////    ////    configuration
-    ////    ////        .CreateMap<ImageCreateInputModel, Image>("ImageCreateInputModel")
-    ////    ////        .ForMember(
-    ////    ////        x => x.ImageData, 
-    ////    ////        x => x.MapFrom(y => y.ImageFile.InputStream.ToByteArray()));
-
-    ////    ////    configuration
-    ////    ////        .CreateMap<ImageUpdateInputModel, Image>("ImageUpdateInputModel")
-    ////    ////        .ForMember(
-    ////    ////        x => x.ImageData,
-    ////    ////        x => x.MapFrom(y => y.ImageFile.InputStream.ToByteArray()));
-    ////    ////}
-    ////}
+        public void CreateMappings(IMapperConfigurationExpression configuration)
+        {
+            configuration
+                .CreateMap<ImageCreateInputModel, Image>()
+                .ForMember(
+                x => x.ImageData,
+                x => x.MapFrom(y => y.ImageFile.ToByteArray()));
+        }
+    }
 }
