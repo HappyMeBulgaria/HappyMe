@@ -1,0 +1,10 @@
+{
+  "name": "happy-me",
+  "version": "1.0.0",
+  "description": "Online educational platform supporting education, development and happiness of children with autism.",
+  "repository": "https://github.com/HappyMeBulgaria/HappyMe",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
