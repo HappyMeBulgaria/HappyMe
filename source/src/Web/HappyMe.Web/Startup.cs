@@ -1,24 +1,23 @@
-﻿using AutoMapper;
-using HappyMe.Data.Contracts.Repositories;
-using HappyMe.Data.Contracts.Repositories.Contracts;
-using HappyMe.Services.Common.Mapping;
-using HappyMe.Services.Common.Mapping.Contracts;
-
-namespace HappyMe.Web
+﻿namespace HappyMe.Web
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
 
+    using AutoMapper;
+
     using HappyMe.Common.Mapping;
     using HappyMe.Data;
+    using HappyMe.Data.Contracts.Repositories;
+    using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Data.Models;
     using HappyMe.Services.Administration.Contracts;
     using HappyMe.Services.Common;
+    using HappyMe.Services.Common.Mapping;
+    using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
     using HappyMe.Web.Config;
-    using HappyMe.Web.Services;
 
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
