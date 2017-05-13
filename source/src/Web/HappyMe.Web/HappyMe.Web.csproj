@@ -16,6 +16,10 @@
   <ItemGroup>
     <AdditionalFiles Include="..\..\..\stylecop.json" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\js\specs\test-spec.js" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.0.2" />
