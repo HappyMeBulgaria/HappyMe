@@ -15,6 +15,8 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
+    using MoreDotNet.Extensions.Common;
+
     public class UsersAnswersController :
         MvcGridAdministrationReadAndDeleteController<UserAnswer, UserAnswerGridViewModel>
     {
@@ -38,7 +40,7 @@
             {
                 usersAnswers = this.MappingService
                     .MapCollection<UserAnswerGridViewModel>(
-                        (this.AdministrationService as IUsersAnswersAdministrationService)
+                        this.AdministrationService.As<IUsersAnswersAdministrationService>()
                             ?.GetChildrenAnswers(await this.GetUserIdAsync()))
                     .OrderBy(m => m.CreatedOn);
             }
@@ -57,7 +59,7 @@
 
             var userHasRight =
                 this.User.IsAdmin() ||
-                ((this.AdministrationService as IUsersAnswersAdministrationService)?.CheckIfUserHasRights(
+                (this.AdministrationService.As<IUsersAnswersAdministrationService>()?.CheckIfUserHasRights(
                     await this.GetUserIdAsync(),
                     id.Value) ?? false);
 

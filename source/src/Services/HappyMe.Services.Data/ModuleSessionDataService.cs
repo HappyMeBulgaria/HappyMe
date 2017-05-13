@@ -1,7 +1,6 @@
 ﻿namespace HappyMe.Services.Data
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -9,6 +8,9 @@
     using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Data.Models;
     using HappyMe.Services.Data.Contracts;
+
+    using MoreDotNet.Extensions.Collections;
+    using MoreDotNet.Extensions.Common;
 
     public class ModuleSessionDataService : IModuleSessionDataService
     {
@@ -51,9 +53,9 @@
                 return null;
             }
 
-            var selectedQuestion = this.OneOf(RandomGenerator.Instance, unanswerdQuestions);
+            var selectedQuestion = RandomGenerator.Instance.OneOf(unanswerdQuestions);
 
-            selectedQuestion.Answers = this.Shuffle(selectedQuestion.Answers, RandomGenerator.Instance)
+            selectedQuestion.Answers = selectedQuestion.Answers.Shuffle(RandomGenerator.Instance)
                 .ToList();
 
             return selectedQuestion;
@@ -113,49 +115,6 @@
             await this.moduleSessionsRepository.SaveChangesAsync();
 
             return newSession;
-        }
-
-        private T OneOf<T>(Random random, IList<T> items)
-        {
-            if (random == null)
-            {
-                throw new ArgumentNullException(nameof(random));
-            }
-
-            if (items == null)
-            {
-                throw new ArgumentNullException(nameof(items));
-            }
-
-            int index = random.Next(0, items.Count);
-            return items.ElementAt(index);
-        }
-
-        private IEnumerable<T> Shuffle<T>(IEnumerable<T> items, Random randomGenerator)
-        {
-            if (items == null)
-            {
-                throw new ArgumentNullException(nameof(items));
-            }
-
-            if (randomGenerator == null)
-            {
-                throw new ArgumentNullException(nameof(randomGenerator));
-            }
-
-            return this.ShuffleIterator(items, randomGenerator);
-        }
-
-        private IEnumerable<T> ShuffleIterator<T>(IEnumerable<T> items, Random randomGenerator)
-        {
-            var buffer = items.ToList();
-            for (int i = 0; i < buffer.Count; i++)
-            {
-                var j = randomGenerator.Next(i, buffer.Count);
-                yield return buffer[j];
-
-                buffer[j] = buffer[i];
-            }
         }
     }
 }
