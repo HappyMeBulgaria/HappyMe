@@ -18,6 +18,8 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
 
+    using MoreDotNet.Extensions.Common;
+
     public class QuestionsController :
         MvcGridAdministrationCrudController<Question, QuestionGridViewModel, QuestionCreateInputModel, QuestionUpdateInputModel>
     {
@@ -197,7 +199,7 @@
         private async Task<bool> CheckIfUserHasRightsForQuestion(int questionId)
         {
             return this.User.IsAdmin()
-                                || ((this.AdministrationService as IQuestionsAdministrationService)
+                                || (this.AdministrationService.As<IQuestionsAdministrationService>()
                                        ?.CheckIfUserIsAuthorOnQuestion(await this.GetUserIdAsync(), questionId) ?? false);
         }
     }

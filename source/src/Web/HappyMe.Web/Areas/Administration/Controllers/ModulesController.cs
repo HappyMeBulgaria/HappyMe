@@ -17,6 +17,8 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
+    using MoreDotNet.Extensions.Common;
+
     public class ModulesController :
         MvcGridAdministrationCrudController<Module, ModuleGridViewModel, ModuleCreateInputModel, ModuleUpdateInputModel>
     {
@@ -44,7 +46,7 @@
             {
                 modules =
                     this.MappingService.MapCollection<ModuleGridViewModel>(
-                        (this.AdministrationService as IModulesAdministrationService)
+                        this.AdministrationService.As<IModulesAdministrationService>()
                         ?.GetUserAndPublicModules(await this.GetUserIdAsync()))
                         .OrderBy(m => m.Id);
             }
@@ -158,7 +160,7 @@
         private async Task<bool> CheckIfUserHasRights(int moduleId)
         {
             return this.User.IsAdmin() ||
-                ((this.AdministrationService as IModulesAdministrationService)
+                (this.AdministrationService.As<IModulesAdministrationService>()
                     ?.CheckIfUserIsModuleAuthor(moduleId, await this.GetUserIdAsync()) ?? false);
         }
     }

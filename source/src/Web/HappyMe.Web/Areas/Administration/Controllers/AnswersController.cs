@@ -19,6 +19,8 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
 
+    using MoreDotNet.Extensions.Common;
+
     using ViewModels.Answers;
 
     public class AnswersController :
@@ -52,7 +54,7 @@
             {
                 answers = this.MappingService
                     .MapCollection<AnswerGridViewModel>(
-                        (this.AdministrationService as IAnswersAdministrationService)
+                        this.AdministrationService.As<IAnswersAdministrationService>()
                         ?.GetAllUserAnswers(await this.GetUserIdAsync()))
                     .OrderBy(m => m.Id);
             }
