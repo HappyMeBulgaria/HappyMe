@@ -1,19 +1,18 @@
-﻿using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-
-using HappyMe.Web.Services;
-using HappyMe.Data.Models;
-
-namespace HappyMe.Web.Controllers
+﻿namespace HappyMe.Web.Controllers
 {
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+    using HappyMe.Data.Models;
+    using HappyMe.Web.Services;
     using HappyMe.Web.ViewModels.Account;
+
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Options;
 
     [Authorize]
     public class AccountController : Controller

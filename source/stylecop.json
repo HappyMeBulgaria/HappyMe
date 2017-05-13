@@ -1,0 +1,24 @@
+{
+  $schema httpsraw.githubusercontent.comDotNetAnalyzersStyleCopAnalyzersmasterStyleCop.AnalyzersStyleCop.AnalyzersSettingsstylecop.schema.json,
+  settings {
+    layoutRules {
+      newlineAtEndOfFile require
+    },
+    namingRules {
+      allowCommonHungarianPrefixes true,
+      allowedHungarianPrefixes [ db, at, or, up, it, un, x, y, id, ip, bg ]
+    },
+    documentationRules {
+      companyName HappyMe,
+      copyrightText Copyright (c) {companyName}. All Rights Reserved.,
+      documentInterfaces false,
+      documentInternalElements false
+    },
+    orderingRules {
+      usingDirectivesPlacement insideNamespace,
+      systemUsingDirectivesFirst true,
+      blankLinesBetweenUsingGroups require
+    }
+  }
+}
+0

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
+    <CodeAnalysisRuleSet>..\..\..\visual-studio-analyzers.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,12 +10,17 @@
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="1.1.1" />
     <PackageReference Include="NonFactors.Grid.Core.Mvc6" Version="1.4.0" />
     <PackageReference Include="NonFactors.Grid.Mvc6" Version="1.4.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\HappyMe.Common\HappyMe.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\stylecop.json" />
+  </ItemGroup>
+  
   <ItemGroup>
     <Reference Include="Microsoft.AspNetCore.Authorization">
       <HintPath>..\..\..\..\..\..\Users\Kiko\.nuget\packages\microsoft.aspnetcore.authorization\1.1.1\lib\netstandard1.3\Microsoft.AspNetCore.Authorization.dll</HintPath>

@@ -2,8 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
+    <CodeAnalysisRuleSet>..\..\..\visual-studio-analyzers.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\stylecop.json" />
+  </ItemGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\..\Data\HappyMe.Data.Contracts\HappyMe.Data.Contracts.csproj" />
     <ProjectReference Include="..\..\Data\HappyMe.Data.Models\HappyMe.Data.Models.csproj" />
