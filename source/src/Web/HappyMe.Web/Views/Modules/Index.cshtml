@@ -1,0 +1,24 @@
+﻿@model IEnumerable<HappyMe.Web.ViewModels.Modules.ModuleViewModel>
+
+@{
+    ViewBag.Title = "Избери модул";
+}
+
+@section styles {
+    
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/modules.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/modules.min.css" />
+    </environment>
+}
+
+<div class="section-title-container">
+    <h1 class="section-title large-heading page-heading">@(ViewBag.Title):</h1>
+</div>
+
+<div class="row modules-container text-center">
+    @Html.DisplayFor(m => m)
+</div>
+

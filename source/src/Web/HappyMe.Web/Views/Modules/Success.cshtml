@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/result-screens.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/result-screens.min.css" />
+    </environment>
+    <style>
+        .btn-exit-main-layout {
+            display: none;
+        }
+    </style>
+}
+
+<div class="screen-container">
+    <div class="screen success-screen">
+        <div class="screen-text text-center cell">
+            <div class="screen-title bottom-buffer">Браво!!!</div>
+            <div>Ти успешно премина този модул!</div>
+        </div>
+        <div>
+            <img src="~/images/character_green.png" alt="Green character"/>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="@Url.Action("Index", "Home", new { area = string.Empty })" class="btn btn-success top-buffer">Към началото</a>
+    </div>
+</div>
+
