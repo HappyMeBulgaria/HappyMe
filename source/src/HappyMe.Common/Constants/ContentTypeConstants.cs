@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ContentTypeConstants.cs" company="">
-//   
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace HappyMe.Common.Constants
+﻿namespace HappyMe.Common.Constants
 {
     public class ContentTypeConstants
     {

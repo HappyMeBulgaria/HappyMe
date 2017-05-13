@@ -1,18 +1,18 @@
-﻿using NonFactors.Mvc.Grid;
-
-namespace HappyMe.Web.Common.Helpers
+﻿namespace HappyMe.Web.Common.Helpers
 {
-    using Microsoft.AspNetCore.Mvc.ViewFeatures;
-
     using System;
     using System.Collections.Generic;
+
+    using Microsoft.AspNetCore.Mvc.ViewFeatures;
+
+    using NonFactors.Mvc.Grid;
 
     public static class GridHelper
     {
         public static IHtmlGrid<TModel> MvcGrid<TModel>(
-            this HtmlHelper helper, 
-            IEnumerable<TModel> source, 
-            Action<IGridColumnsOf<TModel>> columns) 
+            this HtmlHelper helper,
+            IEnumerable<TModel> source,
+            Action<IGridColumnsOf<TModel>> columns)
             where TModel : class
         {
             return helper

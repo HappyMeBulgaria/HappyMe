@@ -25,7 +25,7 @@
 
         public IQueryable<Module> AllPublic() => this.modulesRepository.All().Where(m => m.IsPublic);
 
-        public IQueryable<Module> AllPublicWithQuestionsWithCorrectAnswer() => 
+        public IQueryable<Module> AllPublicWithQuestionsWithCorrectAnswer() =>
             this.AllPublic().Where(x => x.Questions.Any(q => q.Answers.Any(a => a.IsCorrect)));
 
         public Module GetById(int id) => this.modulesRepository.GetById(id);

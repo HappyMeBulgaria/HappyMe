@@ -1,27 +1,25 @@
-﻿using System.Linq;
-using System.Reflection;
-using HappyMe.Data.Models;
-
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using HappyMe.Web.Services;
-
-namespace HappyMe.Web
+﻿namespace HappyMe.Web
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
 
     using HappyMe.Common.Mapping;
     using HappyMe.Data;
-    using HappyMe.Services.Administration.Base;
+    using HappyMe.Data.Models;
     using HappyMe.Services.Administration.Contracts;
     using HappyMe.Services.Common;
     using HappyMe.Services.Data.Contracts;
+    using HappyMe.Web.Services;
+
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
 
     public class Startup
     {
@@ -59,7 +57,7 @@ namespace HappyMe.Web
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
-            //services.AddTransient<ISmsSender, AuthMessageSender>();
+            //// services.AddTransient<ISmsSender, AuthMessageSender>();
 
             // TODOD: Move to constants or somewhere else
             var serviceAssemblies = new[]
@@ -94,7 +92,7 @@ namespace HappyMe.Web
 
             app.UseIdentity();
 
-            // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
+            //// Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
 
             app.UseMvc(routes =>
             {

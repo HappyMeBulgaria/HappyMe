@@ -25,7 +25,7 @@
             : base(userData, dataRepository, mappingService, userManager)
         {
         }
-        
+
         protected TEditModel GetEditModelData(params object[] id) =>
            this.MappingService.Map<TEditModel>(this.AdministrationService.Get(id));
 

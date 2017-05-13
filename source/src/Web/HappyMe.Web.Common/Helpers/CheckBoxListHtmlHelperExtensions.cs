@@ -1,19 +1,18 @@
-﻿using System.Linq.Expressions;
-using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
-using Microsoft.AspNetCore.Routing;
-
-namespace HappyMe.Web.Common.Helpers
+﻿namespace HappyMe.Web.Common.Helpers
 {
     using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
+    using System.Linq.Expressions;
 
-    public static class HtmlHelperExtensions
+    using Microsoft.AspNetCore.Html;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
+    using Microsoft.AspNetCore.Routing;
+
+    public static class CheckBoxListHtmlHelperExtensions
     {
         /// <summary>
         /// Returns a checkbox for each of the provided <paramref name="items"/>.
@@ -23,9 +22,9 @@ namespace HappyMe.Web.Common.Helpers
             var listName = ExpressionHelper.GetExpressionText(expression);
 
             // TODO: [Migration Fix] uncomment
-            //var metaData = ModelMetadata.FromLambdaExpression(expression, htmlHelper.ViewData);
+            // var metaData = ModelMetadata.FromLambdaExpression(expression, htmlHelper.ViewData);
 
-            //items = GetCheckboxListWithDefaultValues(metaData.Model, items);
+            // items = GetCheckboxListWithDefaultValues(metaData.Model, items);
             return htmlHelper.CheckBoxList(listName, items, htmlAttributes);
         }
 
@@ -75,8 +74,8 @@ namespace HappyMe.Web.Common.Helpers
 
             foreach (var selectListItem in selectList)
             {
-                selectListItem.Selected = (selectListItem.Value != null) 
-                    ? selectedValues.Contains(selectListItem.Value) 
+                selectListItem.Selected = (selectListItem.Value != null)
+                    ? selectedValues.Contains(selectListItem.Value)
                     : selectedValues.Contains(selectListItem.Text);
                 newSelectList.Add(selectListItem);
             }

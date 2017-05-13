@@ -9,7 +9,7 @@
 
     public class AnswersAdministrationService : AdministrationService<Answer>, IAnswersAdministrationService
     {
-        public AnswersAdministrationService(IRepository<Answer> entities) 
+        public AnswersAdministrationService(IRepository<Answer> entities)
             : base(entities)
         {
         }

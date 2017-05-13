@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    //using HappyMe.Common.Constants;
+    using HappyMe.Common.Constants;
     using HappyMe.Data.Contracts;
     using HappyMe.Data.Contracts.Models;
 
@@ -24,11 +24,11 @@
         public virtual Question Question { get; set; }
 
         [Required]
-        //[MaxLength(GlobalConstants.AnswerTextMaxLength)]
+        [MaxLength(GlobalConstants.AnswerTextMaxLength)]
         public string Text { get; set; }
 
         public bool IsCorrect { get; set; }
-        
+
         public bool IsHidden { get; set; }
 
         public int OrderBy { get; set; }

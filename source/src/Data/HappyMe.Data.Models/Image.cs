@@ -11,8 +11,8 @@
     {
         private ICollection<Question> questions;
         private ICollection<Answer> answers;
-        private ICollection<User> users; 
-        private ICollection<Module> modules; 
+        private ICollection<User> users;
+        private ICollection<Module> modules;
 
         public Image()
         {
@@ -38,20 +38,20 @@
 
         public virtual ICollection<Question> Questions
         {
-            get { return this.questions; }
-            set { this.questions = value; }
+            get => this.questions;
+            set => this.questions = value;
         }
 
         public virtual ICollection<Answer> Answers
         {
-            get { return this.answers; }
-            set { this.answers = value; }
+            get => this.answers;
+            set => this.answers = value;
         }
 
         public virtual ICollection<Module> Modules
         {
-            get { return this.modules; }
-            set { this.modules = value; }
-        } 
+            get => this.modules;
+            set => this.modules = value;
+        }
     }
 }

@@ -3,6 +3,7 @@
     using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
+
     using HappyMe.Data.Models;
     using HappyMe.Web.Services;
     using HappyMe.Web.ViewModels.Account;
@@ -40,8 +41,6 @@
             this.logger = loggerFactory.CreateLogger<AccountController>();
         }
 
-        //
-        // GET: /Account/Login
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> Login(string returnUrl = null)
@@ -53,8 +52,6 @@
             return this.View();
         }
 
-        //
-        // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -71,28 +68,26 @@
                     this.logger.LogInformation(1, "User logged in.");
                     return this.RedirectToLocal(returnUrl);
                 }
+
                 if (result.RequiresTwoFactor)
                 {
-                    return this.RedirectToAction(nameof(SendCode), new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    return this.RedirectToAction(nameof(this.SendCode), new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 }
+
                 if (result.IsLockedOut)
                 {
                     this.logger.LogWarning(2, "User account locked out.");
                     return this.View("Lockout");
                 }
-                else
-                {
-                    this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    return this.View(model);
-                }
+
+                this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                return this.View(model);
             }
 
             // If we got this far, something failed, redisplay form
             return this.View(model);
         }
 
-        //
-        // GET: /Account/Register
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Register(string returnUrl = null)
@@ -101,8 +96,6 @@
             return this.View();
         }
 
-        //
-        // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -117,14 +110,15 @@
                 {
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
                     // Send an email with this link
-                    //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    //var callbackUrl = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                    //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
+                    // var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    // var callbackUrl = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                    // await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
                     //    $"Please confirm your account by clicking this link: <a href='{callbackUrl}'>link</a>");
                     await this.signInManager.SignInAsync(user, isPersistent: false);
                     this.logger.LogInformation(3, "User created a new account with password.");
                     return this.RedirectToLocal(returnUrl);
                 }
+
                 this.AddErrors(result);
             }
 
@@ -132,8 +126,6 @@
             return this.View(model);
         }
 
-        //
-        // POST: /Account/Logout
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -143,8 +135,6 @@
             return this.RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
-        //
-        // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -156,8 +146,6 @@
             return this.Challenge(properties, provider);
         }
 
-        //
-        // GET: /Account/ExternalLoginCallback
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> ExternalLoginCallback(string returnUrl = null, string remoteError = null)
@@ -165,12 +153,13 @@
             if (remoteError != null)
             {
                 this.ModelState.AddModelError(string.Empty, $"Error from external provider: {remoteError}");
-                return this.View(nameof(Login));
+                return this.View(nameof(this.Login));
             }
+
             var info = await this.signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
-                return this.RedirectToAction(nameof(Login));
+                return this.RedirectToAction(nameof(this.Login));
             }
 
             // Sign in the user with this external login provider if the user already has a login.
@@ -180,26 +169,24 @@
                 this.logger.LogInformation(5, "User logged in with {Name} provider.", info.LoginProvider);
                 return this.RedirectToLocal(returnUrl);
             }
+
             if (result.RequiresTwoFactor)
             {
-                return this.RedirectToAction(nameof(SendCode), new { ReturnUrl = returnUrl });
+                return this.RedirectToAction(nameof(this.SendCode), new { ReturnUrl = returnUrl });
             }
+
             if (result.IsLockedOut)
             {
                 return this.View("Lockout");
             }
-            else
-            {
-                // If the user does not have an account, then ask the user to create an account.
-                this.ViewData["ReturnUrl"] = returnUrl;
-                this.ViewData["LoginProvider"] = info.LoginProvider;
-                var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-                return this.View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = email });
-            }
+
+            // If the user does not have an account, then ask the user to create an account.
+            this.ViewData["ReturnUrl"] = returnUrl;
+            this.ViewData["LoginProvider"] = info.LoginProvider;
+            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+            return this.View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = email });
         }
 
-        //
-        // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -213,6 +200,7 @@
                 {
                     return this.View("ExternalLoginFailure");
                 }
+
                 var user = new User { UserName = model.Email, Email = model.Email };
                 var result = await this.userManager.CreateAsync(user);
                 if (result.Succeeded)
@@ -225,6 +213,7 @@
                         return this.RedirectToLocal(returnUrl);
                     }
                 }
+
                 this.AddErrors(result);
             }
 
@@ -241,17 +230,17 @@
             {
                 return this.View("Error");
             }
+
             var user = await this.userManager.FindByIdAsync(userId);
             if (user == null)
             {
                 return this.View("Error");
             }
+
             var result = await this.userManager.ConfirmEmailAsync(user, code);
             return this.View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
-        //
-        // GET: /Account/ForgotPassword
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPassword()
@@ -259,8 +248,6 @@
             return this.View();
         }
 
-        //
-        // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -277,19 +264,17 @@
 
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
                 // Send an email with this link
-                //var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-                //var callbackUrl = Url.Action(nameof(ResetPassword), "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                //await _emailSender.SendEmailAsync(model.Email, "Reset Password",
-                //   $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
-                //return View("ForgotPasswordConfirmation");
+                // var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                // var callbackUrl = Url.Action(nameof(ResetPassword), "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                // await _emailSender.SendEmailAsync(model.Email, "Reset Password",
+                //     $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
+                // return View("ForgotPasswordConfirmation");
             }
 
             // If we got this far, something failed, redisplay form
             return this.View(model);
         }
 
-        //
-        // GET: /Account/ForgotPasswordConfirmation
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPasswordConfirmation()
@@ -297,8 +282,6 @@
             return this.View();
         }
 
-        //
-        // GET: /Account/ResetPassword
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ResetPassword(string code = null)
@@ -306,8 +289,6 @@
             return code == null ? this.View("Error") : this.View();
         }
 
-        //
-        // POST: /Account/ResetPassword
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -317,23 +298,24 @@
             {
                 return this.View(model);
             }
+
             var user = await this.userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return this.RedirectToAction(nameof(ResetPasswordConfirmation), "Account");
+                return this.RedirectToAction(nameof(this.ResetPasswordConfirmation), "Account");
             }
+
             var result = await this.userManager.ResetPasswordAsync(user, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return this.RedirectToAction(nameof(ResetPasswordConfirmation), "Account");
+                return this.RedirectToAction(nameof(this.ResetPasswordConfirmation), "Account");
             }
+
             this.AddErrors(result);
             return this.View();
         }
 
-        //
-        // GET: /Account/ResetPasswordConfirmation
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ResetPasswordConfirmation()
@@ -341,8 +323,6 @@
             return this.View();
         }
 
-        //
-        // GET: /Account/SendCode
         [HttpGet]
         [AllowAnonymous]
         public async Task<ActionResult> SendCode(string returnUrl = null, bool rememberMe = false)
@@ -352,13 +332,12 @@
             {
                 return this.View("Error");
             }
+
             var userFactors = await this.userManager.GetValidTwoFactorProvidersAsync(user);
             var factorOptions = userFactors.Select(purpose => new SelectListItem { Text = purpose, Value = purpose }).ToList();
             return this.View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
-        // POST: /Account/SendCode
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -392,11 +371,11 @@
                 await this.smsSender.SendSmsAsync(await this.userManager.GetPhoneNumberAsync(user), message);
             }
 
-            return this.RedirectToAction(nameof(VerifyCode), new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
+            return this.RedirectToAction(
+                nameof(this.VerifyCode),
+                new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
-        //
-        // GET: /Account/VerifyCode
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> VerifyCode(string provider, bool rememberMe, string returnUrl = null)
@@ -407,11 +386,10 @@
             {
                 return this.View("Error");
             }
+
             return this.View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
-        // POST: /Account/VerifyCode
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -430,27 +408,22 @@
             {
                 return this.RedirectToLocal(model.ReturnUrl);
             }
+
             if (result.IsLockedOut)
             {
                 this.logger.LogWarning(7, "User account locked out.");
                 return this.View("Lockout");
             }
-            else
-            {
-                this.ModelState.AddModelError(string.Empty, "Invalid code.");
-                return this.View(model);
-            }
+
+            this.ModelState.AddModelError(string.Empty, "Invalid code.");
+            return this.View(model);
         }
 
-        //
-        // GET /Account/AccessDenied
         [HttpGet]
         public IActionResult AccessDenied()
         {
             return this.View();
         }
-
-        #region Helpers
 
         private void AddErrors(IdentityResult result)
         {
@@ -466,12 +439,8 @@
             {
                 return this.Redirect(returnUrl);
             }
-            else
-            {
-                return this.RedirectToAction(nameof(HomeController.Index), "Home");
-            }
-        }
 
-        #endregion
+            return this.RedirectToAction(nameof(HomeController.Index), "Home");
+        }
     }
 }

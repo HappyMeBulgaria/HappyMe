@@ -10,7 +10,7 @@
         // TODO: Get users with autocomplete
         [UIHint("StringDropDownList")]
         public string UserId { get; set; }
-        
+
         [UIHint("DropDownList")]
         public int ModuleId { get; set; }
     }

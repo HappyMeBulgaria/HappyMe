@@ -1,9 +1,9 @@
-﻿using System.IO;
-
-using Microsoft.AspNetCore.Hosting;
-
-namespace HappyMe.Web
+﻿namespace HappyMe.Web
 {
+    using System.IO;
+
+    using Microsoft.AspNetCore.Hosting;
+
     public class Program
     {
         public static void Main(string[] args)

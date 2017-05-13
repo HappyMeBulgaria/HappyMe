@@ -1,16 +1,16 @@
-﻿using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
-namespace HappyMe.Web.Common.Helpers
+﻿namespace HappyMe.Web.Common.Helpers
 {
+    using Microsoft.AspNetCore.Html;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+
     public static class FormHelper
     {
         private const string DefaultArea = "Administration";
 
         public static IHtmlContent DeleteForm(this IHtmlHelper helper, string action, string controller, string id, string secondId = null, string area = DefaultArea)
         {
-            //var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
-            //var url = urlHelper.Action(action, controller, new { area });
+            ////var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
+            ////var url = urlHelper.Action(action, controller, new { area });
 
             var form = new TagBuilder("form");
             form.Attributes.Add("action", string.Empty);

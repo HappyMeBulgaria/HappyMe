@@ -1,19 +1,15 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-
-namespace HappyMe.Data.Models
+﻿namespace HappyMe.Data.Models
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-    using System.Security.Claims;
-    using System.Threading.Tasks;
 
     using HappyMe.Common.Constants;
     using HappyMe.Data.Contracts;
     using HappyMe.Data.Contracts.Models;
+
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
     public class User : IdentityUser, IDeletableEntity, IAuditInfo, IIdentifiable<string>
     {
@@ -58,44 +54,44 @@ namespace HappyMe.Data.Models
 
         public virtual ICollection<Question> Questions
         {
-            get { return this.questions; }
-            set { this.questions = value; }
+            get => this.questions;
+            set => this.questions = value;
         }
 
         public virtual ICollection<User> Children
         {
-            get { return this.children; }
-            set { this.children = value; }
+            get => this.children;
+            set => this.children = value;
         }
 
         public virtual ICollection<UserInModule> UserInModules
         {
-            get { return this.userInModules; }
-            set { this.userInModules = value; }
+            get => this.userInModules;
+            set => this.userInModules = value;
         }
 
         public virtual ICollection<UserAnswer> UserAnswers
         {
-            get { return this.userAnswers; }
-            set { this.userAnswers = value; }
+            get => this.userAnswers;
+            set => this.userAnswers = value;
         }
 
-        //public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
-        //{
+        // public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
+        // {
         //    // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
         //    var userIdentity = await manager.(this, DefaultAuthenticationTypes.ApplicationCookie);
 
-        //    // Add custom user claims here
+        // // Add custom user claims here
         //    return userIdentity;
-        //}
+        // }
 
-        //public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager, string authenticationType)
-        //{
+        // public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager, string authenticationType)
+        // {
         //    // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
         //    var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
 
-        //    // Add custom user claims here
+        // // Add custom user claims here
         //    return userIdentity;
-        //}
+        // }
     }
 }

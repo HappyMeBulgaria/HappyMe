@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace HappyMe.Web.Common.ActionResults
+﻿namespace HappyMe.Web.Common.ActionResults
 {
     using System;
     using System.Collections.Generic;
@@ -10,21 +8,23 @@ namespace HappyMe.Web.Common.ActionResults
     using HappyMe.Common.Constants;
     using HappyMe.Web.Common.ActionResults.Models;
 
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using Newtonsoft.Json.Serialization;
-    using Microsoft.AspNetCore.Mvc;
 
     internal class StandardJsonResult : JsonResult
     {
         private readonly ICollection<string> errorMessages = new List<string>();
 
-        public StandardJsonResult(object value) 
+        public StandardJsonResult(object value)
             : base(value)
         {
         }
 
-        public StandardJsonResult(object value, JsonSerializerSettings serializerSettings) 
+        public StandardJsonResult(object value, JsonSerializerSettings serializerSettings)
             : base(value, serializerSettings)
         {
         }

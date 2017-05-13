@@ -36,7 +36,7 @@
             {
                 UserName = fakeUsername
             };
-            
+
             this.usersRepository.Add(fakeUser);
 
             var searchResult = this.usersDataService.GetUserByUsername(fakeUsername);

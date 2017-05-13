@@ -1,6 +1,5 @@
-namespace HappyMe.Services.Common.Colors
+﻿namespace HappyMe.Services.Common.Colors
 {
-    using System;
     using System.Collections.Generic;
 
     using HappyMe.Common.Tools;

@@ -13,7 +13,6 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
-
     public class QuestionsController : BaseController
     {
         private readonly IQuestionsDataService questionsDataService;

@@ -5,7 +5,7 @@
 
     public abstract class DeletableEntity : AuditInfo, IDeletableEntity
     {
-        //[Index] TODO: Move index to modelbuilder
+        // [Index] TODO: Move index to modelbuilder
         public bool IsDeleted { get; set; }
 
         public DateTime? DeletedOn { get; set; }

@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace HappyMe.Web.Common.Extensions
+﻿namespace HappyMe.Web.Common.Extensions
 {
     using System.Linq;
 
     using HappyMe.Common.Constants;
     using HappyMe.Web.Common.ActionResults;
+
+    using Microsoft.AspNetCore.Mvc;
 
     using Newtonsoft.Json;
 
@@ -16,7 +16,7 @@ namespace HappyMe.Web.Common.Extensions
             return new EmptyResult();
         }
 
-        public static IActionResult JsonCamelCase(this Controller controler, object data) => 
+        public static IActionResult JsonCamelCase(this Controller controler, object data) =>
             new JsonCamelCaseResult(data);
 
         public static IActionResult JsonSuccess(this Controller controller, object data) => new StandardJsonResult(data);

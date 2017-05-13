@@ -15,17 +15,14 @@
     {
         private readonly AnswersDataService answersDataService;
         private readonly IRepository<UserAnswer> userAnswerRepositoryMock;
-        private readonly IRepository<Answer> answerRepositoryMock;
-
 
         public AnswersDataServiceTests()
         {
             this.userAnswerRepositoryMock = new InMemoryRepository<UserAnswer, int>();
-            this.answerRepositoryMock = new InMemoryRepository<Answer, int>();
 
             this.answersDataService = new AnswersDataService(
                 this.userAnswerRepositoryMock,
-                this.answerRepositoryMock);
+                new InMemoryRepository<Answer, int>());
         }
 
         [Fact]
@@ -36,18 +33,19 @@
             var fakeModuleSessionId = 12;
 
             await this.answersDataService.AnswerAsUser(
-                fakeUserId, 
-                fakeAnswerId, 
+                fakeUserId,
+                fakeAnswerId,
                 fakeModuleSessionId);
 
             Assert.Equal(this.userAnswerRepositoryMock.All().Count(), 1);
 
             var userAnswerExists =
-                this.userAnswerRepositoryMock.All()
-                    .Any(
-                        x => x.AnswerId == fakeAnswerId
-                        && x.UserId == fakeUserId
-                        && x.ModuleSessionId == fakeModuleSessionId);
+                this.userAnswerRepositoryMock
+                    .All()
+                    .Any(x =>
+                        x.AnswerId == fakeAnswerId &&
+                        x.UserId == fakeUserId &&
+                        x.ModuleSessionId == fakeModuleSessionId);
 
             Assert.True(userAnswerExists);
         }
@@ -66,17 +64,18 @@
             var fakeModuleSessionId = 12;
 
             await this.answersDataService.AnswerAsAnonymous(
-                fakeAnswerId, 
+                fakeAnswerId,
                 fakeModuleSessionId);
 
             Assert.Equal(this.userAnswerRepositoryMock.All().Count(), 1);
 
             var answerExists =
-                this.userAnswerRepositoryMock.All()
-                    .Any(
-                        x => x.AnswerId == fakeAnswerId
-                        && x.UserId == null
-                        && x.ModuleSessionId == fakeModuleSessionId);
+                this.userAnswerRepositoryMock
+                    .All()
+                    .Any(x =>
+                        x.AnswerId == fakeAnswerId &&
+                        x.UserId == null &&
+                        x.ModuleSessionId == fakeModuleSessionId);
 
             Assert.True(answerExists);
         }

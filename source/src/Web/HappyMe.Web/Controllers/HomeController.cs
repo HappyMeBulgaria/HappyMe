@@ -1,8 +1,9 @@
-﻿using HappyMe.Web.Services;
-using Microsoft.AspNetCore.Mvc;
-
-namespace HappyMe.Web.Controllers
+﻿namespace HappyMe.Web.Controllers
 {
+    using HappyMe.Web.Services;
+
+    using Microsoft.AspNetCore.Mvc;
+
     public class HomeController : Controller
     {
         public HomeController(IEmailSender emailSender, ISmsSender smsSender)
@@ -17,7 +18,7 @@ namespace HappyMe.Web.Controllers
         public IActionResult About()
         {
             this.ViewData["Message"] = "Your application ge.";
-            
+
             return this.View();
         }
 

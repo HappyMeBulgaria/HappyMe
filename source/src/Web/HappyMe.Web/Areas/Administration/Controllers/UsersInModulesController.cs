@@ -20,7 +20,7 @@
     {
         private readonly IAdministrationService<User> usersAdministrationService;
         private readonly IAdministrationService<Module> modulesAdministrationService;
-        
+
         public UsersInModulesController(
             IUsersDataService userData,
             IAdministrationService<UserInModule> dataRepository,

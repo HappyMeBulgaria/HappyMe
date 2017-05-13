@@ -1,4 +1,4 @@
-namespace HappyMe.Common.Colors
+﻿namespace HappyMe.Common.Colors
 {
     using System;
 

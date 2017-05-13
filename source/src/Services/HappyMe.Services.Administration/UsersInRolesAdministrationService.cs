@@ -6,8 +6,8 @@
 
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-    public class UsersInRolesAdministrationService : 
-        AdministrationService<IdentityUserRole<string>>, 
+    public class UsersInRolesAdministrationService :
+        AdministrationService<IdentityUserRole<string>>,
         IUsersInRolesAdministrationService
     {
         public UsersInRolesAdministrationService(IRepository<IdentityUserRole<string>> entities)

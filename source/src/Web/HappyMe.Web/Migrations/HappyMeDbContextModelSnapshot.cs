@@ -1,14 +1,15 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
-
-using HappyMe.Data;
-
-namespace HappyMe.Web.Migrations
+﻿namespace HappyMe.Web.Migrations
 {
+    using System;
+
+    using HappyMe.Data;
+
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Infrastructure;
+    using Microsoft.EntityFrameworkCore.Metadata;
+
     [DbContext(typeof(HappyMeDbContext))]
-    partial class HappyMeDbContextModelSnapshot : ModelSnapshot
+    public partial class HappyMeDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

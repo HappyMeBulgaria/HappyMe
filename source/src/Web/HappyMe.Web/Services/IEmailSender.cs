@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-
-namespace HappyMe.Web.Services
+﻿namespace HappyMe.Web.Services
 {
+    using System.Threading.Tasks;
+
     using HappyMe.Services.Common;
 
     public interface IEmailSender : IService

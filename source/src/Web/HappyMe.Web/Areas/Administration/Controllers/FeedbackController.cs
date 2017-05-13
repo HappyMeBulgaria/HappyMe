@@ -16,14 +16,14 @@
     public class FeedbackController : MvcGridAdministrationReadAndDeleteController<Feedback, FeedbackGridViewModel>
     {
         public FeedbackController(
-            IUsersDataService userData, 
-            IAdministrationService<Feedback> dataRepository, 
+            IUsersDataService userData,
+            IAdministrationService<Feedback> dataRepository,
             IMappingService mappingService,
-            UserManager<User> userManager) 
+            UserManager<User> userManager)
             : base(userData, dataRepository, mappingService, userManager)
         {
         }
-        
+
         public ActionResult Index() => this.View(this.GetData().OrderBy(f => f.Id));
 
         public IActionResult Delete(int? id)

@@ -71,10 +71,10 @@
             var databaseEntites =
                 this.feedbackRepository
                     .All()
-                    .Where(x => 
-                        x.Name == name && 
-                        x.Email == email && 
-                        x.Title == subject && 
+                    .Where(x =>
+                        x.Name == name &&
+                        x.Email == email &&
+                        x.Title == subject &&
                         x.Message == message);
 
             Assert.NotNull(databaseEntites);

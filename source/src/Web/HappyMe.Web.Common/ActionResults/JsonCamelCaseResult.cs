@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
-namespace HappyMe.Web.Common.ActionResults
+﻿namespace HappyMe.Web.Common.ActionResults
 {
     using System;
 
     using HappyMe.Common.Constants;
+    using Microsoft.AspNetCore.Http;
+
+    using Microsoft.AspNetCore.Mvc;
 
     using Newtonsoft.Json;
     using Newtonsoft.Json.Serialization;

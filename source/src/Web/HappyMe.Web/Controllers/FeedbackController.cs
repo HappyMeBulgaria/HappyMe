@@ -15,7 +15,7 @@
     {
         private readonly IFeedbackDataService feedbackDataService;
 
-        public FeedbackController(IFeedbackDataService feedbackDataService, UserManager<User> userManager) 
+        public FeedbackController(IFeedbackDataService feedbackDataService, UserManager<User> userManager)
             : base(userManager)
         {
             this.feedbackDataService = feedbackDataService;

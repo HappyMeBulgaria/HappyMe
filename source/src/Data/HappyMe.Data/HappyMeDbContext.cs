@@ -7,7 +7,7 @@
     using System.Threading.Tasks;
     using HappyMe.Data.Contracts.Models;
     using HappyMe.Data.Models;
-    
+
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata;
@@ -25,7 +25,7 @@
 
         public virtual DbSet<Image> Images { get; set; }
 
-        //TODO: Make many to many table in the context for Modules in Questions
+        // TODO: Make many to many table in the context for Modules in Questions
         public virtual DbSet<Module> Modules { get; set; }
 
         public virtual DbSet<UserInModule> UsersInModules { get; set; }
@@ -36,12 +36,12 @@
 
         public virtual DbSet<ModuleSession> ModuleSessions { get; set; }
 
-        //public override DbSet<IdentityRole> Roles { get; set; }
+        ////public override DbSet<IdentityRole> Roles { get; set; }
 
-        //public static HappyMeDbContext Create()
-        //{
-        //    return new HappyMeDbContext();
-        //}
+        ////public static HappyMeDbContext Create()
+        ////{
+        ////    return new HappyMeDbContext();
+        ////}
 
         public override int SaveChanges()
         {
@@ -50,11 +50,11 @@
             return this.SaveChangesWithTracingDbExceptions();
         }
 
-        //public override Task<int> SaveChangesAsync(CancellationToken cancellationToken)
-        //{
-        //    this.ApplyAuditInfoRules();
-        //    return base.SaveChangesAsync(cancellationToken);
-        //}
+        //// public override Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        //// {
+        ////    this.ApplyAuditInfoRules();
+        ////    return base.SaveChangesAsync(cancellationToken);
+        //// }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -122,8 +122,9 @@
 
                 throw;
             }
-            //catch (DbEntityValidationException ex)
-            //{
+
+            // catch (DbEntityValidationException ex)
+            // {
             //    foreach (var validationErrors in ex.EntityValidationErrors)
             //    {
             //        foreach (var validationError in validationErrors.ValidationErrors)
@@ -132,8 +133,8 @@
             //        }
             //    }
 
-            //    throw;
-            //}
+            // throw;
+            // }
         }
     }
 }

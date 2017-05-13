@@ -10,7 +10,7 @@
     public class UserInModuleGridViewModel : IMapFrom<UserInModule>, IHaveCustomMappings
     {
         public string UserName { get; set; }
-        
+
         public string ModuleName { get; set; }
 
         public string UserId { get; set; }

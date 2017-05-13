@@ -10,7 +10,7 @@
 
     public class QuestionsAdministrationService : AdministrationService<Question>, IQuestionsAdministrationService
     {
-        public QuestionsAdministrationService(IRepository<Question> entities) 
+        public QuestionsAdministrationService(IRepository<Question> entities)
             : base(entities)
         {
         }
@@ -20,10 +20,10 @@
             return this.Read().Where(q => q.AuthorId == userId);
         }
 
-        public IQueryable<Question> GetUserAndPublicQuestions(string userId) => 
+        public IQueryable<Question> GetUserAndPublicQuestions(string userId) =>
             this.Read().Where(q => q.AuthorId == userId || q.IsPublic);
 
-        public bool CheckIfUserIsAuthorOnQuestion(string userId, int questionId) => 
+        public bool CheckIfUserIsAuthorOnQuestion(string userId, int questionId) =>
             this.Read().Any(q => q.AuthorId == userId && q.Id == questionId);
     }
 }

@@ -5,7 +5,7 @@
     public class UserInModule : DeletableEntity
     {
         public string UserId { get; set; }
-        
+
         public int ModuleId { get; set; }
 
         public virtual User User { get; set; }

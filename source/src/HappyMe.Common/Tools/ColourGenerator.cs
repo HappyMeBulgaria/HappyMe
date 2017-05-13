@@ -1,4 +1,4 @@
-namespace HappyMe.Common.Tools
+﻿namespace HappyMe.Common.Tools
 {
     using HappyMe.Common.Colors;
 
@@ -15,7 +15,7 @@ namespace HappyMe.Common.Tools
 
         public string NextColour()
         {
-            string colour = string.Format(PatternGenerator.NextPattern(this.index), this.intensityGenerator.NextIntensity(this.index));
+            var colour = string.Format(PatternGenerator.NextPattern(this.index), this.intensityGenerator.NextIntensity(this.index));
             this.index++;
             return colour;
         }

@@ -10,11 +10,11 @@
     public class Module : DeletableEntity, IIdentifiable<int>
     {
         private ICollection<Question> questions;
-        private ICollection<UserInModule> usersInModule; 
+        private ICollection<UserInModule> usersInModule;
 
         public Module()
         {
-            this.questions = new HashSet<Question>();  
+            this.questions = new HashSet<Question>();
             this.usersInModule = new HashSet<UserInModule>();
         }
 
@@ -50,8 +50,8 @@
 
         public virtual ICollection<UserInModule> UsersInModule
         {
-            get { return this.usersInModule; }
-            set { this.usersInModule = value; }
+            get => this.usersInModule;
+            set => this.usersInModule = value;
         }
     }
 }

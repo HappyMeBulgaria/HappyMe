@@ -17,14 +17,14 @@
     using Microsoft.AspNetCore.Mvc;
 
     [AuthorizeRoles(RoleConstants.Administrator)]
-    public class ImagesController : 
+    public class ImagesController :
         MvcGridAdministrationCrudController<Image, ImageGridViewModel, ImageCreateInputModel, ImageUpdateInputModel>
     {
         public ImagesController(
             IUsersDataService userData,
             IAdministrationService<Image> imageAdministrationService,
             IMappingService mapingService,
-            UserManager<User> userManager) 
+            UserManager<User> userManager)
             : base(userData, imageAdministrationService, mapingService, userManager)
         {
         }

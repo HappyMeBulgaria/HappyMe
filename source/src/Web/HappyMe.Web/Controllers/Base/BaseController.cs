@@ -10,7 +10,6 @@
 
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Mvc.Filters;
 
     public class BaseController : Controller
     {
@@ -20,7 +19,6 @@
         }
 
         protected UserManager<User> UserManager { get; set; }
-
 
         protected internal RedirectToActionResult RedirectToAction<TController>(Expression<Action<TController>> expression)
             where TController : Controller
@@ -37,7 +35,6 @@
         protected Task<User> GetCurrentUserAsync() => this.UserManager.GetUserAsync(this.HttpContext.User);
 
         protected async Task<string> GetUserIdAsync() => (await this.GetCurrentUserAsync())?.Id;
-
 
         ////protected override IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state)
         ////{

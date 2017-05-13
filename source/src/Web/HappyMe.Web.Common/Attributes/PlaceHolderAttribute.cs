@@ -2,8 +2,7 @@
 {
     using System;
 
-
-    /*TODO: Change placeholder attributes with Prompt prop of the Display attribute. 
+    /*TODO: Change placeholder attributes with Prompt prop of the Display attribute.
      * We can get it with: ModelMetadata.FromLambdaExpression(m => m.Email, ViewData).Watermark */
     public class PlaceHolderAttribute : Attribute
     {
@@ -14,14 +13,14 @@
             this.placeholder = placeholder;
         }
 
-        //void IMetadataAware.OnMetadataCreated(ModelMetadata metadata)
-        //{
+        // void IMetadataAware.OnMetadataCreated(ModelMetadata metadata)
+        // {
         //    this.OnMetadataCreated(metadata);
-        //}
+        // }
 
-        //public void OnMetadataCreated(ModelMetadata metadata)
-        //{
+        // public void OnMetadataCreated(ModelMetadata metadata)
+        // {
         //    metadata.AdditionalValues["placeholder"] = this.placeholder;
-        //}
+        // }
     }
 }

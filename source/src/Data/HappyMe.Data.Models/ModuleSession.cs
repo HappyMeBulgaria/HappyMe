@@ -36,7 +36,7 @@
         public bool IsFinised { get; set; }
 
         public DateTime StartedDate { get; set; }
-        
+
         public DateTime? FinishDate { get; set; }
 
         public virtual User User { get; set; }
@@ -47,8 +47,8 @@
 
         public virtual ICollection<UserAnswer> UsersAnswers
         {
-            get { return this.usersAnswers; }
-            set { this.usersAnswers = value; }
+            get => this.usersAnswers;
+            set => this.usersAnswers = value;
         }
     }
 }

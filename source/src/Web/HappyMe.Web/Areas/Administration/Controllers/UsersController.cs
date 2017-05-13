@@ -20,7 +20,6 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
 
-
     [AuthorizeRoles(RoleConstants.Administrator, RoleConstants.Parent)]
     public class UsersController :
         MvcGridAdministrationCrudController<User, UserGridViewModel, UserCreateInputModel, UserUpdateInputModel>

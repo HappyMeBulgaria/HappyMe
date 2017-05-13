@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
-
-namespace HappyMe.Web.Common.Extensions
+﻿namespace HappyMe.Web.Common.Extensions
 {
     using HappyMe.Common.Constants;
+
+    using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
     public static class TempDataExtentions
     {
