@@ -18,6 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\js\custom\administration\common\editorHelper.js" />
+    <Content Include="wwwroot\js\custom\administration\common\multiSelectHelper.js" />
+    <Content Include="wwwroot\js\custom\administration\common\style.js" />
+    <Content Include="wwwroot\js\custom\administration\data\dataLayer.js" />
+    <Content Include="wwwroot\js\custom\administration\statistics\child-statistics.js" />
+    <Content Include="wwwroot\js\custom\common\color-utils.js" />
+    <Content Include="wwwroot\js\custom\common\http-requester.js" />
+    <Content Include="wwwroot\js\custom\questions\answer.js" />
     <Content Include="wwwroot\js\specs\test-spec.js" />
   </ItemGroup>
   
