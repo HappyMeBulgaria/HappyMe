@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="1.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="1.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="1.1.2" />
     <PackageReference Include="MoreDotNet" Version="0.7.1" />
     <PackageReference Include="NonFactors.Grid.Core.Mvc6" Version="1.4.0" />
     <PackageReference Include="NonFactors.Grid.Mvc6" Version="1.4.0" />
