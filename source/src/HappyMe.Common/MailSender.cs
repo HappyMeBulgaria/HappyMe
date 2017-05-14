@@ -35,7 +35,7 @@ namespace HappyMe.Common
             private const string ServerAddress = "mail.happyme.site";
             private const int ServerPort = 25;
 
-            private string Password => WebConfigurationManager.AppSettings["SmptPassowrd"];
+            private string Password => "TO ADD BACK";
 #endif
 
         private static readonly object SyncRoot = new object();
