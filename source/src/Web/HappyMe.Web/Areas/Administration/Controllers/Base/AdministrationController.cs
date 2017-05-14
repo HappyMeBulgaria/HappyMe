@@ -10,6 +10,7 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
+    [Area("Administration")]
     [AuthorizeRoles(RoleConstants.Administrator, RoleConstants.Parent)]
     public class AdministrationController : BaseAuthorizationController
     {

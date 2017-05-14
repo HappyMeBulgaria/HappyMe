@@ -7,6 +7,7 @@
     using HappyMe.Data.Contracts.Repositories.Contracts;
 
     using Microsoft.EntityFrameworkCore;
+
     public class EfDeletableEntityRepository<T> : EfRepository<T>, IDeletableEntityRepository<T>
             where T : class, IDeletableEntity
     {

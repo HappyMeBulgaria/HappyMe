@@ -4,7 +4,11 @@
   {
     "outputFileName": "wwwroot/css/site.min.css",
     "inputFiles": [
-      "wwwroot/css/site.css"
+      "wwwroot/css/site.css",
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "wwwroot/css/global.css",
+      "wwwroot/css/reset-css.css",
+      "wwwroot/css/override.css"
     ]
   },
   {
@@ -14,6 +18,18 @@
       "wwwroot/css/global.css",
       "wwwroot/css/reset-css.css",
       "wwwroot/css/override.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/modules.min.css",
+    "inputFiles": [
+      "wwwroot/css/modules.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/result-screens.min.css",
+    "inputFiles": [
+      "wwwroot/css/result-screens.css"
     ]
   },
   {

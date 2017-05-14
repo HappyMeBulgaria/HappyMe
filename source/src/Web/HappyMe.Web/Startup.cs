@@ -5,13 +5,19 @@
     using System.Linq;
     using System.Reflection;
 
+    using AutoMapper;
+
     using HappyMe.Common.Mapping;
     using HappyMe.Data;
+    using HappyMe.Data.Contracts.Repositories;
+    using HappyMe.Data.Contracts.Repositories.Contracts;
     using HappyMe.Data.Models;
     using HappyMe.Services.Administration.Contracts;
     using HappyMe.Services.Common;
+    using HappyMe.Services.Common.Mapping;
+    using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
-    using HappyMe.Web.Services;
+    using HappyMe.Web.Config;
 
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -55,8 +61,15 @@
 
             services.AddMvc();
 
+            AutoMapperConfig.RegisterMappings(typeof(Startup).GetTypeInfo().Assembly);
+
             // Add application services.
-            services.AddTransient<IEmailSender, AuthMessageSender>();
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+            services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
+            services.AddScoped<DbContext, HappyMeDbContext>();
+            services.AddScoped<DbContext, HappyMeDbContext>();
+            services.AddScoped<IMappingService, AutoMapperMappingService>();
+            services.Add(new ServiceDescriptor(typeof(IMapper), AutoMapperConfig.MapperConfiguration?.CreateMapper()));
             //// services.AddTransient<ISmsSender, AuthMessageSender>();
 
             // TODOD: Move to constants or somewhere else
@@ -94,14 +107,7 @@
 
             //// Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
-
-            AutoMapperConfig.RegisterMappings(typeof(Startup).GetTypeInfo().Assembly);
+            app.UseMvc(RouteConfig.RegisterRoutes);
         }
 
         private void RegesterServiceFromType(
