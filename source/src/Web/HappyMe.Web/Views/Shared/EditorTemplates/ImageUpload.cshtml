@@ -1,0 +1,26 @@
+﻿@model Microsoft.AspNetCore.Http.IFormFile
+
+@{
+    // TODO:
+    // input to load file -> name as prop name
+    // on change -> get the file and its source
+    // load image to container element
+    // do the magic
+    // save the newly cropped image
+
+    var propertyName = ViewData.ModelMetadata.PropertyName;
+}
+
+@*@Styles.Render("~/Content/guillotine")*@
+
+<div class="editor-field top-buffer">
+    <label class="btn btn-default btn-file">
+        Browse <input type="file" name="@propertyName" style="display: none;" />
+    </label>
+</div>
+
+@*<div id="theparent" style="width: 80%;">
+        <img id="thepicture" src="@Url.Content(String.Format("~/Images/Model/{0}", item.ModelImagePath))"/>
+    </div>*@
+
+@*@Scripts.Render("~/bundles/guillotine")*@

@@ -1,0 +1,37 @@
+﻿@model string
+
+@{
+    var placeholder = string.Empty;
+    if (ViewData.ModelMetadata.AdditionalValues.ContainsKey("placeholder"))
+    {
+        placeholder = ViewData.ModelMetadata.AdditionalValues["placeholder"] as string;
+    }
+
+    bool? isDisabled = null;
+    if (ViewData.ModelMetadata.AdditionalValues.ContainsKey("enabled"))
+    {
+        isDisabled = ViewData.ModelMetadata.AdditionalValues["enabled"] as bool?;
+    }
+    
+    object htmlAttributes;
+    if (isDisabled.HasValue && !isDisabled.Value)
+    {
+        htmlAttributes = new
+        {
+            disabled = "disabled",
+            placeholder,
+            @class = "form-control",
+        };
+    }
+    else
+    {
+        htmlAttributes = new
+        {
+            placeholder,
+            @class = "form-control",
+        };
+    }
+
+}
+
+@Html.TextBoxFor(m => m, htmlAttributes)
