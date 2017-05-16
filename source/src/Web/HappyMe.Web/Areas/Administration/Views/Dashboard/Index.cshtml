@@ -1,0 +1,42 @@
+﻿@model HappyMe.Web.Areas.Administration.ViewModels.Dashboard.DashboardIndexViewModel
+@{
+    ViewBag.Title = string.Format("Здравей, {0}", this.User.Identity.Name);
+}
+
+<h2>Здравей, <strong class="dashboard-username">@this.User.Identity.Name</strong></h2>
+
+<a href="@Url.Action("Create", "Users", new { area = "Administration" })" class="btn btn-lg btn-primary">Добави дете</a>
+<div class="section-title-container">
+    <h3 class="section-title huge-heading">Деца</h3>
+</div>
+
+<div class="row">
+    @if (this.Model.CurrentUserChildren.Any())
+    {
+        @Html.DisplayFor(x => x.CurrentUserChildren)
+    }
+    else
+    {
+        <h3 class="text-center">Нямате добавени потребители.</h3>
+    }
+</div>
+
+<div class="section-title-container">
+    <h3 class="section-title huge-heading">Модули</h3>
+</div>
+
+<div class="row module-actions">
+    <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+        <a href="@Url.Action("Create", "Modules", new { area = "Administration" })" class="btn btn-primary top-buffer">Създай модул</a>
+    </div>
+    <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+        <a href="@Url.Action("Create", "Questions", new { area = "Administration" })" class="btn btn-primary top-buffer">Добави въпрос</a>
+    </div>
+    <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+        <a href="@Url.Action("Create", "Answers", new { area = "Administration" })" class="btn btn-primary top-buffer">Добави отговор</a>
+    </div>
+</div>
+
+<div class="section-title-container">
+    <h3 class="section-title huge-heading">Статистика</h3>
+</div>

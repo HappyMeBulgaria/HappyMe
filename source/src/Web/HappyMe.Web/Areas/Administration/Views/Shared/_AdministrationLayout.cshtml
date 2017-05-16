@@ -1,0 +1,139 @@
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Common
+@using HappyMe.Web.Common.Extensions
+@using HappyMe.Web.Common.Helpers
+@using Microsoft.AspNetCore.Routing
+
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+@section styles {
+    @*@Styles.Render("~/Content/jquery-gritter")
+        @Styles.Render("~/Content/administration-css")*@
+    @RenderSection("styles", false)
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/administration-styles.css"/>
+        <link rel="stylesheet" href="~/css/global.css" />
+    </environment>
+    <environment names="Staging,Production">
+    </environment>
+}
+
+@section scripts {
+    @*@Scripts.Render("~/bundles/jquery-gritter")
+        @Scripts.Render("~/bundles/nice-scroll")
+        @Scripts.Render("~/bundles/administration-scripts")*@
+
+    <script type="text/javascript">
+        CKEDITOR_BASEPATH = '@(Url.Content("~/lib/ckeditor/"))';
+    </script>
+
+    @*@Scripts.Render("~/bundles/ckeditor")*@
+    @RenderSection("scripts", required: false)
+}
+
+<div class="administration-container">
+    <header class="header black-bg">
+        <div class="sidebar-toggle-box">
+            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        </div>
+        <!--logo start-->
+        <a href="@Url.Action("Index", "Dashboard", new { area = "Administration" })" class="logo">
+            <b>HappyMe</b>
+        </a>
+        <!--logo end-->
+        <div class="top-menu">
+            <ul class="nav pull-right top-menu">
+                <li>
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <button type="submit" class="logout btn btn-default">Log out</button>
+                            </li>
+                        </ul>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!--header end-->
+    <!--sidebar start-->
+    <aside>
+        <div id="sidebar" class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+
+                <p class="centered">
+                    <a href="@this.Url.Action("Index", "Dashboard", new { area = "Administration" })"><img src="/Content/images/user-default-image.png" class="img-circle" width="60"></a>
+                </p>
+                <h5 class="centered">@this.User.Identity.Name</h5>
+
+                <li class="mt">
+                    @(Html.ActiveActionLinkHelper("Управление", nameof(DashboardController.Index), "Dashboard", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "dashboard" } }))
+                </li>
+
+                <li class="mt">
+                    @(Html.ActiveActionLinkHelper("Модули", nameof(ModulesController.Index), "Modules", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "modules" } }))
+                </li>
+
+                @if (this.User.IsAdmin())
+                {
+                    <li class="mt">
+                        @(Html.ActiveActionLinkHelper("Изображения", nameof(ImagesController.Index), "Images", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "images" } }))
+                    </li>
+                }
+
+                <li class="mt">
+                    @(Html.ActiveActionLinkHelper("Въпроси", nameof(QuestionsController.Index), "Questions", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "questions" } }))
+                </li>
+
+                <li class="mt">
+                    @(Html.ActiveActionLinkHelper("Отговори", nameof(AnswersController.Index), "Answers", new RouteValueDictionary { { "area", "Administration" } }, new RouteValueDictionary { { "class", "answers" } }))
+                </li>
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+    <!--sidebar end-->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    @if (ViewBag.SystemMessages != null)
+                    {
+                        foreach (var message in (SystemMessageCollection)ViewBag.SystemMessages)
+                        {
+                            string messageClass = "alert alert-success";
+                            switch (message.Type)
+                            {
+                                case SystemMessageType.Informational:
+                                    messageClass = "alert alert-info";
+                                    break;
+                                case SystemMessageType.Success:
+                                    messageClass = "alert alert-success";
+                                    break;
+                                case SystemMessageType.Warning:
+                                    messageClass = "alert alert-warning";
+                                    break;
+                                case SystemMessageType.Error:
+                                    messageClass = "alert alert-danger";
+                                    break;
+                            }
+
+                            @:<div class="@(messageClass) top-buffer"><strong>@Html.Raw(message.Content)</strong></div>
+        }
+                    }
+                    @RenderBody()
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer class="site-footer">
+        <div class="text-center">
+            2016 - HappyMe
+        </div>
+    </footer>
+</div>

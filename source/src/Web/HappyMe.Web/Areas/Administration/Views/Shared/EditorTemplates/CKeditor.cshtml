@@ -1,0 +1,14 @@
+﻿@model string
+
+@{
+    var propertyName = this.ViewData.ModelMetadata.PropertyName;
+}
+
+@this.Html.TextAreaFor(m => m)
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        CKEDITOR.env.isCompatible = true;
+        editor.loadCKEditor('@propertyName');
+    });
+</script>

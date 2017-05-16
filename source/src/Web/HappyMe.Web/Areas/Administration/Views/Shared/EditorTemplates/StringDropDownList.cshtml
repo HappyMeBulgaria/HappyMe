@@ -1,0 +1,10 @@
+﻿@model string
+
+@{
+    var propertyName = ViewData.ModelMetadata.PropertyName;
+    var viewDataName = $"{propertyName}Data";
+}
+
+<div>
+    @Html.DropDownListFor(m => m, ViewData[viewDataName] as IEnumerable<SelectListItem>, new { @class = "form-control" })
+</div>
