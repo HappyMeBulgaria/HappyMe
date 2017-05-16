@@ -18,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\fonts\BloggerSans\Blogger_Sans-Light.otf" />
+    <Content Include="wwwroot\fonts\BloggerSans\Blogger_Sans.otf" />
     <Content Include="wwwroot\js\custom\administration\common\editorHelper.js" />
     <Content Include="wwwroot\js\custom\administration\common\multiSelectHelper.js" />
     <Content Include="wwwroot\js\custom\administration\common\style.js" />
