@@ -1,8 +1,5 @@
 ﻿namespace HappyMe.Web.Controllers.Base
 {
-    using System;
-    using System.Threading.Tasks;
-
     using HappyMe.Data.Models;
     using HappyMe.Services.Data.Contracts;
 

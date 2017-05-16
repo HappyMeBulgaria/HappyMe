@@ -21,6 +21,7 @@
 
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
@@ -55,7 +56,10 @@
             services.AddDbContext<HappyMeDbContext>(options =>
                 options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("HappyMe.Web")));
 
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>(x =>
+                {
+                    x.Password.RequireNonAlphanumeric = false;
+                })
                 .AddEntityFrameworkStores<HappyMeDbContext>()
                 .AddDefaultTokenProviders();
 
@@ -70,6 +74,7 @@
             services.AddScoped<DbContext, HappyMeDbContext>();
             services.AddScoped<IMappingService, AutoMapperMappingService>();
             services.Add(new ServiceDescriptor(typeof(IMapper), AutoMapperConfig.MapperConfiguration?.CreateMapper()));
+            services.AddScoped<RoleManager<IdentityRole<string>>, RoleManager<IdentityRole<string>>>();
             //// services.AddTransient<ISmsSender, AuthMessageSender>();
 
             // TODOD: Move to constants or somewhere else

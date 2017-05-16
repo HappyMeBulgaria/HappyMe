@@ -1,12 +1,16 @@
 ﻿namespace HappyMe.Web.Controllers
 {
-    using HappyMe.Web.Services;
+    using HappyMe.Common.Constants;
+    using HappyMe.Data.Models;
+    using HappyMe.Web.Controllers.Base;
 
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        public HomeController(IEmailSender emailSender, ISmsSender smsSender)
+        public HomeController(UserManager<User> userManager)
+            : base(userManager)
         {
         }
 

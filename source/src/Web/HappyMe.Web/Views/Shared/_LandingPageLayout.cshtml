@@ -1,4 +1,4 @@
-﻿@using HappyMe.Common.Constants
+﻿@using HappyMe.Web.Common.Extensions
 
 @{
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="@Url.Action("Index", "Home", new { area = string.Empty })" class="navbar-brand">
+                <a asp-action="Index" asp-controller="Home" asp-area="" class="navbar-brand">
                     <img class="nav-logo" alt="Happy Me Logo" src="~/images/nav-logo-min.png">
                 </a>
             </div>
@@ -40,19 +40,15 @@
                     <li class=""><a class="scroll" href="#mission">мисия</a></li>
                     <li class=""><a class="scroll" href="#functions">функции</a></li>
                     <li class=""><a class="scroll" href="#modules">модули</a></li>
-                    @*<li class=""><a class="scroll" href="#tutorial">как да започнем</a></li>
-                        <li class=""><a class="scroll" href="#why-happy">защо happy me?</a></li>*@
                     <li class=""><a class="scroll" href="#team">екип</a></li>
                     <li class=""><a class="scroll" href="#contact-us">контакти</a></li>
-                    @if (User.IsInRole(RoleConstants.Administrator))
+                    @if (this.User.IsAdmin())
                     {
-                        <li class="">@Html.ActionLink("Администрация", "Index", new { controller = "Dashboard", area = "Administration" }, null)</li>
+                        <li class="">
+                            <a asp-action="Index" , asp-controller="Dashboard" asp-area="Administration">Администрация</a>
+                        </li>
                     }
-
-                    @*<li class=""><a href="@Url.Action("Login", "Account", new { area = string.Empty })">влез</a></li>*@
-                    @*<li class=""><a href="@Url.Action("Register", "Account", new { area = string.Empty })">регистрирай се</a></li>*@
                 </ul>
-                @*@Html.Partial("_LoginPartial")*@
             </div>
         </div>
     </div>
