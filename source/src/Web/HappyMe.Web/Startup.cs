@@ -63,6 +63,7 @@
                 .AddEntityFrameworkStores<HappyMeDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddSession();
             services.AddMvc();
 
             AutoMapperConfig.RegisterMappings(typeof(Startup).GetTypeInfo().Assembly);
@@ -112,6 +113,7 @@
 
             //// Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
 
+            app.UseSession();
             app.UseMvc(RouteConfig.RegisterRoutes);
         }
 

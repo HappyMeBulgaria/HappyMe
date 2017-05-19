@@ -10,13 +10,11 @@
 
     public class ModuleCreateInputModel : IMapTo<Module>, IMapFrom<Module>
     {
-        [Display(Name = "Име на модул")]
-        ////[PlaceHolder("Име на модул")]
+        [Display(Name = "Име на модул", Prompt = "Име на модул")]
         public string Name { get; set; }
 
-        [Display(Name = "Описание на модул")]
+        [Display(Name = "Описание на модул", Prompt = "Описание на модул")]
         [UIHint("CKeditor")]
-        ////[PlaceHolder("Описание на модул")]
         public string Description { get; set; }
 
         [HiddenInput(DisplayValue = false)]

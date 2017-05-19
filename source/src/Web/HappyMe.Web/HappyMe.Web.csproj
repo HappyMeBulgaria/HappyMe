@@ -18,8 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\css\administration\style-responsive.css" />
+    <Content Include="wwwroot\css\administration\style.css" />
+    <Content Include="wwwroot\css\administration\table-responsive.css" />
+    <Content Include="wwwroot\css\administration\to-do.css" />
+    <Content Include="wwwroot\css\administration\zabuto_calendar.css" />
     <Content Include="wwwroot\fonts\BloggerSans\Blogger_Sans-Light.otf" />
     <Content Include="wwwroot\fonts\BloggerSans\Blogger_Sans.otf" />
+    <Content Include="wwwroot\images\administration\user-default-image.png" />
     <Content Include="wwwroot\js\custom\administration\common\editorHelper.js" />
     <Content Include="wwwroot\js\custom\administration\common\multiSelectHelper.js" />
     <Content Include="wwwroot\js\custom\administration\common\style.js" />
@@ -39,6 +45,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />

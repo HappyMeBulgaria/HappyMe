@@ -1,0 +1,14 @@
+﻿@using HappyMe.Web.Areas.Administration.ViewModels.Modules
+@using HappyMe.Web.Common.Helpers
+
+@model IEnumerable<ModuleGridViewModel>
+
+
+<h2>Модули</h2>
+
+<input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer" />
+@Html.DashboardLink()
+<a asp-action="Create" asp-controller="Modules" asp-area="Administration" class="btn btn-primary bottom-buffer">Създай нов</a>
+
+@section scripts {
+}

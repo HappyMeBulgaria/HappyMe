@@ -74,7 +74,7 @@
                 if (entity != null)
                 {
                     this.TempData.AddSuccessMessage("Успешно създадохте модул");
-                    return this.RedirectToAction(nameof(this.Index));
+                    return this.RedirectToAction(nameof(this.Index), "Modules", new { area ="Administration" });
                 }
             }
 
