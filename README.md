@@ -36,7 +36,7 @@ For a feature to be considered "Done", the following requirements **must be met*
 - The code of the feature **must NOT produce any warring**.
 - The code must be **in compliance with the StyleCop and ESLint coding standards**.
 - The code must be **covered by unit tests** (xUnit or Jasmine).
-- The pull request created from the feature branch to the development branch, **must review by at least one person**.
+- The pull request created from the feature branch to the development branch, **must pass a review by at least one person**.
 
 ## Contributors
 
