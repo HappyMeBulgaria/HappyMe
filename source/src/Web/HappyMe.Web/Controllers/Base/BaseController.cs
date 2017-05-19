@@ -10,6 +10,7 @@
 
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Filters;
 
     public class BaseController : Controller
     {
@@ -19,6 +20,12 @@
         }
 
         protected UserManager<User> UserManager { get; set; }
+
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            this.ViewBag.SystemMessages = this.PrepareSystemMessages();
+            base.OnActionExecuting(context);
+        }
 
         protected internal RedirectToActionResult RedirectToAction<TController>(Expression<Action<TController>> expression)
             where TController : Controller
@@ -35,46 +42,6 @@
         protected Task<User> GetCurrentUserAsync() => this.UserManager.GetUserAsync(this.HttpContext.User);
 
         protected async Task<string> GetUserIdAsync() => (await this.GetCurrentUserAsync())?.Id;
-
-        ////protected override IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state)
-        ////{
-        ////    // Work with data before BeginExecute to prevent "NotSupportedException: A second operation started on this context before a previous asynchronous operation completed."
-
-        ////    // Calling BeginExecute before PrepareSystemMessages for the TempData to has values
-        ////    var result = base.BeginExecute(requestContext, callback, state);
-
-        ////    var systemMessages = this.PrepareSystemMessages();
-        ////    this.ViewBag.SystemMessages = systemMessages;
-
-        ////    return result;
-        ////}
-
-        ////protected override void OnException(ExceptionContext filterContext)
-        ////{
-        ////    if (filterContext.ExceptionHandled)
-        ////    {
-        ////        return;
-        ////    }
-
-        ////    if (this.Request.IsAjaxRequest())
-        ////    {
-        ////        var exception = filterContext.Exception as HttpException;
-
-        ////        if (exception != null)
-        ////        {
-        ////            this.Response.StatusCode = exception.GetHttpCode();
-        ////            this.Response.StatusDescription = exception.Message;
-        ////        }
-        ////    }
-        ////    else
-        ////    {
-        ////        var controllerName = this.ControllerContext.RouteData.Values["Controller"].ToString();
-        ////        var actionName = this.ControllerContext.RouteData.Values["Action"].ToString();
-        ////        this.View("Error", new HandleErrorInfo(filterContext.Exception, controllerName, actionName)).ExecuteResult(this.ControllerContext);
-        ////    }
-
-        ////    filterContext.ExceptionHandled = true;
-        ////}
 
         private SystemMessageCollection PrepareSystemMessages()
         {
