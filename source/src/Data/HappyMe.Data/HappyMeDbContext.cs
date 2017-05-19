@@ -50,11 +50,12 @@
             return this.SaveChangesWithTracingDbExceptions();
         }
 
-        //// public override Task<int> SaveChangesAsync(CancellationToken cancellationToken)
-        //// {
-        ////    this.ApplyAuditInfoRules();
-        ////    return base.SaveChangesAsync(cancellationToken);
-        //// }
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        {
+            this.ApplyAuditInfoRules();
+
+            return base.SaveChangesAsync(cancellationToken);
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
