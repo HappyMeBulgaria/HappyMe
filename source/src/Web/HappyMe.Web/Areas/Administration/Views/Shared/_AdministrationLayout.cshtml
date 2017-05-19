@@ -13,8 +13,10 @@
         @Styles.Render("~/Content/administration-css")*@
     @RenderSection("styles", false)
     <environment names="Development">
+        <link rel="stylesheet" href="~/css/administration/style.css" />
+        <link rel="stylesheet" href="~/css/administration/style-responsive.css" />
         <link rel="stylesheet" href="~/css/administration-styles.css"/>
-        <link rel="stylesheet" href="~/css/global.css" />
+        <link rel="stylesheet" href="~/css/global.css"/>
     </environment>
     <environment names="Staging,Production">
     </environment>
@@ -65,7 +67,7 @@
             <ul class="sidebar-menu" id="nav-accordion">
 
                 <p class="centered">
-                    <a href="@this.Url.Action("Index", "Dashboard", new { area = "Administration" })"><img src="/Content/images/user-default-image.png" class="img-circle" width="60"></a>
+                    <a href="@this.Url.Action("Index", "Dashboard", new { area = "Administration" })"><img src="/images/administration/user-default-image.png" class="img-circle" width="60"></a>
                 </p>
                 <h5 class="centered">@this.User.Identity.Name</h5>
 
