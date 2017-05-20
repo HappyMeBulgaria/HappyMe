@@ -18,6 +18,7 @@
         private readonly IRepository<ModuleSession> moduleSessionsRepository;
         private readonly IRepository<UserAnswer> userAnswersRepository;
         private readonly IRepository<Module> modulesRepository;
+        private readonly IRepository<Question> questionsRepository;
         private readonly ModuleSessionDataService moduleSessionDataService;
 
         public ModuleSessionDataServiceTests()
@@ -25,12 +26,13 @@
             this.moduleSessionsRepository = new InMemoryRepository<ModuleSession, int>();
             this.userAnswersRepository = new InMemoryRepository<UserAnswer, int>();
             this.modulesRepository = new InMemoryRepository<Module, int>();
+            this.questionsRepository = new InMemoryRepository<Question, int>();
 
             this.moduleSessionDataService = new ModuleSessionDataService(
                 this.moduleSessionsRepository,
                 this.userAnswersRepository,
                 this.modulesRepository,
-                new Mock<IRepository<Question>>().Object);
+                this.questionsRepository);
 
             var simpleModule = new Module { Id = 1 };
             var fakeUser = new User
