@@ -1,0 +1,28 @@
+﻿@model HappyMe.Web.Areas.Administration.InputModels.Images.ImageUpdateInputModel
+@{
+    ViewBag.Title = "Редактиране на изображение";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Update"
+      asp-controller="Images"
+      asp-area="Administration"
+      asp-antiforgery="true"
+      method="post"
+      enctype="multipart/form-data">
+
+    @Html.ValidationSummary()
+    @Html.HiddenFor(x => x.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ImageFile, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="ImageFile" id="ImageFile" class="form-control" />
+            @Html.ValidationMessageFor(model => model.ImageFile, string.Empty, new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue" />
+    <input type="submit" value="Редактирай" class="btn btn-primary pull-right" />
+</form>

@@ -1,0 +1,49 @@
+﻿@model HappyMe.Web.Areas.Administration.ViewModels.ChildrenStatistics.ChildStatisticsIndexViewModel
+
+@{
+    ViewBag.Title = "Статистика за " + Model.ChildUserName;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Брой играни пъти на модул:</h3>
+        <div id="playd-module-stats">
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Съотношение правилни към грешни отговори по модул:</h3>
+        <div class="won-lost-module-stats">
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Средно време прекарано в модул:</h3>
+        <div class="time-per-module-stats">
+            <canvas id="time-per-module-stats-context" width="400"></canvas>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        var persister = HappyMe.Data.getAdminDataPersister();
+        persister.childrenStatistics.getAllForChild('@Model.ChildId')
+            .then(function (data) {
+                console.log(data);
+                debugger;
+                var statisticsProvider = HappyMe.ChildStatistics;
+                statisticsProvider.loadAverageTimePerModuleStatistics('time-per-module-stats-context', data.modulePlayedTimesStatistics);
+            }, function (error) {
+                console.error(error);
+            });
+    </script>
+}

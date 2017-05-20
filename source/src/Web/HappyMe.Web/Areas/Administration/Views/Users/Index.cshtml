@@ -1,0 +1,9 @@
+﻿@model IEnumerable<HappyMe.Web.Areas.Administration.ViewModels.Users.UserGridViewModel>
+
+<h2>Потребители</h2>
+
+@Html.DashboardLink()
+<a asp-action="Create" asp-controller="Users" asp-area="Administration" class="btn btn-primary bottom-buffer">Създай</a>
+
+@section scripts {
+}

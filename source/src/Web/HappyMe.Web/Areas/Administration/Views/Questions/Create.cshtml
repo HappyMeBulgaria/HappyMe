@@ -1,0 +1,34 @@
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@model HappyMe.Web.Areas.Administration.InputModels.Questions.QuestionCreateInputModel
+
+@{
+    ViewBag.Title = "Добавяне на нов въпрос";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Create"
+      asp-controller="Questions"
+      asp-area="Administration"
+      asp-antiforgery="true"
+      method="post"
+      enctype="multipart/form-data">
+
+    @Html.EditorForModel()
+
+    @Html.EditorFor(x => x.ModulesIds)
+
+    @Html.EditorFor(m => m.ImageData, new { htmlAttributes = new { @class = "top-buffer" } })
+
+    <input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue" />
+    <input type="submit" value="Създай" class="btn btn-primary pull-right" />
+
+</form>
+
+@section scripts {
+    <script type="text/javascript">
+        HappyMe.MultiSelectHelper.loadMultiSelect('#ModulesIds', {
+            allow_single_deselect: true
+        });
+    </script>
+}

@@ -1,0 +1,29 @@
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Common.Helpers
+@model HappyMe.Web.Areas.Administration.ViewModels.Questions.QuestionGridViewModel
+
+@{
+    var headingId = $"heading{Model.Id}";
+    var colapseId = $"collapse{Model.Id}";
+}
+
+@*<div class="panel panel-default">
+    <div class="panel-heading clearfix" role="tab" id="@headingId">
+        <h4 class="panel-title">
+            <a class="col-md-9" role="button" data-toggle="collapse" data-parent="#accordion" href="#@colapseId" aria-expanded="true" aria-controls="@colapseId">
+                @Model.Text
+            </a>
+            <span class="badge">@Model.Answers.Count()</span>
+            @Html.ActionLink("Редаткирай въпрос", "Update", "Questions", new { area = "Administration", id = Model.Id }, new { @class = "btn btn-warning" })
+            @Html.DeleteForm(nameof(QuestionsController.Delete), "Questions", Model.Id)
+        </h4>
+    </div>
+    <div id="@colapseId" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@headingId">
+        <ul class="list-group">
+            @Html.DisplayFor(x => x.Answers)
+            <li class="list-group-item">
+                @Html.ActionLink("Добави отговор +", "Create", "Answers", new { are = "Administration", id = Model.Id }, new { @class = "btn btn-success" })
+            </li>
+        </ul>
+    </div>
+</div>*@

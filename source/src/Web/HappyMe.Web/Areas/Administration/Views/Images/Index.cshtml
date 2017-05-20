@@ -1,0 +1,17 @@
+﻿@using HappyMe.Web.Common.Helpers
+
+@model IEnumerable<HappyMe.Web.Areas.Administration.ViewModels.Images.ImageGridViewModel>
+
+<h2>Изображения</h2>
+
+
+<input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer"/>
+@Html.DashboardLink()
+<a asp-action="Create"
+   asp-controller="Images"
+   asp-area=""
+   class="btn btn-primary bottom-buffer">Създай</a>
+
+@section scripts {
+
+}

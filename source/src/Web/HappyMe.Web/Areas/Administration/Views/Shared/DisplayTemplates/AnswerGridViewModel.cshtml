@@ -1,0 +1,11 @@
+﻿@using HappyMe.Web.Areas.Administration.Controllers
+@using HappyMe.Web.Common.Helpers
+@model HappyMe.Web.Areas.Administration.ViewModels.Answers.AnswerGridViewModel
+
+<li class="list-group-item">
+    <span class="col-md-9">@Model.Text</span>
+    <a asp-action="Update" asp-controller="Answers" asp-area="Adminsitration" asp-route-id="@Model.Id" class="btn btn-danger">
+        Редактирай отговор
+    </a>
+    @Html.DeleteForm(nameof(AnswersController.Delete), "Answers", Model.Id)
+</li>

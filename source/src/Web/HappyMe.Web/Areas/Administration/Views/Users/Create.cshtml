@@ -1,0 +1,18 @@
+﻿@model HappyMe.Web.Areas.Administration.InputModels.Users.UserCreateInputModel
+
+@{
+    ViewBag.Title = "Добавяне на нов потребител";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Create"
+      asp-controller="Users"
+      asp-area="Administration"
+      asp-antiforgery="true"
+      method="post">
+
+    @Html.EditorForModel()
+
+    <input type="submit" value="Създай" class="btn btn-primary" />
+</form>

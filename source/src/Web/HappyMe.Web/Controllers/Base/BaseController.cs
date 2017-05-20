@@ -45,7 +45,6 @@
 
         private SystemMessageCollection PrepareSystemMessages()
         {
-            // Warning: always escape data to prevent XSS
             var messages = new SystemMessageCollection();
 
             if (this.TempData.ContainsKey(GlobalConstants.InfoMessage))

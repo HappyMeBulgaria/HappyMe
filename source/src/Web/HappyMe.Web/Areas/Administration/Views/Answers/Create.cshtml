@@ -1,0 +1,23 @@
+﻿@model HappyMe.Web.Areas.Administration.InputModels.Answers.AnswerCreateInputModel
+
+@{
+    ViewBag.Title = "Добавяне на нов отговор";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form enctype="multipart/form-data"
+      asp-action="Create"
+      asp-controller="Answers"
+      asp-area="Administration"
+      asp-antiforgery="true"
+      method="post">
+
+    @Html.EditorForModel()
+
+    @Html.EditorFor(m => m.ImageData)
+
+    <input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue" />
+    <input type="submit" value="Създай" class="btn btn-primary pull-right" />
+
+</form>
