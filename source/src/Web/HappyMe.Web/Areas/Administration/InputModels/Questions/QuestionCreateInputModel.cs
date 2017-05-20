@@ -14,8 +14,7 @@
         [HiddenInput(DisplayValue = false)]
         public string AuthorId { get; set; }
 
-        [Display(Name = "Име на въпроса")]
-        ////[PlaceHolder("Име на въпроса")]
+        [Display(Name = "Име на въпроса", Prompt = "Име на въпроса")]
         public string Text { get; set; }
 
         [UIHint("EnumDropDownList")]
@@ -23,10 +22,6 @@
 
         [Display(Name = "Публичен?")]
         public bool IsPublic { get; set; }
-
-        ////[Display(Name = "Присъства в модул")]
-        ////[UIHint("DropDownList")]
-        ////public int ModuleId { get; set; }
 
         [Display(Name = "Присъства в модули")]
         [UIHint("MultiSelectDropDownList")]

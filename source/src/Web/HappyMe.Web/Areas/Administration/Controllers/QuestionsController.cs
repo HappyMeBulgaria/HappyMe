@@ -84,13 +84,17 @@
 
                 foreach (var selectedModule in allSelectedModules)
                 {
-                    entity.Modules.Add(selectedModule);
+                    entity.QuestionsInModules.Add(new QuestionInModule
+                    {
+                        Question = entity,
+                        Module = selectedModule
+                    });
                 }
 
                 this.AdministrationService.Create(entity);
 
                 this.TempData.AddSuccessMessage("Успешно създадохте въпрос");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToIndex();
             }
 
             await this.PopulateViewBag(model.ModulesIds);
@@ -116,7 +120,7 @@
             }
 
             this.TempData.AddDangerMessage("Нямате права за да променяте този въпрос");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToIndex();
         }
 
         [HttpPost]
@@ -139,17 +143,21 @@
                     var entity = this.AdministrationService.Get(model.Id);
                     this.MappingService.Map(model, entity);
                     var allSelectedModules = this.modulesAdministrationService.GetAllByIds(model.ModulesIds);
-                    entity.Modules.Clear();
+                    entity.QuestionsInModules.Clear();
 
                     foreach (var selectedModule in allSelectedModules)
                     {
-                        entity.Modules.Add(selectedModule);
+                        entity.QuestionsInModules.Add(new QuestionInModule
+                        {
+                            QuestionId = entity.Id,
+                            ModuleId = selectedModule.Id
+                        });
                     }
 
                     this.AdministrationService.Update(entity);
 
                     this.TempData.AddSuccessMessage("Успешно редактирахте въпрос");
-                    return this.RedirectToAction(nameof(this.Index));
+                    return this.RedirectToIndex();
                 }
 
                 await this.PopulateViewBag(model.ModulesIds);
@@ -157,7 +165,7 @@
             }
 
             this.TempData.AddDangerMessage("Нямате права за да променяте този въпрос");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToIndex();
         }
 
         [HttpPost]
@@ -176,11 +184,11 @@
                 this.BaseDestroy(id);
 
                 this.TempData.AddSuccessMessage("Успешно изтрихте въпрос");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToIndex();
             }
 
             this.TempData.AddDangerMessage("Нямате права за да изтриете този въпрос");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToIndex();
         }
 
         private async Task PopulateViewBag(int[] selectedIds)
@@ -201,6 +209,11 @@
             return this.User.IsAdmin()
                                 || (this.AdministrationService.As<IQuestionsAdministrationService>()
                                        ?.CheckIfUserIsAuthorOnQuestion(await this.GetUserIdAsync(), questionId) ?? false);
+        }
+
+        private RedirectToActionResult RedirectToIndex()
+        {
+            return this.RedirectToAction(nameof(this.Index), "Questions", new { area = "Administration" });
         }
     }
 }

@@ -24,9 +24,14 @@
             var moduleWithQuestion = new Module
             {
                 Id = 2,
-                Questions = new List<Question>
+                QuestionsInModules = new List<QuestionInModule>
                 {
-                    new Question { Id = 1 }
+                    new QuestionInModule
+                    {
+                        ModuleId = 2,
+                        QuestionId = 1,
+                        Question = new Question { Id = 1 }
+                    }
                 }
             };
             var activeModule = new Module { Id = 3, IsActive = true };
@@ -34,9 +39,14 @@
             {
                 Id = 4,
                 IsActive = true,
-                Questions = new List<Question>
+                QuestionsInModules = new List<QuestionInModule>
                 {
-                    new Question { Id = 2 }
+                    new QuestionInModule
+                    {
+                        ModuleId = 4,
+                        QuestionId = 2,
+                        Question = new Question { Id = 2 }
+                    }
                 }
             };
             var publicModule = new Module { Id = 5, IsPublic = true };
@@ -44,17 +54,22 @@
             {
                 Id = 4,
                 IsPublic = true,
-                Questions = new List<Question>
+                QuestionsInModules = new List<QuestionInModule>
                 {
-                    new Question
+                    new QuestionInModule
                     {
-                        Id = 2,
-                        Answers = new List<Answer>
+                        ModuleId = 4,
+                        QuestionId = 2,
+                        Question = new Question
                         {
-                            new Answer
+                            Id = 2,
+                            Answers = new List<Answer>
                             {
-                                Id = 1,
-                                IsCorrect = true
+                                new Answer
+                                {
+                                    Id = 1,
+                                    IsCorrect = true
+                                }
                             }
                         }
                     }
@@ -87,7 +102,7 @@
             Assert.NotNull(result);
             Assert.NotEmpty(result);
             Assert.Equal(3, result.Count());
-            Assert.True(result.All(x => x.Questions.Any()));
+            Assert.True(result.All(x => x.QuestionsInModules.Any()));
         }
 
         [Fact]
@@ -110,7 +125,7 @@
             Assert.NotEmpty(result);
             Assert.Equal(1, result.Count());
             Assert.True(result.All(x => x.IsActive));
-            Assert.True(result.All(x => x.Questions.Any()));
+            Assert.True(result.All(x => x.QuestionsInModules.Any()));
         }
 
         [Fact]
@@ -133,7 +148,7 @@
             Assert.NotEmpty(result);
             Assert.Equal(1, result.Count());
             Assert.True(result.All(x => x.IsPublic));
-            Assert.True(result.All(x => x.Questions.Any(y => y.Answers.Any(z => z.IsCorrect))));
+            Assert.True(result.All(x => x.QuestionsInModules.Select(y => y.Question).Any(y => y.Answers.Any(z => z.IsCorrect))));
         }
 
         [Fact]

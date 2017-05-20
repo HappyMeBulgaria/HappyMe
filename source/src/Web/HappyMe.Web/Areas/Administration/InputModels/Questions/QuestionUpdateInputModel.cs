@@ -20,7 +20,7 @@
                 .ForMember(m => m.AuthorId, opt => opt.Ignore());
 
             configuration.CreateMap<Question, QuestionUpdateInputModel>()
-                .ForMember(m => m.ModulesIds, opt => opt.MapFrom(x => x.Modules.Select(y => y.Id)));
+                .ForMember(m => m.ModulesIds, opt => opt.MapFrom(x => x.QuestionsInModules.Select(y => y.ModuleId)));
         }
     }
 }

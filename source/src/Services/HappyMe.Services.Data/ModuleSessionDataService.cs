@@ -43,7 +43,10 @@
             var unanswerdQuestions =
                 this.moduleSessionsRepository
                     .GetById(moduleSessionId)
-                    .Module.Questions.Where(x => !answerdQuestioIds.Contains(x.Id))
+                    .Module
+                    .QuestionsInModules
+                    .Select(x => x.Question)
+                    .Where(x => !answerdQuestioIds.Contains(x.Id))
                     .ToArray();
 
             if (!unanswerdQuestions.Any())

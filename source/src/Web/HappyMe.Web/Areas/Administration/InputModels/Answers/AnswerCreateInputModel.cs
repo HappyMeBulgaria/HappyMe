@@ -13,8 +13,7 @@
         [Display(Name = "Въпрос")]
         public int QuestionId { get; set; }
 
-        [Display(Name = "Сдържание на отговор")]
-        ////[PlaceHolder("Сдържание на отговор")]
+        [Display(Name = "Сдържание на отговор", Prompt = "Сдържание на отговор")]
         public string Text { get; set; }
 
         [Display(Name = "Правилен?")]

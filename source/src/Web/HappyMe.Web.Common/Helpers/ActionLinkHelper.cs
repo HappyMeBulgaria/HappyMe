@@ -22,7 +22,7 @@
 
         public static IHtmlContent DashboardLink(this IHtmlHelper helper)
         {
-            return helper.ActionLink("Dashboard", "Index", new { controller = "Начална страница", area = "Administration" }, new { @class = "btn btn-primary bottom-buffer" });
+            return helper.ActionLink("Начална страница", "Index", new { controller = "Dashboard", area = "Administration" }, new { @class = "btn btn-primary bottom-buffer" });
         }
     }
 }

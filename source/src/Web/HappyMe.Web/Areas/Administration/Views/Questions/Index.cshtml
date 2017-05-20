@@ -6,7 +6,7 @@
 
 <input type="button" value="Назад" onClick="history.go(-1);return true;" class="btn btn-blue bottom-buffer" />
 @Html.DashboardLink()
-<a asp-action="Create" asp-controller="Questions" asp-area="Administration" class="btn btn-primary bottom-buffer"></a>
+<a asp-action="Create" asp-controller="Questions" asp-area="Administration" class="btn btn-primary bottom-buffer">Създаване</a>
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     @Html.DisplayForModel()

@@ -36,6 +36,8 @@
 
         public virtual DbSet<ModuleSession> ModuleSessions { get; set; }
 
+        public virtual DbSet<QuestionInModule> QuestionsInModules { get; set; }
+
         ////public override DbSet<IdentityRole> Roles { get; set; }
 
         ////public static HappyMeDbContext Create()
@@ -62,11 +64,14 @@
             modelBuilder.Entity<UserInModule>()
                 .HasKey(a => new { a.UserId, a.ModuleId });
 
+            modelBuilder.Entity<QuestionInModule>()
+                .HasKey(a => new { a.QuestionId, a.ModuleId });
+
             modelBuilder.Entity<Module>()
-                .HasMany(m => m.Questions);
+                .HasMany(m => m.QuestionsInModules);
 
             modelBuilder.Entity<Question>()
-                .HasMany(q => q.Modules);
+                .HasMany(q => q.QuestionsInModules);
 
             modelBuilder.Entity<Question>()
                 .HasMany(q => q.Answers)

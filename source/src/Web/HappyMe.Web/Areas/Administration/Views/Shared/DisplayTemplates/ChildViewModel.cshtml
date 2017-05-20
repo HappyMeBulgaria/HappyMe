@@ -4,8 +4,16 @@
     <div class="inner-container">
         <img src="@Model.ImageUrl" alt="Picture of @Model.ImageUrl" class="img-responsive img-circle" />
         <h3 class="large-heading">@Html.DisplayFor(x => x.UserName)</h3>
-        @Html.ActionLink("Виж cтатистика", "Index", "ChildrenStatistics", new { area = "Administration", username = Model.UserName }, new { @class = "btn btn-warning top-buffer btn-rounded" })
-        @Html.ActionLink("Започни сесия", "LoginChild", "Dashboard", new { area = "Administration", username = Model.UserName }, new { @class = "btn btn-primary top-buffer btn-rounded" })
+        <a asp-action="Index"
+           asp-controller="ChildrenStatistics"
+           asp-area="Administration"
+           asp-route-username="@Model.UserName"
+           class="btn btn-warning top-buffer btn-rounded">Статистика</a>
+        <a asp-action="LoginChild"
+           asp-controller="Dashboard"
+           asp-area="Administration"
+           asp-route-username="@Model.UserName"
+           class="btn btn-primary top-buffer btn-rounded">Започни сесия</a>
     </div>
 </div>
 

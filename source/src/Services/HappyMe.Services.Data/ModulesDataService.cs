@@ -17,16 +17,16 @@
 
         public IQueryable<Module> All() => this.modulesRepository.All();
 
-        public IQueryable<Module> AllWithQuestions() => this.All().Where(x => x.Questions.Any());
+        public IQueryable<Module> AllWithQuestions() => this.All().Where(x => x.QuestionsInModules.Any());
 
         public IQueryable<Module> AllActive() => this.modulesRepository.All().Where(m => m.IsActive);
 
-        public IQueryable<Module> AllActiveWithQuestions() => this.AllActive().Where(x => x.Questions.Any());
+        public IQueryable<Module> AllActiveWithQuestions() => this.AllActive().Where(x => x.QuestionsInModules.Any());
 
         public IQueryable<Module> AllPublic() => this.modulesRepository.All().Where(m => m.IsPublic);
 
         public IQueryable<Module> AllPublicWithQuestionsWithCorrectAnswer() =>
-            this.AllPublic().Where(x => x.Questions.Any(q => q.Answers.Any(a => a.IsCorrect)));
+            this.AllPublic().Where(x => x.QuestionsInModules.Any(q => q.Question.Answers.Any(a => a.IsCorrect)));
 
         public Module GetById(int id) => this.modulesRepository.GetById(id);
     }

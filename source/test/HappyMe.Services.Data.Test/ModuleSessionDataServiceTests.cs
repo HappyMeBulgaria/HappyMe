@@ -144,14 +144,19 @@
             var simpleModule = new Module
             {
                 Id = 3,
-                Questions = new List<Question>
+                QuestionsInModules = new List<QuestionInModule>
                 {
-                    new Question
+                    new QuestionInModule
                     {
-                        Id = 3,
-                        Answers = new List<Answer>
+                        ModuleId = 3,
+                        QuestionId = 3,
+                        Question = new Question
                         {
-                            correctAnswer
+                            Id = 3,
+                            Answers = new List<Answer>
+                            {
+                                correctAnswer
+                            }
                         }
                     }
                 }
@@ -191,14 +196,19 @@
             var simpleModule = new Module
             {
                 Id = 3,
-                Questions = new List<Question>
+                QuestionsInModules = new List<QuestionInModule>
                 {
-                    new Question
+                    new QuestionInModule
                     {
-                        Id = 3,
-                        Answers = new List<Answer>
+                        ModuleId = 3,
+                        QuestionId = 3,
+                        Question = new Question
                         {
-                            correctAnswer
+                            Id = 3,
+                            Answers = new List<Answer>
+                            {
+                                correctAnswer
+                            }
                         }
                     }
                 }

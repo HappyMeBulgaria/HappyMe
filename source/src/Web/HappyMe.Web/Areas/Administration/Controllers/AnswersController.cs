@@ -87,7 +87,7 @@
                 if (entity != null)
                 {
                     this.TempData.AddSuccessMessage("Успешно създадохте отговор");
-                    return this.RedirectToAction(nameof(this.Index));
+                    return this.RedirectToIndex();
                 }
             }
 
@@ -112,7 +112,7 @@
             }
 
             this.TempData.AddDangerMessage("Нямате право да редактирате този отговор");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToIndex();
         }
 
         [HttpPost]
@@ -135,7 +135,7 @@
                     if (entity != null)
                     {
                         this.TempData.AddSuccessMessage("Успешно редактирахте отговор");
-                        return this.RedirectToAction(nameof(this.Index));
+                        return this.RedirectToIndex();
                     }
                 }
 
@@ -144,7 +144,7 @@
             }
 
             this.TempData.AddDangerMessage("Нямате право да редактирате този отговор");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToIndex();
         }
 
         [HttpPost]
@@ -163,11 +163,11 @@
                 this.BaseDestroy(id);
 
                 this.TempData.AddSuccessMessage("Успешно изтрихте отговор");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToIndex();
             }
 
             this.TempData.AddDangerMessage("Нямате право да изтриете този отговор");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToIndex();
         }
 
         private async Task PopulateViewBag(int? id)
@@ -185,6 +185,11 @@
             return this.User.IsAdmin() ||
                 ((this.AdministrationService as IAnswersAdministrationService)
                     ?.CheckIfUserIsAnswerAuthor(answerId, await this.GetUserIdAsync()) ?? false);
+        }
+
+        private RedirectToActionResult RedirectToIndex()
+        {
+            return this.RedirectToAction(nameof(this.Index), "Questions", new { area = "Administration" });
         }
     }
 }
