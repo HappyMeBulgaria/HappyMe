@@ -198,6 +198,15 @@
         {
             var correctAnswer = new Answer { Id = 3, IsCorrect = true, QuestionId = 3 };
 
+            var simpleQuestion = new Question
+            {
+                Id = 3,
+                Answers = new List<Answer>
+                {
+                    correctAnswer
+                }
+            };
+
             var simpleModule = new Module
             {
                 Id = 3,
@@ -207,14 +216,7 @@
                     {
                         ModuleId = 3,
                         QuestionId = 3,
-                        Question = new Question
-                        {
-                            Id = 3,
-                            Answers = new List<Answer>
-                            {
-                                correctAnswer
-                            }
-                        }
+                        Question = simpleQuestion
                     }
                 }
             };
@@ -231,6 +233,7 @@
                 User = fakeUser
             };
 
+            this.questionsRepository.Add(simpleQuestion);
             this.moduleSessionsRepository.Add(simpleModuleSession);
             var result = this.moduleSessionDataService.NextQuestion(3, "NEWXUSER");
 
