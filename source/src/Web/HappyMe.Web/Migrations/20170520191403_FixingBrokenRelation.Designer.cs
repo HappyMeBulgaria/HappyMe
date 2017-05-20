@@ -9,9 +9,10 @@ using HappyMe.Common.Models;
 namespace HappyMe.Web.Migrations
 {
     [DbContext(typeof(HappyMeDbContext))]
-    partial class HappyMeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170520191403_FixingBrokenRelation")]
+    partial class FixingBrokenRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")

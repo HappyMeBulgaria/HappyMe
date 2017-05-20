@@ -7,6 +7,7 @@
     "jquery-ui": "1.12.1",
     "jquery-validation": "1.14.0",
     "jquery-validation-unobtrusive": "3.2.6",
+    "q": "1.5.0",
     "jasmine": "2.6.1",
     "font-awesome": "Font-Awesome#v4.7.0",
     "lato-font": "v3.0.0",

@@ -5,13 +5,21 @@
 }
 
 @section styles{
-    @Styles.Render("~/Content/custom/questions.css")
-    @Styles.Render("~/Scripts/vendor/jquery-ui/jquery-ui.css")
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/questions.css" />
+        <link rel="stylesheet" href="~/lib/jquery-ui/themes/base/jquery-ui.css" />
+    </environment>
+    <environment names="Staging,Production">
+    </environment>
 }
 
 @section scripts {
-    @Scripts.Render("~/Scripts/custom/questions/answer.js")
-    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.js")
+    <environment names="Development">
+        <script src="~/js/custom/questions/answer.js"></script>
+        <script src="~/lib/jquery-ui/jquery-ui.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+    </environment>
 
     <script>
         HappyMe.Questions.loadAnswerDragAndDropEvents(@(Model.Id), @(@Model.SessionId))
@@ -25,7 +33,7 @@
 <div id="question-answer-area" class="text-center drag-and-drop-question-area">
     <div class="col-md-8 drag-and-drop-question-container">
         <span class="drag-and-drop-box">
-            <img src="@Model.ImageUrl" class="question-image"/>
+            <img src="@Model.ImageUrl" class="question-image" />
         </span>
         <span class="plus">
             <i class="fa fa-plus" aria-hidden="true"></i>

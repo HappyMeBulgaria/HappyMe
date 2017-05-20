@@ -9,6 +9,8 @@
     using HappyMe.Data.Models;
     using HappyMe.Services.Data.Contracts;
 
+    using Microsoft.EntityFrameworkCore;
+
     using MoreDotNet.Extensions.Collections;
     using MoreDotNet.Extensions.Common;
 
@@ -17,15 +19,18 @@
         private readonly IRepository<ModuleSession> moduleSessionsRepository;
         private readonly IRepository<UserAnswer> userAnswersRepository;
         private readonly IRepository<Module> modulesRepository;
+        private readonly IRepository<Question> questionsRepository;
 
         public ModuleSessionDataService(
             IRepository<ModuleSession> moduleSessionsRepository,
             IRepository<UserAnswer> userAnswersRepository,
-            IRepository<Module> modulesRepository)
+            IRepository<Module> modulesRepository,
+            IRepository<Question> questionsRepository)
         {
             this.moduleSessionsRepository = moduleSessionsRepository;
             this.userAnswersRepository = userAnswersRepository;
             this.modulesRepository = modulesRepository;
+            this.questionsRepository = questionsRepository;
         }
 
         public ModuleSession GetById(int id)
@@ -40,10 +45,14 @@
                     .Where(x => x.ModuleSessionId == moduleSessionId && x.UserId == userId && x.Answer.IsCorrect)
                     .Select(x => x.Answer.QuestionId);
 
-            var unanswerdQuestions =
-                this.moduleSessionsRepository
-                    .GetById(moduleSessionId)
-                    .Module
+            var sessionModule = this.moduleSessionsRepository.All()
+                .Include(x => x.Module)
+                .Include(x => x.Module.QuestionsInModules)
+                .Include("Module.QuestionsInModules.Question")
+                .FirstOrDefault(x => x.Id == moduleSessionId)
+                .Module;
+
+            var unanswerdQuestions = sessionModule
                     .QuestionsInModules
                     .Select(x => x.Question)
                     .Where(x => !answerdQuestioIds.Contains(x.Id))
@@ -58,7 +67,14 @@
 
             var selectedQuestion = RandomGenerator.Instance.OneOf(unanswerdQuestions);
 
-            selectedQuestion.Answers = selectedQuestion.Answers.Shuffle(RandomGenerator.Instance)
+            var qustionResult = this.questionsRepository
+                .All()
+                .Include(x => x.Answers)
+                .Include("Answers.Image")
+                .Include(x => x.Image)
+                .FirstOrDefault(x => x.Id == selectedQuestion.Id);
+
+            qustionResult.Answers = qustionResult.Answers.Shuffle(RandomGenerator.Instance)
                 .ToList();
 
             return selectedQuestion;

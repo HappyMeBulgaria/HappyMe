@@ -66,9 +66,9 @@ HappyMe.Questions = (function (httpRequester) {
             var answerId = event.currentTarget.dataset.answerId || event.originalEvent.target.dataset.answerId;
 
             var data = {
-                answerId: answerId,
-                questionId: questionId,
-                sessionId: sessionId
+                AnswerId: answerId,
+                QuestionId: questionId,
+                SessionId: sessionId
             };
 
             sendUserAnswer(data);

@@ -69,7 +69,7 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> Answer(AnswerQuestionInputModel inputModel)
+        public async Task<IActionResult> Answer([FromBody]AnswerQuestionInputModel inputModel)
         {
             if (this.ModelState.IsValid)
             {

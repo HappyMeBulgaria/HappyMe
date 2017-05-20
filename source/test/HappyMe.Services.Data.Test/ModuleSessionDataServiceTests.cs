@@ -9,6 +9,8 @@
     using HappyMe.Data.Models;
     using HappyMe.Services.Data;
 
+    using Moq;
+
     using Xunit;
 
     public class ModuleSessionDataServiceTests
@@ -27,7 +29,8 @@
             this.moduleSessionDataService = new ModuleSessionDataService(
                 this.moduleSessionsRepository,
                 this.userAnswersRepository,
-                this.modulesRepository);
+                this.modulesRepository,
+                new Mock<IRepository<Question>>().Object);
 
             var simpleModule = new Module { Id = 1 };
             var fakeUser = new User

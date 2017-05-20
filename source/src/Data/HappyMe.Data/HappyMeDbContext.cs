@@ -25,7 +25,6 @@
 
         public virtual DbSet<Image> Images { get; set; }
 
-        // TODO: Make many to many table in the context for Modules in Questions
         public virtual DbSet<Module> Modules { get; set; }
 
         public virtual DbSet<UserInModule> UsersInModules { get; set; }

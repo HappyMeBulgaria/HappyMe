@@ -35,7 +35,10 @@
   {
     "outputFileName": "wwwroot/js/site.min.js",
     "inputFiles": [
-      "wwwroot/js/site.js"
+      "wwwroot/js/site.js",
+      "wwwroot/lib/q/q.js",
+      "wwwroot/js/custom/common/http-requester.js",
+      "wwwroot/js/custom/common/color-utils.js"
     ],
     // Optionally specify minification options
     "minify": {

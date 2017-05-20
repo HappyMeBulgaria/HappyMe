@@ -11,11 +11,13 @@
     {
         private ICollection<QuestionInModule> questionsInModules;
         private ICollection<UserInModule> usersInModule;
+        private ICollection<ModuleSession> sessions;
 
         public Module()
         {
             this.questionsInModules = new HashSet<QuestionInModule>();
             this.usersInModule = new HashSet<UserInModule>();
+            this.sessions = new List<ModuleSession>();
         }
 
         [Key]
@@ -41,6 +43,12 @@
         public int? ImageId { get; set; }
 
         public virtual Image Image { get; set; }
+
+        public virtual ICollection<ModuleSession> Sessions
+        {
+            get => this.sessions;
+            set => this.sessions = value;
+        }
 
         public virtual ICollection<QuestionInModule> QuestionsInModules
         {
