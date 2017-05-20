@@ -1,7 +1,6 @@
 ﻿namespace HappyMe.Web.Areas.Administration.Controllers
 {
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -74,7 +73,7 @@
                 if (entity != null)
                 {
                     this.TempData.AddSuccessMessage("Успешно създадохте модул");
-                    return this.RedirectToAction(nameof(this.Index), "Modules", new { area ="Administration" });
+                    return this.RedirectToIndex();
                 }
             }
 
@@ -97,7 +96,7 @@
             }
 
             this.TempData.AddDangerMessage("Нямате права за да променяте този модул");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToIndex();
         }
 
         [HttpPost]
@@ -123,7 +122,7 @@
                     if (entity != null)
                     {
                         this.TempData.AddSuccessMessage("Успешно редактирахте модул");
-                        return this.RedirectToAction(nameof(this.Index));
+                        return this.RedirectToIndex();
                     }
                 }
 
@@ -131,7 +130,7 @@
             }
 
             this.TempData.AddDangerMessage("Нямате права за да променяте този модул");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToIndex();
         }
 
         [HttpPost]
@@ -150,11 +149,11 @@
                 this.BaseDestroy(id);
 
                 this.TempData.AddSuccessMessage("Успешно изтрихте модул");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToIndex();
             }
 
             this.TempData.AddDangerMessage("Нямате права за да изтривате този модул");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToIndex();
         }
 
         private async Task<bool> CheckIfUserHasRights(int moduleId)
@@ -162,6 +161,11 @@
             return this.User.IsAdmin() ||
                 (this.AdministrationService.As<IModulesAdministrationService>()
                     ?.CheckIfUserIsModuleAuthor(moduleId, await this.GetUserIdAsync()) ?? false);
+        }
+
+        private RedirectToActionResult RedirectToIndex()
+        {
+            return this.RedirectToAction(nameof(this.Index), "Modules", new { area = "Administration" });
         }
     }
 }

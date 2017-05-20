@@ -66,7 +66,7 @@
                 }
 
                 this.TempData.AddDangerMessage(string.Join(";", userCreateResult.Errors));
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToAction(nameof(this.Index), "Users", new { area = "Administration" });
             }
 
             return this.View(model);
@@ -85,7 +85,7 @@
             if (entity != null)
             {
                 this.TempData.AddSuccessMessage("Успешно редактирахте модул");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToAction(nameof(this.Index), "Users", new { area = "Administration" });
             }
 
             return this.View(model);
@@ -98,7 +98,7 @@
             this.BaseDestroy(id);
 
             this.TempData.AddSuccessMessage("Успешно изтрихте потребител");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToAction(nameof(this.Index), "Users", new { area = "Administration" });
         }
 
         [HttpGet]
@@ -114,7 +114,7 @@
             if (!roles.Any())
             {
                 this.TempData.AddWarningMessage("Няма намерени роли");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToAction(nameof(this.Index), "Users", new { area = "Administration" });
             }
 
             var user = this.AdministrationService.Get(id);
@@ -134,7 +134,7 @@
                 this.usersInRolesAdministrationService.Create(userInRole);
 
                 this.TempData.AddSuccessMessage("Успешно добавихте потребител в роля");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToAction(nameof(this.Index), "Users", new { area = "Administration" });
             }
 
             return this.View(model);

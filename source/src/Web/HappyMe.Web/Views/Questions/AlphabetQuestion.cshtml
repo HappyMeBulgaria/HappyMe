@@ -1,0 +1,28 @@
+﻿@model HappyMe.Web.ViewModels.Questions.QuestionViewModel
+
+@{
+    ViewBag.Title = Model.Text;
+}
+
+@section styles {
+    @Styles.Render("~/Content/custom/questions.css")
+    @Styles.Render("~/Scripts/vendor/jquery-ui/jquery-ui.css")
+}
+
+@section scripts {
+    @Scripts.Render("~/Scripts/custom/questions/answer.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.js")
+
+    <script>
+        HappyMe.Questions.loadAnswerClickEvent(@(Model.Id), @(@Model.SessionId))
+    </script>
+}
+
+<div class="col-md-12 text-center">
+    <img class="alphabet-question-letter-image" src="@Model.ImageUrl" alt="@($"{Model.Text} - изображение")" />
+</div>
+
+@Html.Partial("_AlphabetAnswer", Model.Answers);
+
+@Html.Partial("_CorrectAnswerPopup")
+@Html.Partial("_WrongAnswerPopup")

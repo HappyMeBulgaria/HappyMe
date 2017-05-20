@@ -45,7 +45,7 @@
             if (entity != null)
             {
                 this.TempData.AddSuccessMessage("Успешно запазихте изображение");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToIndex();
             }
 
             return this.View(input);
@@ -77,7 +77,7 @@
             if (entity != null)
             {
                 this.TempData.AddSuccessMessage("Успешно редактирахте модул");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToIndex();
             }
 
             return this.View();
@@ -94,7 +94,12 @@
             this.BaseDestroy(id);
 
             this.TempData.AddSuccessMessage("Успешно изтрихте изображение.");
-            return this.RedirectToAction<ImagesController>(x => x.Index());
+            return this.RedirectToIndex();
+        }
+
+        private RedirectToActionResult RedirectToIndex()
+        {
+            return this.RedirectToAction(nameof(this.Index), "Images", new { area = "Administration" });
         }
     }
 }

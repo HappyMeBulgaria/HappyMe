@@ -36,7 +36,7 @@
             this.BaseDestroy(id);
 
             this.TempData.AddSuccessMessage("Успешно изтрихте потребителски отговор");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToAction(nameof(this.Index), "Feedback", new { area = "Administration" });
         }
     }
 }

@@ -1,0 +1,46 @@
+﻿@model HappyMe.Web.ViewModels.Questions.QuestionViewModel
+
+@{
+    ViewBag.Title = Model.Text;
+}
+
+@section styles{
+    @Styles.Render("~/Content/custom/questions.css")
+    @Styles.Render("~/Scripts/vendor/jquery-ui/jquery-ui.css")
+}
+
+@section scripts {
+    @Scripts.Render("~/Scripts/custom/questions/answer.js")
+    @Scripts.Render("~/Scripts/vendor/jquery-ui/jquery-ui.js")
+
+    <script>
+        HappyMe.Questions.loadAnswerDragAndDropEvents(@(Model.Id), @(@Model.SessionId))
+    </script>
+}
+
+<div class="section-title-container">
+    <h1 class="section-title large-heading page-heading">@ViewBag.Title</h1>
+</div>
+
+<div id="question-answer-area" class="text-center drag-and-drop-question-area">
+    <div class="col-md-8 drag-and-drop-question-container">
+        <span class="drag-and-drop-box">
+            <img src="@Model.ImageUrl" class="question-image"/>
+        </span>
+        <span class="plus">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </span>
+        <span class="drag-and-drop-box"></span>
+    </div>
+</div>
+
+<div>
+    <div class="col-sm-12">
+        <div class="drag-and-drop-answers-wrapper">
+            @Html.DisplayFor(m => m.Answers, "DragAndDropAnswers")
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_CorrectAnswerPopup")
+@Html.Partial("_WrongAnswerPopup")

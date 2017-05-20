@@ -68,11 +68,11 @@
                 this.BaseDestroy(id);
 
                 this.TempData.AddSuccessMessage("Успешно изтрихте потребителски отговор");
-                return this.RedirectToAction(nameof(this.Index));
+                return this.RedirectToAction(nameof(this.Index), "UsersAnswers", new { area = "Administration" });
             }
 
             this.TempData.AddDangerMessage("Нямате права за да изтриете потребителският отговор");
-            return this.RedirectToAction(nameof(this.Index));
+            return this.RedirectToAction(nameof(this.Index), "UsersAnswers", new { area = "Administration" });
         }
     }
 }
