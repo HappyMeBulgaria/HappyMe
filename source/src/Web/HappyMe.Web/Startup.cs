@@ -1,4 +1,6 @@
-﻿namespace HappyMe.Web
+﻿
+
+namespace HappyMe.Web
 {
     using System;
     using System.Collections.Generic;
@@ -14,6 +16,8 @@
     using HappyMe.Data.Models;
     using HappyMe.Services.Administration.Contracts;
     using HappyMe.Services.Common;
+    using HappyMe.Services.Common.MailSender;
+    using HappyMe.Services.Common.MailSender.Contracts;
     using HappyMe.Services.Common.Mapping;
     using HappyMe.Services.Common.Mapping.Contracts;
     using HappyMe.Services.Data.Contracts;
@@ -76,6 +80,7 @@
             services.AddScoped<IMappingService, AutoMapperMappingService>();
             services.Add(new ServiceDescriptor(typeof(IMapper), AutoMapperConfig.MapperConfiguration?.CreateMapper()));
             services.AddScoped<RoleManager<IdentityRole<string>>, RoleManager<IdentityRole<string>>>();
+            services.AddScoped<IMailSender>(provider => new MailSender(this.Configuration.GetSection("AppSettings")["SmtpPassword"]));
             //// services.AddTransient<ISmsSender, AuthMessageSender>();
 
             // TODOD: Move to constants or somewhere else

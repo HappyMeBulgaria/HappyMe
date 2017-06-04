@@ -1,4 +1,7 @@
-﻿namespace HappyMe.Web.Controllers
+﻿using System.Collections.Generic;
+using HappyMe.Services.Common.MailSender.Contracts;
+
+namespace HappyMe.Web.Controllers
 {
     using HappyMe.Common.Constants;
     using HappyMe.Data.Models;
@@ -9,9 +12,14 @@
 
     public class HomeController : BaseController
     {
-        public HomeController(UserManager<User> userManager)
+        private readonly IMailSender mailSender;
+
+        public HomeController(
+            UserManager<User> userManager,
+            IMailSender mailSender)
             : base(userManager)
         {
+            this.mailSender = mailSender;
         }
 
         public IActionResult Index()
@@ -26,9 +34,9 @@
             return this.View();
         }
 
-        public IActionResult Contact()
+        public IActionResult TestEmail()
         {
-            this.ViewData["Message"] = "Your contact page.";
+            this.mailSender.SendMail("kristian.mariyanov@gmail.com", "Test Email", "It works!", new List<string> { "yana.slavcheva@gmail.com" });
 
             return this.View();
         }
