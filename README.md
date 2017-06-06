@@ -38,6 +38,7 @@ For a feature to be considered "Done", the following requirements **must be met*
 - The code must be **covered by unit tests** (xUnit or Jasmine).
 - The pull request created from the feature branch to the development branch, **must pass a review by at least one person**.
 
+
 ## Contributors
 
 * Kristian Mariyanov - ([https://github.com/KristianMariyanov](https://github.com/KristianMariyanov))
