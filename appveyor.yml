@@ -5,6 +5,10 @@ platform: Any CPU
 environment:
   # Don't report back to the mothership
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
+notifications:
+  - provider: Slack
+    incoming_webhook:
+      secure: C2h8A0lLolvcm9SQFHvkWtQUA0tg0VglANwmlyu0bGnlQzG5uBQzIU05ul+0EIHs4FHi/WzNR2Fhx8sSEyYRw4aULxnbxTj/Sp6umosEsQA=
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
